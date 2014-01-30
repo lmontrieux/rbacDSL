@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="uk.ac.open.rbacDSL.sdk"
+	label="RbacDSL SDK Feature "
+	version="1.0.0.qualifier">
+	<plugin
+			id="uk.ac.open.rbacDSL"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+	<plugin
+			id="uk.ac.open.rbacDSL.ui"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+</feature>
