@@ -173,7 +173,7 @@ public class RbacDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (name=ID parent=[Role|ID]? ssod+=[Role|ID]* dsod+=[Role|ID]* permissions+=[Permission|ID]*)
+	 *     (name=ID parent+=[Role|ID]* ssod+=[Role|ID]* dsod+=[Role|ID]* permissions+=[Permission|ID]*)
 	 */
 	protected void sequence_Role(EObject context, Role semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

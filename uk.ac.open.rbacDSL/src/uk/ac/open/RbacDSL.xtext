@@ -30,7 +30,7 @@ User:
 ;
 
 Role:
-	'role' name = ID ('extends' parent = [Role])? '{'
+	'role' name = ID ('extends' parent += [Role]*)? '{'
 		('ssod:' ssod += [Role])*
 		('dsod:' dsod += [Role])*
 		('permission:' permissions += [Permission])*

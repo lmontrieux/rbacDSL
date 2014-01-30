@@ -904,7 +904,7 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRole"
-    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:375:1: ruleRole returns [EObject current=null] : (otherlv_0= 'role' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' (otherlv_5= 'ssod:' ( (otherlv_6= RULE_ID ) ) )* (otherlv_7= 'dsod:' ( (otherlv_8= RULE_ID ) ) )* (otherlv_9= 'permission:' ( (otherlv_10= RULE_ID ) ) )* otherlv_11= '}' ) ;
+    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:375:1: ruleRole returns [EObject current=null] : (otherlv_0= 'role' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) )* )? otherlv_4= '{' (otherlv_5= 'ssod:' ( (otherlv_6= RULE_ID ) ) )* (otherlv_7= 'dsod:' ( (otherlv_8= RULE_ID ) ) )* (otherlv_9= 'permission:' ( (otherlv_10= RULE_ID ) ) )* otherlv_11= '}' ) ;
     public final EObject ruleRole() throws RecognitionException {
         EObject current = null;
 
@@ -924,11 +924,11 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:378:28: ( (otherlv_0= 'role' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' (otherlv_5= 'ssod:' ( (otherlv_6= RULE_ID ) ) )* (otherlv_7= 'dsod:' ( (otherlv_8= RULE_ID ) ) )* (otherlv_9= 'permission:' ( (otherlv_10= RULE_ID ) ) )* otherlv_11= '}' ) )
-            // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:379:1: (otherlv_0= 'role' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' (otherlv_5= 'ssod:' ( (otherlv_6= RULE_ID ) ) )* (otherlv_7= 'dsod:' ( (otherlv_8= RULE_ID ) ) )* (otherlv_9= 'permission:' ( (otherlv_10= RULE_ID ) ) )* otherlv_11= '}' )
+            // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:378:28: ( (otherlv_0= 'role' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) )* )? otherlv_4= '{' (otherlv_5= 'ssod:' ( (otherlv_6= RULE_ID ) ) )* (otherlv_7= 'dsod:' ( (otherlv_8= RULE_ID ) ) )* (otherlv_9= 'permission:' ( (otherlv_10= RULE_ID ) ) )* otherlv_11= '}' ) )
+            // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:379:1: (otherlv_0= 'role' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) )* )? otherlv_4= '{' (otherlv_5= 'ssod:' ( (otherlv_6= RULE_ID ) ) )* (otherlv_7= 'dsod:' ( (otherlv_8= RULE_ID ) ) )* (otherlv_9= 'permission:' ( (otherlv_10= RULE_ID ) ) )* otherlv_11= '}' )
             {
-            // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:379:1: (otherlv_0= 'role' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' (otherlv_5= 'ssod:' ( (otherlv_6= RULE_ID ) ) )* (otherlv_7= 'dsod:' ( (otherlv_8= RULE_ID ) ) )* (otherlv_9= 'permission:' ( (otherlv_10= RULE_ID ) ) )* otherlv_11= '}' )
-            // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:379:3: otherlv_0= 'role' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' (otherlv_5= 'ssod:' ( (otherlv_6= RULE_ID ) ) )* (otherlv_7= 'dsod:' ( (otherlv_8= RULE_ID ) ) )* (otherlv_9= 'permission:' ( (otherlv_10= RULE_ID ) ) )* otherlv_11= '}'
+            // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:379:1: (otherlv_0= 'role' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) )* )? otherlv_4= '{' (otherlv_5= 'ssod:' ( (otherlv_6= RULE_ID ) ) )* (otherlv_7= 'dsod:' ( (otherlv_8= RULE_ID ) ) )* (otherlv_9= 'permission:' ( (otherlv_10= RULE_ID ) ) )* otherlv_11= '}' )
+            // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:379:3: otherlv_0= 'role' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) )* )? otherlv_4= '{' (otherlv_5= 'ssod:' ( (otherlv_6= RULE_ID ) ) )* (otherlv_7= 'dsod:' ( (otherlv_8= RULE_ID ) ) )* (otherlv_9= 'permission:' ( (otherlv_10= RULE_ID ) ) )* otherlv_11= '}'
             {
             otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleRole745); 
 
@@ -960,41 +960,59 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:401:2: (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )?
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+            // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:401:2: (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) )* )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            if ( (LA8_0==18) ) {
-                alt8=1;
+            if ( (LA9_0==18) ) {
+                alt9=1;
             }
-            switch (alt8) {
+            switch (alt9) {
                 case 1 :
-                    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:401:4: otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) )
+                    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:401:4: otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) )*
                     {
                     otherlv_2=(Token)match(input,18,FOLLOW_18_in_ruleRole780); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getRoleAccess().getExtendsKeyword_2_0());
                         
-                    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:405:1: ( (otherlv_3= RULE_ID ) )
-                    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:406:1: (otherlv_3= RULE_ID )
-                    {
-                    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:406:1: (otherlv_3= RULE_ID )
-                    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:407:3: otherlv_3= RULE_ID
-                    {
+                    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:405:1: ( (otherlv_3= RULE_ID ) )*
+                    loop8:
+                    do {
+                        int alt8=2;
+                        int LA8_0 = input.LA(1);
 
-                    			if (current==null) {
-                    	            current = createModelElement(grammarAccess.getRoleRule());
-                    	        }
-                            
-                    otherlv_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRole800); 
-
-                    		newLeafNode(otherlv_3, grammarAccess.getRoleAccess().getParentRoleCrossReference_2_1_0()); 
-                    	
-
-                    }
+                        if ( (LA8_0==RULE_ID) ) {
+                            alt8=1;
+                        }
 
 
-                    }
+                        switch (alt8) {
+                    	case 1 :
+                    	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:406:1: (otherlv_3= RULE_ID )
+                    	    {
+                    	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:406:1: (otherlv_3= RULE_ID )
+                    	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:407:3: otherlv_3= RULE_ID
+                    	    {
+
+                    	    			if (current==null) {
+                    	    	            current = createModelElement(grammarAccess.getRoleRule());
+                    	    	        }
+                    	            
+                    	    otherlv_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRole800); 
+
+                    	    		newLeafNode(otherlv_3, grammarAccess.getRoleAccess().getParentRoleCrossReference_2_1_0()); 
+                    	    	
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop8;
+                        }
+                    } while (true);
 
 
                     }
@@ -1002,26 +1020,26 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,12,FOLLOW_12_in_ruleRole814); 
+            otherlv_4=(Token)match(input,12,FOLLOW_12_in_ruleRole815); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getRoleAccess().getLeftCurlyBracketKeyword_3());
                 
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:422:1: (otherlv_5= 'ssod:' ( (otherlv_6= RULE_ID ) ) )*
-            loop9:
+            loop10:
             do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( (LA9_0==19) ) {
-                    alt9=1;
+                if ( (LA10_0==19) ) {
+                    alt10=1;
                 }
 
 
-                switch (alt9) {
+                switch (alt10) {
             	case 1 :
             	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:422:3: otherlv_5= 'ssod:' ( (otherlv_6= RULE_ID ) )
             	    {
-            	    otherlv_5=(Token)match(input,19,FOLLOW_19_in_ruleRole827); 
+            	    otherlv_5=(Token)match(input,19,FOLLOW_19_in_ruleRole828); 
 
             	        	newLeafNode(otherlv_5, grammarAccess.getRoleAccess().getSsodKeyword_4_0());
             	        
@@ -1036,58 +1054,9 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             	    	            current = createModelElement(grammarAccess.getRoleRule());
             	    	        }
             	            
-            	    otherlv_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRole847); 
+            	    otherlv_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRole848); 
 
             	    		newLeafNode(otherlv_6, grammarAccess.getRoleAccess().getSsodRoleCrossReference_4_1_0()); 
-            	    	
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop9;
-                }
-            } while (true);
-
-            // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:439:4: (otherlv_7= 'dsod:' ( (otherlv_8= RULE_ID ) ) )*
-            loop10:
-            do {
-                int alt10=2;
-                int LA10_0 = input.LA(1);
-
-                if ( (LA10_0==20) ) {
-                    alt10=1;
-                }
-
-
-                switch (alt10) {
-            	case 1 :
-            	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:439:6: otherlv_7= 'dsod:' ( (otherlv_8= RULE_ID ) )
-            	    {
-            	    otherlv_7=(Token)match(input,20,FOLLOW_20_in_ruleRole862); 
-
-            	        	newLeafNode(otherlv_7, grammarAccess.getRoleAccess().getDsodKeyword_5_0());
-            	        
-            	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:443:1: ( (otherlv_8= RULE_ID ) )
-            	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:444:1: (otherlv_8= RULE_ID )
-            	    {
-            	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:444:1: (otherlv_8= RULE_ID )
-            	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:445:3: otherlv_8= RULE_ID
-            	    {
-
-            	    			if (current==null) {
-            	    	            current = createModelElement(grammarAccess.getRoleRule());
-            	    	        }
-            	            
-            	    otherlv_8=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRole882); 
-
-            	    		newLeafNode(otherlv_8, grammarAccess.getRoleAccess().getDsodRoleCrossReference_5_1_0()); 
             	    	
 
             	    }
@@ -1104,39 +1073,39 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:456:4: (otherlv_9= 'permission:' ( (otherlv_10= RULE_ID ) ) )*
+            // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:439:4: (otherlv_7= 'dsod:' ( (otherlv_8= RULE_ID ) ) )*
             loop11:
             do {
                 int alt11=2;
                 int LA11_0 = input.LA(1);
 
-                if ( (LA11_0==21) ) {
+                if ( (LA11_0==20) ) {
                     alt11=1;
                 }
 
 
                 switch (alt11) {
             	case 1 :
-            	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:456:6: otherlv_9= 'permission:' ( (otherlv_10= RULE_ID ) )
+            	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:439:6: otherlv_7= 'dsod:' ( (otherlv_8= RULE_ID ) )
             	    {
-            	    otherlv_9=(Token)match(input,21,FOLLOW_21_in_ruleRole897); 
+            	    otherlv_7=(Token)match(input,20,FOLLOW_20_in_ruleRole863); 
 
-            	        	newLeafNode(otherlv_9, grammarAccess.getRoleAccess().getPermissionKeyword_6_0());
+            	        	newLeafNode(otherlv_7, grammarAccess.getRoleAccess().getDsodKeyword_5_0());
             	        
-            	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:460:1: ( (otherlv_10= RULE_ID ) )
-            	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:461:1: (otherlv_10= RULE_ID )
+            	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:443:1: ( (otherlv_8= RULE_ID ) )
+            	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:444:1: (otherlv_8= RULE_ID )
             	    {
-            	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:461:1: (otherlv_10= RULE_ID )
-            	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:462:3: otherlv_10= RULE_ID
+            	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:444:1: (otherlv_8= RULE_ID )
+            	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:445:3: otherlv_8= RULE_ID
             	    {
 
             	    			if (current==null) {
             	    	            current = createModelElement(grammarAccess.getRoleRule());
             	    	        }
             	            
-            	    otherlv_10=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRole917); 
+            	    otherlv_8=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRole883); 
 
-            	    		newLeafNode(otherlv_10, grammarAccess.getRoleAccess().getPermissionsPermissionCrossReference_6_1_0()); 
+            	    		newLeafNode(otherlv_8, grammarAccess.getRoleAccess().getDsodRoleCrossReference_5_1_0()); 
             	    	
 
             	    }
@@ -1153,7 +1122,56 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_11=(Token)match(input,13,FOLLOW_13_in_ruleRole931); 
+            // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:456:4: (otherlv_9= 'permission:' ( (otherlv_10= RULE_ID ) ) )*
+            loop12:
+            do {
+                int alt12=2;
+                int LA12_0 = input.LA(1);
+
+                if ( (LA12_0==21) ) {
+                    alt12=1;
+                }
+
+
+                switch (alt12) {
+            	case 1 :
+            	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:456:6: otherlv_9= 'permission:' ( (otherlv_10= RULE_ID ) )
+            	    {
+            	    otherlv_9=(Token)match(input,21,FOLLOW_21_in_ruleRole898); 
+
+            	        	newLeafNode(otherlv_9, grammarAccess.getRoleAccess().getPermissionKeyword_6_0());
+            	        
+            	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:460:1: ( (otherlv_10= RULE_ID ) )
+            	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:461:1: (otherlv_10= RULE_ID )
+            	    {
+            	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:461:1: (otherlv_10= RULE_ID )
+            	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:462:3: otherlv_10= RULE_ID
+            	    {
+
+            	    			if (current==null) {
+            	    	            current = createModelElement(grammarAccess.getRoleRule());
+            	    	        }
+            	            
+            	    otherlv_10=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRole918); 
+
+            	    		newLeafNode(otherlv_10, grammarAccess.getRoleAccess().getPermissionsPermissionCrossReference_6_1_0()); 
+            	    	
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop12;
+                }
+            } while (true);
+
+            otherlv_11=(Token)match(input,13,FOLLOW_13_in_ruleRole932); 
 
                 	newLeafNode(otherlv_11, grammarAccess.getRoleAccess().getRightCurlyBracketKeyword_7());
                 
@@ -1190,13 +1208,13 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:487:2: iv_rulePermission= rulePermission EOF
             {
              newCompositeNode(grammarAccess.getPermissionRule()); 
-            pushFollow(FOLLOW_rulePermission_in_entryRulePermission967);
+            pushFollow(FOLLOW_rulePermission_in_entryRulePermission968);
             iv_rulePermission=rulePermission();
 
             state._fsp--;
 
              current =iv_rulePermission; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePermission977); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePermission978); 
 
             }
 
@@ -1230,7 +1248,7 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:498:1: (otherlv_0= 'permission' ( (lv_name_1_0= RULE_ID ) ) )
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:498:3: otherlv_0= 'permission' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,22,FOLLOW_22_in_rulePermission1014); 
+            otherlv_0=(Token)match(input,22,FOLLOW_22_in_rulePermission1015); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getPermissionAccess().getPermissionKeyword_0());
                 
@@ -1240,7 +1258,7 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:503:1: (lv_name_1_0= RULE_ID )
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:504:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_rulePermission1031); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_rulePermission1032); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getPermissionAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -1293,13 +1311,13 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:530:2: iv_ruleResource= ruleResource EOF
             {
              newCompositeNode(grammarAccess.getResourceRule()); 
-            pushFollow(FOLLOW_ruleResource_in_entryRuleResource1072);
+            pushFollow(FOLLOW_ruleResource_in_entryRuleResource1073);
             iv_ruleResource=ruleResource();
 
             state._fsp--;
 
              current =iv_ruleResource; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleResource1082); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleResource1083); 
 
             }
 
@@ -1337,7 +1355,7 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:541:1: (otherlv_0= 'resource' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'permission:' ( (otherlv_4= RULE_ID ) ) )* otherlv_5= '}' )
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:541:3: otherlv_0= 'resource' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'permission:' ( (otherlv_4= RULE_ID ) ) )* otherlv_5= '}'
             {
-            otherlv_0=(Token)match(input,23,FOLLOW_23_in_ruleResource1119); 
+            otherlv_0=(Token)match(input,23,FOLLOW_23_in_ruleResource1120); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getResourceAccess().getResourceKeyword_0());
                 
@@ -1347,7 +1365,7 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:546:1: (lv_name_1_0= RULE_ID )
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:547:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleResource1136); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleResource1137); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getResourceAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -1367,26 +1385,26 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleResource1153); 
+            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleResource1154); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getResourceAccess().getLeftCurlyBracketKeyword_2());
                 
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:567:1: (otherlv_3= 'permission:' ( (otherlv_4= RULE_ID ) ) )*
-            loop12:
+            loop13:
             do {
-                int alt12=2;
-                int LA12_0 = input.LA(1);
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-                if ( (LA12_0==21) ) {
-                    alt12=1;
+                if ( (LA13_0==21) ) {
+                    alt13=1;
                 }
 
 
-                switch (alt12) {
+                switch (alt13) {
             	case 1 :
             	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:567:3: otherlv_3= 'permission:' ( (otherlv_4= RULE_ID ) )
             	    {
-            	    otherlv_3=(Token)match(input,21,FOLLOW_21_in_ruleResource1166); 
+            	    otherlv_3=(Token)match(input,21,FOLLOW_21_in_ruleResource1167); 
 
             	        	newLeafNode(otherlv_3, grammarAccess.getResourceAccess().getPermissionKeyword_3_0());
             	        
@@ -1401,7 +1419,7 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             	    	            current = createModelElement(grammarAccess.getResourceRule());
             	    	        }
             	            
-            	    otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleResource1186); 
+            	    otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleResource1187); 
 
             	    		newLeafNode(otherlv_4, grammarAccess.getResourceAccess().getPermissionsPermissionCrossReference_3_1_0()); 
             	    	
@@ -1416,11 +1434,11 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop12;
+            	    break loop13;
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,13,FOLLOW_13_in_ruleResource1200); 
+            otherlv_5=(Token)match(input,13,FOLLOW_13_in_ruleResource1201); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getResourceAccess().getRightCurlyBracketKeyword_4());
                 
@@ -1457,13 +1475,13 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:598:2: iv_ruleUserScenario= ruleUserScenario EOF
             {
              newCompositeNode(grammarAccess.getUserScenarioRule()); 
-            pushFollow(FOLLOW_ruleUserScenario_in_entryRuleUserScenario1236);
+            pushFollow(FOLLOW_ruleUserScenario_in_entryRuleUserScenario1237);
             iv_ruleUserScenario=ruleUserScenario();
 
             state._fsp--;
 
              current =iv_ruleUserScenario; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUserScenario1246); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUserScenario1247); 
 
             }
 
@@ -1497,29 +1515,29 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:609:1: (this_GrantedScenario_0= ruleGrantedScenario | this_ForbiddenScenario_1= ruleForbiddenScenario )
             {
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:609:1: (this_GrantedScenario_0= ruleGrantedScenario | this_ForbiddenScenario_1= ruleForbiddenScenario )
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( (LA13_0==24) ) {
-                alt13=1;
+            if ( (LA14_0==24) ) {
+                alt14=1;
             }
-            else if ( (LA13_0==27) ) {
-                alt13=2;
+            else if ( (LA14_0==27) ) {
+                alt14=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
+                    new NoViableAltException("", 14, 0, input);
 
                 throw nvae;
             }
-            switch (alt13) {
+            switch (alt14) {
                 case 1 :
                     // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:610:5: this_GrantedScenario_0= ruleGrantedScenario
                     {
                      
                             newCompositeNode(grammarAccess.getUserScenarioAccess().getGrantedScenarioParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleGrantedScenario_in_ruleUserScenario1293);
+                    pushFollow(FOLLOW_ruleGrantedScenario_in_ruleUserScenario1294);
                     this_GrantedScenario_0=ruleGrantedScenario();
 
                     state._fsp--;
@@ -1537,7 +1555,7 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getUserScenarioAccess().getForbiddenScenarioParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleForbiddenScenario_in_ruleUserScenario1320);
+                    pushFollow(FOLLOW_ruleForbiddenScenario_in_ruleUserScenario1321);
                     this_ForbiddenScenario_1=ruleForbiddenScenario();
 
                     state._fsp--;
@@ -1582,13 +1600,13 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:638:2: iv_ruleGrantedScenario= ruleGrantedScenario EOF
             {
              newCompositeNode(grammarAccess.getGrantedScenarioRule()); 
-            pushFollow(FOLLOW_ruleGrantedScenario_in_entryRuleGrantedScenario1355);
+            pushFollow(FOLLOW_ruleGrantedScenario_in_entryRuleGrantedScenario1356);
             iv_ruleGrantedScenario=ruleGrantedScenario();
 
             state._fsp--;
 
              current =iv_ruleGrantedScenario; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleGrantedScenario1365); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleGrantedScenario1366); 
 
             }
 
@@ -1630,7 +1648,7 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:649:1: (otherlv_0= 'grantedScenario' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'user:' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'role:' ( (otherlv_6= RULE_ID ) ) )* (otherlv_7= 'resource:' ( (otherlv_8= RULE_ID ) ) )+ otherlv_9= '}' )
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:649:3: otherlv_0= 'grantedScenario' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'user:' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'role:' ( (otherlv_6= RULE_ID ) ) )* (otherlv_7= 'resource:' ( (otherlv_8= RULE_ID ) ) )+ otherlv_9= '}'
             {
-            otherlv_0=(Token)match(input,24,FOLLOW_24_in_ruleGrantedScenario1402); 
+            otherlv_0=(Token)match(input,24,FOLLOW_24_in_ruleGrantedScenario1403); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getGrantedScenarioAccess().getGrantedScenarioKeyword_0());
                 
@@ -1640,7 +1658,7 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:654:1: (lv_name_1_0= RULE_ID )
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:655:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleGrantedScenario1419); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleGrantedScenario1420); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getGrantedScenarioAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -1660,11 +1678,11 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleGrantedScenario1436); 
+            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleGrantedScenario1437); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getGrantedScenarioAccess().getLeftCurlyBracketKeyword_2());
                 
-            otherlv_3=(Token)match(input,25,FOLLOW_25_in_ruleGrantedScenario1448); 
+            otherlv_3=(Token)match(input,25,FOLLOW_25_in_ruleGrantedScenario1449); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getGrantedScenarioAccess().getUserKeyword_3());
                 
@@ -1679,7 +1697,7 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             	            current = createModelElement(grammarAccess.getGrantedScenarioRule());
             	        }
                     
-            otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleGrantedScenario1468); 
+            otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleGrantedScenario1469); 
 
             		newLeafNode(otherlv_4, grammarAccess.getGrantedScenarioAccess().getUserUserCrossReference_4_0()); 
             	
@@ -1690,21 +1708,21 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             }
 
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:692:2: (otherlv_5= 'role:' ( (otherlv_6= RULE_ID ) ) )*
-            loop14:
+            loop15:
             do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
+                int alt15=2;
+                int LA15_0 = input.LA(1);
 
-                if ( (LA14_0==16) ) {
-                    alt14=1;
+                if ( (LA15_0==16) ) {
+                    alt15=1;
                 }
 
 
-                switch (alt14) {
+                switch (alt15) {
             	case 1 :
             	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:692:4: otherlv_5= 'role:' ( (otherlv_6= RULE_ID ) )
             	    {
-            	    otherlv_5=(Token)match(input,16,FOLLOW_16_in_ruleGrantedScenario1481); 
+            	    otherlv_5=(Token)match(input,16,FOLLOW_16_in_ruleGrantedScenario1482); 
 
             	        	newLeafNode(otherlv_5, grammarAccess.getGrantedScenarioAccess().getRoleKeyword_5_0());
             	        
@@ -1719,7 +1737,7 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             	    	            current = createModelElement(grammarAccess.getGrantedScenarioRule());
             	    	        }
             	            
-            	    otherlv_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleGrantedScenario1501); 
+            	    otherlv_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleGrantedScenario1502); 
 
             	    		newLeafNode(otherlv_6, grammarAccess.getGrantedScenarioAccess().getRolesRoleCrossReference_5_1_0()); 
             	    	
@@ -1734,27 +1752,27 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop14;
+            	    break loop15;
                 }
             } while (true);
 
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:709:4: (otherlv_7= 'resource:' ( (otherlv_8= RULE_ID ) ) )+
-            int cnt15=0;
-            loop15:
+            int cnt16=0;
+            loop16:
             do {
-                int alt15=2;
-                int LA15_0 = input.LA(1);
+                int alt16=2;
+                int LA16_0 = input.LA(1);
 
-                if ( (LA15_0==26) ) {
-                    alt15=1;
+                if ( (LA16_0==26) ) {
+                    alt16=1;
                 }
 
 
-                switch (alt15) {
+                switch (alt16) {
             	case 1 :
             	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:709:6: otherlv_7= 'resource:' ( (otherlv_8= RULE_ID ) )
             	    {
-            	    otherlv_7=(Token)match(input,26,FOLLOW_26_in_ruleGrantedScenario1516); 
+            	    otherlv_7=(Token)match(input,26,FOLLOW_26_in_ruleGrantedScenario1517); 
 
             	        	newLeafNode(otherlv_7, grammarAccess.getGrantedScenarioAccess().getResourceKeyword_6_0());
             	        
@@ -1769,7 +1787,7 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             	    	            current = createModelElement(grammarAccess.getGrantedScenarioRule());
             	    	        }
             	            
-            	    otherlv_8=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleGrantedScenario1536); 
+            	    otherlv_8=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleGrantedScenario1537); 
 
             	    		newLeafNode(otherlv_8, grammarAccess.getGrantedScenarioAccess().getResourcesResourceCrossReference_6_1_0()); 
             	    	
@@ -1784,15 +1802,15 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt15 >= 1 ) break loop15;
+            	    if ( cnt16 >= 1 ) break loop16;
                         EarlyExitException eee =
-                            new EarlyExitException(15, input);
+                            new EarlyExitException(16, input);
                         throw eee;
                 }
-                cnt15++;
+                cnt16++;
             } while (true);
 
-            otherlv_9=(Token)match(input,13,FOLLOW_13_in_ruleGrantedScenario1550); 
+            otherlv_9=(Token)match(input,13,FOLLOW_13_in_ruleGrantedScenario1551); 
 
                 	newLeafNode(otherlv_9, grammarAccess.getGrantedScenarioAccess().getRightCurlyBracketKeyword_7());
                 
@@ -1829,13 +1847,13 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:740:2: iv_ruleForbiddenScenario= ruleForbiddenScenario EOF
             {
              newCompositeNode(grammarAccess.getForbiddenScenarioRule()); 
-            pushFollow(FOLLOW_ruleForbiddenScenario_in_entryRuleForbiddenScenario1586);
+            pushFollow(FOLLOW_ruleForbiddenScenario_in_entryRuleForbiddenScenario1587);
             iv_ruleForbiddenScenario=ruleForbiddenScenario();
 
             state._fsp--;
 
              current =iv_ruleForbiddenScenario; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleForbiddenScenario1596); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleForbiddenScenario1597); 
 
             }
 
@@ -1877,7 +1895,7 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:751:1: (otherlv_0= 'forbiddenScenario' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'user:' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'role:' ( (otherlv_6= RULE_ID ) ) )* (otherlv_7= 'resource:' ( (otherlv_8= RULE_ID ) ) )+ otherlv_9= '}' )
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:751:3: otherlv_0= 'forbiddenScenario' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'user:' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'role:' ( (otherlv_6= RULE_ID ) ) )* (otherlv_7= 'resource:' ( (otherlv_8= RULE_ID ) ) )+ otherlv_9= '}'
             {
-            otherlv_0=(Token)match(input,27,FOLLOW_27_in_ruleForbiddenScenario1633); 
+            otherlv_0=(Token)match(input,27,FOLLOW_27_in_ruleForbiddenScenario1634); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getForbiddenScenarioAccess().getForbiddenScenarioKeyword_0());
                 
@@ -1887,7 +1905,7 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:756:1: (lv_name_1_0= RULE_ID )
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:757:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleForbiddenScenario1650); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleForbiddenScenario1651); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getForbiddenScenarioAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -1907,11 +1925,11 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleForbiddenScenario1667); 
+            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleForbiddenScenario1668); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getForbiddenScenarioAccess().getLeftCurlyBracketKeyword_2());
                 
-            otherlv_3=(Token)match(input,25,FOLLOW_25_in_ruleForbiddenScenario1679); 
+            otherlv_3=(Token)match(input,25,FOLLOW_25_in_ruleForbiddenScenario1680); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getForbiddenScenarioAccess().getUserKeyword_3());
                 
@@ -1926,7 +1944,7 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             	            current = createModelElement(grammarAccess.getForbiddenScenarioRule());
             	        }
                     
-            otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleForbiddenScenario1699); 
+            otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleForbiddenScenario1700); 
 
             		newLeafNode(otherlv_4, grammarAccess.getForbiddenScenarioAccess().getUserUserCrossReference_4_0()); 
             	
@@ -1937,21 +1955,21 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             }
 
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:794:2: (otherlv_5= 'role:' ( (otherlv_6= RULE_ID ) ) )*
-            loop16:
+            loop17:
             do {
-                int alt16=2;
-                int LA16_0 = input.LA(1);
+                int alt17=2;
+                int LA17_0 = input.LA(1);
 
-                if ( (LA16_0==16) ) {
-                    alt16=1;
+                if ( (LA17_0==16) ) {
+                    alt17=1;
                 }
 
 
-                switch (alt16) {
+                switch (alt17) {
             	case 1 :
             	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:794:4: otherlv_5= 'role:' ( (otherlv_6= RULE_ID ) )
             	    {
-            	    otherlv_5=(Token)match(input,16,FOLLOW_16_in_ruleForbiddenScenario1712); 
+            	    otherlv_5=(Token)match(input,16,FOLLOW_16_in_ruleForbiddenScenario1713); 
 
             	        	newLeafNode(otherlv_5, grammarAccess.getForbiddenScenarioAccess().getRoleKeyword_5_0());
             	        
@@ -1966,7 +1984,7 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             	    	            current = createModelElement(grammarAccess.getForbiddenScenarioRule());
             	    	        }
             	            
-            	    otherlv_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleForbiddenScenario1732); 
+            	    otherlv_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleForbiddenScenario1733); 
 
             	    		newLeafNode(otherlv_6, grammarAccess.getForbiddenScenarioAccess().getRolesRoleCrossReference_5_1_0()); 
             	    	
@@ -1981,27 +1999,27 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop16;
+            	    break loop17;
                 }
             } while (true);
 
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:811:4: (otherlv_7= 'resource:' ( (otherlv_8= RULE_ID ) ) )+
-            int cnt17=0;
-            loop17:
+            int cnt18=0;
+            loop18:
             do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
+                int alt18=2;
+                int LA18_0 = input.LA(1);
 
-                if ( (LA17_0==26) ) {
-                    alt17=1;
+                if ( (LA18_0==26) ) {
+                    alt18=1;
                 }
 
 
-                switch (alt17) {
+                switch (alt18) {
             	case 1 :
             	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:811:6: otherlv_7= 'resource:' ( (otherlv_8= RULE_ID ) )
             	    {
-            	    otherlv_7=(Token)match(input,26,FOLLOW_26_in_ruleForbiddenScenario1747); 
+            	    otherlv_7=(Token)match(input,26,FOLLOW_26_in_ruleForbiddenScenario1748); 
 
             	        	newLeafNode(otherlv_7, grammarAccess.getForbiddenScenarioAccess().getResourceKeyword_6_0());
             	        
@@ -2016,7 +2034,7 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             	    	            current = createModelElement(grammarAccess.getForbiddenScenarioRule());
             	    	        }
             	            
-            	    otherlv_8=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleForbiddenScenario1767); 
+            	    otherlv_8=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleForbiddenScenario1768); 
 
             	    		newLeafNode(otherlv_8, grammarAccess.getForbiddenScenarioAccess().getResourcesResourceCrossReference_6_1_0()); 
             	    	
@@ -2031,15 +2049,15 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt17 >= 1 ) break loop17;
+            	    if ( cnt18 >= 1 ) break loop18;
                         EarlyExitException eee =
-                            new EarlyExitException(17, input);
+                            new EarlyExitException(18, input);
                         throw eee;
                 }
-                cnt17++;
+                cnt18++;
             } while (true);
 
-            otherlv_9=(Token)match(input,13,FOLLOW_13_in_ruleForbiddenScenario1781); 
+            otherlv_9=(Token)match(input,13,FOLLOW_13_in_ruleForbiddenScenario1782); 
 
                 	newLeafNode(otherlv_9, grammarAccess.getForbiddenScenarioAccess().getRightCurlyBracketKeyword_7());
                 
@@ -2076,13 +2094,13 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:842:2: iv_ruleUserRoleScenario= ruleUserRoleScenario EOF
             {
              newCompositeNode(grammarAccess.getUserRoleScenarioRule()); 
-            pushFollow(FOLLOW_ruleUserRoleScenario_in_entryRuleUserRoleScenario1817);
+            pushFollow(FOLLOW_ruleUserRoleScenario_in_entryRuleUserRoleScenario1818);
             iv_ruleUserRoleScenario=ruleUserRoleScenario();
 
             state._fsp--;
 
              current =iv_ruleUserRoleScenario; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUserRoleScenario1827); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUserRoleScenario1828); 
 
             }
 
@@ -2120,7 +2138,7 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:853:1: (otherlv_0= 'userRoleScenario' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'role:' ( (otherlv_4= RULE_ID ) ) )+ otherlv_5= '}' )
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:853:3: otherlv_0= 'userRoleScenario' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'role:' ( (otherlv_4= RULE_ID ) ) )+ otherlv_5= '}'
             {
-            otherlv_0=(Token)match(input,28,FOLLOW_28_in_ruleUserRoleScenario1864); 
+            otherlv_0=(Token)match(input,28,FOLLOW_28_in_ruleUserRoleScenario1865); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getUserRoleScenarioAccess().getUserRoleScenarioKeyword_0());
                 
@@ -2130,7 +2148,7 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:858:1: (lv_name_1_0= RULE_ID )
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:859:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleUserRoleScenario1881); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleUserRoleScenario1882); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getUserRoleScenarioAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -2150,27 +2168,27 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleUserRoleScenario1898); 
+            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleUserRoleScenario1899); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getUserRoleScenarioAccess().getLeftCurlyBracketKeyword_2());
                 
             // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:879:1: (otherlv_3= 'role:' ( (otherlv_4= RULE_ID ) ) )+
-            int cnt18=0;
-            loop18:
+            int cnt19=0;
+            loop19:
             do {
-                int alt18=2;
-                int LA18_0 = input.LA(1);
+                int alt19=2;
+                int LA19_0 = input.LA(1);
 
-                if ( (LA18_0==16) ) {
-                    alt18=1;
+                if ( (LA19_0==16) ) {
+                    alt19=1;
                 }
 
 
-                switch (alt18) {
+                switch (alt19) {
             	case 1 :
             	    // ../uk.ac.open.rbacDSL/src-gen/uk/ac/open/parser/antlr/internal/InternalRbacDSL.g:879:3: otherlv_3= 'role:' ( (otherlv_4= RULE_ID ) )
             	    {
-            	    otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleUserRoleScenario1911); 
+            	    otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleUserRoleScenario1912); 
 
             	        	newLeafNode(otherlv_3, grammarAccess.getUserRoleScenarioAccess().getRoleKeyword_3_0());
             	        
@@ -2185,7 +2203,7 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             	    	            current = createModelElement(grammarAccess.getUserRoleScenarioRule());
             	    	        }
             	            
-            	    otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleUserRoleScenario1931); 
+            	    otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleUserRoleScenario1932); 
 
             	    		newLeafNode(otherlv_4, grammarAccess.getUserRoleScenarioAccess().getRolesRoleCrossReference_3_1_0()); 
             	    	
@@ -2200,15 +2218,15 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt18 >= 1 ) break loop18;
+            	    if ( cnt19 >= 1 ) break loop19;
                         EarlyExitException eee =
-                            new EarlyExitException(18, input);
+                            new EarlyExitException(19, input);
                         throw eee;
                 }
-                cnt18++;
+                cnt19++;
             } while (true);
 
-            otherlv_5=(Token)match(input,13,FOLLOW_13_in_ruleUserRoleScenario1945); 
+            otherlv_5=(Token)match(input,13,FOLLOW_13_in_ruleUserRoleScenario1946); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getUserRoleScenarioAccess().getRightCurlyBracketKeyword_4());
                 
@@ -2268,63 +2286,63 @@ public class InternalRbacDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleRole708 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_17_in_ruleRole745 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleRole762 = new BitSet(new long[]{0x0000000000041000L});
-    public static final BitSet FOLLOW_18_in_ruleRole780 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleRole800 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleRole814 = new BitSet(new long[]{0x0000000000382000L});
-    public static final BitSet FOLLOW_19_in_ruleRole827 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleRole847 = new BitSet(new long[]{0x0000000000382000L});
-    public static final BitSet FOLLOW_20_in_ruleRole862 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleRole882 = new BitSet(new long[]{0x0000000000302000L});
-    public static final BitSet FOLLOW_21_in_ruleRole897 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleRole917 = new BitSet(new long[]{0x0000000000202000L});
-    public static final BitSet FOLLOW_13_in_ruleRole931 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePermission_in_entryRulePermission967 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePermission977 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rulePermission1014 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_rulePermission1031 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleResource_in_entryRuleResource1072 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleResource1082 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_ruleResource1119 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleResource1136 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleResource1153 = new BitSet(new long[]{0x0000000000202000L});
-    public static final BitSet FOLLOW_21_in_ruleResource1166 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleResource1186 = new BitSet(new long[]{0x0000000000202000L});
-    public static final BitSet FOLLOW_13_in_ruleResource1200 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUserScenario_in_entryRuleUserScenario1236 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUserScenario1246 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleGrantedScenario_in_ruleUserScenario1293 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleForbiddenScenario_in_ruleUserScenario1320 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleGrantedScenario_in_entryRuleGrantedScenario1355 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleGrantedScenario1365 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleGrantedScenario1402 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleGrantedScenario1419 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleGrantedScenario1436 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleGrantedScenario1448 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleGrantedScenario1468 = new BitSet(new long[]{0x0000000004010000L});
-    public static final BitSet FOLLOW_16_in_ruleGrantedScenario1481 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleGrantedScenario1501 = new BitSet(new long[]{0x0000000004010000L});
-    public static final BitSet FOLLOW_26_in_ruleGrantedScenario1516 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleGrantedScenario1536 = new BitSet(new long[]{0x0000000004002000L});
-    public static final BitSet FOLLOW_13_in_ruleGrantedScenario1550 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleForbiddenScenario_in_entryRuleForbiddenScenario1586 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleForbiddenScenario1596 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_ruleForbiddenScenario1633 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleForbiddenScenario1650 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleForbiddenScenario1667 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleForbiddenScenario1679 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleForbiddenScenario1699 = new BitSet(new long[]{0x0000000004010000L});
-    public static final BitSet FOLLOW_16_in_ruleForbiddenScenario1712 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleForbiddenScenario1732 = new BitSet(new long[]{0x0000000004010000L});
-    public static final BitSet FOLLOW_26_in_ruleForbiddenScenario1747 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleForbiddenScenario1767 = new BitSet(new long[]{0x0000000004002000L});
-    public static final BitSet FOLLOW_13_in_ruleForbiddenScenario1781 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUserRoleScenario_in_entryRuleUserRoleScenario1817 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUserRoleScenario1827 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_ruleUserRoleScenario1864 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleUserRoleScenario1881 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleUserRoleScenario1898 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleUserRoleScenario1911 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleUserRoleScenario1931 = new BitSet(new long[]{0x0000000000012000L});
-    public static final BitSet FOLLOW_13_in_ruleUserRoleScenario1945 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_ruleRole780 = new BitSet(new long[]{0x0000000000001010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleRole800 = new BitSet(new long[]{0x0000000000001010L});
+    public static final BitSet FOLLOW_12_in_ruleRole815 = new BitSet(new long[]{0x0000000000382000L});
+    public static final BitSet FOLLOW_19_in_ruleRole828 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleRole848 = new BitSet(new long[]{0x0000000000382000L});
+    public static final BitSet FOLLOW_20_in_ruleRole863 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleRole883 = new BitSet(new long[]{0x0000000000302000L});
+    public static final BitSet FOLLOW_21_in_ruleRole898 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleRole918 = new BitSet(new long[]{0x0000000000202000L});
+    public static final BitSet FOLLOW_13_in_ruleRole932 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePermission_in_entryRulePermission968 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePermission978 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rulePermission1015 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_rulePermission1032 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleResource_in_entryRuleResource1073 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleResource1083 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleResource1120 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleResource1137 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleResource1154 = new BitSet(new long[]{0x0000000000202000L});
+    public static final BitSet FOLLOW_21_in_ruleResource1167 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleResource1187 = new BitSet(new long[]{0x0000000000202000L});
+    public static final BitSet FOLLOW_13_in_ruleResource1201 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUserScenario_in_entryRuleUserScenario1237 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUserScenario1247 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleGrantedScenario_in_ruleUserScenario1294 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleForbiddenScenario_in_ruleUserScenario1321 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleGrantedScenario_in_entryRuleGrantedScenario1356 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleGrantedScenario1366 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleGrantedScenario1403 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleGrantedScenario1420 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleGrantedScenario1437 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleGrantedScenario1449 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleGrantedScenario1469 = new BitSet(new long[]{0x0000000004010000L});
+    public static final BitSet FOLLOW_16_in_ruleGrantedScenario1482 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleGrantedScenario1502 = new BitSet(new long[]{0x0000000004010000L});
+    public static final BitSet FOLLOW_26_in_ruleGrantedScenario1517 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleGrantedScenario1537 = new BitSet(new long[]{0x0000000004002000L});
+    public static final BitSet FOLLOW_13_in_ruleGrantedScenario1551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleForbiddenScenario_in_entryRuleForbiddenScenario1587 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleForbiddenScenario1597 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleForbiddenScenario1634 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleForbiddenScenario1651 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleForbiddenScenario1668 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleForbiddenScenario1680 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleForbiddenScenario1700 = new BitSet(new long[]{0x0000000004010000L});
+    public static final BitSet FOLLOW_16_in_ruleForbiddenScenario1713 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleForbiddenScenario1733 = new BitSet(new long[]{0x0000000004010000L});
+    public static final BitSet FOLLOW_26_in_ruleForbiddenScenario1748 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleForbiddenScenario1768 = new BitSet(new long[]{0x0000000004002000L});
+    public static final BitSet FOLLOW_13_in_ruleForbiddenScenario1782 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUserRoleScenario_in_entryRuleUserRoleScenario1818 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUserRoleScenario1828 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_ruleUserRoleScenario1865 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleUserRoleScenario1882 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleUserRoleScenario1899 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleUserRoleScenario1912 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleUserRoleScenario1932 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_13_in_ruleUserRoleScenario1946 = new BitSet(new long[]{0x0000000000000002L});
 
 }

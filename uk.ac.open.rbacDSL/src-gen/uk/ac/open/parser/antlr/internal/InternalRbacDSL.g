@@ -415,7 +415,7 @@ ruleRole returns [EObject current=null]
 	}
 
 )
-))?	otherlv_4='{' 
+)*)?	otherlv_4='{' 
     {
     	newLeafNode(otherlv_4, grammarAccess.getRoleAccess().getLeftCurlyBracketKeyword_3());
     }

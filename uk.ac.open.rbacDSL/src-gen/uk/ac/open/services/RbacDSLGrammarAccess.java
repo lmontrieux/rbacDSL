@@ -224,11 +224,11 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Role:
-		//	"role" name=ID ("extends" parent=[Role])? "{" ("ssod:" ssod+=[Role])* ("dsod:" dsod+=[Role])* ("permission:"
+		//	"role" name=ID ("extends" parent+=[Role]*)? "{" ("ssod:" ssod+=[Role])* ("dsod:" dsod+=[Role])* ("permission:"
 		//	permissions+=[Permission])* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"role" name=ID ("extends" parent=[Role])? "{" ("ssod:" ssod+=[Role])* ("dsod:" dsod+=[Role])* ("permission:"
+		//"role" name=ID ("extends" parent+=[Role]*)? "{" ("ssod:" ssod+=[Role])* ("dsod:" dsod+=[Role])* ("permission:"
 		//permissions+=[Permission])* "}"
 		public Group getGroup() { return cGroup; }
 
@@ -241,13 +241,13 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
-		//("extends" parent=[Role])?
+		//("extends" parent+=[Role]*)?
 		public Group getGroup_2() { return cGroup_2; }
 
 		//"extends"
 		public Keyword getExtendsKeyword_2_0() { return cExtendsKeyword_2_0; }
 
-		//parent=[Role]
+		//parent+=[Role]*
 		public Assignment getParentAssignment_2_1() { return cParentAssignment_2_1; }
 
 		//[Role]
@@ -724,7 +724,7 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Role:
-	//	"role" name=ID ("extends" parent=[Role])? "{" ("ssod:" ssod+=[Role])* ("dsod:" dsod+=[Role])* ("permission:"
+	//	"role" name=ID ("extends" parent+=[Role]*)? "{" ("ssod:" ssod+=[Role])* ("dsod:" dsod+=[Role])* ("permission:"
 	//	permissions+=[Permission])* "}";
 	public RoleElements getRoleAccess() {
 		return (pRole != null) ? pRole : (pRole = new RoleElements());

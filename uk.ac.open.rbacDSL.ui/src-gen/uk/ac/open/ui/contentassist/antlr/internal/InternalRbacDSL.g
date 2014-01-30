@@ -1357,7 +1357,7 @@ rule__Role__Group_2__1__Impl
 :
 (
 { before(grammarAccess.getRoleAccess().getParentAssignment_2_1()); }
-(rule__Role__ParentAssignment_2_1)
+(rule__Role__ParentAssignment_2_1)*
 { after(grammarAccess.getRoleAccess().getParentAssignment_2_1()); }
 )
 

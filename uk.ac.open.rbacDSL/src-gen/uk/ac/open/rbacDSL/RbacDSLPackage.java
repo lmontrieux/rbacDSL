@@ -242,7 +242,7 @@ public interface RbacDSLPackage extends EPackage
   int ROLE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Parent</b></em>' reference.
+   * The feature id for the '<em><b>Parent</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -726,10 +726,10 @@ public interface RbacDSLPackage extends EPackage
   EAttribute getRole_Name();
 
   /**
-   * Returns the meta object for the reference '{@link uk.ac.open.rbacDSL.Role#getParent <em>Parent</em>}'.
+   * Returns the meta object for the reference list '{@link uk.ac.open.rbacDSL.Role#getParent <em>Parent</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Parent</em>'.
+   * @return the meta object for the reference list '<em>Parent</em>'.
    * @see uk.ac.open.rbacDSL.Role#getParent()
    * @see #getRole()
    * @generated
@@ -1090,7 +1090,7 @@ public interface RbacDSLPackage extends EPackage
     EAttribute ROLE__NAME = eINSTANCE.getRole_Name();
 
     /**
-     * The meta object literal for the '<em><b>Parent</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Parent</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

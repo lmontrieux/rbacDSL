@@ -3619,29 +3619,47 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Role__Group_2__1__Impl"
-    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1353:1: rule__Role__Group_2__1__Impl : ( ( rule__Role__ParentAssignment_2_1 ) ) ;
+    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1353:1: rule__Role__Group_2__1__Impl : ( ( rule__Role__ParentAssignment_2_1 )* ) ;
     public final void rule__Role__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1357:1: ( ( ( rule__Role__ParentAssignment_2_1 ) ) )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1358:1: ( ( rule__Role__ParentAssignment_2_1 ) )
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1357:1: ( ( ( rule__Role__ParentAssignment_2_1 )* ) )
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1358:1: ( ( rule__Role__ParentAssignment_2_1 )* )
             {
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1358:1: ( ( rule__Role__ParentAssignment_2_1 ) )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1359:1: ( rule__Role__ParentAssignment_2_1 )
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1358:1: ( ( rule__Role__ParentAssignment_2_1 )* )
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1359:1: ( rule__Role__ParentAssignment_2_1 )*
             {
              before(grammarAccess.getRoleAccess().getParentAssignment_2_1()); 
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1360:1: ( rule__Role__ParentAssignment_2_1 )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1360:2: rule__Role__ParentAssignment_2_1
-            {
-            pushFollow(FOLLOW_rule__Role__ParentAssignment_2_1_in_rule__Role__Group_2__1__Impl2683);
-            rule__Role__ParentAssignment_2_1();
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1360:1: ( rule__Role__ParentAssignment_2_1 )*
+            loop13:
+            do {
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-            state._fsp--;
+                if ( (LA13_0==RULE_ID) ) {
+                    alt13=1;
+                }
 
 
-            }
+                switch (alt13) {
+            	case 1 :
+            	    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1360:2: rule__Role__ParentAssignment_2_1
+            	    {
+            	    pushFollow(FOLLOW_rule__Role__ParentAssignment_2_1_in_rule__Role__Group_2__1__Impl2683);
+            	    rule__Role__ParentAssignment_2_1();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop13;
+                }
+            } while (true);
 
              after(grammarAccess.getRoleAccess().getParentAssignment_2_1()); 
 
@@ -3675,12 +3693,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1378:1: ( rule__Role__Group_4__0__Impl rule__Role__Group_4__1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1379:2: rule__Role__Group_4__0__Impl rule__Role__Group_4__1
             {
-            pushFollow(FOLLOW_rule__Role__Group_4__0__Impl_in_rule__Role__Group_4__02717);
+            pushFollow(FOLLOW_rule__Role__Group_4__0__Impl_in_rule__Role__Group_4__02718);
             rule__Role__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Role__Group_4__1_in_rule__Role__Group_4__02720);
+            pushFollow(FOLLOW_rule__Role__Group_4__1_in_rule__Role__Group_4__02721);
             rule__Role__Group_4__1();
 
             state._fsp--;
@@ -3717,7 +3735,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1392:1: 'ssod:'
             {
              before(grammarAccess.getRoleAccess().getSsodKeyword_4_0()); 
-            match(input,19,FOLLOW_19_in_rule__Role__Group_4__0__Impl2748); 
+            match(input,19,FOLLOW_19_in_rule__Role__Group_4__0__Impl2749); 
              after(grammarAccess.getRoleAccess().getSsodKeyword_4_0()); 
 
             }
@@ -3750,7 +3768,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1409:1: ( rule__Role__Group_4__1__Impl )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1410:2: rule__Role__Group_4__1__Impl
             {
-            pushFollow(FOLLOW_rule__Role__Group_4__1__Impl_in_rule__Role__Group_4__12779);
+            pushFollow(FOLLOW_rule__Role__Group_4__1__Impl_in_rule__Role__Group_4__12780);
             rule__Role__Group_4__1__Impl();
 
             state._fsp--;
@@ -3790,7 +3808,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1423:1: ( rule__Role__SsodAssignment_4_1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1423:2: rule__Role__SsodAssignment_4_1
             {
-            pushFollow(FOLLOW_rule__Role__SsodAssignment_4_1_in_rule__Role__Group_4__1__Impl2806);
+            pushFollow(FOLLOW_rule__Role__SsodAssignment_4_1_in_rule__Role__Group_4__1__Impl2807);
             rule__Role__SsodAssignment_4_1();
 
             state._fsp--;
@@ -3830,12 +3848,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1441:1: ( rule__Role__Group_5__0__Impl rule__Role__Group_5__1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1442:2: rule__Role__Group_5__0__Impl rule__Role__Group_5__1
             {
-            pushFollow(FOLLOW_rule__Role__Group_5__0__Impl_in_rule__Role__Group_5__02840);
+            pushFollow(FOLLOW_rule__Role__Group_5__0__Impl_in_rule__Role__Group_5__02841);
             rule__Role__Group_5__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Role__Group_5__1_in_rule__Role__Group_5__02843);
+            pushFollow(FOLLOW_rule__Role__Group_5__1_in_rule__Role__Group_5__02844);
             rule__Role__Group_5__1();
 
             state._fsp--;
@@ -3872,7 +3890,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1455:1: 'dsod:'
             {
              before(grammarAccess.getRoleAccess().getDsodKeyword_5_0()); 
-            match(input,20,FOLLOW_20_in_rule__Role__Group_5__0__Impl2871); 
+            match(input,20,FOLLOW_20_in_rule__Role__Group_5__0__Impl2872); 
              after(grammarAccess.getRoleAccess().getDsodKeyword_5_0()); 
 
             }
@@ -3905,7 +3923,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1472:1: ( rule__Role__Group_5__1__Impl )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1473:2: rule__Role__Group_5__1__Impl
             {
-            pushFollow(FOLLOW_rule__Role__Group_5__1__Impl_in_rule__Role__Group_5__12902);
+            pushFollow(FOLLOW_rule__Role__Group_5__1__Impl_in_rule__Role__Group_5__12903);
             rule__Role__Group_5__1__Impl();
 
             state._fsp--;
@@ -3945,7 +3963,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1486:1: ( rule__Role__DsodAssignment_5_1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1486:2: rule__Role__DsodAssignment_5_1
             {
-            pushFollow(FOLLOW_rule__Role__DsodAssignment_5_1_in_rule__Role__Group_5__1__Impl2929);
+            pushFollow(FOLLOW_rule__Role__DsodAssignment_5_1_in_rule__Role__Group_5__1__Impl2930);
             rule__Role__DsodAssignment_5_1();
 
             state._fsp--;
@@ -3985,12 +4003,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1504:1: ( rule__Role__Group_6__0__Impl rule__Role__Group_6__1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1505:2: rule__Role__Group_6__0__Impl rule__Role__Group_6__1
             {
-            pushFollow(FOLLOW_rule__Role__Group_6__0__Impl_in_rule__Role__Group_6__02963);
+            pushFollow(FOLLOW_rule__Role__Group_6__0__Impl_in_rule__Role__Group_6__02964);
             rule__Role__Group_6__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Role__Group_6__1_in_rule__Role__Group_6__02966);
+            pushFollow(FOLLOW_rule__Role__Group_6__1_in_rule__Role__Group_6__02967);
             rule__Role__Group_6__1();
 
             state._fsp--;
@@ -4027,7 +4045,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1518:1: 'permission:'
             {
              before(grammarAccess.getRoleAccess().getPermissionKeyword_6_0()); 
-            match(input,21,FOLLOW_21_in_rule__Role__Group_6__0__Impl2994); 
+            match(input,21,FOLLOW_21_in_rule__Role__Group_6__0__Impl2995); 
              after(grammarAccess.getRoleAccess().getPermissionKeyword_6_0()); 
 
             }
@@ -4060,7 +4078,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1535:1: ( rule__Role__Group_6__1__Impl )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1536:2: rule__Role__Group_6__1__Impl
             {
-            pushFollow(FOLLOW_rule__Role__Group_6__1__Impl_in_rule__Role__Group_6__13025);
+            pushFollow(FOLLOW_rule__Role__Group_6__1__Impl_in_rule__Role__Group_6__13026);
             rule__Role__Group_6__1__Impl();
 
             state._fsp--;
@@ -4100,7 +4118,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1549:1: ( rule__Role__PermissionsAssignment_6_1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1549:2: rule__Role__PermissionsAssignment_6_1
             {
-            pushFollow(FOLLOW_rule__Role__PermissionsAssignment_6_1_in_rule__Role__Group_6__1__Impl3052);
+            pushFollow(FOLLOW_rule__Role__PermissionsAssignment_6_1_in_rule__Role__Group_6__1__Impl3053);
             rule__Role__PermissionsAssignment_6_1();
 
             state._fsp--;
@@ -4140,12 +4158,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1567:1: ( rule__Permission__Group__0__Impl rule__Permission__Group__1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1568:2: rule__Permission__Group__0__Impl rule__Permission__Group__1
             {
-            pushFollow(FOLLOW_rule__Permission__Group__0__Impl_in_rule__Permission__Group__03086);
+            pushFollow(FOLLOW_rule__Permission__Group__0__Impl_in_rule__Permission__Group__03087);
             rule__Permission__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Permission__Group__1_in_rule__Permission__Group__03089);
+            pushFollow(FOLLOW_rule__Permission__Group__1_in_rule__Permission__Group__03090);
             rule__Permission__Group__1();
 
             state._fsp--;
@@ -4182,7 +4200,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1581:1: 'permission'
             {
              before(grammarAccess.getPermissionAccess().getPermissionKeyword_0()); 
-            match(input,22,FOLLOW_22_in_rule__Permission__Group__0__Impl3117); 
+            match(input,22,FOLLOW_22_in_rule__Permission__Group__0__Impl3118); 
              after(grammarAccess.getPermissionAccess().getPermissionKeyword_0()); 
 
             }
@@ -4215,7 +4233,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1598:1: ( rule__Permission__Group__1__Impl )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1599:2: rule__Permission__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Permission__Group__1__Impl_in_rule__Permission__Group__13148);
+            pushFollow(FOLLOW_rule__Permission__Group__1__Impl_in_rule__Permission__Group__13149);
             rule__Permission__Group__1__Impl();
 
             state._fsp--;
@@ -4255,7 +4273,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1612:1: ( rule__Permission__NameAssignment_1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1612:2: rule__Permission__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Permission__NameAssignment_1_in_rule__Permission__Group__1__Impl3175);
+            pushFollow(FOLLOW_rule__Permission__NameAssignment_1_in_rule__Permission__Group__1__Impl3176);
             rule__Permission__NameAssignment_1();
 
             state._fsp--;
@@ -4295,12 +4313,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1630:1: ( rule__Resource__Group__0__Impl rule__Resource__Group__1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1631:2: rule__Resource__Group__0__Impl rule__Resource__Group__1
             {
-            pushFollow(FOLLOW_rule__Resource__Group__0__Impl_in_rule__Resource__Group__03209);
+            pushFollow(FOLLOW_rule__Resource__Group__0__Impl_in_rule__Resource__Group__03210);
             rule__Resource__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Resource__Group__1_in_rule__Resource__Group__03212);
+            pushFollow(FOLLOW_rule__Resource__Group__1_in_rule__Resource__Group__03213);
             rule__Resource__Group__1();
 
             state._fsp--;
@@ -4337,7 +4355,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1644:1: 'resource'
             {
              before(grammarAccess.getResourceAccess().getResourceKeyword_0()); 
-            match(input,23,FOLLOW_23_in_rule__Resource__Group__0__Impl3240); 
+            match(input,23,FOLLOW_23_in_rule__Resource__Group__0__Impl3241); 
              after(grammarAccess.getResourceAccess().getResourceKeyword_0()); 
 
             }
@@ -4370,12 +4388,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1661:1: ( rule__Resource__Group__1__Impl rule__Resource__Group__2 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1662:2: rule__Resource__Group__1__Impl rule__Resource__Group__2
             {
-            pushFollow(FOLLOW_rule__Resource__Group__1__Impl_in_rule__Resource__Group__13271);
+            pushFollow(FOLLOW_rule__Resource__Group__1__Impl_in_rule__Resource__Group__13272);
             rule__Resource__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Resource__Group__2_in_rule__Resource__Group__13274);
+            pushFollow(FOLLOW_rule__Resource__Group__2_in_rule__Resource__Group__13275);
             rule__Resource__Group__2();
 
             state._fsp--;
@@ -4415,7 +4433,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1676:1: ( rule__Resource__NameAssignment_1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1676:2: rule__Resource__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Resource__NameAssignment_1_in_rule__Resource__Group__1__Impl3301);
+            pushFollow(FOLLOW_rule__Resource__NameAssignment_1_in_rule__Resource__Group__1__Impl3302);
             rule__Resource__NameAssignment_1();
 
             state._fsp--;
@@ -4455,12 +4473,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1690:1: ( rule__Resource__Group__2__Impl rule__Resource__Group__3 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1691:2: rule__Resource__Group__2__Impl rule__Resource__Group__3
             {
-            pushFollow(FOLLOW_rule__Resource__Group__2__Impl_in_rule__Resource__Group__23331);
+            pushFollow(FOLLOW_rule__Resource__Group__2__Impl_in_rule__Resource__Group__23332);
             rule__Resource__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Resource__Group__3_in_rule__Resource__Group__23334);
+            pushFollow(FOLLOW_rule__Resource__Group__3_in_rule__Resource__Group__23335);
             rule__Resource__Group__3();
 
             state._fsp--;
@@ -4497,7 +4515,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1704:1: '{'
             {
              before(grammarAccess.getResourceAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,12,FOLLOW_12_in_rule__Resource__Group__2__Impl3362); 
+            match(input,12,FOLLOW_12_in_rule__Resource__Group__2__Impl3363); 
              after(grammarAccess.getResourceAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -4530,12 +4548,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1721:1: ( rule__Resource__Group__3__Impl rule__Resource__Group__4 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1722:2: rule__Resource__Group__3__Impl rule__Resource__Group__4
             {
-            pushFollow(FOLLOW_rule__Resource__Group__3__Impl_in_rule__Resource__Group__33393);
+            pushFollow(FOLLOW_rule__Resource__Group__3__Impl_in_rule__Resource__Group__33394);
             rule__Resource__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Resource__Group__4_in_rule__Resource__Group__33396);
+            pushFollow(FOLLOW_rule__Resource__Group__4_in_rule__Resource__Group__33397);
             rule__Resource__Group__4();
 
             state._fsp--;
@@ -4573,21 +4591,21 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getResourceAccess().getGroup_3()); 
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1736:1: ( rule__Resource__Group_3__0 )*
-            loop13:
+            loop14:
             do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+                int alt14=2;
+                int LA14_0 = input.LA(1);
 
-                if ( (LA13_0==21) ) {
-                    alt13=1;
+                if ( (LA14_0==21) ) {
+                    alt14=1;
                 }
 
 
-                switch (alt13) {
+                switch (alt14) {
             	case 1 :
             	    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1736:2: rule__Resource__Group_3__0
             	    {
-            	    pushFollow(FOLLOW_rule__Resource__Group_3__0_in_rule__Resource__Group__3__Impl3423);
+            	    pushFollow(FOLLOW_rule__Resource__Group_3__0_in_rule__Resource__Group__3__Impl3424);
             	    rule__Resource__Group_3__0();
 
             	    state._fsp--;
@@ -4597,7 +4615,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop13;
+            	    break loop14;
                 }
             } while (true);
 
@@ -4633,7 +4651,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1750:1: ( rule__Resource__Group__4__Impl )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1751:2: rule__Resource__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__Resource__Group__4__Impl_in_rule__Resource__Group__43454);
+            pushFollow(FOLLOW_rule__Resource__Group__4__Impl_in_rule__Resource__Group__43455);
             rule__Resource__Group__4__Impl();
 
             state._fsp--;
@@ -4670,7 +4688,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1763:1: '}'
             {
              before(grammarAccess.getResourceAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,13,FOLLOW_13_in_rule__Resource__Group__4__Impl3482); 
+            match(input,13,FOLLOW_13_in_rule__Resource__Group__4__Impl3483); 
              after(grammarAccess.getResourceAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -4703,12 +4721,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1790:1: ( rule__Resource__Group_3__0__Impl rule__Resource__Group_3__1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1791:2: rule__Resource__Group_3__0__Impl rule__Resource__Group_3__1
             {
-            pushFollow(FOLLOW_rule__Resource__Group_3__0__Impl_in_rule__Resource__Group_3__03523);
+            pushFollow(FOLLOW_rule__Resource__Group_3__0__Impl_in_rule__Resource__Group_3__03524);
             rule__Resource__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Resource__Group_3__1_in_rule__Resource__Group_3__03526);
+            pushFollow(FOLLOW_rule__Resource__Group_3__1_in_rule__Resource__Group_3__03527);
             rule__Resource__Group_3__1();
 
             state._fsp--;
@@ -4745,7 +4763,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1804:1: 'permission:'
             {
              before(grammarAccess.getResourceAccess().getPermissionKeyword_3_0()); 
-            match(input,21,FOLLOW_21_in_rule__Resource__Group_3__0__Impl3554); 
+            match(input,21,FOLLOW_21_in_rule__Resource__Group_3__0__Impl3555); 
              after(grammarAccess.getResourceAccess().getPermissionKeyword_3_0()); 
 
             }
@@ -4778,7 +4796,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1821:1: ( rule__Resource__Group_3__1__Impl )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1822:2: rule__Resource__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__Resource__Group_3__1__Impl_in_rule__Resource__Group_3__13585);
+            pushFollow(FOLLOW_rule__Resource__Group_3__1__Impl_in_rule__Resource__Group_3__13586);
             rule__Resource__Group_3__1__Impl();
 
             state._fsp--;
@@ -4818,7 +4836,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1835:1: ( rule__Resource__PermissionsAssignment_3_1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1835:2: rule__Resource__PermissionsAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__Resource__PermissionsAssignment_3_1_in_rule__Resource__Group_3__1__Impl3612);
+            pushFollow(FOLLOW_rule__Resource__PermissionsAssignment_3_1_in_rule__Resource__Group_3__1__Impl3613);
             rule__Resource__PermissionsAssignment_3_1();
 
             state._fsp--;
@@ -4858,12 +4876,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1853:1: ( rule__GrantedScenario__Group__0__Impl rule__GrantedScenario__Group__1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1854:2: rule__GrantedScenario__Group__0__Impl rule__GrantedScenario__Group__1
             {
-            pushFollow(FOLLOW_rule__GrantedScenario__Group__0__Impl_in_rule__GrantedScenario__Group__03646);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group__0__Impl_in_rule__GrantedScenario__Group__03647);
             rule__GrantedScenario__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__GrantedScenario__Group__1_in_rule__GrantedScenario__Group__03649);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group__1_in_rule__GrantedScenario__Group__03650);
             rule__GrantedScenario__Group__1();
 
             state._fsp--;
@@ -4900,7 +4918,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1867:1: 'grantedScenario'
             {
              before(grammarAccess.getGrantedScenarioAccess().getGrantedScenarioKeyword_0()); 
-            match(input,24,FOLLOW_24_in_rule__GrantedScenario__Group__0__Impl3677); 
+            match(input,24,FOLLOW_24_in_rule__GrantedScenario__Group__0__Impl3678); 
              after(grammarAccess.getGrantedScenarioAccess().getGrantedScenarioKeyword_0()); 
 
             }
@@ -4933,12 +4951,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1884:1: ( rule__GrantedScenario__Group__1__Impl rule__GrantedScenario__Group__2 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1885:2: rule__GrantedScenario__Group__1__Impl rule__GrantedScenario__Group__2
             {
-            pushFollow(FOLLOW_rule__GrantedScenario__Group__1__Impl_in_rule__GrantedScenario__Group__13708);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group__1__Impl_in_rule__GrantedScenario__Group__13709);
             rule__GrantedScenario__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__GrantedScenario__Group__2_in_rule__GrantedScenario__Group__13711);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group__2_in_rule__GrantedScenario__Group__13712);
             rule__GrantedScenario__Group__2();
 
             state._fsp--;
@@ -4978,7 +4996,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1899:1: ( rule__GrantedScenario__NameAssignment_1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1899:2: rule__GrantedScenario__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__GrantedScenario__NameAssignment_1_in_rule__GrantedScenario__Group__1__Impl3738);
+            pushFollow(FOLLOW_rule__GrantedScenario__NameAssignment_1_in_rule__GrantedScenario__Group__1__Impl3739);
             rule__GrantedScenario__NameAssignment_1();
 
             state._fsp--;
@@ -5018,12 +5036,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1913:1: ( rule__GrantedScenario__Group__2__Impl rule__GrantedScenario__Group__3 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1914:2: rule__GrantedScenario__Group__2__Impl rule__GrantedScenario__Group__3
             {
-            pushFollow(FOLLOW_rule__GrantedScenario__Group__2__Impl_in_rule__GrantedScenario__Group__23768);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group__2__Impl_in_rule__GrantedScenario__Group__23769);
             rule__GrantedScenario__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__GrantedScenario__Group__3_in_rule__GrantedScenario__Group__23771);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group__3_in_rule__GrantedScenario__Group__23772);
             rule__GrantedScenario__Group__3();
 
             state._fsp--;
@@ -5060,7 +5078,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1927:1: '{'
             {
              before(grammarAccess.getGrantedScenarioAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,12,FOLLOW_12_in_rule__GrantedScenario__Group__2__Impl3799); 
+            match(input,12,FOLLOW_12_in_rule__GrantedScenario__Group__2__Impl3800); 
              after(grammarAccess.getGrantedScenarioAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -5093,12 +5111,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1944:1: ( rule__GrantedScenario__Group__3__Impl rule__GrantedScenario__Group__4 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1945:2: rule__GrantedScenario__Group__3__Impl rule__GrantedScenario__Group__4
             {
-            pushFollow(FOLLOW_rule__GrantedScenario__Group__3__Impl_in_rule__GrantedScenario__Group__33830);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group__3__Impl_in_rule__GrantedScenario__Group__33831);
             rule__GrantedScenario__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__GrantedScenario__Group__4_in_rule__GrantedScenario__Group__33833);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group__4_in_rule__GrantedScenario__Group__33834);
             rule__GrantedScenario__Group__4();
 
             state._fsp--;
@@ -5135,7 +5153,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1958:1: 'user:'
             {
              before(grammarAccess.getGrantedScenarioAccess().getUserKeyword_3()); 
-            match(input,25,FOLLOW_25_in_rule__GrantedScenario__Group__3__Impl3861); 
+            match(input,25,FOLLOW_25_in_rule__GrantedScenario__Group__3__Impl3862); 
              after(grammarAccess.getGrantedScenarioAccess().getUserKeyword_3()); 
 
             }
@@ -5168,12 +5186,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1975:1: ( rule__GrantedScenario__Group__4__Impl rule__GrantedScenario__Group__5 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1976:2: rule__GrantedScenario__Group__4__Impl rule__GrantedScenario__Group__5
             {
-            pushFollow(FOLLOW_rule__GrantedScenario__Group__4__Impl_in_rule__GrantedScenario__Group__43892);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group__4__Impl_in_rule__GrantedScenario__Group__43893);
             rule__GrantedScenario__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__GrantedScenario__Group__5_in_rule__GrantedScenario__Group__43895);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group__5_in_rule__GrantedScenario__Group__43896);
             rule__GrantedScenario__Group__5();
 
             state._fsp--;
@@ -5213,7 +5231,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1990:1: ( rule__GrantedScenario__UserAssignment_4 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1990:2: rule__GrantedScenario__UserAssignment_4
             {
-            pushFollow(FOLLOW_rule__GrantedScenario__UserAssignment_4_in_rule__GrantedScenario__Group__4__Impl3922);
+            pushFollow(FOLLOW_rule__GrantedScenario__UserAssignment_4_in_rule__GrantedScenario__Group__4__Impl3923);
             rule__GrantedScenario__UserAssignment_4();
 
             state._fsp--;
@@ -5253,12 +5271,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2004:1: ( rule__GrantedScenario__Group__5__Impl rule__GrantedScenario__Group__6 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2005:2: rule__GrantedScenario__Group__5__Impl rule__GrantedScenario__Group__6
             {
-            pushFollow(FOLLOW_rule__GrantedScenario__Group__5__Impl_in_rule__GrantedScenario__Group__53952);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group__5__Impl_in_rule__GrantedScenario__Group__53953);
             rule__GrantedScenario__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__GrantedScenario__Group__6_in_rule__GrantedScenario__Group__53955);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group__6_in_rule__GrantedScenario__Group__53956);
             rule__GrantedScenario__Group__6();
 
             state._fsp--;
@@ -5296,21 +5314,21 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getGrantedScenarioAccess().getGroup_5()); 
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2019:1: ( rule__GrantedScenario__Group_5__0 )*
-            loop14:
+            loop15:
             do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
+                int alt15=2;
+                int LA15_0 = input.LA(1);
 
-                if ( (LA14_0==16) ) {
-                    alt14=1;
+                if ( (LA15_0==16) ) {
+                    alt15=1;
                 }
 
 
-                switch (alt14) {
+                switch (alt15) {
             	case 1 :
             	    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2019:2: rule__GrantedScenario__Group_5__0
             	    {
-            	    pushFollow(FOLLOW_rule__GrantedScenario__Group_5__0_in_rule__GrantedScenario__Group__5__Impl3982);
+            	    pushFollow(FOLLOW_rule__GrantedScenario__Group_5__0_in_rule__GrantedScenario__Group__5__Impl3983);
             	    rule__GrantedScenario__Group_5__0();
 
             	    state._fsp--;
@@ -5320,7 +5338,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop14;
+            	    break loop15;
                 }
             } while (true);
 
@@ -5356,12 +5374,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2033:1: ( rule__GrantedScenario__Group__6__Impl rule__GrantedScenario__Group__7 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2034:2: rule__GrantedScenario__Group__6__Impl rule__GrantedScenario__Group__7
             {
-            pushFollow(FOLLOW_rule__GrantedScenario__Group__6__Impl_in_rule__GrantedScenario__Group__64013);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group__6__Impl_in_rule__GrantedScenario__Group__64014);
             rule__GrantedScenario__Group__6__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__GrantedScenario__Group__7_in_rule__GrantedScenario__Group__64016);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group__7_in_rule__GrantedScenario__Group__64017);
             rule__GrantedScenario__Group__7();
 
             state._fsp--;
@@ -5404,7 +5422,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2049:1: ( rule__GrantedScenario__Group_6__0 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2049:2: rule__GrantedScenario__Group_6__0
             {
-            pushFollow(FOLLOW_rule__GrantedScenario__Group_6__0_in_rule__GrantedScenario__Group__6__Impl4045);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group_6__0_in_rule__GrantedScenario__Group__6__Impl4046);
             rule__GrantedScenario__Group_6__0();
 
             state._fsp--;
@@ -5421,21 +5439,21 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getGrantedScenarioAccess().getGroup_6()); 
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2054:1: ( rule__GrantedScenario__Group_6__0 )*
-            loop15:
+            loop16:
             do {
-                int alt15=2;
-                int LA15_0 = input.LA(1);
+                int alt16=2;
+                int LA16_0 = input.LA(1);
 
-                if ( (LA15_0==26) ) {
-                    alt15=1;
+                if ( (LA16_0==26) ) {
+                    alt16=1;
                 }
 
 
-                switch (alt15) {
+                switch (alt16) {
             	case 1 :
             	    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2054:2: rule__GrantedScenario__Group_6__0
             	    {
-            	    pushFollow(FOLLOW_rule__GrantedScenario__Group_6__0_in_rule__GrantedScenario__Group__6__Impl4057);
+            	    pushFollow(FOLLOW_rule__GrantedScenario__Group_6__0_in_rule__GrantedScenario__Group__6__Impl4058);
             	    rule__GrantedScenario__Group_6__0();
 
             	    state._fsp--;
@@ -5445,7 +5463,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop15;
+            	    break loop16;
                 }
             } while (true);
 
@@ -5484,7 +5502,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2069:1: ( rule__GrantedScenario__Group__7__Impl )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2070:2: rule__GrantedScenario__Group__7__Impl
             {
-            pushFollow(FOLLOW_rule__GrantedScenario__Group__7__Impl_in_rule__GrantedScenario__Group__74090);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group__7__Impl_in_rule__GrantedScenario__Group__74091);
             rule__GrantedScenario__Group__7__Impl();
 
             state._fsp--;
@@ -5521,7 +5539,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2082:1: '}'
             {
              before(grammarAccess.getGrantedScenarioAccess().getRightCurlyBracketKeyword_7()); 
-            match(input,13,FOLLOW_13_in_rule__GrantedScenario__Group__7__Impl4118); 
+            match(input,13,FOLLOW_13_in_rule__GrantedScenario__Group__7__Impl4119); 
              after(grammarAccess.getGrantedScenarioAccess().getRightCurlyBracketKeyword_7()); 
 
             }
@@ -5554,12 +5572,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2115:1: ( rule__GrantedScenario__Group_5__0__Impl rule__GrantedScenario__Group_5__1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2116:2: rule__GrantedScenario__Group_5__0__Impl rule__GrantedScenario__Group_5__1
             {
-            pushFollow(FOLLOW_rule__GrantedScenario__Group_5__0__Impl_in_rule__GrantedScenario__Group_5__04165);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group_5__0__Impl_in_rule__GrantedScenario__Group_5__04166);
             rule__GrantedScenario__Group_5__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__GrantedScenario__Group_5__1_in_rule__GrantedScenario__Group_5__04168);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group_5__1_in_rule__GrantedScenario__Group_5__04169);
             rule__GrantedScenario__Group_5__1();
 
             state._fsp--;
@@ -5596,7 +5614,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2129:1: 'role:'
             {
              before(grammarAccess.getGrantedScenarioAccess().getRoleKeyword_5_0()); 
-            match(input,16,FOLLOW_16_in_rule__GrantedScenario__Group_5__0__Impl4196); 
+            match(input,16,FOLLOW_16_in_rule__GrantedScenario__Group_5__0__Impl4197); 
              after(grammarAccess.getGrantedScenarioAccess().getRoleKeyword_5_0()); 
 
             }
@@ -5629,7 +5647,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2146:1: ( rule__GrantedScenario__Group_5__1__Impl )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2147:2: rule__GrantedScenario__Group_5__1__Impl
             {
-            pushFollow(FOLLOW_rule__GrantedScenario__Group_5__1__Impl_in_rule__GrantedScenario__Group_5__14227);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group_5__1__Impl_in_rule__GrantedScenario__Group_5__14228);
             rule__GrantedScenario__Group_5__1__Impl();
 
             state._fsp--;
@@ -5669,7 +5687,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2160:1: ( rule__GrantedScenario__RolesAssignment_5_1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2160:2: rule__GrantedScenario__RolesAssignment_5_1
             {
-            pushFollow(FOLLOW_rule__GrantedScenario__RolesAssignment_5_1_in_rule__GrantedScenario__Group_5__1__Impl4254);
+            pushFollow(FOLLOW_rule__GrantedScenario__RolesAssignment_5_1_in_rule__GrantedScenario__Group_5__1__Impl4255);
             rule__GrantedScenario__RolesAssignment_5_1();
 
             state._fsp--;
@@ -5709,12 +5727,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2178:1: ( rule__GrantedScenario__Group_6__0__Impl rule__GrantedScenario__Group_6__1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2179:2: rule__GrantedScenario__Group_6__0__Impl rule__GrantedScenario__Group_6__1
             {
-            pushFollow(FOLLOW_rule__GrantedScenario__Group_6__0__Impl_in_rule__GrantedScenario__Group_6__04288);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group_6__0__Impl_in_rule__GrantedScenario__Group_6__04289);
             rule__GrantedScenario__Group_6__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__GrantedScenario__Group_6__1_in_rule__GrantedScenario__Group_6__04291);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group_6__1_in_rule__GrantedScenario__Group_6__04292);
             rule__GrantedScenario__Group_6__1();
 
             state._fsp--;
@@ -5751,7 +5769,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2192:1: 'resource:'
             {
              before(grammarAccess.getGrantedScenarioAccess().getResourceKeyword_6_0()); 
-            match(input,26,FOLLOW_26_in_rule__GrantedScenario__Group_6__0__Impl4319); 
+            match(input,26,FOLLOW_26_in_rule__GrantedScenario__Group_6__0__Impl4320); 
              after(grammarAccess.getGrantedScenarioAccess().getResourceKeyword_6_0()); 
 
             }
@@ -5784,7 +5802,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2209:1: ( rule__GrantedScenario__Group_6__1__Impl )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2210:2: rule__GrantedScenario__Group_6__1__Impl
             {
-            pushFollow(FOLLOW_rule__GrantedScenario__Group_6__1__Impl_in_rule__GrantedScenario__Group_6__14350);
+            pushFollow(FOLLOW_rule__GrantedScenario__Group_6__1__Impl_in_rule__GrantedScenario__Group_6__14351);
             rule__GrantedScenario__Group_6__1__Impl();
 
             state._fsp--;
@@ -5824,7 +5842,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2223:1: ( rule__GrantedScenario__ResourcesAssignment_6_1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2223:2: rule__GrantedScenario__ResourcesAssignment_6_1
             {
-            pushFollow(FOLLOW_rule__GrantedScenario__ResourcesAssignment_6_1_in_rule__GrantedScenario__Group_6__1__Impl4377);
+            pushFollow(FOLLOW_rule__GrantedScenario__ResourcesAssignment_6_1_in_rule__GrantedScenario__Group_6__1__Impl4378);
             rule__GrantedScenario__ResourcesAssignment_6_1();
 
             state._fsp--;
@@ -5864,12 +5882,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2241:1: ( rule__ForbiddenScenario__Group__0__Impl rule__ForbiddenScenario__Group__1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2242:2: rule__ForbiddenScenario__Group__0__Impl rule__ForbiddenScenario__Group__1
             {
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__0__Impl_in_rule__ForbiddenScenario__Group__04411);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__0__Impl_in_rule__ForbiddenScenario__Group__04412);
             rule__ForbiddenScenario__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__1_in_rule__ForbiddenScenario__Group__04414);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__1_in_rule__ForbiddenScenario__Group__04415);
             rule__ForbiddenScenario__Group__1();
 
             state._fsp--;
@@ -5906,7 +5924,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2255:1: 'forbiddenScenario'
             {
              before(grammarAccess.getForbiddenScenarioAccess().getForbiddenScenarioKeyword_0()); 
-            match(input,27,FOLLOW_27_in_rule__ForbiddenScenario__Group__0__Impl4442); 
+            match(input,27,FOLLOW_27_in_rule__ForbiddenScenario__Group__0__Impl4443); 
              after(grammarAccess.getForbiddenScenarioAccess().getForbiddenScenarioKeyword_0()); 
 
             }
@@ -5939,12 +5957,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2272:1: ( rule__ForbiddenScenario__Group__1__Impl rule__ForbiddenScenario__Group__2 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2273:2: rule__ForbiddenScenario__Group__1__Impl rule__ForbiddenScenario__Group__2
             {
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__1__Impl_in_rule__ForbiddenScenario__Group__14473);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__1__Impl_in_rule__ForbiddenScenario__Group__14474);
             rule__ForbiddenScenario__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__2_in_rule__ForbiddenScenario__Group__14476);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__2_in_rule__ForbiddenScenario__Group__14477);
             rule__ForbiddenScenario__Group__2();
 
             state._fsp--;
@@ -5984,7 +6002,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2287:1: ( rule__ForbiddenScenario__NameAssignment_1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2287:2: rule__ForbiddenScenario__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__ForbiddenScenario__NameAssignment_1_in_rule__ForbiddenScenario__Group__1__Impl4503);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__NameAssignment_1_in_rule__ForbiddenScenario__Group__1__Impl4504);
             rule__ForbiddenScenario__NameAssignment_1();
 
             state._fsp--;
@@ -6024,12 +6042,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2301:1: ( rule__ForbiddenScenario__Group__2__Impl rule__ForbiddenScenario__Group__3 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2302:2: rule__ForbiddenScenario__Group__2__Impl rule__ForbiddenScenario__Group__3
             {
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__2__Impl_in_rule__ForbiddenScenario__Group__24533);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__2__Impl_in_rule__ForbiddenScenario__Group__24534);
             rule__ForbiddenScenario__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__3_in_rule__ForbiddenScenario__Group__24536);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__3_in_rule__ForbiddenScenario__Group__24537);
             rule__ForbiddenScenario__Group__3();
 
             state._fsp--;
@@ -6066,7 +6084,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2315:1: '{'
             {
              before(grammarAccess.getForbiddenScenarioAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,12,FOLLOW_12_in_rule__ForbiddenScenario__Group__2__Impl4564); 
+            match(input,12,FOLLOW_12_in_rule__ForbiddenScenario__Group__2__Impl4565); 
              after(grammarAccess.getForbiddenScenarioAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -6099,12 +6117,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2332:1: ( rule__ForbiddenScenario__Group__3__Impl rule__ForbiddenScenario__Group__4 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2333:2: rule__ForbiddenScenario__Group__3__Impl rule__ForbiddenScenario__Group__4
             {
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__3__Impl_in_rule__ForbiddenScenario__Group__34595);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__3__Impl_in_rule__ForbiddenScenario__Group__34596);
             rule__ForbiddenScenario__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__4_in_rule__ForbiddenScenario__Group__34598);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__4_in_rule__ForbiddenScenario__Group__34599);
             rule__ForbiddenScenario__Group__4();
 
             state._fsp--;
@@ -6141,7 +6159,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2346:1: 'user:'
             {
              before(grammarAccess.getForbiddenScenarioAccess().getUserKeyword_3()); 
-            match(input,25,FOLLOW_25_in_rule__ForbiddenScenario__Group__3__Impl4626); 
+            match(input,25,FOLLOW_25_in_rule__ForbiddenScenario__Group__3__Impl4627); 
              after(grammarAccess.getForbiddenScenarioAccess().getUserKeyword_3()); 
 
             }
@@ -6174,12 +6192,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2363:1: ( rule__ForbiddenScenario__Group__4__Impl rule__ForbiddenScenario__Group__5 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2364:2: rule__ForbiddenScenario__Group__4__Impl rule__ForbiddenScenario__Group__5
             {
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__4__Impl_in_rule__ForbiddenScenario__Group__44657);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__4__Impl_in_rule__ForbiddenScenario__Group__44658);
             rule__ForbiddenScenario__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__5_in_rule__ForbiddenScenario__Group__44660);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__5_in_rule__ForbiddenScenario__Group__44661);
             rule__ForbiddenScenario__Group__5();
 
             state._fsp--;
@@ -6219,7 +6237,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2378:1: ( rule__ForbiddenScenario__UserAssignment_4 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2378:2: rule__ForbiddenScenario__UserAssignment_4
             {
-            pushFollow(FOLLOW_rule__ForbiddenScenario__UserAssignment_4_in_rule__ForbiddenScenario__Group__4__Impl4687);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__UserAssignment_4_in_rule__ForbiddenScenario__Group__4__Impl4688);
             rule__ForbiddenScenario__UserAssignment_4();
 
             state._fsp--;
@@ -6259,12 +6277,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2392:1: ( rule__ForbiddenScenario__Group__5__Impl rule__ForbiddenScenario__Group__6 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2393:2: rule__ForbiddenScenario__Group__5__Impl rule__ForbiddenScenario__Group__6
             {
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__5__Impl_in_rule__ForbiddenScenario__Group__54717);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__5__Impl_in_rule__ForbiddenScenario__Group__54718);
             rule__ForbiddenScenario__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__6_in_rule__ForbiddenScenario__Group__54720);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__6_in_rule__ForbiddenScenario__Group__54721);
             rule__ForbiddenScenario__Group__6();
 
             state._fsp--;
@@ -6302,21 +6320,21 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getForbiddenScenarioAccess().getGroup_5()); 
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2407:1: ( rule__ForbiddenScenario__Group_5__0 )*
-            loop16:
+            loop17:
             do {
-                int alt16=2;
-                int LA16_0 = input.LA(1);
+                int alt17=2;
+                int LA17_0 = input.LA(1);
 
-                if ( (LA16_0==16) ) {
-                    alt16=1;
+                if ( (LA17_0==16) ) {
+                    alt17=1;
                 }
 
 
-                switch (alt16) {
+                switch (alt17) {
             	case 1 :
             	    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2407:2: rule__ForbiddenScenario__Group_5__0
             	    {
-            	    pushFollow(FOLLOW_rule__ForbiddenScenario__Group_5__0_in_rule__ForbiddenScenario__Group__5__Impl4747);
+            	    pushFollow(FOLLOW_rule__ForbiddenScenario__Group_5__0_in_rule__ForbiddenScenario__Group__5__Impl4748);
             	    rule__ForbiddenScenario__Group_5__0();
 
             	    state._fsp--;
@@ -6326,7 +6344,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop16;
+            	    break loop17;
                 }
             } while (true);
 
@@ -6362,12 +6380,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2421:1: ( rule__ForbiddenScenario__Group__6__Impl rule__ForbiddenScenario__Group__7 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2422:2: rule__ForbiddenScenario__Group__6__Impl rule__ForbiddenScenario__Group__7
             {
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__6__Impl_in_rule__ForbiddenScenario__Group__64778);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__6__Impl_in_rule__ForbiddenScenario__Group__64779);
             rule__ForbiddenScenario__Group__6__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__7_in_rule__ForbiddenScenario__Group__64781);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__7_in_rule__ForbiddenScenario__Group__64782);
             rule__ForbiddenScenario__Group__7();
 
             state._fsp--;
@@ -6410,7 +6428,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2437:1: ( rule__ForbiddenScenario__Group_6__0 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2437:2: rule__ForbiddenScenario__Group_6__0
             {
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group_6__0_in_rule__ForbiddenScenario__Group__6__Impl4810);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group_6__0_in_rule__ForbiddenScenario__Group__6__Impl4811);
             rule__ForbiddenScenario__Group_6__0();
 
             state._fsp--;
@@ -6427,21 +6445,21 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getForbiddenScenarioAccess().getGroup_6()); 
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2442:1: ( rule__ForbiddenScenario__Group_6__0 )*
-            loop17:
+            loop18:
             do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
+                int alt18=2;
+                int LA18_0 = input.LA(1);
 
-                if ( (LA17_0==26) ) {
-                    alt17=1;
+                if ( (LA18_0==26) ) {
+                    alt18=1;
                 }
 
 
-                switch (alt17) {
+                switch (alt18) {
             	case 1 :
             	    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2442:2: rule__ForbiddenScenario__Group_6__0
             	    {
-            	    pushFollow(FOLLOW_rule__ForbiddenScenario__Group_6__0_in_rule__ForbiddenScenario__Group__6__Impl4822);
+            	    pushFollow(FOLLOW_rule__ForbiddenScenario__Group_6__0_in_rule__ForbiddenScenario__Group__6__Impl4823);
             	    rule__ForbiddenScenario__Group_6__0();
 
             	    state._fsp--;
@@ -6451,7 +6469,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop17;
+            	    break loop18;
                 }
             } while (true);
 
@@ -6490,7 +6508,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2457:1: ( rule__ForbiddenScenario__Group__7__Impl )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2458:2: rule__ForbiddenScenario__Group__7__Impl
             {
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__7__Impl_in_rule__ForbiddenScenario__Group__74855);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group__7__Impl_in_rule__ForbiddenScenario__Group__74856);
             rule__ForbiddenScenario__Group__7__Impl();
 
             state._fsp--;
@@ -6527,7 +6545,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2470:1: '}'
             {
              before(grammarAccess.getForbiddenScenarioAccess().getRightCurlyBracketKeyword_7()); 
-            match(input,13,FOLLOW_13_in_rule__ForbiddenScenario__Group__7__Impl4883); 
+            match(input,13,FOLLOW_13_in_rule__ForbiddenScenario__Group__7__Impl4884); 
              after(grammarAccess.getForbiddenScenarioAccess().getRightCurlyBracketKeyword_7()); 
 
             }
@@ -6560,12 +6578,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2503:1: ( rule__ForbiddenScenario__Group_5__0__Impl rule__ForbiddenScenario__Group_5__1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2504:2: rule__ForbiddenScenario__Group_5__0__Impl rule__ForbiddenScenario__Group_5__1
             {
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group_5__0__Impl_in_rule__ForbiddenScenario__Group_5__04930);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group_5__0__Impl_in_rule__ForbiddenScenario__Group_5__04931);
             rule__ForbiddenScenario__Group_5__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group_5__1_in_rule__ForbiddenScenario__Group_5__04933);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group_5__1_in_rule__ForbiddenScenario__Group_5__04934);
             rule__ForbiddenScenario__Group_5__1();
 
             state._fsp--;
@@ -6602,7 +6620,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2517:1: 'role:'
             {
              before(grammarAccess.getForbiddenScenarioAccess().getRoleKeyword_5_0()); 
-            match(input,16,FOLLOW_16_in_rule__ForbiddenScenario__Group_5__0__Impl4961); 
+            match(input,16,FOLLOW_16_in_rule__ForbiddenScenario__Group_5__0__Impl4962); 
              after(grammarAccess.getForbiddenScenarioAccess().getRoleKeyword_5_0()); 
 
             }
@@ -6635,7 +6653,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2534:1: ( rule__ForbiddenScenario__Group_5__1__Impl )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2535:2: rule__ForbiddenScenario__Group_5__1__Impl
             {
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group_5__1__Impl_in_rule__ForbiddenScenario__Group_5__14992);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group_5__1__Impl_in_rule__ForbiddenScenario__Group_5__14993);
             rule__ForbiddenScenario__Group_5__1__Impl();
 
             state._fsp--;
@@ -6675,7 +6693,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2548:1: ( rule__ForbiddenScenario__RolesAssignment_5_1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2548:2: rule__ForbiddenScenario__RolesAssignment_5_1
             {
-            pushFollow(FOLLOW_rule__ForbiddenScenario__RolesAssignment_5_1_in_rule__ForbiddenScenario__Group_5__1__Impl5019);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__RolesAssignment_5_1_in_rule__ForbiddenScenario__Group_5__1__Impl5020);
             rule__ForbiddenScenario__RolesAssignment_5_1();
 
             state._fsp--;
@@ -6715,12 +6733,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2566:1: ( rule__ForbiddenScenario__Group_6__0__Impl rule__ForbiddenScenario__Group_6__1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2567:2: rule__ForbiddenScenario__Group_6__0__Impl rule__ForbiddenScenario__Group_6__1
             {
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group_6__0__Impl_in_rule__ForbiddenScenario__Group_6__05053);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group_6__0__Impl_in_rule__ForbiddenScenario__Group_6__05054);
             rule__ForbiddenScenario__Group_6__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group_6__1_in_rule__ForbiddenScenario__Group_6__05056);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group_6__1_in_rule__ForbiddenScenario__Group_6__05057);
             rule__ForbiddenScenario__Group_6__1();
 
             state._fsp--;
@@ -6757,7 +6775,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2580:1: 'resource:'
             {
              before(grammarAccess.getForbiddenScenarioAccess().getResourceKeyword_6_0()); 
-            match(input,26,FOLLOW_26_in_rule__ForbiddenScenario__Group_6__0__Impl5084); 
+            match(input,26,FOLLOW_26_in_rule__ForbiddenScenario__Group_6__0__Impl5085); 
              after(grammarAccess.getForbiddenScenarioAccess().getResourceKeyword_6_0()); 
 
             }
@@ -6790,7 +6808,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2597:1: ( rule__ForbiddenScenario__Group_6__1__Impl )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2598:2: rule__ForbiddenScenario__Group_6__1__Impl
             {
-            pushFollow(FOLLOW_rule__ForbiddenScenario__Group_6__1__Impl_in_rule__ForbiddenScenario__Group_6__15115);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__Group_6__1__Impl_in_rule__ForbiddenScenario__Group_6__15116);
             rule__ForbiddenScenario__Group_6__1__Impl();
 
             state._fsp--;
@@ -6830,7 +6848,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2611:1: ( rule__ForbiddenScenario__ResourcesAssignment_6_1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2611:2: rule__ForbiddenScenario__ResourcesAssignment_6_1
             {
-            pushFollow(FOLLOW_rule__ForbiddenScenario__ResourcesAssignment_6_1_in_rule__ForbiddenScenario__Group_6__1__Impl5142);
+            pushFollow(FOLLOW_rule__ForbiddenScenario__ResourcesAssignment_6_1_in_rule__ForbiddenScenario__Group_6__1__Impl5143);
             rule__ForbiddenScenario__ResourcesAssignment_6_1();
 
             state._fsp--;
@@ -6870,12 +6888,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2629:1: ( rule__UserRoleScenario__Group__0__Impl rule__UserRoleScenario__Group__1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2630:2: rule__UserRoleScenario__Group__0__Impl rule__UserRoleScenario__Group__1
             {
-            pushFollow(FOLLOW_rule__UserRoleScenario__Group__0__Impl_in_rule__UserRoleScenario__Group__05176);
+            pushFollow(FOLLOW_rule__UserRoleScenario__Group__0__Impl_in_rule__UserRoleScenario__Group__05177);
             rule__UserRoleScenario__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__UserRoleScenario__Group__1_in_rule__UserRoleScenario__Group__05179);
+            pushFollow(FOLLOW_rule__UserRoleScenario__Group__1_in_rule__UserRoleScenario__Group__05180);
             rule__UserRoleScenario__Group__1();
 
             state._fsp--;
@@ -6912,7 +6930,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2643:1: 'userRoleScenario'
             {
              before(grammarAccess.getUserRoleScenarioAccess().getUserRoleScenarioKeyword_0()); 
-            match(input,28,FOLLOW_28_in_rule__UserRoleScenario__Group__0__Impl5207); 
+            match(input,28,FOLLOW_28_in_rule__UserRoleScenario__Group__0__Impl5208); 
              after(grammarAccess.getUserRoleScenarioAccess().getUserRoleScenarioKeyword_0()); 
 
             }
@@ -6945,12 +6963,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2660:1: ( rule__UserRoleScenario__Group__1__Impl rule__UserRoleScenario__Group__2 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2661:2: rule__UserRoleScenario__Group__1__Impl rule__UserRoleScenario__Group__2
             {
-            pushFollow(FOLLOW_rule__UserRoleScenario__Group__1__Impl_in_rule__UserRoleScenario__Group__15238);
+            pushFollow(FOLLOW_rule__UserRoleScenario__Group__1__Impl_in_rule__UserRoleScenario__Group__15239);
             rule__UserRoleScenario__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__UserRoleScenario__Group__2_in_rule__UserRoleScenario__Group__15241);
+            pushFollow(FOLLOW_rule__UserRoleScenario__Group__2_in_rule__UserRoleScenario__Group__15242);
             rule__UserRoleScenario__Group__2();
 
             state._fsp--;
@@ -6990,7 +7008,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2675:1: ( rule__UserRoleScenario__NameAssignment_1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2675:2: rule__UserRoleScenario__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__UserRoleScenario__NameAssignment_1_in_rule__UserRoleScenario__Group__1__Impl5268);
+            pushFollow(FOLLOW_rule__UserRoleScenario__NameAssignment_1_in_rule__UserRoleScenario__Group__1__Impl5269);
             rule__UserRoleScenario__NameAssignment_1();
 
             state._fsp--;
@@ -7030,12 +7048,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2689:1: ( rule__UserRoleScenario__Group__2__Impl rule__UserRoleScenario__Group__3 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2690:2: rule__UserRoleScenario__Group__2__Impl rule__UserRoleScenario__Group__3
             {
-            pushFollow(FOLLOW_rule__UserRoleScenario__Group__2__Impl_in_rule__UserRoleScenario__Group__25298);
+            pushFollow(FOLLOW_rule__UserRoleScenario__Group__2__Impl_in_rule__UserRoleScenario__Group__25299);
             rule__UserRoleScenario__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__UserRoleScenario__Group__3_in_rule__UserRoleScenario__Group__25301);
+            pushFollow(FOLLOW_rule__UserRoleScenario__Group__3_in_rule__UserRoleScenario__Group__25302);
             rule__UserRoleScenario__Group__3();
 
             state._fsp--;
@@ -7072,7 +7090,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2703:1: '{'
             {
              before(grammarAccess.getUserRoleScenarioAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,12,FOLLOW_12_in_rule__UserRoleScenario__Group__2__Impl5329); 
+            match(input,12,FOLLOW_12_in_rule__UserRoleScenario__Group__2__Impl5330); 
              after(grammarAccess.getUserRoleScenarioAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -7105,12 +7123,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2720:1: ( rule__UserRoleScenario__Group__3__Impl rule__UserRoleScenario__Group__4 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2721:2: rule__UserRoleScenario__Group__3__Impl rule__UserRoleScenario__Group__4
             {
-            pushFollow(FOLLOW_rule__UserRoleScenario__Group__3__Impl_in_rule__UserRoleScenario__Group__35360);
+            pushFollow(FOLLOW_rule__UserRoleScenario__Group__3__Impl_in_rule__UserRoleScenario__Group__35361);
             rule__UserRoleScenario__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__UserRoleScenario__Group__4_in_rule__UserRoleScenario__Group__35363);
+            pushFollow(FOLLOW_rule__UserRoleScenario__Group__4_in_rule__UserRoleScenario__Group__35364);
             rule__UserRoleScenario__Group__4();
 
             state._fsp--;
@@ -7153,7 +7171,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2736:1: ( rule__UserRoleScenario__Group_3__0 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2736:2: rule__UserRoleScenario__Group_3__0
             {
-            pushFollow(FOLLOW_rule__UserRoleScenario__Group_3__0_in_rule__UserRoleScenario__Group__3__Impl5392);
+            pushFollow(FOLLOW_rule__UserRoleScenario__Group_3__0_in_rule__UserRoleScenario__Group__3__Impl5393);
             rule__UserRoleScenario__Group_3__0();
 
             state._fsp--;
@@ -7170,21 +7188,21 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getUserRoleScenarioAccess().getGroup_3()); 
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2741:1: ( rule__UserRoleScenario__Group_3__0 )*
-            loop18:
+            loop19:
             do {
-                int alt18=2;
-                int LA18_0 = input.LA(1);
+                int alt19=2;
+                int LA19_0 = input.LA(1);
 
-                if ( (LA18_0==16) ) {
-                    alt18=1;
+                if ( (LA19_0==16) ) {
+                    alt19=1;
                 }
 
 
-                switch (alt18) {
+                switch (alt19) {
             	case 1 :
             	    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2741:2: rule__UserRoleScenario__Group_3__0
             	    {
-            	    pushFollow(FOLLOW_rule__UserRoleScenario__Group_3__0_in_rule__UserRoleScenario__Group__3__Impl5404);
+            	    pushFollow(FOLLOW_rule__UserRoleScenario__Group_3__0_in_rule__UserRoleScenario__Group__3__Impl5405);
             	    rule__UserRoleScenario__Group_3__0();
 
             	    state._fsp--;
@@ -7194,7 +7212,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop18;
+            	    break loop19;
                 }
             } while (true);
 
@@ -7233,7 +7251,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2756:1: ( rule__UserRoleScenario__Group__4__Impl )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2757:2: rule__UserRoleScenario__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__UserRoleScenario__Group__4__Impl_in_rule__UserRoleScenario__Group__45437);
+            pushFollow(FOLLOW_rule__UserRoleScenario__Group__4__Impl_in_rule__UserRoleScenario__Group__45438);
             rule__UserRoleScenario__Group__4__Impl();
 
             state._fsp--;
@@ -7270,7 +7288,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2769:1: '}'
             {
              before(grammarAccess.getUserRoleScenarioAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,13,FOLLOW_13_in_rule__UserRoleScenario__Group__4__Impl5465); 
+            match(input,13,FOLLOW_13_in_rule__UserRoleScenario__Group__4__Impl5466); 
              after(grammarAccess.getUserRoleScenarioAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -7303,12 +7321,12 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2796:1: ( rule__UserRoleScenario__Group_3__0__Impl rule__UserRoleScenario__Group_3__1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2797:2: rule__UserRoleScenario__Group_3__0__Impl rule__UserRoleScenario__Group_3__1
             {
-            pushFollow(FOLLOW_rule__UserRoleScenario__Group_3__0__Impl_in_rule__UserRoleScenario__Group_3__05506);
+            pushFollow(FOLLOW_rule__UserRoleScenario__Group_3__0__Impl_in_rule__UserRoleScenario__Group_3__05507);
             rule__UserRoleScenario__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__UserRoleScenario__Group_3__1_in_rule__UserRoleScenario__Group_3__05509);
+            pushFollow(FOLLOW_rule__UserRoleScenario__Group_3__1_in_rule__UserRoleScenario__Group_3__05510);
             rule__UserRoleScenario__Group_3__1();
 
             state._fsp--;
@@ -7345,7 +7363,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2810:1: 'role:'
             {
              before(grammarAccess.getUserRoleScenarioAccess().getRoleKeyword_3_0()); 
-            match(input,16,FOLLOW_16_in_rule__UserRoleScenario__Group_3__0__Impl5537); 
+            match(input,16,FOLLOW_16_in_rule__UserRoleScenario__Group_3__0__Impl5538); 
              after(grammarAccess.getUserRoleScenarioAccess().getRoleKeyword_3_0()); 
 
             }
@@ -7378,7 +7396,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2827:1: ( rule__UserRoleScenario__Group_3__1__Impl )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2828:2: rule__UserRoleScenario__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__UserRoleScenario__Group_3__1__Impl_in_rule__UserRoleScenario__Group_3__15568);
+            pushFollow(FOLLOW_rule__UserRoleScenario__Group_3__1__Impl_in_rule__UserRoleScenario__Group_3__15569);
             rule__UserRoleScenario__Group_3__1__Impl();
 
             state._fsp--;
@@ -7418,7 +7436,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2841:1: ( rule__UserRoleScenario__RolesAssignment_3_1 )
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2841:2: rule__UserRoleScenario__RolesAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__UserRoleScenario__RolesAssignment_3_1_in_rule__UserRoleScenario__Group_3__1__Impl5595);
+            pushFollow(FOLLOW_rule__UserRoleScenario__RolesAssignment_3_1_in_rule__UserRoleScenario__Group_3__1__Impl5596);
             rule__UserRoleScenario__RolesAssignment_3_1();
 
             state._fsp--;
@@ -7462,7 +7480,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2862:1: rulePolicy
             {
              before(grammarAccess.getRbacAccess().getPolicyPolicyParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_rulePolicy_in_rule__Rbac__PolicyAssignment_05634);
+            pushFollow(FOLLOW_rulePolicy_in_rule__Rbac__PolicyAssignment_05635);
             rulePolicy();
 
             state._fsp--;
@@ -7503,7 +7521,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2877:1: ruleScenarios
             {
              before(grammarAccess.getRbacAccess().getScenariosScenariosParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleScenarios_in_rule__Rbac__ScenariosAssignment_15665);
+            pushFollow(FOLLOW_ruleScenarios_in_rule__Rbac__ScenariosAssignment_15666);
             ruleScenarios();
 
             state._fsp--;
@@ -7544,7 +7562,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2892:1: ruleUser
             {
              before(grammarAccess.getPolicyAccess().getUsersUserParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleUser_in_rule__Policy__UsersAssignment_25696);
+            pushFollow(FOLLOW_ruleUser_in_rule__Policy__UsersAssignment_25697);
             ruleUser();
 
             state._fsp--;
@@ -7585,7 +7603,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2907:1: ruleRole
             {
              before(grammarAccess.getPolicyAccess().getRolesRoleParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleRole_in_rule__Policy__RolesAssignment_35727);
+            pushFollow(FOLLOW_ruleRole_in_rule__Policy__RolesAssignment_35728);
             ruleRole();
 
             state._fsp--;
@@ -7626,7 +7644,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2922:1: rulePermission
             {
              before(grammarAccess.getPolicyAccess().getPermissionsPermissionParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_rulePermission_in_rule__Policy__PermissionsAssignment_45758);
+            pushFollow(FOLLOW_rulePermission_in_rule__Policy__PermissionsAssignment_45759);
             rulePermission();
 
             state._fsp--;
@@ -7667,7 +7685,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2937:1: ruleResource
             {
              before(grammarAccess.getPolicyAccess().getResourcesResourceParserRuleCall_5_0()); 
-            pushFollow(FOLLOW_ruleResource_in_rule__Policy__ResourcesAssignment_55789);
+            pushFollow(FOLLOW_ruleResource_in_rule__Policy__ResourcesAssignment_55790);
             ruleResource();
 
             state._fsp--;
@@ -7708,7 +7726,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2952:1: ruleUserScenario
             {
              before(grammarAccess.getScenariosAccess().getUserScenariosUserScenarioParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleUserScenario_in_rule__Scenarios__UserScenariosAssignment_25820);
+            pushFollow(FOLLOW_ruleUserScenario_in_rule__Scenarios__UserScenariosAssignment_25821);
             ruleUserScenario();
 
             state._fsp--;
@@ -7749,7 +7767,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2967:1: ruleUserRoleScenario
             {
              before(grammarAccess.getScenariosAccess().getUserRoleScenariosUserRoleScenarioParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleUserRoleScenario_in_rule__Scenarios__UserRoleScenariosAssignment_35851);
+            pushFollow(FOLLOW_ruleUserRoleScenario_in_rule__Scenarios__UserRoleScenariosAssignment_35852);
             ruleUserRoleScenario();
 
             state._fsp--;
@@ -7790,7 +7808,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2982:1: RULE_ID
             {
              before(grammarAccess.getUserAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__User__NameAssignment_15882); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__User__NameAssignment_15883); 
              after(grammarAccess.getUserAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -7831,7 +7849,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:2999:1: RULE_ID
             {
              before(grammarAccess.getUserAccess().getRolesRoleIDTerminalRuleCall_3_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__User__RolesAssignment_3_15917); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__User__RolesAssignment_3_15918); 
              after(grammarAccess.getUserAccess().getRolesRoleIDTerminalRuleCall_3_1_0_1()); 
 
             }
@@ -7872,7 +7890,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3016:1: RULE_ID
             {
              before(grammarAccess.getRoleAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Role__NameAssignment_15952); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Role__NameAssignment_15953); 
              after(grammarAccess.getRoleAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -7913,7 +7931,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3033:1: RULE_ID
             {
              before(grammarAccess.getRoleAccess().getParentRoleIDTerminalRuleCall_2_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Role__ParentAssignment_2_15987); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Role__ParentAssignment_2_15988); 
              after(grammarAccess.getRoleAccess().getParentRoleIDTerminalRuleCall_2_1_0_1()); 
 
             }
@@ -7958,7 +7976,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3052:1: RULE_ID
             {
              before(grammarAccess.getRoleAccess().getSsodRoleIDTerminalRuleCall_4_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Role__SsodAssignment_4_16026); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Role__SsodAssignment_4_16027); 
              after(grammarAccess.getRoleAccess().getSsodRoleIDTerminalRuleCall_4_1_0_1()); 
 
             }
@@ -8003,7 +8021,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3071:1: RULE_ID
             {
              before(grammarAccess.getRoleAccess().getDsodRoleIDTerminalRuleCall_5_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Role__DsodAssignment_5_16065); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Role__DsodAssignment_5_16066); 
              after(grammarAccess.getRoleAccess().getDsodRoleIDTerminalRuleCall_5_1_0_1()); 
 
             }
@@ -8048,7 +8066,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3090:1: RULE_ID
             {
              before(grammarAccess.getRoleAccess().getPermissionsPermissionIDTerminalRuleCall_6_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Role__PermissionsAssignment_6_16104); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Role__PermissionsAssignment_6_16105); 
              after(grammarAccess.getRoleAccess().getPermissionsPermissionIDTerminalRuleCall_6_1_0_1()); 
 
             }
@@ -8089,7 +8107,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3107:1: RULE_ID
             {
              before(grammarAccess.getPermissionAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Permission__NameAssignment_16139); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Permission__NameAssignment_16140); 
              after(grammarAccess.getPermissionAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -8126,7 +8144,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3122:1: RULE_ID
             {
              before(grammarAccess.getResourceAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Resource__NameAssignment_16170); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Resource__NameAssignment_16171); 
              after(grammarAccess.getResourceAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -8167,7 +8185,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3139:1: RULE_ID
             {
              before(grammarAccess.getResourceAccess().getPermissionsPermissionIDTerminalRuleCall_3_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Resource__PermissionsAssignment_3_16205); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Resource__PermissionsAssignment_3_16206); 
              after(grammarAccess.getResourceAccess().getPermissionsPermissionIDTerminalRuleCall_3_1_0_1()); 
 
             }
@@ -8208,7 +8226,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3156:1: RULE_ID
             {
              before(grammarAccess.getGrantedScenarioAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__GrantedScenario__NameAssignment_16240); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__GrantedScenario__NameAssignment_16241); 
              after(grammarAccess.getGrantedScenarioAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -8249,7 +8267,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3173:1: RULE_ID
             {
              before(grammarAccess.getGrantedScenarioAccess().getUserUserIDTerminalRuleCall_4_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__GrantedScenario__UserAssignment_46275); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__GrantedScenario__UserAssignment_46276); 
              after(grammarAccess.getGrantedScenarioAccess().getUserUserIDTerminalRuleCall_4_0_1()); 
 
             }
@@ -8294,7 +8312,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3192:1: RULE_ID
             {
              before(grammarAccess.getGrantedScenarioAccess().getRolesRoleIDTerminalRuleCall_5_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__GrantedScenario__RolesAssignment_5_16314); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__GrantedScenario__RolesAssignment_5_16315); 
              after(grammarAccess.getGrantedScenarioAccess().getRolesRoleIDTerminalRuleCall_5_1_0_1()); 
 
             }
@@ -8339,7 +8357,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3211:1: RULE_ID
             {
              before(grammarAccess.getGrantedScenarioAccess().getResourcesResourceIDTerminalRuleCall_6_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__GrantedScenario__ResourcesAssignment_6_16353); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__GrantedScenario__ResourcesAssignment_6_16354); 
              after(grammarAccess.getGrantedScenarioAccess().getResourcesResourceIDTerminalRuleCall_6_1_0_1()); 
 
             }
@@ -8380,7 +8398,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3228:1: RULE_ID
             {
              before(grammarAccess.getForbiddenScenarioAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ForbiddenScenario__NameAssignment_16388); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ForbiddenScenario__NameAssignment_16389); 
              after(grammarAccess.getForbiddenScenarioAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -8421,7 +8439,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3245:1: RULE_ID
             {
              before(grammarAccess.getForbiddenScenarioAccess().getUserUserIDTerminalRuleCall_4_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ForbiddenScenario__UserAssignment_46423); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ForbiddenScenario__UserAssignment_46424); 
              after(grammarAccess.getForbiddenScenarioAccess().getUserUserIDTerminalRuleCall_4_0_1()); 
 
             }
@@ -8466,7 +8484,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3264:1: RULE_ID
             {
              before(grammarAccess.getForbiddenScenarioAccess().getRolesRoleIDTerminalRuleCall_5_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ForbiddenScenario__RolesAssignment_5_16462); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ForbiddenScenario__RolesAssignment_5_16463); 
              after(grammarAccess.getForbiddenScenarioAccess().getRolesRoleIDTerminalRuleCall_5_1_0_1()); 
 
             }
@@ -8511,7 +8529,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3283:1: RULE_ID
             {
              before(grammarAccess.getForbiddenScenarioAccess().getResourcesResourceIDTerminalRuleCall_6_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ForbiddenScenario__ResourcesAssignment_6_16501); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ForbiddenScenario__ResourcesAssignment_6_16502); 
              after(grammarAccess.getForbiddenScenarioAccess().getResourcesResourceIDTerminalRuleCall_6_1_0_1()); 
 
             }
@@ -8552,7 +8570,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3300:1: RULE_ID
             {
              before(grammarAccess.getUserRoleScenarioAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__UserRoleScenario__NameAssignment_16536); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__UserRoleScenario__NameAssignment_16537); 
              after(grammarAccess.getUserRoleScenarioAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -8593,7 +8611,7 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
             // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3317:1: RULE_ID
             {
              before(grammarAccess.getUserRoleScenarioAccess().getRolesRoleIDTerminalRuleCall_3_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__UserRoleScenario__RolesAssignment_3_16571); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__UserRoleScenario__RolesAssignment_3_16572); 
              after(grammarAccess.getUserRoleScenarioAccess().getRolesRoleIDTerminalRuleCall_3_1_0_1()); 
 
             }
@@ -8744,161 +8762,161 @@ public class InternalRbacDSLParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Role__Group_2__1_in_rule__Role__Group_2__02597 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_18_in_rule__Role__Group_2__0__Impl2625 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Role__Group_2__1__Impl_in_rule__Role__Group_2__12656 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Role__ParentAssignment_2_1_in_rule__Role__Group_2__1__Impl2683 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Role__Group_4__0__Impl_in_rule__Role__Group_4__02717 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Role__Group_4__1_in_rule__Role__Group_4__02720 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__Role__Group_4__0__Impl2748 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Role__Group_4__1__Impl_in_rule__Role__Group_4__12779 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Role__SsodAssignment_4_1_in_rule__Role__Group_4__1__Impl2806 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Role__Group_5__0__Impl_in_rule__Role__Group_5__02840 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Role__Group_5__1_in_rule__Role__Group_5__02843 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__Role__Group_5__0__Impl2871 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Role__Group_5__1__Impl_in_rule__Role__Group_5__12902 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Role__DsodAssignment_5_1_in_rule__Role__Group_5__1__Impl2929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Role__Group_6__0__Impl_in_rule__Role__Group_6__02963 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Role__Group_6__1_in_rule__Role__Group_6__02966 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__Role__Group_6__0__Impl2994 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Role__Group_6__1__Impl_in_rule__Role__Group_6__13025 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Role__PermissionsAssignment_6_1_in_rule__Role__Group_6__1__Impl3052 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Permission__Group__0__Impl_in_rule__Permission__Group__03086 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Permission__Group__1_in_rule__Permission__Group__03089 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__Permission__Group__0__Impl3117 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Permission__Group__1__Impl_in_rule__Permission__Group__13148 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Permission__NameAssignment_1_in_rule__Permission__Group__1__Impl3175 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Resource__Group__0__Impl_in_rule__Resource__Group__03209 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Resource__Group__1_in_rule__Resource__Group__03212 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__Resource__Group__0__Impl3240 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Resource__Group__1__Impl_in_rule__Resource__Group__13271 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_rule__Resource__Group__2_in_rule__Resource__Group__13274 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Resource__NameAssignment_1_in_rule__Resource__Group__1__Impl3301 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Resource__Group__2__Impl_in_rule__Resource__Group__23331 = new BitSet(new long[]{0x0000000000202000L});
-    public static final BitSet FOLLOW_rule__Resource__Group__3_in_rule__Resource__Group__23334 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__Resource__Group__2__Impl3362 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Resource__Group__3__Impl_in_rule__Resource__Group__33393 = new BitSet(new long[]{0x0000000000202000L});
-    public static final BitSet FOLLOW_rule__Resource__Group__4_in_rule__Resource__Group__33396 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Resource__Group_3__0_in_rule__Resource__Group__3__Impl3423 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_rule__Resource__Group__4__Impl_in_rule__Resource__Group__43454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__Resource__Group__4__Impl3482 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Resource__Group_3__0__Impl_in_rule__Resource__Group_3__03523 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Resource__Group_3__1_in_rule__Resource__Group_3__03526 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__Resource__Group_3__0__Impl3554 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Resource__Group_3__1__Impl_in_rule__Resource__Group_3__13585 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Resource__PermissionsAssignment_3_1_in_rule__Resource__Group_3__1__Impl3612 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group__0__Impl_in_rule__GrantedScenario__Group__03646 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group__1_in_rule__GrantedScenario__Group__03649 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__GrantedScenario__Group__0__Impl3677 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group__1__Impl_in_rule__GrantedScenario__Group__13708 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group__2_in_rule__GrantedScenario__Group__13711 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__NameAssignment_1_in_rule__GrantedScenario__Group__1__Impl3738 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group__2__Impl_in_rule__GrantedScenario__Group__23768 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group__3_in_rule__GrantedScenario__Group__23771 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__GrantedScenario__Group__2__Impl3799 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group__3__Impl_in_rule__GrantedScenario__Group__33830 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group__4_in_rule__GrantedScenario__Group__33833 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__GrantedScenario__Group__3__Impl3861 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group__4__Impl_in_rule__GrantedScenario__Group__43892 = new BitSet(new long[]{0x0000000004010000L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group__5_in_rule__GrantedScenario__Group__43895 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__UserAssignment_4_in_rule__GrantedScenario__Group__4__Impl3922 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group__5__Impl_in_rule__GrantedScenario__Group__53952 = new BitSet(new long[]{0x0000000004010000L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group__6_in_rule__GrantedScenario__Group__53955 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group_5__0_in_rule__GrantedScenario__Group__5__Impl3982 = new BitSet(new long[]{0x0000000000010002L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group__6__Impl_in_rule__GrantedScenario__Group__64013 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group__7_in_rule__GrantedScenario__Group__64016 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group_6__0_in_rule__GrantedScenario__Group__6__Impl4045 = new BitSet(new long[]{0x0000000004010002L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group_6__0_in_rule__GrantedScenario__Group__6__Impl4057 = new BitSet(new long[]{0x0000000004010002L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group__7__Impl_in_rule__GrantedScenario__Group__74090 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__GrantedScenario__Group__7__Impl4118 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group_5__0__Impl_in_rule__GrantedScenario__Group_5__04165 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group_5__1_in_rule__GrantedScenario__Group_5__04168 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__GrantedScenario__Group_5__0__Impl4196 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group_5__1__Impl_in_rule__GrantedScenario__Group_5__14227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__RolesAssignment_5_1_in_rule__GrantedScenario__Group_5__1__Impl4254 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group_6__0__Impl_in_rule__GrantedScenario__Group_6__04288 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group_6__1_in_rule__GrantedScenario__Group_6__04291 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__GrantedScenario__Group_6__0__Impl4319 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__Group_6__1__Impl_in_rule__GrantedScenario__Group_6__14350 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__GrantedScenario__ResourcesAssignment_6_1_in_rule__GrantedScenario__Group_6__1__Impl4377 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__0__Impl_in_rule__ForbiddenScenario__Group__04411 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__1_in_rule__ForbiddenScenario__Group__04414 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__ForbiddenScenario__Group__0__Impl4442 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__1__Impl_in_rule__ForbiddenScenario__Group__14473 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__2_in_rule__ForbiddenScenario__Group__14476 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__NameAssignment_1_in_rule__ForbiddenScenario__Group__1__Impl4503 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__2__Impl_in_rule__ForbiddenScenario__Group__24533 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__3_in_rule__ForbiddenScenario__Group__24536 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__ForbiddenScenario__Group__2__Impl4564 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__3__Impl_in_rule__ForbiddenScenario__Group__34595 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__4_in_rule__ForbiddenScenario__Group__34598 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__ForbiddenScenario__Group__3__Impl4626 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__4__Impl_in_rule__ForbiddenScenario__Group__44657 = new BitSet(new long[]{0x0000000004010000L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__5_in_rule__ForbiddenScenario__Group__44660 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__UserAssignment_4_in_rule__ForbiddenScenario__Group__4__Impl4687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__5__Impl_in_rule__ForbiddenScenario__Group__54717 = new BitSet(new long[]{0x0000000004010000L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__6_in_rule__ForbiddenScenario__Group__54720 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group_5__0_in_rule__ForbiddenScenario__Group__5__Impl4747 = new BitSet(new long[]{0x0000000000010002L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__6__Impl_in_rule__ForbiddenScenario__Group__64778 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__7_in_rule__ForbiddenScenario__Group__64781 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group_6__0_in_rule__ForbiddenScenario__Group__6__Impl4810 = new BitSet(new long[]{0x0000000004010002L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group_6__0_in_rule__ForbiddenScenario__Group__6__Impl4822 = new BitSet(new long[]{0x0000000004010002L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__7__Impl_in_rule__ForbiddenScenario__Group__74855 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__ForbiddenScenario__Group__7__Impl4883 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group_5__0__Impl_in_rule__ForbiddenScenario__Group_5__04930 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group_5__1_in_rule__ForbiddenScenario__Group_5__04933 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__ForbiddenScenario__Group_5__0__Impl4961 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group_5__1__Impl_in_rule__ForbiddenScenario__Group_5__14992 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__RolesAssignment_5_1_in_rule__ForbiddenScenario__Group_5__1__Impl5019 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group_6__0__Impl_in_rule__ForbiddenScenario__Group_6__05053 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group_6__1_in_rule__ForbiddenScenario__Group_6__05056 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__ForbiddenScenario__Group_6__0__Impl5084 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group_6__1__Impl_in_rule__ForbiddenScenario__Group_6__15115 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ForbiddenScenario__ResourcesAssignment_6_1_in_rule__ForbiddenScenario__Group_6__1__Impl5142 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserRoleScenario__Group__0__Impl_in_rule__UserRoleScenario__Group__05176 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__UserRoleScenario__Group__1_in_rule__UserRoleScenario__Group__05179 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__UserRoleScenario__Group__0__Impl5207 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserRoleScenario__Group__1__Impl_in_rule__UserRoleScenario__Group__15238 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_rule__UserRoleScenario__Group__2_in_rule__UserRoleScenario__Group__15241 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserRoleScenario__NameAssignment_1_in_rule__UserRoleScenario__Group__1__Impl5268 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserRoleScenario__Group__2__Impl_in_rule__UserRoleScenario__Group__25298 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_rule__UserRoleScenario__Group__3_in_rule__UserRoleScenario__Group__25301 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__UserRoleScenario__Group__2__Impl5329 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserRoleScenario__Group__3__Impl_in_rule__UserRoleScenario__Group__35360 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_rule__UserRoleScenario__Group__4_in_rule__UserRoleScenario__Group__35363 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserRoleScenario__Group_3__0_in_rule__UserRoleScenario__Group__3__Impl5392 = new BitSet(new long[]{0x0000000000010002L});
-    public static final BitSet FOLLOW_rule__UserRoleScenario__Group_3__0_in_rule__UserRoleScenario__Group__3__Impl5404 = new BitSet(new long[]{0x0000000000010002L});
-    public static final BitSet FOLLOW_rule__UserRoleScenario__Group__4__Impl_in_rule__UserRoleScenario__Group__45437 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__UserRoleScenario__Group__4__Impl5465 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserRoleScenario__Group_3__0__Impl_in_rule__UserRoleScenario__Group_3__05506 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__UserRoleScenario__Group_3__1_in_rule__UserRoleScenario__Group_3__05509 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__UserRoleScenario__Group_3__0__Impl5537 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserRoleScenario__Group_3__1__Impl_in_rule__UserRoleScenario__Group_3__15568 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UserRoleScenario__RolesAssignment_3_1_in_rule__UserRoleScenario__Group_3__1__Impl5595 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePolicy_in_rule__Rbac__PolicyAssignment_05634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleScenarios_in_rule__Rbac__ScenariosAssignment_15665 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUser_in_rule__Policy__UsersAssignment_25696 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRole_in_rule__Policy__RolesAssignment_35727 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePermission_in_rule__Policy__PermissionsAssignment_45758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleResource_in_rule__Policy__ResourcesAssignment_55789 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUserScenario_in_rule__Scenarios__UserScenariosAssignment_25820 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUserRoleScenario_in_rule__Scenarios__UserRoleScenariosAssignment_35851 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__User__NameAssignment_15882 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__User__RolesAssignment_3_15917 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Role__NameAssignment_15952 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Role__ParentAssignment_2_15987 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Role__SsodAssignment_4_16026 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Role__DsodAssignment_5_16065 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Role__PermissionsAssignment_6_16104 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Permission__NameAssignment_16139 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Resource__NameAssignment_16170 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Resource__PermissionsAssignment_3_16205 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__GrantedScenario__NameAssignment_16240 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__GrantedScenario__UserAssignment_46275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__GrantedScenario__RolesAssignment_5_16314 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__GrantedScenario__ResourcesAssignment_6_16353 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ForbiddenScenario__NameAssignment_16388 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ForbiddenScenario__UserAssignment_46423 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ForbiddenScenario__RolesAssignment_5_16462 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ForbiddenScenario__ResourcesAssignment_6_16501 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__UserRoleScenario__NameAssignment_16536 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__UserRoleScenario__RolesAssignment_3_16571 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Role__ParentAssignment_2_1_in_rule__Role__Group_2__1__Impl2683 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__Role__Group_4__0__Impl_in_rule__Role__Group_4__02718 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Role__Group_4__1_in_rule__Role__Group_4__02721 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__Role__Group_4__0__Impl2749 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Role__Group_4__1__Impl_in_rule__Role__Group_4__12780 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Role__SsodAssignment_4_1_in_rule__Role__Group_4__1__Impl2807 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Role__Group_5__0__Impl_in_rule__Role__Group_5__02841 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Role__Group_5__1_in_rule__Role__Group_5__02844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__Role__Group_5__0__Impl2872 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Role__Group_5__1__Impl_in_rule__Role__Group_5__12903 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Role__DsodAssignment_5_1_in_rule__Role__Group_5__1__Impl2930 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Role__Group_6__0__Impl_in_rule__Role__Group_6__02964 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Role__Group_6__1_in_rule__Role__Group_6__02967 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__Role__Group_6__0__Impl2995 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Role__Group_6__1__Impl_in_rule__Role__Group_6__13026 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Role__PermissionsAssignment_6_1_in_rule__Role__Group_6__1__Impl3053 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Permission__Group__0__Impl_in_rule__Permission__Group__03087 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Permission__Group__1_in_rule__Permission__Group__03090 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__Permission__Group__0__Impl3118 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Permission__Group__1__Impl_in_rule__Permission__Group__13149 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Permission__NameAssignment_1_in_rule__Permission__Group__1__Impl3176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Resource__Group__0__Impl_in_rule__Resource__Group__03210 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Resource__Group__1_in_rule__Resource__Group__03213 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__Resource__Group__0__Impl3241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Resource__Group__1__Impl_in_rule__Resource__Group__13272 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_rule__Resource__Group__2_in_rule__Resource__Group__13275 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Resource__NameAssignment_1_in_rule__Resource__Group__1__Impl3302 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Resource__Group__2__Impl_in_rule__Resource__Group__23332 = new BitSet(new long[]{0x0000000000202000L});
+    public static final BitSet FOLLOW_rule__Resource__Group__3_in_rule__Resource__Group__23335 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__Resource__Group__2__Impl3363 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Resource__Group__3__Impl_in_rule__Resource__Group__33394 = new BitSet(new long[]{0x0000000000202000L});
+    public static final BitSet FOLLOW_rule__Resource__Group__4_in_rule__Resource__Group__33397 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Resource__Group_3__0_in_rule__Resource__Group__3__Impl3424 = new BitSet(new long[]{0x0000000000200002L});
+    public static final BitSet FOLLOW_rule__Resource__Group__4__Impl_in_rule__Resource__Group__43455 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__Resource__Group__4__Impl3483 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Resource__Group_3__0__Impl_in_rule__Resource__Group_3__03524 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Resource__Group_3__1_in_rule__Resource__Group_3__03527 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__Resource__Group_3__0__Impl3555 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Resource__Group_3__1__Impl_in_rule__Resource__Group_3__13586 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Resource__PermissionsAssignment_3_1_in_rule__Resource__Group_3__1__Impl3613 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group__0__Impl_in_rule__GrantedScenario__Group__03647 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group__1_in_rule__GrantedScenario__Group__03650 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__GrantedScenario__Group__0__Impl3678 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group__1__Impl_in_rule__GrantedScenario__Group__13709 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group__2_in_rule__GrantedScenario__Group__13712 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__NameAssignment_1_in_rule__GrantedScenario__Group__1__Impl3739 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group__2__Impl_in_rule__GrantedScenario__Group__23769 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group__3_in_rule__GrantedScenario__Group__23772 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__GrantedScenario__Group__2__Impl3800 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group__3__Impl_in_rule__GrantedScenario__Group__33831 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group__4_in_rule__GrantedScenario__Group__33834 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__GrantedScenario__Group__3__Impl3862 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group__4__Impl_in_rule__GrantedScenario__Group__43893 = new BitSet(new long[]{0x0000000004010000L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group__5_in_rule__GrantedScenario__Group__43896 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__UserAssignment_4_in_rule__GrantedScenario__Group__4__Impl3923 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group__5__Impl_in_rule__GrantedScenario__Group__53953 = new BitSet(new long[]{0x0000000004010000L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group__6_in_rule__GrantedScenario__Group__53956 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group_5__0_in_rule__GrantedScenario__Group__5__Impl3983 = new BitSet(new long[]{0x0000000000010002L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group__6__Impl_in_rule__GrantedScenario__Group__64014 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group__7_in_rule__GrantedScenario__Group__64017 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group_6__0_in_rule__GrantedScenario__Group__6__Impl4046 = new BitSet(new long[]{0x0000000004010002L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group_6__0_in_rule__GrantedScenario__Group__6__Impl4058 = new BitSet(new long[]{0x0000000004010002L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group__7__Impl_in_rule__GrantedScenario__Group__74091 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__GrantedScenario__Group__7__Impl4119 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group_5__0__Impl_in_rule__GrantedScenario__Group_5__04166 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group_5__1_in_rule__GrantedScenario__Group_5__04169 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__GrantedScenario__Group_5__0__Impl4197 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group_5__1__Impl_in_rule__GrantedScenario__Group_5__14228 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__RolesAssignment_5_1_in_rule__GrantedScenario__Group_5__1__Impl4255 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group_6__0__Impl_in_rule__GrantedScenario__Group_6__04289 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group_6__1_in_rule__GrantedScenario__Group_6__04292 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__GrantedScenario__Group_6__0__Impl4320 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__Group_6__1__Impl_in_rule__GrantedScenario__Group_6__14351 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__GrantedScenario__ResourcesAssignment_6_1_in_rule__GrantedScenario__Group_6__1__Impl4378 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__0__Impl_in_rule__ForbiddenScenario__Group__04412 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__1_in_rule__ForbiddenScenario__Group__04415 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__ForbiddenScenario__Group__0__Impl4443 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__1__Impl_in_rule__ForbiddenScenario__Group__14474 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__2_in_rule__ForbiddenScenario__Group__14477 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__NameAssignment_1_in_rule__ForbiddenScenario__Group__1__Impl4504 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__2__Impl_in_rule__ForbiddenScenario__Group__24534 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__3_in_rule__ForbiddenScenario__Group__24537 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__ForbiddenScenario__Group__2__Impl4565 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__3__Impl_in_rule__ForbiddenScenario__Group__34596 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__4_in_rule__ForbiddenScenario__Group__34599 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__ForbiddenScenario__Group__3__Impl4627 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__4__Impl_in_rule__ForbiddenScenario__Group__44658 = new BitSet(new long[]{0x0000000004010000L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__5_in_rule__ForbiddenScenario__Group__44661 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__UserAssignment_4_in_rule__ForbiddenScenario__Group__4__Impl4688 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__5__Impl_in_rule__ForbiddenScenario__Group__54718 = new BitSet(new long[]{0x0000000004010000L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__6_in_rule__ForbiddenScenario__Group__54721 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group_5__0_in_rule__ForbiddenScenario__Group__5__Impl4748 = new BitSet(new long[]{0x0000000000010002L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__6__Impl_in_rule__ForbiddenScenario__Group__64779 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__7_in_rule__ForbiddenScenario__Group__64782 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group_6__0_in_rule__ForbiddenScenario__Group__6__Impl4811 = new BitSet(new long[]{0x0000000004010002L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group_6__0_in_rule__ForbiddenScenario__Group__6__Impl4823 = new BitSet(new long[]{0x0000000004010002L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group__7__Impl_in_rule__ForbiddenScenario__Group__74856 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__ForbiddenScenario__Group__7__Impl4884 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group_5__0__Impl_in_rule__ForbiddenScenario__Group_5__04931 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group_5__1_in_rule__ForbiddenScenario__Group_5__04934 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__ForbiddenScenario__Group_5__0__Impl4962 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group_5__1__Impl_in_rule__ForbiddenScenario__Group_5__14993 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__RolesAssignment_5_1_in_rule__ForbiddenScenario__Group_5__1__Impl5020 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group_6__0__Impl_in_rule__ForbiddenScenario__Group_6__05054 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group_6__1_in_rule__ForbiddenScenario__Group_6__05057 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__ForbiddenScenario__Group_6__0__Impl5085 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__Group_6__1__Impl_in_rule__ForbiddenScenario__Group_6__15116 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ForbiddenScenario__ResourcesAssignment_6_1_in_rule__ForbiddenScenario__Group_6__1__Impl5143 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserRoleScenario__Group__0__Impl_in_rule__UserRoleScenario__Group__05177 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__UserRoleScenario__Group__1_in_rule__UserRoleScenario__Group__05180 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__UserRoleScenario__Group__0__Impl5208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserRoleScenario__Group__1__Impl_in_rule__UserRoleScenario__Group__15239 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_rule__UserRoleScenario__Group__2_in_rule__UserRoleScenario__Group__15242 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserRoleScenario__NameAssignment_1_in_rule__UserRoleScenario__Group__1__Impl5269 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserRoleScenario__Group__2__Impl_in_rule__UserRoleScenario__Group__25299 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_rule__UserRoleScenario__Group__3_in_rule__UserRoleScenario__Group__25302 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__UserRoleScenario__Group__2__Impl5330 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserRoleScenario__Group__3__Impl_in_rule__UserRoleScenario__Group__35361 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_rule__UserRoleScenario__Group__4_in_rule__UserRoleScenario__Group__35364 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserRoleScenario__Group_3__0_in_rule__UserRoleScenario__Group__3__Impl5393 = new BitSet(new long[]{0x0000000000010002L});
+    public static final BitSet FOLLOW_rule__UserRoleScenario__Group_3__0_in_rule__UserRoleScenario__Group__3__Impl5405 = new BitSet(new long[]{0x0000000000010002L});
+    public static final BitSet FOLLOW_rule__UserRoleScenario__Group__4__Impl_in_rule__UserRoleScenario__Group__45438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__UserRoleScenario__Group__4__Impl5466 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserRoleScenario__Group_3__0__Impl_in_rule__UserRoleScenario__Group_3__05507 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__UserRoleScenario__Group_3__1_in_rule__UserRoleScenario__Group_3__05510 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__UserRoleScenario__Group_3__0__Impl5538 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserRoleScenario__Group_3__1__Impl_in_rule__UserRoleScenario__Group_3__15569 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UserRoleScenario__RolesAssignment_3_1_in_rule__UserRoleScenario__Group_3__1__Impl5596 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePolicy_in_rule__Rbac__PolicyAssignment_05635 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleScenarios_in_rule__Rbac__ScenariosAssignment_15666 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUser_in_rule__Policy__UsersAssignment_25697 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRole_in_rule__Policy__RolesAssignment_35728 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePermission_in_rule__Policy__PermissionsAssignment_45759 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleResource_in_rule__Policy__ResourcesAssignment_55790 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUserScenario_in_rule__Scenarios__UserScenariosAssignment_25821 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUserRoleScenario_in_rule__Scenarios__UserRoleScenariosAssignment_35852 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__User__NameAssignment_15883 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__User__RolesAssignment_3_15918 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Role__NameAssignment_15953 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Role__ParentAssignment_2_15988 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Role__SsodAssignment_4_16027 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Role__DsodAssignment_5_16066 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Role__PermissionsAssignment_6_16105 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Permission__NameAssignment_16140 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Resource__NameAssignment_16171 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Resource__PermissionsAssignment_3_16206 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__GrantedScenario__NameAssignment_16241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__GrantedScenario__UserAssignment_46276 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__GrantedScenario__RolesAssignment_5_16315 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__GrantedScenario__ResourcesAssignment_6_16354 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ForbiddenScenario__NameAssignment_16389 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ForbiddenScenario__UserAssignment_46424 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ForbiddenScenario__RolesAssignment_5_16463 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ForbiddenScenario__ResourcesAssignment_6_16502 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__UserRoleScenario__NameAssignment_16537 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__UserRoleScenario__RolesAssignment_3_16572 = new BitSet(new long[]{0x0000000000000002L});
 
 }

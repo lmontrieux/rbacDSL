@@ -9,7 +9,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -60,14 +59,14 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getParent() <em>Parent</em>}' reference.
+   * The cached value of the '{@link #getParent() <em>Parent</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getParent()
    * @generated
    * @ordered
    */
-  protected Role parent;
+  protected EList<Role> parent;
 
   /**
    * The cached value of the '{@link #getSsod() <em>Ssod</em>}' reference list.
@@ -148,42 +147,13 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
    * <!-- end-user-doc -->
    * @generated
    */
-  public Role getParent()
+  public EList<Role> getParent()
   {
-    if (parent != null && parent.eIsProxy())
+    if (parent == null)
     {
-      InternalEObject oldParent = (InternalEObject)parent;
-      parent = (Role)eResolveProxy(oldParent);
-      if (parent != oldParent)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, RbacDSLPackage.ROLE__PARENT, oldParent, parent));
-      }
+      parent = new EObjectResolvingEList<Role>(Role.class, this, RbacDSLPackage.ROLE__PARENT);
     }
     return parent;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Role basicGetParent()
-  {
-    return parent;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setParent(Role newParent)
-  {
-    Role oldParent = parent;
-    parent = newParent;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RbacDSLPackage.ROLE__PARENT, oldParent, parent));
   }
 
   /**
@@ -241,8 +211,7 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
       case RbacDSLPackage.ROLE__NAME:
         return getName();
       case RbacDSLPackage.ROLE__PARENT:
-        if (resolve) return getParent();
-        return basicGetParent();
+        return getParent();
       case RbacDSLPackage.ROLE__SSOD:
         return getSsod();
       case RbacDSLPackage.ROLE__DSOD:
@@ -268,7 +237,8 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
         setName((String)newValue);
         return;
       case RbacDSLPackage.ROLE__PARENT:
-        setParent((Role)newValue);
+        getParent().clear();
+        getParent().addAll((Collection<? extends Role>)newValue);
         return;
       case RbacDSLPackage.ROLE__SSOD:
         getSsod().clear();
@@ -300,7 +270,7 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
         setName(NAME_EDEFAULT);
         return;
       case RbacDSLPackage.ROLE__PARENT:
-        setParent((Role)null);
+        getParent().clear();
         return;
       case RbacDSLPackage.ROLE__SSOD:
         getSsod().clear();
@@ -328,7 +298,7 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
       case RbacDSLPackage.ROLE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case RbacDSLPackage.ROLE__PARENT:
-        return parent != null;
+        return parent != null && !parent.isEmpty();
       case RbacDSLPackage.ROLE__SSOD:
         return ssod != null && !ssod.isEmpty();
       case RbacDSLPackage.ROLE__DSOD:
