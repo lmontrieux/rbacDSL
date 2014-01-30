@@ -1,0 +1,74 @@
+grammar uk.ac.open.RbacDSL with org.eclipse.xtext.common.Terminals
+
+generate rbacDSL "http://www.ac.uk/open/RbacDSL"
+
+Rbac:
+	policy = Policy
+	scenarios = Scenarios
+;
+
+Policy:
+	'policy' '{'
+		(users += User)*
+		(roles += Role)*
+		(permissions += Permission)*
+		(resources += Resource)*
+	'}'
+;
+
+Scenarios:
+	'scenarios' '{'
+		(userScenarios += UserScenario)*
+		(userRoleScenarios += UserRoleScenario)*
+	'}'
+;
+
+User:
+	'user' name = ID '{'
+		('role:' roles += [Role])*
+	'}'
+;
+
+Role:
+	'role' name = ID ('extends' parent = [Role])? '{'
+		('ssod:' ssod += [Role])*
+		('dsod:' dsod += [Role])*
+		('permission:' permissions += [Permission])*
+	'}'
+;
+
+Permission:
+	'permission' name = ID
+;
+
+Resource:
+	'resource' name = ID '{'
+		('permission:' permissions += [Permission])*
+	'}'
+;
+
+UserScenario:
+	GrantedScenario | ForbiddenScenario
+;
+
+GrantedScenario:
+	'grantedScenario' name = ID '{'
+		'user:' user = [User]
+		('role:' roles += [Role])*
+		('resource:' resources += [Resource])+
+	'}'
+;
+
+ForbiddenScenario:
+	'forbiddenScenario' name = ID '{'
+		'user:' user = [User]
+		('role:' roles += [Role])*
+		('resource:' resources += [Resource])+
+	'}'
+;
+
+UserRoleScenario:
+	'userRoleScenario' name = ID '{'
+		('role:' roles += [Role])+
+	'}'
+;
