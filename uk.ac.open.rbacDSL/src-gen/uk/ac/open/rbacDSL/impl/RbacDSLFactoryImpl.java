@@ -75,6 +75,8 @@ public class RbacDSLFactoryImpl extends EFactoryImpl implements RbacDSLFactory
       case RbacDSLPackage.GRANTED_SCENARIO: return createGrantedScenario();
       case RbacDSLPackage.FORBIDDEN_SCENARIO: return createForbiddenScenario();
       case RbacDSLPackage.USER_ROLE_SCENARIO: return createUserRoleScenario();
+      case RbacDSLPackage.RESOURCE_ROLE_SCENARIO: return createResourceRoleScenario();
+      case RbacDSLPackage.RESOURCE_SCENARIO: return createResourceScenario();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -199,6 +201,28 @@ public class RbacDSLFactoryImpl extends EFactoryImpl implements RbacDSLFactory
   {
     UserRoleScenarioImpl userRoleScenario = new UserRoleScenarioImpl();
     return userRoleScenario;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ResourceRoleScenario createResourceRoleScenario()
+  {
+    ResourceRoleScenarioImpl resourceRoleScenario = new ResourceRoleScenarioImpl();
+    return resourceRoleScenario;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ResourceScenario createResourceScenario()
+  {
+    ResourceScenarioImpl resourceScenario = new ResourceScenarioImpl();
+    return resourceScenario;
   }
 
   /**

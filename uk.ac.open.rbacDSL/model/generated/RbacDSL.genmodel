@@ -20,6 +20,8 @@
     <genClasses ecoreClass="RbacDSL.ecore#//Scenarios">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Scenarios/userScenarios"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Scenarios/userRoleScenarios"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Scenarios/resourceRoleScenarios"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Scenarios/roleScenarios"/>
     </genClasses>
     <genClasses ecoreClass="RbacDSL.ecore#//User">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RbacDSL.ecore#//User/name"/>
@@ -50,6 +52,15 @@
     <genClasses ecoreClass="RbacDSL.ecore#//UserRoleScenario">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RbacDSL.ecore#//UserRoleScenario/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//UserRoleScenario/roles"/>
+    </genClasses>
+    <genClasses ecoreClass="RbacDSL.ecore#//ResourceRoleScenario">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RbacDSL.ecore#//ResourceRoleScenario/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//ResourceRoleScenario/role"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//ResourceRoleScenario/resources"/>
+    </genClasses>
+    <genClasses ecoreClass="RbacDSL.ecore#//ResourceScenario">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RbacDSL.ecore#//ResourceScenario/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//ResourceScenario/resources"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

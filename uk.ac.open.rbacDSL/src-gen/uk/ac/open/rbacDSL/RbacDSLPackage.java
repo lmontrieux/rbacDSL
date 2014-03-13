@@ -177,13 +177,31 @@ public interface RbacDSLPackage extends EPackage
   int SCENARIOS__USER_ROLE_SCENARIOS = 1;
 
   /**
+   * The feature id for the '<em><b>Resource Role Scenarios</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIOS__RESOURCE_ROLE_SCENARIOS = 2;
+
+  /**
+   * The feature id for the '<em><b>Role Scenarios</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIOS__ROLE_SCENARIOS = 3;
+
+  /**
    * The number of structural features of the '<em>Scenarios</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SCENARIOS_FEATURE_COUNT = 2;
+  int SCENARIOS_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link uk.ac.open.rbacDSL.impl.UserImpl <em>User</em>}' class.
@@ -553,6 +571,89 @@ public interface RbacDSLPackage extends EPackage
    */
   int USER_ROLE_SCENARIO_FEATURE_COUNT = 2;
 
+  /**
+   * The meta object id for the '{@link uk.ac.open.rbacDSL.impl.ResourceRoleScenarioImpl <em>Resource Role Scenario</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.open.rbacDSL.impl.ResourceRoleScenarioImpl
+   * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getResourceRoleScenario()
+   * @generated
+   */
+  int RESOURCE_ROLE_SCENARIO = 11;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESOURCE_ROLE_SCENARIO__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Role</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESOURCE_ROLE_SCENARIO__ROLE = 1;
+
+  /**
+   * The feature id for the '<em><b>Resources</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESOURCE_ROLE_SCENARIO__RESOURCES = 2;
+
+  /**
+   * The number of structural features of the '<em>Resource Role Scenario</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESOURCE_ROLE_SCENARIO_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link uk.ac.open.rbacDSL.impl.ResourceScenarioImpl <em>Resource Scenario</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.open.rbacDSL.impl.ResourceScenarioImpl
+   * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getResourceScenario()
+   * @generated
+   */
+  int RESOURCE_SCENARIO = 12;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESOURCE_SCENARIO__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Resources</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESOURCE_SCENARIO__RESOURCES = 1;
+
+  /**
+   * The number of structural features of the '<em>Resource Scenario</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESOURCE_SCENARIO_FEATURE_COUNT = 2;
+
 
   /**
    * Returns the meta object for class '{@link uk.ac.open.rbacDSL.Rbac <em>Rbac</em>}'.
@@ -671,6 +772,28 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    */
   EReference getScenarios_UserRoleScenarios();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.open.rbacDSL.Scenarios#getResourceRoleScenarios <em>Resource Role Scenarios</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Resource Role Scenarios</em>'.
+   * @see uk.ac.open.rbacDSL.Scenarios#getResourceRoleScenarios()
+   * @see #getScenarios()
+   * @generated
+   */
+  EReference getScenarios_ResourceRoleScenarios();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.open.rbacDSL.Scenarios#getRoleScenarios <em>Role Scenarios</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Role Scenarios</em>'.
+   * @see uk.ac.open.rbacDSL.Scenarios#getRoleScenarios()
+   * @see #getScenarios()
+   * @generated
+   */
+  EReference getScenarios_RoleScenarios();
 
   /**
    * Returns the meta object for class '{@link uk.ac.open.rbacDSL.User <em>User</em>}'.
@@ -929,6 +1052,81 @@ public interface RbacDSLPackage extends EPackage
   EReference getUserRoleScenario_Roles();
 
   /**
+   * Returns the meta object for class '{@link uk.ac.open.rbacDSL.ResourceRoleScenario <em>Resource Role Scenario</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Resource Role Scenario</em>'.
+   * @see uk.ac.open.rbacDSL.ResourceRoleScenario
+   * @generated
+   */
+  EClass getResourceRoleScenario();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.open.rbacDSL.ResourceRoleScenario#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see uk.ac.open.rbacDSL.ResourceRoleScenario#getName()
+   * @see #getResourceRoleScenario()
+   * @generated
+   */
+  EAttribute getResourceRoleScenario_Name();
+
+  /**
+   * Returns the meta object for the reference list '{@link uk.ac.open.rbacDSL.ResourceRoleScenario#getRole <em>Role</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Role</em>'.
+   * @see uk.ac.open.rbacDSL.ResourceRoleScenario#getRole()
+   * @see #getResourceRoleScenario()
+   * @generated
+   */
+  EReference getResourceRoleScenario_Role();
+
+  /**
+   * Returns the meta object for the reference list '{@link uk.ac.open.rbacDSL.ResourceRoleScenario#getResources <em>Resources</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Resources</em>'.
+   * @see uk.ac.open.rbacDSL.ResourceRoleScenario#getResources()
+   * @see #getResourceRoleScenario()
+   * @generated
+   */
+  EReference getResourceRoleScenario_Resources();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.open.rbacDSL.ResourceScenario <em>Resource Scenario</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Resource Scenario</em>'.
+   * @see uk.ac.open.rbacDSL.ResourceScenario
+   * @generated
+   */
+  EClass getResourceScenario();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.open.rbacDSL.ResourceScenario#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see uk.ac.open.rbacDSL.ResourceScenario#getName()
+   * @see #getResourceScenario()
+   * @generated
+   */
+  EAttribute getResourceScenario_Name();
+
+  /**
+   * Returns the meta object for the reference list '{@link uk.ac.open.rbacDSL.ResourceScenario#getResources <em>Resources</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Resources</em>'.
+   * @see uk.ac.open.rbacDSL.ResourceScenario#getResources()
+   * @see #getResourceScenario()
+   * @generated
+   */
+  EReference getResourceScenario_Resources();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1044,6 +1242,22 @@ public interface RbacDSLPackage extends EPackage
      * @generated
      */
     EReference SCENARIOS__USER_ROLE_SCENARIOS = eINSTANCE.getScenarios_UserRoleScenarios();
+
+    /**
+     * The meta object literal for the '<em><b>Resource Role Scenarios</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCENARIOS__RESOURCE_ROLE_SCENARIOS = eINSTANCE.getScenarios_ResourceRoleScenarios();
+
+    /**
+     * The meta object literal for the '<em><b>Role Scenarios</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCENARIOS__ROLE_SCENARIOS = eINSTANCE.getScenarios_RoleScenarios();
 
     /**
      * The meta object literal for the '{@link uk.ac.open.rbacDSL.impl.UserImpl <em>User</em>}' class.
@@ -1252,6 +1466,66 @@ public interface RbacDSLPackage extends EPackage
      * @generated
      */
     EReference USER_ROLE_SCENARIO__ROLES = eINSTANCE.getUserRoleScenario_Roles();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.open.rbacDSL.impl.ResourceRoleScenarioImpl <em>Resource Role Scenario</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.open.rbacDSL.impl.ResourceRoleScenarioImpl
+     * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getResourceRoleScenario()
+     * @generated
+     */
+    EClass RESOURCE_ROLE_SCENARIO = eINSTANCE.getResourceRoleScenario();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RESOURCE_ROLE_SCENARIO__NAME = eINSTANCE.getResourceRoleScenario_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Role</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RESOURCE_ROLE_SCENARIO__ROLE = eINSTANCE.getResourceRoleScenario_Role();
+
+    /**
+     * The meta object literal for the '<em><b>Resources</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RESOURCE_ROLE_SCENARIO__RESOURCES = eINSTANCE.getResourceRoleScenario_Resources();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.open.rbacDSL.impl.ResourceScenarioImpl <em>Resource Scenario</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.open.rbacDSL.impl.ResourceScenarioImpl
+     * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getResourceScenario()
+     * @generated
+     */
+    EClass RESOURCE_SCENARIO = eINSTANCE.getResourceScenario();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RESOURCE_SCENARIO__NAME = eINSTANCE.getResourceScenario_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Resources</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RESOURCE_SCENARIO__RESOURCES = eINSTANCE.getResourceScenario_Resources();
 
   }
 

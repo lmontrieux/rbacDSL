@@ -151,6 +151,20 @@ public class RbacDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case RbacDSLPackage.RESOURCE_ROLE_SCENARIO:
+      {
+        ResourceRoleScenario resourceRoleScenario = (ResourceRoleScenario)theEObject;
+        T result = caseResourceRoleScenario(resourceRoleScenario);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RbacDSLPackage.RESOURCE_SCENARIO:
+      {
+        ResourceScenario resourceScenario = (ResourceScenario)theEObject;
+        T result = caseResourceScenario(resourceScenario);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -327,6 +341,38 @@ public class RbacDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseUserRoleScenario(UserRoleScenario object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Resource Role Scenario</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Resource Role Scenario</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseResourceRoleScenario(ResourceRoleScenario object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Resource Scenario</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Resource Scenario</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseResourceScenario(ResourceScenario object)
   {
     return null;
   }

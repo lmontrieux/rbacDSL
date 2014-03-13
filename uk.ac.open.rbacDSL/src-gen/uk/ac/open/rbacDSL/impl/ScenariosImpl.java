@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.open.rbacDSL.RbacDSLPackage;
+import uk.ac.open.rbacDSL.ResourceRoleScenario;
+import uk.ac.open.rbacDSL.ResourceScenario;
 import uk.ac.open.rbacDSL.Scenarios;
 import uk.ac.open.rbacDSL.UserRoleScenario;
 import uk.ac.open.rbacDSL.UserScenario;
@@ -30,6 +32,8 @@ import uk.ac.open.rbacDSL.UserScenario;
  * <ul>
  *   <li>{@link uk.ac.open.rbacDSL.impl.ScenariosImpl#getUserScenarios <em>User Scenarios</em>}</li>
  *   <li>{@link uk.ac.open.rbacDSL.impl.ScenariosImpl#getUserRoleScenarios <em>User Role Scenarios</em>}</li>
+ *   <li>{@link uk.ac.open.rbacDSL.impl.ScenariosImpl#getResourceRoleScenarios <em>Resource Role Scenarios</em>}</li>
+ *   <li>{@link uk.ac.open.rbacDSL.impl.ScenariosImpl#getRoleScenarios <em>Role Scenarios</em>}</li>
  * </ul>
  * </p>
  *
@@ -56,6 +60,26 @@ public class ScenariosImpl extends MinimalEObjectImpl.Container implements Scena
    * @ordered
    */
   protected EList<UserRoleScenario> userRoleScenarios;
+
+  /**
+   * The cached value of the '{@link #getResourceRoleScenarios() <em>Resource Role Scenarios</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getResourceRoleScenarios()
+   * @generated
+   * @ordered
+   */
+  protected EList<ResourceRoleScenario> resourceRoleScenarios;
+
+  /**
+   * The cached value of the '{@link #getRoleScenarios() <em>Role Scenarios</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRoleScenarios()
+   * @generated
+   * @ordered
+   */
+  protected EList<ResourceScenario> roleScenarios;
 
   /**
    * <!-- begin-user-doc -->
@@ -111,6 +135,34 @@ public class ScenariosImpl extends MinimalEObjectImpl.Container implements Scena
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<ResourceRoleScenario> getResourceRoleScenarios()
+  {
+    if (resourceRoleScenarios == null)
+    {
+      resourceRoleScenarios = new EObjectContainmentEList<ResourceRoleScenario>(ResourceRoleScenario.class, this, RbacDSLPackage.SCENARIOS__RESOURCE_ROLE_SCENARIOS);
+    }
+    return resourceRoleScenarios;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<ResourceScenario> getRoleScenarios()
+  {
+    if (roleScenarios == null)
+    {
+      roleScenarios = new EObjectContainmentEList<ResourceScenario>(ResourceScenario.class, this, RbacDSLPackage.SCENARIOS__ROLE_SCENARIOS);
+    }
+    return roleScenarios;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -120,6 +172,10 @@ public class ScenariosImpl extends MinimalEObjectImpl.Container implements Scena
         return ((InternalEList<?>)getUserScenarios()).basicRemove(otherEnd, msgs);
       case RbacDSLPackage.SCENARIOS__USER_ROLE_SCENARIOS:
         return ((InternalEList<?>)getUserRoleScenarios()).basicRemove(otherEnd, msgs);
+      case RbacDSLPackage.SCENARIOS__RESOURCE_ROLE_SCENARIOS:
+        return ((InternalEList<?>)getResourceRoleScenarios()).basicRemove(otherEnd, msgs);
+      case RbacDSLPackage.SCENARIOS__ROLE_SCENARIOS:
+        return ((InternalEList<?>)getRoleScenarios()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -138,6 +194,10 @@ public class ScenariosImpl extends MinimalEObjectImpl.Container implements Scena
         return getUserScenarios();
       case RbacDSLPackage.SCENARIOS__USER_ROLE_SCENARIOS:
         return getUserRoleScenarios();
+      case RbacDSLPackage.SCENARIOS__RESOURCE_ROLE_SCENARIOS:
+        return getResourceRoleScenarios();
+      case RbacDSLPackage.SCENARIOS__ROLE_SCENARIOS:
+        return getRoleScenarios();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -161,6 +221,14 @@ public class ScenariosImpl extends MinimalEObjectImpl.Container implements Scena
         getUserRoleScenarios().clear();
         getUserRoleScenarios().addAll((Collection<? extends UserRoleScenario>)newValue);
         return;
+      case RbacDSLPackage.SCENARIOS__RESOURCE_ROLE_SCENARIOS:
+        getResourceRoleScenarios().clear();
+        getResourceRoleScenarios().addAll((Collection<? extends ResourceRoleScenario>)newValue);
+        return;
+      case RbacDSLPackage.SCENARIOS__ROLE_SCENARIOS:
+        getRoleScenarios().clear();
+        getRoleScenarios().addAll((Collection<? extends ResourceScenario>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -181,6 +249,12 @@ public class ScenariosImpl extends MinimalEObjectImpl.Container implements Scena
       case RbacDSLPackage.SCENARIOS__USER_ROLE_SCENARIOS:
         getUserRoleScenarios().clear();
         return;
+      case RbacDSLPackage.SCENARIOS__RESOURCE_ROLE_SCENARIOS:
+        getResourceRoleScenarios().clear();
+        return;
+      case RbacDSLPackage.SCENARIOS__ROLE_SCENARIOS:
+        getRoleScenarios().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -199,6 +273,10 @@ public class ScenariosImpl extends MinimalEObjectImpl.Container implements Scena
         return userScenarios != null && !userScenarios.isEmpty();
       case RbacDSLPackage.SCENARIOS__USER_ROLE_SCENARIOS:
         return userRoleScenarios != null && !userRoleScenarios.isEmpty();
+      case RbacDSLPackage.SCENARIOS__RESOURCE_ROLE_SCENARIOS:
+        return resourceRoleScenarios != null && !resourceRoleScenarios.isEmpty();
+      case RbacDSLPackage.SCENARIOS__ROLE_SCENARIOS:
+        return roleScenarios != null && !roleScenarios.isEmpty();
     }
     return super.eIsSet(featureID);
   }
