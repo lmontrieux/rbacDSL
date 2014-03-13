@@ -59,6 +59,10 @@ public class RbacDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getForbiddenScenarioAccess().getGroup_6(), "rule__ForbiddenScenario__Group_6__0");
 					put(grammarAccess.getUserRoleScenarioAccess().getGroup(), "rule__UserRoleScenario__Group__0");
 					put(grammarAccess.getUserRoleScenarioAccess().getGroup_3(), "rule__UserRoleScenario__Group_3__0");
+					put(grammarAccess.getResourceRoleScenarioAccess().getGroup(), "rule__ResourceRoleScenario__Group__0");
+					put(grammarAccess.getResourceRoleScenarioAccess().getGroup_5(), "rule__ResourceRoleScenario__Group_5__0");
+					put(grammarAccess.getResourceScenarioAccess().getGroup(), "rule__ResourceScenario__Group__0");
+					put(grammarAccess.getResourceScenarioAccess().getGroup_3(), "rule__ResourceScenario__Group_3__0");
 					put(grammarAccess.getRbacAccess().getPolicyAssignment_0(), "rule__Rbac__PolicyAssignment_0");
 					put(grammarAccess.getRbacAccess().getScenariosAssignment_1(), "rule__Rbac__ScenariosAssignment_1");
 					put(grammarAccess.getPolicyAccess().getUsersAssignment_2(), "rule__Policy__UsersAssignment_2");
@@ -67,6 +71,8 @@ public class RbacDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPolicyAccess().getResourcesAssignment_5(), "rule__Policy__ResourcesAssignment_5");
 					put(grammarAccess.getScenariosAccess().getUserScenariosAssignment_2(), "rule__Scenarios__UserScenariosAssignment_2");
 					put(grammarAccess.getScenariosAccess().getUserRoleScenariosAssignment_3(), "rule__Scenarios__UserRoleScenariosAssignment_3");
+					put(grammarAccess.getScenariosAccess().getResourceRoleScenariosAssignment_4(), "rule__Scenarios__ResourceRoleScenariosAssignment_4");
+					put(grammarAccess.getScenariosAccess().getRoleScenariosAssignment_5(), "rule__Scenarios__RoleScenariosAssignment_5");
 					put(grammarAccess.getUserAccess().getNameAssignment_1(), "rule__User__NameAssignment_1");
 					put(grammarAccess.getUserAccess().getRolesAssignment_3_1(), "rule__User__RolesAssignment_3_1");
 					put(grammarAccess.getRoleAccess().getNameAssignment_1(), "rule__Role__NameAssignment_1");
@@ -87,6 +93,11 @@ public class RbacDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getForbiddenScenarioAccess().getResourcesAssignment_6_1(), "rule__ForbiddenScenario__ResourcesAssignment_6_1");
 					put(grammarAccess.getUserRoleScenarioAccess().getNameAssignment_1(), "rule__UserRoleScenario__NameAssignment_1");
 					put(grammarAccess.getUserRoleScenarioAccess().getRolesAssignment_3_1(), "rule__UserRoleScenario__RolesAssignment_3_1");
+					put(grammarAccess.getResourceRoleScenarioAccess().getNameAssignment_1(), "rule__ResourceRoleScenario__NameAssignment_1");
+					put(grammarAccess.getResourceRoleScenarioAccess().getRoleAssignment_4(), "rule__ResourceRoleScenario__RoleAssignment_4");
+					put(grammarAccess.getResourceRoleScenarioAccess().getResourcesAssignment_5_1(), "rule__ResourceRoleScenario__ResourcesAssignment_5_1");
+					put(grammarAccess.getResourceScenarioAccess().getNameAssignment_1(), "rule__ResourceScenario__NameAssignment_1");
+					put(grammarAccess.getResourceScenarioAccess().getResourcesAssignment_3_1(), "rule__ResourceScenario__ResourcesAssignment_3_1");
 				}
 			};
 		}

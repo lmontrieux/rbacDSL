@@ -20,6 +20,8 @@ Scenarios:
 	'scenarios' '{'
 		(userScenarios += UserScenario)*
 		(userRoleScenarios += UserRoleScenario)*
+		(resourceRoleScenarios += ResourceRoleScenario)*
+		(roleScenarios += ResourceScenario)*
 	'}'
 ;
 
@@ -70,5 +72,18 @@ ForbiddenScenario:
 UserRoleScenario:
 	'userRoleScenario' name = ID '{'
 		('role:' roles += [Role])+
+	'}'
+;
+
+ResourceRoleScenario:
+	'resourceRoleScenario' name = ID '{'
+		'role:' role += [Role]
+		('resource:' resources += [Resource])+
+	'}'
+;
+
+ResourceScenario:
+	'roleScenario' name = ID '{'
+		('resource:' resources += [Resource])+
 	'}'
 ;

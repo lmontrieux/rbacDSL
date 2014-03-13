@@ -122,6 +122,24 @@ public interface RbacDSLFactory extends EFactory
   UserRoleScenario createUserRoleScenario();
 
   /**
+   * Returns a new object of class '<em>Resource Role Scenario</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Resource Role Scenario</em>'.
+   * @generated
+   */
+  ResourceRoleScenario createResourceRoleScenario();
+
+  /**
+   * Returns a new object of class '<em>Resource Scenario</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Resource Scenario</em>'.
+   * @generated
+   */
+  ResourceScenario createResourceScenario();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

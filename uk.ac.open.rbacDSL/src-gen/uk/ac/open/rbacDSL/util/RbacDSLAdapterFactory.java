@@ -130,6 +130,16 @@ public class RbacDSLAdapterFactory extends AdapterFactoryImpl
         return createUserRoleScenarioAdapter();
       }
       @Override
+      public Adapter caseResourceRoleScenario(ResourceRoleScenario object)
+      {
+        return createResourceRoleScenarioAdapter();
+      }
+      @Override
+      public Adapter caseResourceScenario(ResourceScenario object)
+      {
+        return createResourceScenarioAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -312,6 +322,36 @@ public class RbacDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createUserRoleScenarioAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.open.rbacDSL.ResourceRoleScenario <em>Resource Role Scenario</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.open.rbacDSL.ResourceRoleScenario
+   * @generated
+   */
+  public Adapter createResourceRoleScenarioAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.open.rbacDSL.ResourceScenario <em>Resource Scenario</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.open.rbacDSL.ResourceScenario
+   * @generated
+   */
+  public Adapter createResourceScenarioAdapter()
   {
     return null;
   }

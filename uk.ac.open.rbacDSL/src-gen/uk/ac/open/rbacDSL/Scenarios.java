@@ -16,6 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link uk.ac.open.rbacDSL.Scenarios#getUserScenarios <em>User Scenarios</em>}</li>
  *   <li>{@link uk.ac.open.rbacDSL.Scenarios#getUserRoleScenarios <em>User Role Scenarios</em>}</li>
+ *   <li>{@link uk.ac.open.rbacDSL.Scenarios#getResourceRoleScenarios <em>Resource Role Scenarios</em>}</li>
+ *   <li>{@link uk.ac.open.rbacDSL.Scenarios#getRoleScenarios <em>Role Scenarios</em>}</li>
  * </ul>
  * </p>
  *
@@ -56,5 +58,37 @@ public interface Scenarios extends EObject
    * @generated
    */
   EList<UserRoleScenario> getUserRoleScenarios();
+
+  /**
+   * Returns the value of the '<em><b>Resource Role Scenarios</b></em>' containment reference list.
+   * The list contents are of type {@link uk.ac.open.rbacDSL.ResourceRoleScenario}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Resource Role Scenarios</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Resource Role Scenarios</em>' containment reference list.
+   * @see uk.ac.open.rbacDSL.RbacDSLPackage#getScenarios_ResourceRoleScenarios()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ResourceRoleScenario> getResourceRoleScenarios();
+
+  /**
+   * Returns the value of the '<em><b>Role Scenarios</b></em>' containment reference list.
+   * The list contents are of type {@link uk.ac.open.rbacDSL.ResourceScenario}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Role Scenarios</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Role Scenarios</em>' containment reference list.
+   * @see uk.ac.open.rbacDSL.RbacDSLPackage#getScenarios_RoleScenarios()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ResourceScenario> getRoleScenarios();
 
 } // Scenarios

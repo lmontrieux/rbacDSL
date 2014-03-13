@@ -20,6 +20,8 @@ import uk.ac.open.rbacDSL.Policy;
 import uk.ac.open.rbacDSL.Rbac;
 import uk.ac.open.rbacDSL.RbacDSLPackage;
 import uk.ac.open.rbacDSL.Resource;
+import uk.ac.open.rbacDSL.ResourceRoleScenario;
+import uk.ac.open.rbacDSL.ResourceScenario;
 import uk.ac.open.rbacDSL.Role;
 import uk.ac.open.rbacDSL.Scenarios;
 import uk.ac.open.rbacDSL.User;
@@ -69,6 +71,18 @@ public class RbacDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case RbacDSLPackage.RESOURCE:
 				if(context == grammarAccess.getResourceRule()) {
 					sequence_Resource(context, (Resource) semanticObject); 
+					return; 
+				}
+				else break;
+			case RbacDSLPackage.RESOURCE_ROLE_SCENARIO:
+				if(context == grammarAccess.getResourceRoleScenarioRule()) {
+					sequence_ResourceRoleScenario(context, (ResourceRoleScenario) semanticObject); 
+					return; 
+				}
+				else break;
+			case RbacDSLPackage.RESOURCE_SCENARIO:
+				if(context == grammarAccess.getResourceScenarioRule()) {
+					sequence_ResourceScenario(context, (ResourceScenario) semanticObject); 
 					return; 
 				}
 				else break;
@@ -164,6 +178,24 @@ public class RbacDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
+	 *     (name=ID role+=[Role|ID] resources+=[Resource|ID]+)
+	 */
+	protected void sequence_ResourceRoleScenario(EObject context, ResourceRoleScenario semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID resources+=[Resource|ID]+)
+	 */
+	protected void sequence_ResourceScenario(EObject context, ResourceScenario semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=ID permissions+=[Permission|ID]*)
 	 */
 	protected void sequence_Resource(EObject context, Resource semanticObject) {
@@ -182,7 +214,7 @@ public class RbacDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (userScenarios+=UserScenario* userRoleScenarios+=UserRoleScenario*)
+	 *     (userScenarios+=UserScenario* userRoleScenarios+=UserRoleScenario* resourceRoleScenarios+=ResourceRoleScenario* roleScenarios+=ResourceScenario*)
 	 */
 	protected void sequence_Scenarios(EObject context, Scenarios semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -283,9 +283,45 @@ ruleScenarios returns [EObject current=null]
 	    }
 
 )
-)*	otherlv_4='}' 
+)*(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getScenariosAccess().getResourceRoleScenariosResourceRoleScenarioParserRuleCall_4_0()); 
+	    }
+		lv_resourceRoleScenarios_4_0=ruleResourceRoleScenario		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getScenariosRule());
+	        }
+       		add(
+       			$current, 
+       			"resourceRoleScenarios",
+        		lv_resourceRoleScenarios_4_0, 
+        		"ResourceRoleScenario");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getScenariosAccess().getRoleScenariosResourceScenarioParserRuleCall_5_0()); 
+	    }
+		lv_roleScenarios_5_0=ruleResourceScenario		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getScenariosRule());
+	        }
+       		add(
+       			$current, 
+       			"roleScenarios",
+        		lv_roleScenarios_5_0, 
+        		"ResourceScenario");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*	otherlv_6='}' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getScenariosAccess().getRightCurlyBracketKeyword_4());
+    	newLeafNode(otherlv_6, grammarAccess.getScenariosAccess().getRightCurlyBracketKeyword_6());
     }
 )
 ;
@@ -896,6 +932,159 @@ ruleUserRoleScenario returns [EObject current=null]
 ))+	otherlv_5='}' 
     {
     	newLeafNode(otherlv_5, grammarAccess.getUserRoleScenarioAccess().getRightCurlyBracketKeyword_4());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleResourceRoleScenario
+entryRuleResourceRoleScenario returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getResourceRoleScenarioRule()); }
+	 iv_ruleResourceRoleScenario=ruleResourceRoleScenario 
+	 { $current=$iv_ruleResourceRoleScenario.current; } 
+	 EOF 
+;
+
+// Rule ResourceRoleScenario
+ruleResourceRoleScenario returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='resourceRoleScenario' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getResourceRoleScenarioAccess().getResourceRoleScenarioKeyword_0());
+    }
+(
+(
+		lv_name_1_0=RULE_ID
+		{
+			newLeafNode(lv_name_1_0, grammarAccess.getResourceRoleScenarioAccess().getNameIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getResourceRoleScenarioRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
+	    }
+
+)
+)	otherlv_2='{' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getResourceRoleScenarioAccess().getLeftCurlyBracketKeyword_2());
+    }
+	otherlv_3='role:' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getResourceRoleScenarioAccess().getRoleKeyword_3());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getResourceRoleScenarioRule());
+	        }
+        }
+	otherlv_4=RULE_ID
+	{
+		newLeafNode(otherlv_4, grammarAccess.getResourceRoleScenarioAccess().getRoleRoleCrossReference_4_0()); 
+	}
+
+)
+)(	otherlv_5='resource:' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getResourceRoleScenarioAccess().getResourceKeyword_5_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getResourceRoleScenarioRule());
+	        }
+        }
+	otherlv_6=RULE_ID
+	{
+		newLeafNode(otherlv_6, grammarAccess.getResourceRoleScenarioAccess().getResourcesResourceCrossReference_5_1_0()); 
+	}
+
+)
+))+	otherlv_7='}' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getResourceRoleScenarioAccess().getRightCurlyBracketKeyword_6());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleResourceScenario
+entryRuleResourceScenario returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getResourceScenarioRule()); }
+	 iv_ruleResourceScenario=ruleResourceScenario 
+	 { $current=$iv_ruleResourceScenario.current; } 
+	 EOF 
+;
+
+// Rule ResourceScenario
+ruleResourceScenario returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='roleScenario' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getResourceScenarioAccess().getRoleScenarioKeyword_0());
+    }
+(
+(
+		lv_name_1_0=RULE_ID
+		{
+			newLeafNode(lv_name_1_0, grammarAccess.getResourceScenarioAccess().getNameIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getResourceScenarioRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
+	    }
+
+)
+)	otherlv_2='{' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getResourceScenarioAccess().getLeftCurlyBracketKeyword_2());
+    }
+(	otherlv_3='resource:' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getResourceScenarioAccess().getResourceKeyword_3_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getResourceScenarioRule());
+	        }
+        }
+	otherlv_4=RULE_ID
+	{
+		newLeafNode(otherlv_4, grammarAccess.getResourceScenarioAccess().getResourcesResourceCrossReference_3_1_0()); 
+	}
+
+)
+))+	otherlv_5='}' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getResourceScenarioAccess().getRightCurlyBracketKeyword_4());
     }
 )
 ;

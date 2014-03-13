@@ -22,6 +22,10 @@
         eType="#//UserScenario" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="userRoleScenarios" upperBound="-1"
         eType="#//UserRoleScenario" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resourceRoleScenarios"
+        upperBound="-1" eType="#//ResourceRoleScenario" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roleScenarios" upperBound="-1"
+        eType="#//ResourceScenario" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="User">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -61,5 +65,17 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roles" unique="false" upperBound="-1"
         eType="#//Role"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceRoleScenario">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="role" unique="false" upperBound="-1"
+        eType="#//Role"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resources" unique="false"
+        upperBound="-1" eType="#//Resource"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceScenario">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resources" unique="false"
+        upperBound="-1" eType="#//Resource"/>
   </eClassifiers>
 </ecore:EPackage>
