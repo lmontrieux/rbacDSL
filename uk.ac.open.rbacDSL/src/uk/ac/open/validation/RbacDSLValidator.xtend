@@ -104,8 +104,9 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 		var assigned = scenario.user.roles
 		var activated = scenario.roles
 		if (!assigned.containsAll(activated)) {
-			error("Attempt to activate a role not assigned to the user for scenario '"
-				+ scenario.name + "'", RbacDSLPackage::eINSTANCE.grantedScenario_Roles)
+			error("Attempt to activate a role not assigned to the user " 
+				+ "for scenario '" + scenario.name + "'", 
+				RbacDSLPackage::eINSTANCE.grantedScenario_Roles)
 		}
 	}
 	
@@ -114,11 +115,17 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 		var assigned = scenario.user.roles
 		var activated = scenario.roles
 		if (!assigned.containsAll(activated)) {
-			error("Attempt to activate a role not assigned to the user for scenario '"
-				+ scenario.name + "'", RbacDSLPackage::eINSTANCE.forbiddenScenario_Roles)
+			error("Attempt to activate a role not assigned to the user " 
+				+ "for scenario '" + scenario.name + "'", 
+				RbacDSLPackage::eINSTANCE.forbiddenScenario_Roles)
 		}
 	}
 	
+	/**
+	 * Checks the policy against granted scenarios:
+	 * the list of required actions must be a subset of the list of available 
+	 * actions
+	 */
 	@Check
 	def checkGrantedScenario(GrantedScenario scenario) {
 		// first we build a list of available actions for each object
@@ -126,30 +133,42 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 		for (Role role:scenario.roles) {
 			for (Assignment assignment:role.assignments) {
 				for (Permission action:assignment.actions) {
-					availableObjectActions.add(new ObjectAction(assignment.object.name, action.name))
+					availableObjectActions.add(
+						new ObjectAction(assignment.object.name, action.name)
+					)
 				}
 			}
 		}
-		// if no roles are active, we fail, since there must be at least one action on 
-		// one object
+		// if no roles are active, we fail, since there must be at least one 
+		// action on one object
 		if (availableObjectActions.isEmpty()) {
 			error("Granted scenario violation on scenario '"
-				+ scenario.name + "'", RbacDSLPackage::eINSTANCE.grantedScenario_Object
+				+ scenario.name + "'", 
+				RbacDSLPackage::eINSTANCE.grantedScenario_Object
 			)
 		}
 		
 		// now we check that each required action is available
 		for (Assignment assignment:scenario.object) {
 			for (Permission action:assignment.actions) {
-				if (!availableObjectActions.contains(new ObjectAction(assignment.object.name, action.name))) {
+				if (!availableObjectActions.contains(
+					new ObjectAction(assignment.object.name, action.name)
+				)) {
 					error("Granted scenario violation on scenario '"
-						+ scenario.name + "'", RbacDSLPackage::eINSTANCE.grantedScenario_Object
+						+ scenario.name + "'", 
+						RbacDSLPackage::eINSTANCE.grantedScenario_Object
 					)
 				}
 			}
 		}
 	}
 	
+	/**
+	 * Checks the policy against forbidden scenarios:
+	 * the list of required actions must *not* be a subset of the list of 
+	 * available
+	 * actions, i.e. at least one action must be missing
+	 */
 	@Check
 	def checkForbiddenScenario(ForbiddenScenario scenario) {
 		// first we build a list of available actions for each object
@@ -157,7 +176,9 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 		for (Role role:scenario.roles) {
 			for (Assignment assignment:role.assignments) {
 				for (Permission action:assignment.actions) {
-					availableObjectActions.add(new ObjectAction(assignment.object.name, action.name))
+					availableObjectActions.add(
+						new ObjectAction(assignment.object.name, action.name)
+					)
 				}
 			}
 		}
@@ -165,14 +186,17 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 		// now we check that each required action is available
 		for (Assignment assignment:scenario.object) {
 			for (Permission action:assignment.actions) {
-				if (!availableObjectActions.contains(new ObjectAction(assignment.object.name, action.name))) {
+				if (!availableObjectActions.contains(
+					new ObjectAction(assignment.object.name, action.name)
+				)) {
 					success = true
 				}
 			}
 		}
 		if (!success)
 			error("Forbidden scenario violation on scenario '"
-				+ scenario.name + "'", RbacDSLPackage::eINSTANCE.forbiddenScenario_Object
+				+ scenario.name + "'", 
+				RbacDSLPackage::eINSTANCE.forbiddenScenario_Object
 			)
 	}
 	
@@ -200,7 +224,8 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 			}
 			if (!oalist.hasAllActions(assignment.object.name, actions)) {
 				error("Object-Role Scenario violation for scenario '" 
-					+ scenario.name + "'", RbacDSLPackage::eINSTANCE.objectRoleScenario_Role
+					+ scenario.name + "'", 
+					RbacDSLPackage::eINSTANCE.objectRoleScenario_Role
 				)
 			}
 		}
