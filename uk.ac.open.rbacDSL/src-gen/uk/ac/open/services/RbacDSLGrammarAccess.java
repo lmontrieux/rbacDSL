@@ -21,51 +21,22 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 	public class RbacElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Rbac");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cPolicyAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cPolicyPolicyParserRuleCall_0_0 = (RuleCall)cPolicyAssignment_0.eContents().get(0);
-		private final Assignment cScenariosAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cScenariosScenariosParserRuleCall_1_0 = (RuleCall)cScenariosAssignment_1.eContents().get(0);
-		
-		//Rbac:
-		//	policy=Policy scenarios=Scenarios;
-		public ParserRule getRule() { return rule; }
-
-		//policy=Policy scenarios=Scenarios
-		public Group getGroup() { return cGroup; }
-
-		//policy=Policy
-		public Assignment getPolicyAssignment_0() { return cPolicyAssignment_0; }
-
-		//Policy
-		public RuleCall getPolicyPolicyParserRuleCall_0_0() { return cPolicyPolicyParserRuleCall_0_0; }
-
-		//scenarios=Scenarios
-		public Assignment getScenariosAssignment_1() { return cScenariosAssignment_1; }
-
-		//Scenarios
-		public RuleCall getScenariosScenariosParserRuleCall_1_0() { return cScenariosScenariosParserRuleCall_1_0; }
-	}
-
-	public class PolicyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Policy");
-		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cPolicyKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cUsersAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cUsersUserParserRuleCall_2_0 = (RuleCall)cUsersAssignment_2.eContents().get(0);
-		private final Assignment cRolesAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cRolesRoleParserRuleCall_3_0 = (RuleCall)cRolesAssignment_3.eContents().get(0);
-		private final Assignment cPermissionsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cPermissionsPermissionParserRuleCall_4_0 = (RuleCall)cPermissionsAssignment_4.eContents().get(0);
-		private final Assignment cResourcesAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cResourcesResourceParserRuleCall_5_0 = (RuleCall)cResourcesAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cPolicyElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cPolicyElementsPolicyElementParserRuleCall_2_0 = (RuleCall)cPolicyElementsAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cScenariosKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cScenarioElementsAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cScenarioElementsScenarioElementParserRuleCall_6_0 = (RuleCall)cScenarioElementsAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
-		//Policy:
-		//	"policy" "{" users+=User* roles+=Role* permissions+=Permission* resources+=Resource* "}";
+		//Rbac:
+		//	"policy" "{" policyElements+=PolicyElement* "}" "scenarios" "{" scenarioElements+=ScenarioElement* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"policy" "{" users+=User* roles+=Role* permissions+=Permission* resources+=Resource* "}"
+		//"policy" "{" policyElements+=PolicyElement* "}" "scenarios" "{" scenarioElements+=ScenarioElement* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"policy"
@@ -74,90 +45,89 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 
-		//users+=User*
-		public Assignment getUsersAssignment_2() { return cUsersAssignment_2; }
+		//policyElements+=PolicyElement*
+		public Assignment getPolicyElementsAssignment_2() { return cPolicyElementsAssignment_2; }
 
-		//User
-		public RuleCall getUsersUserParserRuleCall_2_0() { return cUsersUserParserRuleCall_2_0; }
-
-		//roles+=Role*
-		public Assignment getRolesAssignment_3() { return cRolesAssignment_3; }
-
-		//Role
-		public RuleCall getRolesRoleParserRuleCall_3_0() { return cRolesRoleParserRuleCall_3_0; }
-
-		//permissions+=Permission*
-		public Assignment getPermissionsAssignment_4() { return cPermissionsAssignment_4; }
-
-		//Permission
-		public RuleCall getPermissionsPermissionParserRuleCall_4_0() { return cPermissionsPermissionParserRuleCall_4_0; }
-
-		//resources+=Resource*
-		public Assignment getResourcesAssignment_5() { return cResourcesAssignment_5; }
-
-		//Resource
-		public RuleCall getResourcesResourceParserRuleCall_5_0() { return cResourcesResourceParserRuleCall_5_0; }
+		//PolicyElement
+		public RuleCall getPolicyElementsPolicyElementParserRuleCall_2_0() { return cPolicyElementsPolicyElementParserRuleCall_2_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
-	}
-
-	public class ScenariosElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Scenarios");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cScenariosKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cUserScenariosAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cUserScenariosUserScenarioParserRuleCall_2_0 = (RuleCall)cUserScenariosAssignment_2.eContents().get(0);
-		private final Assignment cUserRoleScenariosAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cUserRoleScenariosUserRoleScenarioParserRuleCall_3_0 = (RuleCall)cUserRoleScenariosAssignment_3.eContents().get(0);
-		private final Assignment cResourceRoleScenariosAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cResourceRoleScenariosResourceRoleScenarioParserRuleCall_4_0 = (RuleCall)cResourceRoleScenariosAssignment_4.eContents().get(0);
-		private final Assignment cRoleScenariosAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cRoleScenariosResourceScenarioParserRuleCall_5_0 = (RuleCall)cRoleScenariosAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		
-		//Scenarios:
-		//	"scenarios" "{" userScenarios+=UserScenario* userRoleScenarios+=UserRoleScenario*
-		//	resourceRoleScenarios+=ResourceRoleScenario* roleScenarios+=ResourceScenario* "}";
-		public ParserRule getRule() { return rule; }
-
-		//"scenarios" "{" userScenarios+=UserScenario* userRoleScenarios+=UserRoleScenario*
-		//resourceRoleScenarios+=ResourceRoleScenario* roleScenarios+=ResourceScenario* "}"
-		public Group getGroup() { return cGroup; }
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 
 		//"scenarios"
-		public Keyword getScenariosKeyword_0() { return cScenariosKeyword_0; }
+		public Keyword getScenariosKeyword_4() { return cScenariosKeyword_4; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 
-		//userScenarios+=UserScenario*
-		public Assignment getUserScenariosAssignment_2() { return cUserScenariosAssignment_2; }
+		//scenarioElements+=ScenarioElement*
+		public Assignment getScenarioElementsAssignment_6() { return cScenarioElementsAssignment_6; }
 
-		//UserScenario
-		public RuleCall getUserScenariosUserScenarioParserRuleCall_2_0() { return cUserScenariosUserScenarioParserRuleCall_2_0; }
-
-		//userRoleScenarios+=UserRoleScenario*
-		public Assignment getUserRoleScenariosAssignment_3() { return cUserRoleScenariosAssignment_3; }
-
-		//UserRoleScenario
-		public RuleCall getUserRoleScenariosUserRoleScenarioParserRuleCall_3_0() { return cUserRoleScenariosUserRoleScenarioParserRuleCall_3_0; }
-
-		//resourceRoleScenarios+=ResourceRoleScenario*
-		public Assignment getResourceRoleScenariosAssignment_4() { return cResourceRoleScenariosAssignment_4; }
-
-		//ResourceRoleScenario
-		public RuleCall getResourceRoleScenariosResourceRoleScenarioParserRuleCall_4_0() { return cResourceRoleScenariosResourceRoleScenarioParserRuleCall_4_0; }
-
-		//roleScenarios+=ResourceScenario*
-		public Assignment getRoleScenariosAssignment_5() { return cRoleScenariosAssignment_5; }
-
-		//ResourceScenario
-		public RuleCall getRoleScenariosResourceScenarioParserRuleCall_5_0() { return cRoleScenariosResourceScenarioParserRuleCall_5_0; }
+		//ScenarioElement
+		public RuleCall getScenarioElementsScenarioElementParserRuleCall_6_0() { return cScenarioElementsScenarioElementParserRuleCall_6_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+	}
+
+	public class PolicyElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PolicyElement");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cUserParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cRoleParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cPermissionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cRBACObjectParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		
+		//PolicyElement:
+		//	User | Role | Permission | RBACObject;
+		public ParserRule getRule() { return rule; }
+
+		//User | Role | Permission | RBACObject
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//User
+		public RuleCall getUserParserRuleCall_0() { return cUserParserRuleCall_0; }
+
+		//Role
+		public RuleCall getRoleParserRuleCall_1() { return cRoleParserRuleCall_1; }
+
+		//Permission
+		public RuleCall getPermissionParserRuleCall_2() { return cPermissionParserRuleCall_2; }
+
+		//RBACObject
+		public RuleCall getRBACObjectParserRuleCall_3() { return cRBACObjectParserRuleCall_3; }
+	}
+
+	public class ScenarioElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ScenarioElement");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cGrantedScenarioParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cForbiddenScenarioParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cUserRoleScenarioParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cObjectRoleScenarioParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cObjectScenarioParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		
+		//ScenarioElement:
+		//	GrantedScenario | ForbiddenScenario | UserRoleScenario | ObjectRoleScenario | ObjectScenario;
+		public ParserRule getRule() { return rule; }
+
+		//GrantedScenario | ForbiddenScenario | UserRoleScenario | ObjectRoleScenario | ObjectScenario
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//GrantedScenario
+		public RuleCall getGrantedScenarioParserRuleCall_0() { return cGrantedScenarioParserRuleCall_0; }
+
+		//ForbiddenScenario
+		public RuleCall getForbiddenScenarioParserRuleCall_1() { return cForbiddenScenarioParserRuleCall_1; }
+
+		//UserRoleScenario
+		public RuleCall getUserRoleScenarioParserRuleCall_2() { return cUserRoleScenarioParserRuleCall_2; }
+
+		//ObjectRoleScenario
+		public RuleCall getObjectRoleScenarioParserRuleCall_3() { return cObjectRoleScenarioParserRuleCall_3; }
+
+		//ObjectScenario
+		public RuleCall getObjectScenarioParserRuleCall_4() { return cObjectScenarioParserRuleCall_4; }
 	}
 
 	public class UserElements extends AbstractParserRuleElementFinder {
@@ -175,10 +145,10 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//User:
-		//	"user" name=ID "{" ("role:" roles+=[Role])* "}";
+		//	"user" name=ID "{" ("role" roles+=[Role])* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"user" name=ID "{" ("role:" roles+=[Role])* "}"
+		//"user" name=ID "{" ("role" roles+=[Role])* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"user"
@@ -193,10 +163,10 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//("role:" roles+=[Role])*
+		//("role" roles+=[Role])*
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"role:"
+		//"role"
 		public Keyword getRoleKeyword_3_0() { return cRoleKeyword_3_0; }
 
 		//roles+=[Role]
@@ -235,19 +205,18 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cDsodRoleCrossReference_5_1_0 = (CrossReference)cDsodAssignment_5_1.eContents().get(0);
 		private final RuleCall cDsodRoleIDTerminalRuleCall_5_1_0_1 = (RuleCall)cDsodRoleCrossReference_5_1_0.eContents().get(1);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cPermissionKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cPermissionsAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final CrossReference cPermissionsPermissionCrossReference_6_1_0 = (CrossReference)cPermissionsAssignment_6_1.eContents().get(0);
-		private final RuleCall cPermissionsPermissionIDTerminalRuleCall_6_1_0_1 = (RuleCall)cPermissionsPermissionCrossReference_6_1_0.eContents().get(1);
+		private final Keyword cObjectKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cAssignmentsAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cAssignmentsAssignmentParserRuleCall_6_1_0 = (RuleCall)cAssignmentsAssignment_6_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Role:
-		//	"role" name=ID ("extends" parent+=[Role]*)? "{" ("ssod:" ssod+=[Role])* ("dsod:" dsod+=[Role])* ("permission:"
-		//	permissions+=[Permission])* "}";
+		//	"role" name=ID ("extends" parent+=[Role]*)? "{" ("ssod" ssod+=[Role])* ("dsod" dsod+=[Role])* ("object"
+		//	assignments+=Assignment)* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"role" name=ID ("extends" parent+=[Role]*)? "{" ("ssod:" ssod+=[Role])* ("dsod:" dsod+=[Role])* ("permission:"
-		//permissions+=[Permission])* "}"
+		//"role" name=ID ("extends" parent+=[Role]*)? "{" ("ssod" ssod+=[Role])* ("dsod" dsod+=[Role])* ("object"
+		//assignments+=Assignment)* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"role"
@@ -277,10 +246,10 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//("ssod:" ssod+=[Role])*
+		//("ssod" ssod+=[Role])*
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"ssod:"
+		//"ssod"
 		public Keyword getSsodKeyword_4_0() { return cSsodKeyword_4_0; }
 
 		//ssod+=[Role]
@@ -292,10 +261,10 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getSsodRoleIDTerminalRuleCall_4_1_0_1() { return cSsodRoleIDTerminalRuleCall_4_1_0_1; }
 
-		//("dsod:" dsod+=[Role])*
+		//("dsod" dsod+=[Role])*
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"dsod:"
+		//"dsod"
 		public Keyword getDsodKeyword_5_0() { return cDsodKeyword_5_0; }
 
 		//dsod+=[Role]
@@ -307,41 +276,82 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getDsodRoleIDTerminalRuleCall_5_1_0_1() { return cDsodRoleIDTerminalRuleCall_5_1_0_1; }
 
-		//("permission:" permissions+=[Permission])*
+		//("object" assignments+=Assignment)*
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"permission:"
-		public Keyword getPermissionKeyword_6_0() { return cPermissionKeyword_6_0; }
+		//"object"
+		public Keyword getObjectKeyword_6_0() { return cObjectKeyword_6_0; }
 
-		//permissions+=[Permission]
-		public Assignment getPermissionsAssignment_6_1() { return cPermissionsAssignment_6_1; }
+		//assignments+=Assignment
+		public Assignment getAssignmentsAssignment_6_1() { return cAssignmentsAssignment_6_1; }
 
-		//[Permission]
-		public CrossReference getPermissionsPermissionCrossReference_6_1_0() { return cPermissionsPermissionCrossReference_6_1_0; }
-
-		//ID
-		public RuleCall getPermissionsPermissionIDTerminalRuleCall_6_1_0_1() { return cPermissionsPermissionIDTerminalRuleCall_6_1_0_1; }
+		//Assignment
+		public RuleCall getAssignmentsAssignmentParserRuleCall_6_1_0() { return cAssignmentsAssignmentParserRuleCall_6_1_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
+	public class AssignmentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Assignment");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cObjectAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cObjectRBACObjectCrossReference_0_0 = (CrossReference)cObjectAssignment_0.eContents().get(0);
+		private final RuleCall cObjectRBACObjectIDTerminalRuleCall_0_0_1 = (RuleCall)cObjectRBACObjectCrossReference_0_0.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cActionsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cActionsPermissionCrossReference_2_0 = (CrossReference)cActionsAssignment_2.eContents().get(0);
+		private final RuleCall cActionsPermissionIDTerminalRuleCall_2_0_1 = (RuleCall)cActionsPermissionCrossReference_2_0.eContents().get(1);
+		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//Assignment:
+		//	object=[RBACObject] "[" actions+=[Permission]* "]";
+		public ParserRule getRule() { return rule; }
+
+		//object=[RBACObject] "[" actions+=[Permission]* "]"
+		public Group getGroup() { return cGroup; }
+
+		//object=[RBACObject]
+		public Assignment getObjectAssignment_0() { return cObjectAssignment_0; }
+
+		//[RBACObject]
+		public CrossReference getObjectRBACObjectCrossReference_0_0() { return cObjectRBACObjectCrossReference_0_0; }
+
+		//ID
+		public RuleCall getObjectRBACObjectIDTerminalRuleCall_0_0_1() { return cObjectRBACObjectIDTerminalRuleCall_0_0_1; }
+
+		//"["
+		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
+
+		//actions+=[Permission]*
+		public Assignment getActionsAssignment_2() { return cActionsAssignment_2; }
+
+		//[Permission]
+		public CrossReference getActionsPermissionCrossReference_2_0() { return cActionsPermissionCrossReference_2_0; }
+
+		//ID
+		public RuleCall getActionsPermissionIDTerminalRuleCall_2_0_1() { return cActionsPermissionIDTerminalRuleCall_2_0_1; }
+
+		//"]"
+		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
+	}
+
 	public class PermissionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Permission");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cPermissionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cActionKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//Permission:
-		//	"permission" name=ID;
+		//	"action" name=ID;
 		public ParserRule getRule() { return rule; }
 
-		//"permission" name=ID
+		//"action" name=ID
 		public Group getGroup() { return cGroup; }
 
-		//"permission"
-		public Keyword getPermissionKeyword_0() { return cPermissionKeyword_0; }
+		//"action"
+		public Keyword getActionKeyword_0() { return cActionKeyword_0; }
 
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -350,29 +360,29 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 	}
 
-	public class ResourceElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Resource");
+	public class RBACObjectElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RBACObject");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cResourceKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cObjectKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cPermissionKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cActionKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cPermissionsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final CrossReference cPermissionsPermissionCrossReference_3_1_0 = (CrossReference)cPermissionsAssignment_3_1.eContents().get(0);
 		private final RuleCall cPermissionsPermissionIDTerminalRuleCall_3_1_0_1 = (RuleCall)cPermissionsPermissionCrossReference_3_1_0.eContents().get(1);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//Resource:
-		//	"resource" name=ID "{" ("permission:" permissions+=[Permission])* "}";
+		//RBACObject:
+		//	"object" name=ID "{" ("action" permissions+=[Permission])* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"resource" name=ID "{" ("permission:" permissions+=[Permission])* "}"
+		//"object" name=ID "{" ("action" permissions+=[Permission])* "}"
 		public Group getGroup() { return cGroup; }
 
-		//"resource"
-		public Keyword getResourceKeyword_0() { return cResourceKeyword_0; }
+		//"object"
+		public Keyword getObjectKeyword_0() { return cObjectKeyword_0; }
 
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -383,11 +393,11 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//("permission:" permissions+=[Permission])*
+		//("action" permissions+=[Permission])*
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"permission:"
-		public Keyword getPermissionKeyword_3_0() { return cPermissionKeyword_3_0; }
+		//"action"
+		public Keyword getActionKeyword_3_0() { return cActionKeyword_3_0; }
 
 		//permissions+=[Permission]
 		public Assignment getPermissionsAssignment_3_1() { return cPermissionsAssignment_3_1; }
@@ -400,26 +410,6 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
-	}
-
-	public class UserScenarioElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "UserScenario");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cGrantedScenarioParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cForbiddenScenarioParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//UserScenario:
-		//	GrantedScenario | ForbiddenScenario;
-		public ParserRule getRule() { return rule; }
-
-		//GrantedScenario | ForbiddenScenario
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//GrantedScenario
-		public RuleCall getGrantedScenarioParserRuleCall_0() { return cGrantedScenarioParserRuleCall_0; }
-
-		//ForbiddenScenario
-		public RuleCall getForbiddenScenarioParserRuleCall_1() { return cForbiddenScenarioParserRuleCall_1; }
 	}
 
 	public class GrantedScenarioElements extends AbstractParserRuleElementFinder {
@@ -439,17 +429,16 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cRolesRoleCrossReference_5_1_0 = (CrossReference)cRolesAssignment_5_1.eContents().get(0);
 		private final RuleCall cRolesRoleIDTerminalRuleCall_5_1_0_1 = (RuleCall)cRolesRoleCrossReference_5_1_0.eContents().get(1);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cResourceKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cResourcesAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final CrossReference cResourcesResourceCrossReference_6_1_0 = (CrossReference)cResourcesAssignment_6_1.eContents().get(0);
-		private final RuleCall cResourcesResourceIDTerminalRuleCall_6_1_0_1 = (RuleCall)cResourcesResourceCrossReference_6_1_0.eContents().get(1);
+		private final Keyword cObjectKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cObjectAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cObjectAssignmentParserRuleCall_6_1_0 = (RuleCall)cObjectAssignment_6_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//GrantedScenario:
-		//	"grantedScenario" name=ID "{" "user:" user=[User] ("role:" roles+=[Role])* ("resource:" resources+=[Resource])+ "}";
+		//	"grantedScenario" name=ID "{" "user" user=[User] ("role" roles+=[Role])* ("object" object+=Assignment)+ "}";
 		public ParserRule getRule() { return rule; }
 
-		//"grantedScenario" name=ID "{" "user:" user=[User] ("role:" roles+=[Role])* ("resource:" resources+=[Resource])+ "}"
+		//"grantedScenario" name=ID "{" "user" user=[User] ("role" roles+=[Role])* ("object" object+=Assignment)+ "}"
 		public Group getGroup() { return cGroup; }
 
 		//"grantedScenario"
@@ -464,7 +453,7 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//"user:"
+		//"user"
 		public Keyword getUserKeyword_3() { return cUserKeyword_3; }
 
 		//user=[User]
@@ -476,10 +465,10 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getUserUserIDTerminalRuleCall_4_0_1() { return cUserUserIDTerminalRuleCall_4_0_1; }
 
-		//("role:" roles+=[Role])*
+		//("role" roles+=[Role])*
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"role:"
+		//"role"
 		public Keyword getRoleKeyword_5_0() { return cRoleKeyword_5_0; }
 
 		//roles+=[Role]
@@ -491,20 +480,17 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getRolesRoleIDTerminalRuleCall_5_1_0_1() { return cRolesRoleIDTerminalRuleCall_5_1_0_1; }
 
-		//("resource:" resources+=[Resource])+
+		//("object" object+=Assignment)+
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"resource:"
-		public Keyword getResourceKeyword_6_0() { return cResourceKeyword_6_0; }
+		//"object"
+		public Keyword getObjectKeyword_6_0() { return cObjectKeyword_6_0; }
 
-		//resources+=[Resource]
-		public Assignment getResourcesAssignment_6_1() { return cResourcesAssignment_6_1; }
+		//object+=Assignment
+		public Assignment getObjectAssignment_6_1() { return cObjectAssignment_6_1; }
 
-		//[Resource]
-		public CrossReference getResourcesResourceCrossReference_6_1_0() { return cResourcesResourceCrossReference_6_1_0; }
-
-		//ID
-		public RuleCall getResourcesResourceIDTerminalRuleCall_6_1_0_1() { return cResourcesResourceIDTerminalRuleCall_6_1_0_1; }
+		//Assignment
+		public RuleCall getObjectAssignmentParserRuleCall_6_1_0() { return cObjectAssignmentParserRuleCall_6_1_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
@@ -527,17 +513,16 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cRolesRoleCrossReference_5_1_0 = (CrossReference)cRolesAssignment_5_1.eContents().get(0);
 		private final RuleCall cRolesRoleIDTerminalRuleCall_5_1_0_1 = (RuleCall)cRolesRoleCrossReference_5_1_0.eContents().get(1);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cResourceKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cResourcesAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final CrossReference cResourcesResourceCrossReference_6_1_0 = (CrossReference)cResourcesAssignment_6_1.eContents().get(0);
-		private final RuleCall cResourcesResourceIDTerminalRuleCall_6_1_0_1 = (RuleCall)cResourcesResourceCrossReference_6_1_0.eContents().get(1);
+		private final Keyword cObjectKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cObjectAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cObjectAssignmentParserRuleCall_6_1_0 = (RuleCall)cObjectAssignment_6_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//ForbiddenScenario:
-		//	"forbiddenScenario" name=ID "{" "user:" user=[User] ("role:" roles+=[Role])* ("resource:" resources+=[Resource])+ "}";
+		//	"forbiddenScenario" name=ID "{" "user" user=[User] ("role" roles+=[Role])* ("object" object+=Assignment)+ "}";
 		public ParserRule getRule() { return rule; }
 
-		//"forbiddenScenario" name=ID "{" "user:" user=[User] ("role:" roles+=[Role])* ("resource:" resources+=[Resource])+ "}"
+		//"forbiddenScenario" name=ID "{" "user" user=[User] ("role" roles+=[Role])* ("object" object+=Assignment)+ "}"
 		public Group getGroup() { return cGroup; }
 
 		//"forbiddenScenario"
@@ -552,7 +537,7 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//"user:"
+		//"user"
 		public Keyword getUserKeyword_3() { return cUserKeyword_3; }
 
 		//user=[User]
@@ -564,10 +549,10 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getUserUserIDTerminalRuleCall_4_0_1() { return cUserUserIDTerminalRuleCall_4_0_1; }
 
-		//("role:" roles+=[Role])*
+		//("role" roles+=[Role])*
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"role:"
+		//"role"
 		public Keyword getRoleKeyword_5_0() { return cRoleKeyword_5_0; }
 
 		//roles+=[Role]
@@ -579,20 +564,17 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getRolesRoleIDTerminalRuleCall_5_1_0_1() { return cRolesRoleIDTerminalRuleCall_5_1_0_1; }
 
-		//("resource:" resources+=[Resource])+
+		//("object" object+=Assignment)+
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"resource:"
-		public Keyword getResourceKeyword_6_0() { return cResourceKeyword_6_0; }
+		//"object"
+		public Keyword getObjectKeyword_6_0() { return cObjectKeyword_6_0; }
 
-		//resources+=[Resource]
-		public Assignment getResourcesAssignment_6_1() { return cResourcesAssignment_6_1; }
+		//object+=Assignment
+		public Assignment getObjectAssignment_6_1() { return cObjectAssignment_6_1; }
 
-		//[Resource]
-		public CrossReference getResourcesResourceCrossReference_6_1_0() { return cResourcesResourceCrossReference_6_1_0; }
-
-		//ID
-		public RuleCall getResourcesResourceIDTerminalRuleCall_6_1_0_1() { return cResourcesResourceIDTerminalRuleCall_6_1_0_1; }
+		//Assignment
+		public RuleCall getObjectAssignmentParserRuleCall_6_1_0() { return cObjectAssignmentParserRuleCall_6_1_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
@@ -613,10 +595,10 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//UserRoleScenario:
-		//	"userRoleScenario" name=ID "{" ("role:" roles+=[Role])+ "}";
+		//	"userRoleScenario" name=ID "{" ("role" roles+=[Role])+ "}";
 		public ParserRule getRule() { return rule; }
 
-		//"userRoleScenario" name=ID "{" ("role:" roles+=[Role])+ "}"
+		//"userRoleScenario" name=ID "{" ("role" roles+=[Role])+ "}"
 		public Group getGroup() { return cGroup; }
 
 		//"userRoleScenario"
@@ -631,10 +613,10 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//("role:" roles+=[Role])+
+		//("role" roles+=[Role])+
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"role:"
+		//"role"
 		public Keyword getRoleKeyword_3_0() { return cRoleKeyword_3_0; }
 
 		//roles+=[Role]
@@ -650,10 +632,10 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 
-	public class ResourceRoleScenarioElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ResourceRoleScenario");
+	public class ObjectRoleScenarioElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ObjectRoleScenario");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cResourceRoleScenarioKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cObjectRoleScenarioKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
@@ -662,21 +644,20 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cRoleRoleCrossReference_4_0 = (CrossReference)cRoleAssignment_4.eContents().get(0);
 		private final RuleCall cRoleRoleIDTerminalRuleCall_4_0_1 = (RuleCall)cRoleRoleCrossReference_4_0.eContents().get(1);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cResourceKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cResourcesAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final CrossReference cResourcesResourceCrossReference_5_1_0 = (CrossReference)cResourcesAssignment_5_1.eContents().get(0);
-		private final RuleCall cResourcesResourceIDTerminalRuleCall_5_1_0_1 = (RuleCall)cResourcesResourceCrossReference_5_1_0.eContents().get(1);
+		private final Keyword cObjectKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cAssignmentAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cAssignmentAssignmentParserRuleCall_5_1_0 = (RuleCall)cAssignmentAssignment_5_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
-		//ResourceRoleScenario:
-		//	"resourceRoleScenario" name=ID "{" "role:" role+=[Role] ("resource:" resources+=[Resource])+ "}";
+		//ObjectRoleScenario:
+		//	"objectRoleScenario" name=ID "{" "role" role+=[Role] ("object" assignment+=Assignment)+ "}";
 		public ParserRule getRule() { return rule; }
 
-		//"resourceRoleScenario" name=ID "{" "role:" role+=[Role] ("resource:" resources+=[Resource])+ "}"
+		//"objectRoleScenario" name=ID "{" "role" role+=[Role] ("object" assignment+=Assignment)+ "}"
 		public Group getGroup() { return cGroup; }
 
-		//"resourceRoleScenario"
-		public Keyword getResourceRoleScenarioKeyword_0() { return cResourceRoleScenarioKeyword_0; }
+		//"objectRoleScenario"
+		public Keyword getObjectRoleScenarioKeyword_0() { return cObjectRoleScenarioKeyword_0; }
 
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -687,7 +668,7 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//"role:"
+		//"role"
 		public Keyword getRoleKeyword_3() { return cRoleKeyword_3; }
 
 		//role+=[Role]
@@ -699,48 +680,44 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getRoleRoleIDTerminalRuleCall_4_0_1() { return cRoleRoleIDTerminalRuleCall_4_0_1; }
 
-		//("resource:" resources+=[Resource])+
+		//("object" assignment+=Assignment)+
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"resource:"
-		public Keyword getResourceKeyword_5_0() { return cResourceKeyword_5_0; }
+		//"object"
+		public Keyword getObjectKeyword_5_0() { return cObjectKeyword_5_0; }
 
-		//resources+=[Resource]
-		public Assignment getResourcesAssignment_5_1() { return cResourcesAssignment_5_1; }
+		//assignment+=Assignment
+		public Assignment getAssignmentAssignment_5_1() { return cAssignmentAssignment_5_1; }
 
-		//[Resource]
-		public CrossReference getResourcesResourceCrossReference_5_1_0() { return cResourcesResourceCrossReference_5_1_0; }
-
-		//ID
-		public RuleCall getResourcesResourceIDTerminalRuleCall_5_1_0_1() { return cResourcesResourceIDTerminalRuleCall_5_1_0_1; }
+		//Assignment
+		public RuleCall getAssignmentAssignmentParserRuleCall_5_1_0() { return cAssignmentAssignmentParserRuleCall_5_1_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 
-	public class ResourceScenarioElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ResourceScenario");
+	public class ObjectScenarioElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ObjectScenario");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cRoleScenarioKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cObjectScenarioKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cResourceKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cResourcesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final CrossReference cResourcesResourceCrossReference_3_1_0 = (CrossReference)cResourcesAssignment_3_1.eContents().get(0);
-		private final RuleCall cResourcesResourceIDTerminalRuleCall_3_1_0_1 = (RuleCall)cResourcesResourceCrossReference_3_1_0.eContents().get(1);
+		private final Keyword cObjectKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cAssignmentAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cAssignmentAssignmentParserRuleCall_3_1_0 = (RuleCall)cAssignmentAssignment_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//ResourceScenario:
-		//	"roleScenario" name=ID "{" ("resource:" resources+=[Resource])+ "}";
+		//ObjectScenario:
+		//	"objectScenario" name=ID "{" ("object" assignment+=Assignment)+ "}";
 		public ParserRule getRule() { return rule; }
 
-		//"roleScenario" name=ID "{" ("resource:" resources+=[Resource])+ "}"
+		//"objectScenario" name=ID "{" ("object" assignment+=Assignment)+ "}"
 		public Group getGroup() { return cGroup; }
 
-		//"roleScenario"
-		public Keyword getRoleScenarioKeyword_0() { return cRoleScenarioKeyword_0; }
+		//"objectScenario"
+		public Keyword getObjectScenarioKeyword_0() { return cObjectScenarioKeyword_0; }
 
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -751,20 +728,17 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//("resource:" resources+=[Resource])+
+		//("object" assignment+=Assignment)+
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"resource:"
-		public Keyword getResourceKeyword_3_0() { return cResourceKeyword_3_0; }
+		//"object"
+		public Keyword getObjectKeyword_3_0() { return cObjectKeyword_3_0; }
 
-		//resources+=[Resource]
-		public Assignment getResourcesAssignment_3_1() { return cResourcesAssignment_3_1; }
+		//assignment+=Assignment
+		public Assignment getAssignmentAssignment_3_1() { return cAssignmentAssignment_3_1; }
 
-		//[Resource]
-		public CrossReference getResourcesResourceCrossReference_3_1_0() { return cResourcesResourceCrossReference_3_1_0; }
-
-		//ID
-		public RuleCall getResourcesResourceIDTerminalRuleCall_3_1_0_1() { return cResourcesResourceIDTerminalRuleCall_3_1_0_1; }
+		//Assignment
+		public RuleCall getAssignmentAssignmentParserRuleCall_3_1_0() { return cAssignmentAssignmentParserRuleCall_3_1_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
@@ -772,18 +746,18 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	private RbacElements pRbac;
-	private PolicyElements pPolicy;
-	private ScenariosElements pScenarios;
+	private PolicyElementElements pPolicyElement;
+	private ScenarioElementElements pScenarioElement;
 	private UserElements pUser;
 	private RoleElements pRole;
+	private AssignmentElements pAssignment;
 	private PermissionElements pPermission;
-	private ResourceElements pResource;
-	private UserScenarioElements pUserScenario;
+	private RBACObjectElements pRBACObject;
 	private GrantedScenarioElements pGrantedScenario;
 	private ForbiddenScenarioElements pForbiddenScenario;
 	private UserRoleScenarioElements pUserRoleScenario;
-	private ResourceRoleScenarioElements pResourceRoleScenario;
-	private ResourceScenarioElements pResourceScenario;
+	private ObjectRoleScenarioElements pObjectRoleScenario;
+	private ObjectScenarioElements pObjectScenario;
 	
 	private final Grammar grammar;
 
@@ -824,7 +798,7 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Rbac:
-	//	policy=Policy scenarios=Scenarios;
+	//	"policy" "{" policyElements+=PolicyElement* "}" "scenarios" "{" scenarioElements+=ScenarioElement* "}";
 	public RbacElements getRbacAccess() {
 		return (pRbac != null) ? pRbac : (pRbac = new RbacElements());
 	}
@@ -833,29 +807,28 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getRbacAccess().getRule();
 	}
 
-	//Policy:
-	//	"policy" "{" users+=User* roles+=Role* permissions+=Permission* resources+=Resource* "}";
-	public PolicyElements getPolicyAccess() {
-		return (pPolicy != null) ? pPolicy : (pPolicy = new PolicyElements());
+	//PolicyElement:
+	//	User | Role | Permission | RBACObject;
+	public PolicyElementElements getPolicyElementAccess() {
+		return (pPolicyElement != null) ? pPolicyElement : (pPolicyElement = new PolicyElementElements());
 	}
 	
-	public ParserRule getPolicyRule() {
-		return getPolicyAccess().getRule();
+	public ParserRule getPolicyElementRule() {
+		return getPolicyElementAccess().getRule();
 	}
 
-	//Scenarios:
-	//	"scenarios" "{" userScenarios+=UserScenario* userRoleScenarios+=UserRoleScenario*
-	//	resourceRoleScenarios+=ResourceRoleScenario* roleScenarios+=ResourceScenario* "}";
-	public ScenariosElements getScenariosAccess() {
-		return (pScenarios != null) ? pScenarios : (pScenarios = new ScenariosElements());
+	//ScenarioElement:
+	//	GrantedScenario | ForbiddenScenario | UserRoleScenario | ObjectRoleScenario | ObjectScenario;
+	public ScenarioElementElements getScenarioElementAccess() {
+		return (pScenarioElement != null) ? pScenarioElement : (pScenarioElement = new ScenarioElementElements());
 	}
 	
-	public ParserRule getScenariosRule() {
-		return getScenariosAccess().getRule();
+	public ParserRule getScenarioElementRule() {
+		return getScenarioElementAccess().getRule();
 	}
 
 	//User:
-	//	"user" name=ID "{" ("role:" roles+=[Role])* "}";
+	//	"user" name=ID "{" ("role" roles+=[Role])* "}";
 	public UserElements getUserAccess() {
 		return (pUser != null) ? pUser : (pUser = new UserElements());
 	}
@@ -865,8 +838,8 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Role:
-	//	"role" name=ID ("extends" parent+=[Role]*)? "{" ("ssod:" ssod+=[Role])* ("dsod:" dsod+=[Role])* ("permission:"
-	//	permissions+=[Permission])* "}";
+	//	"role" name=ID ("extends" parent+=[Role]*)? "{" ("ssod" ssod+=[Role])* ("dsod" dsod+=[Role])* ("object"
+	//	assignments+=Assignment)* "}";
 	public RoleElements getRoleAccess() {
 		return (pRole != null) ? pRole : (pRole = new RoleElements());
 	}
@@ -875,8 +848,18 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getRoleAccess().getRule();
 	}
 
+	//Assignment:
+	//	object=[RBACObject] "[" actions+=[Permission]* "]";
+	public AssignmentElements getAssignmentAccess() {
+		return (pAssignment != null) ? pAssignment : (pAssignment = new AssignmentElements());
+	}
+	
+	public ParserRule getAssignmentRule() {
+		return getAssignmentAccess().getRule();
+	}
+
 	//Permission:
-	//	"permission" name=ID;
+	//	"action" name=ID;
 	public PermissionElements getPermissionAccess() {
 		return (pPermission != null) ? pPermission : (pPermission = new PermissionElements());
 	}
@@ -885,28 +868,18 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getPermissionAccess().getRule();
 	}
 
-	//Resource:
-	//	"resource" name=ID "{" ("permission:" permissions+=[Permission])* "}";
-	public ResourceElements getResourceAccess() {
-		return (pResource != null) ? pResource : (pResource = new ResourceElements());
+	//RBACObject:
+	//	"object" name=ID "{" ("action" permissions+=[Permission])* "}";
+	public RBACObjectElements getRBACObjectAccess() {
+		return (pRBACObject != null) ? pRBACObject : (pRBACObject = new RBACObjectElements());
 	}
 	
-	public ParserRule getResourceRule() {
-		return getResourceAccess().getRule();
-	}
-
-	//UserScenario:
-	//	GrantedScenario | ForbiddenScenario;
-	public UserScenarioElements getUserScenarioAccess() {
-		return (pUserScenario != null) ? pUserScenario : (pUserScenario = new UserScenarioElements());
-	}
-	
-	public ParserRule getUserScenarioRule() {
-		return getUserScenarioAccess().getRule();
+	public ParserRule getRBACObjectRule() {
+		return getRBACObjectAccess().getRule();
 	}
 
 	//GrantedScenario:
-	//	"grantedScenario" name=ID "{" "user:" user=[User] ("role:" roles+=[Role])* ("resource:" resources+=[Resource])+ "}";
+	//	"grantedScenario" name=ID "{" "user" user=[User] ("role" roles+=[Role])* ("object" object+=Assignment)+ "}";
 	public GrantedScenarioElements getGrantedScenarioAccess() {
 		return (pGrantedScenario != null) ? pGrantedScenario : (pGrantedScenario = new GrantedScenarioElements());
 	}
@@ -916,7 +889,7 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ForbiddenScenario:
-	//	"forbiddenScenario" name=ID "{" "user:" user=[User] ("role:" roles+=[Role])* ("resource:" resources+=[Resource])+ "}";
+	//	"forbiddenScenario" name=ID "{" "user" user=[User] ("role" roles+=[Role])* ("object" object+=Assignment)+ "}";
 	public ForbiddenScenarioElements getForbiddenScenarioAccess() {
 		return (pForbiddenScenario != null) ? pForbiddenScenario : (pForbiddenScenario = new ForbiddenScenarioElements());
 	}
@@ -926,7 +899,7 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//UserRoleScenario:
-	//	"userRoleScenario" name=ID "{" ("role:" roles+=[Role])+ "}";
+	//	"userRoleScenario" name=ID "{" ("role" roles+=[Role])+ "}";
 	public UserRoleScenarioElements getUserRoleScenarioAccess() {
 		return (pUserRoleScenario != null) ? pUserRoleScenario : (pUserRoleScenario = new UserRoleScenarioElements());
 	}
@@ -935,24 +908,24 @@ public class RbacDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getUserRoleScenarioAccess().getRule();
 	}
 
-	//ResourceRoleScenario:
-	//	"resourceRoleScenario" name=ID "{" "role:" role+=[Role] ("resource:" resources+=[Resource])+ "}";
-	public ResourceRoleScenarioElements getResourceRoleScenarioAccess() {
-		return (pResourceRoleScenario != null) ? pResourceRoleScenario : (pResourceRoleScenario = new ResourceRoleScenarioElements());
+	//ObjectRoleScenario:
+	//	"objectRoleScenario" name=ID "{" "role" role+=[Role] ("object" assignment+=Assignment)+ "}";
+	public ObjectRoleScenarioElements getObjectRoleScenarioAccess() {
+		return (pObjectRoleScenario != null) ? pObjectRoleScenario : (pObjectRoleScenario = new ObjectRoleScenarioElements());
 	}
 	
-	public ParserRule getResourceRoleScenarioRule() {
-		return getResourceRoleScenarioAccess().getRule();
+	public ParserRule getObjectRoleScenarioRule() {
+		return getObjectRoleScenarioAccess().getRule();
 	}
 
-	//ResourceScenario:
-	//	"roleScenario" name=ID "{" ("resource:" resources+=[Resource])+ "}";
-	public ResourceScenarioElements getResourceScenarioAccess() {
-		return (pResourceScenario != null) ? pResourceScenario : (pResourceScenario = new ResourceScenarioElements());
+	//ObjectScenario:
+	//	"objectScenario" name=ID "{" ("object" assignment+=Assignment)+ "}";
+	public ObjectScenarioElements getObjectScenarioAccess() {
+		return (pObjectScenario != null) ? pObjectScenario : (pObjectScenario = new ObjectScenarioElements());
 	}
 	
-	public ParserRule getResourceScenarioRule() {
-		return getResourceScenarioAccess().getRule();
+	public ParserRule getObjectScenarioRule() {
+		return getObjectScenarioAccess().getRule();
 	}
 
 	//terminal ID:

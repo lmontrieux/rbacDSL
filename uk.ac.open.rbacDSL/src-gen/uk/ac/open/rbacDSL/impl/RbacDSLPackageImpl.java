@@ -9,21 +9,21 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import uk.ac.open.rbacDSL.Assignment;
 import uk.ac.open.rbacDSL.ForbiddenScenario;
 import uk.ac.open.rbacDSL.GrantedScenario;
+import uk.ac.open.rbacDSL.ObjectRoleScenario;
+import uk.ac.open.rbacDSL.ObjectScenario;
 import uk.ac.open.rbacDSL.Permission;
-import uk.ac.open.rbacDSL.Policy;
+import uk.ac.open.rbacDSL.PolicyElement;
+import uk.ac.open.rbacDSL.RBACObject;
 import uk.ac.open.rbacDSL.Rbac;
 import uk.ac.open.rbacDSL.RbacDSLFactory;
 import uk.ac.open.rbacDSL.RbacDSLPackage;
-import uk.ac.open.rbacDSL.Resource;
-import uk.ac.open.rbacDSL.ResourceRoleScenario;
-import uk.ac.open.rbacDSL.ResourceScenario;
 import uk.ac.open.rbacDSL.Role;
-import uk.ac.open.rbacDSL.Scenarios;
+import uk.ac.open.rbacDSL.ScenarioElement;
 import uk.ac.open.rbacDSL.User;
 import uk.ac.open.rbacDSL.UserRoleScenario;
-import uk.ac.open.rbacDSL.UserScenario;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,14 +45,14 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass policyEClass = null;
+  private EClass policyElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass scenariosEClass = null;
+  private EClass scenarioElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,6 +73,13 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass assignmentEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass permissionEClass = null;
 
   /**
@@ -80,14 +87,7 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass resourceEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass userScenarioEClass = null;
+  private EClass rbacObjectEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -115,14 +115,14 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass resourceRoleScenarioEClass = null;
+  private EClass objectRoleScenarioEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass resourceScenarioEClass = null;
+  private EClass objectScenarioEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -202,7 +202,7 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRbac_Policy()
+  public EReference getRbac_PolicyElements()
   {
     return (EReference)rbacEClass.getEStructuralFeatures().get(0);
   }
@@ -212,7 +212,7 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRbac_Scenarios()
+  public EReference getRbac_ScenarioElements()
   {
     return (EReference)rbacEClass.getEStructuralFeatures().get(1);
   }
@@ -222,9 +222,9 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getPolicy()
+  public EClass getPolicyElement()
   {
-    return policyEClass;
+    return policyElementEClass;
   }
 
   /**
@@ -232,9 +232,9 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPolicy_Users()
+  public EAttribute getPolicyElement_Name()
   {
-    return (EReference)policyEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)policyElementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -242,9 +242,9 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPolicy_Roles()
+  public EClass getScenarioElement()
   {
-    return (EReference)policyEClass.getEStructuralFeatures().get(1);
+    return scenarioElementEClass;
   }
 
   /**
@@ -252,69 +252,9 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPolicy_Permissions()
+  public EAttribute getScenarioElement_Name()
   {
-    return (EReference)policyEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getPolicy_Resources()
-  {
-    return (EReference)policyEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getScenarios()
-  {
-    return scenariosEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getScenarios_UserScenarios()
-  {
-    return (EReference)scenariosEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getScenarios_UserRoleScenarios()
-  {
-    return (EReference)scenariosEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getScenarios_ResourceRoleScenarios()
-  {
-    return (EReference)scenariosEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getScenarios_RoleScenarios()
-  {
-    return (EReference)scenariosEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)scenarioElementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -332,19 +272,9 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getUser_Name()
-  {
-    return (EAttribute)userEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getUser_Roles()
   {
-    return (EReference)userEClass.getEStructuralFeatures().get(1);
+    return (EReference)userEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -362,19 +292,9 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRole_Name()
-  {
-    return (EAttribute)roleEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getRole_Parent()
   {
-    return (EReference)roleEClass.getEStructuralFeatures().get(1);
+    return (EReference)roleEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -384,7 +304,7 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    */
   public EReference getRole_Ssod()
   {
-    return (EReference)roleEClass.getEStructuralFeatures().get(2);
+    return (EReference)roleEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -394,6 +314,16 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    */
   public EReference getRole_Dsod()
   {
+    return (EReference)roleEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRole_Assignments()
+  {
     return (EReference)roleEClass.getEStructuralFeatures().get(3);
   }
 
@@ -402,9 +332,29 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRole_Permissions()
+  public EClass getAssignment()
   {
-    return (EReference)roleEClass.getEStructuralFeatures().get(4);
+    return assignmentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAssignment_Object()
+  {
+    return (EReference)assignmentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAssignment_Actions()
+  {
+    return (EReference)assignmentEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -422,9 +372,9 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPermission_Name()
+  public EClass getRBACObject()
   {
-    return (EAttribute)permissionEClass.getEStructuralFeatures().get(0);
+    return rbacObjectEClass;
   }
 
   /**
@@ -432,79 +382,9 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getResource()
+  public EReference getRBACObject_Permissions()
   {
-    return resourceEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getResource_Name()
-  {
-    return (EAttribute)resourceEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getResource_Permissions()
-  {
-    return (EReference)resourceEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getUserScenario()
-  {
-    return userScenarioEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getUserScenario_Name()
-  {
-    return (EAttribute)userScenarioEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getUserScenario_User()
-  {
-    return (EReference)userScenarioEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getUserScenario_Roles()
-  {
-    return (EReference)userScenarioEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getUserScenario_Resources()
-  {
-    return (EReference)userScenarioEClass.getEStructuralFeatures().get(3);
+    return (EReference)rbacObjectEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -522,9 +402,69 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getGrantedScenario_User()
+  {
+    return (EReference)grantedScenarioEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGrantedScenario_Roles()
+  {
+    return (EReference)grantedScenarioEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGrantedScenario_Object()
+  {
+    return (EReference)grantedScenarioEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getForbiddenScenario()
   {
     return forbiddenScenarioEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getForbiddenScenario_User()
+  {
+    return (EReference)forbiddenScenarioEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getForbiddenScenario_Roles()
+  {
+    return (EReference)forbiddenScenarioEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getForbiddenScenario_Object()
+  {
+    return (EReference)forbiddenScenarioEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -542,19 +482,9 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getUserRoleScenario_Name()
-  {
-    return (EAttribute)userRoleScenarioEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getUserRoleScenario_Roles()
   {
-    return (EReference)userRoleScenarioEClass.getEStructuralFeatures().get(1);
+    return (EReference)userRoleScenarioEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -562,9 +492,9 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getResourceRoleScenario()
+  public EClass getObjectRoleScenario()
   {
-    return resourceRoleScenarioEClass;
+    return objectRoleScenarioEClass;
   }
 
   /**
@@ -572,9 +502,9 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getResourceRoleScenario_Name()
+  public EReference getObjectRoleScenario_Role()
   {
-    return (EAttribute)resourceRoleScenarioEClass.getEStructuralFeatures().get(0);
+    return (EReference)objectRoleScenarioEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -582,9 +512,9 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getResourceRoleScenario_Role()
+  public EReference getObjectRoleScenario_Assignment()
   {
-    return (EReference)resourceRoleScenarioEClass.getEStructuralFeatures().get(1);
+    return (EReference)objectRoleScenarioEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -592,9 +522,9 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getResourceRoleScenario_Resources()
+  public EClass getObjectScenario()
   {
-    return (EReference)resourceRoleScenarioEClass.getEStructuralFeatures().get(2);
+    return objectScenarioEClass;
   }
 
   /**
@@ -602,29 +532,9 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getResourceScenario()
+  public EReference getObjectScenario_Assignment()
   {
-    return resourceScenarioEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getResourceScenario_Name()
-  {
-    return (EAttribute)resourceScenarioEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getResourceScenario_Resources()
-  {
-    return (EReference)resourceScenarioEClass.getEStructuralFeatures().get(1);
+    return (EReference)objectScenarioEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -658,61 +568,52 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
 
     // Create classes and their features
     rbacEClass = createEClass(RBAC);
-    createEReference(rbacEClass, RBAC__POLICY);
-    createEReference(rbacEClass, RBAC__SCENARIOS);
+    createEReference(rbacEClass, RBAC__POLICY_ELEMENTS);
+    createEReference(rbacEClass, RBAC__SCENARIO_ELEMENTS);
 
-    policyEClass = createEClass(POLICY);
-    createEReference(policyEClass, POLICY__USERS);
-    createEReference(policyEClass, POLICY__ROLES);
-    createEReference(policyEClass, POLICY__PERMISSIONS);
-    createEReference(policyEClass, POLICY__RESOURCES);
+    policyElementEClass = createEClass(POLICY_ELEMENT);
+    createEAttribute(policyElementEClass, POLICY_ELEMENT__NAME);
 
-    scenariosEClass = createEClass(SCENARIOS);
-    createEReference(scenariosEClass, SCENARIOS__USER_SCENARIOS);
-    createEReference(scenariosEClass, SCENARIOS__USER_ROLE_SCENARIOS);
-    createEReference(scenariosEClass, SCENARIOS__RESOURCE_ROLE_SCENARIOS);
-    createEReference(scenariosEClass, SCENARIOS__ROLE_SCENARIOS);
+    scenarioElementEClass = createEClass(SCENARIO_ELEMENT);
+    createEAttribute(scenarioElementEClass, SCENARIO_ELEMENT__NAME);
 
     userEClass = createEClass(USER);
-    createEAttribute(userEClass, USER__NAME);
     createEReference(userEClass, USER__ROLES);
 
     roleEClass = createEClass(ROLE);
-    createEAttribute(roleEClass, ROLE__NAME);
     createEReference(roleEClass, ROLE__PARENT);
     createEReference(roleEClass, ROLE__SSOD);
     createEReference(roleEClass, ROLE__DSOD);
-    createEReference(roleEClass, ROLE__PERMISSIONS);
+    createEReference(roleEClass, ROLE__ASSIGNMENTS);
+
+    assignmentEClass = createEClass(ASSIGNMENT);
+    createEReference(assignmentEClass, ASSIGNMENT__OBJECT);
+    createEReference(assignmentEClass, ASSIGNMENT__ACTIONS);
 
     permissionEClass = createEClass(PERMISSION);
-    createEAttribute(permissionEClass, PERMISSION__NAME);
 
-    resourceEClass = createEClass(RESOURCE);
-    createEAttribute(resourceEClass, RESOURCE__NAME);
-    createEReference(resourceEClass, RESOURCE__PERMISSIONS);
-
-    userScenarioEClass = createEClass(USER_SCENARIO);
-    createEAttribute(userScenarioEClass, USER_SCENARIO__NAME);
-    createEReference(userScenarioEClass, USER_SCENARIO__USER);
-    createEReference(userScenarioEClass, USER_SCENARIO__ROLES);
-    createEReference(userScenarioEClass, USER_SCENARIO__RESOURCES);
+    rbacObjectEClass = createEClass(RBAC_OBJECT);
+    createEReference(rbacObjectEClass, RBAC_OBJECT__PERMISSIONS);
 
     grantedScenarioEClass = createEClass(GRANTED_SCENARIO);
+    createEReference(grantedScenarioEClass, GRANTED_SCENARIO__USER);
+    createEReference(grantedScenarioEClass, GRANTED_SCENARIO__ROLES);
+    createEReference(grantedScenarioEClass, GRANTED_SCENARIO__OBJECT);
 
     forbiddenScenarioEClass = createEClass(FORBIDDEN_SCENARIO);
+    createEReference(forbiddenScenarioEClass, FORBIDDEN_SCENARIO__USER);
+    createEReference(forbiddenScenarioEClass, FORBIDDEN_SCENARIO__ROLES);
+    createEReference(forbiddenScenarioEClass, FORBIDDEN_SCENARIO__OBJECT);
 
     userRoleScenarioEClass = createEClass(USER_ROLE_SCENARIO);
-    createEAttribute(userRoleScenarioEClass, USER_ROLE_SCENARIO__NAME);
     createEReference(userRoleScenarioEClass, USER_ROLE_SCENARIO__ROLES);
 
-    resourceRoleScenarioEClass = createEClass(RESOURCE_ROLE_SCENARIO);
-    createEAttribute(resourceRoleScenarioEClass, RESOURCE_ROLE_SCENARIO__NAME);
-    createEReference(resourceRoleScenarioEClass, RESOURCE_ROLE_SCENARIO__ROLE);
-    createEReference(resourceRoleScenarioEClass, RESOURCE_ROLE_SCENARIO__RESOURCES);
+    objectRoleScenarioEClass = createEClass(OBJECT_ROLE_SCENARIO);
+    createEReference(objectRoleScenarioEClass, OBJECT_ROLE_SCENARIO__ROLE);
+    createEReference(objectRoleScenarioEClass, OBJECT_ROLE_SCENARIO__ASSIGNMENT);
 
-    resourceScenarioEClass = createEClass(RESOURCE_SCENARIO);
-    createEAttribute(resourceScenarioEClass, RESOURCE_SCENARIO__NAME);
-    createEReference(resourceScenarioEClass, RESOURCE_SCENARIO__RESOURCES);
+    objectScenarioEClass = createEClass(OBJECT_SCENARIO);
+    createEReference(objectScenarioEClass, OBJECT_SCENARIO__ASSIGNMENT);
   }
 
   /**
@@ -744,66 +645,64 @@ public class RbacDSLPackageImpl extends EPackageImpl implements RbacDSLPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    grantedScenarioEClass.getESuperTypes().add(this.getUserScenario());
-    forbiddenScenarioEClass.getESuperTypes().add(this.getUserScenario());
+    userEClass.getESuperTypes().add(this.getPolicyElement());
+    roleEClass.getESuperTypes().add(this.getPolicyElement());
+    permissionEClass.getESuperTypes().add(this.getPolicyElement());
+    rbacObjectEClass.getESuperTypes().add(this.getPolicyElement());
+    grantedScenarioEClass.getESuperTypes().add(this.getScenarioElement());
+    forbiddenScenarioEClass.getESuperTypes().add(this.getScenarioElement());
+    userRoleScenarioEClass.getESuperTypes().add(this.getScenarioElement());
+    objectRoleScenarioEClass.getESuperTypes().add(this.getScenarioElement());
+    objectScenarioEClass.getESuperTypes().add(this.getScenarioElement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(rbacEClass, Rbac.class, "Rbac", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRbac_Policy(), this.getPolicy(), null, "policy", null, 0, 1, Rbac.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRbac_Scenarios(), this.getScenarios(), null, "scenarios", null, 0, 1, Rbac.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRbac_PolicyElements(), this.getPolicyElement(), null, "policyElements", null, 0, -1, Rbac.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRbac_ScenarioElements(), this.getScenarioElement(), null, "scenarioElements", null, 0, -1, Rbac.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(policyEClass, Policy.class, "Policy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPolicy_Users(), this.getUser(), null, "users", null, 0, -1, Policy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPolicy_Roles(), this.getRole(), null, "roles", null, 0, -1, Policy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPolicy_Permissions(), this.getPermission(), null, "permissions", null, 0, -1, Policy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPolicy_Resources(), this.getResource(), null, "resources", null, 0, -1, Policy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(policyElementEClass, PolicyElement.class, "PolicyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPolicyElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, PolicyElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(scenariosEClass, Scenarios.class, "Scenarios", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getScenarios_UserScenarios(), this.getUserScenario(), null, "userScenarios", null, 0, -1, Scenarios.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getScenarios_UserRoleScenarios(), this.getUserRoleScenario(), null, "userRoleScenarios", null, 0, -1, Scenarios.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getScenarios_ResourceRoleScenarios(), this.getResourceRoleScenario(), null, "resourceRoleScenarios", null, 0, -1, Scenarios.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getScenarios_RoleScenarios(), this.getResourceScenario(), null, "roleScenarios", null, 0, -1, Scenarios.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(scenarioElementEClass, ScenarioElement.class, "ScenarioElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getScenarioElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, ScenarioElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(userEClass, User.class, "User", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getUser_Name(), ecorePackage.getEString(), "name", null, 0, 1, User.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUser_Roles(), this.getRole(), null, "roles", null, 0, -1, User.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRole_Name(), ecorePackage.getEString(), "name", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRole_Parent(), this.getRole(), null, "parent", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRole_Ssod(), this.getRole(), null, "ssod", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRole_Dsod(), this.getRole(), null, "dsod", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRole_Permissions(), this.getPermission(), null, "permissions", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRole_Assignments(), this.getAssignment(), null, "assignments", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(assignmentEClass, Assignment.class, "Assignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAssignment_Object(), this.getRBACObject(), null, "object", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAssignment_Actions(), this.getPermission(), null, "actions", null, 0, -1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(permissionEClass, Permission.class, "Permission", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPermission_Name(), ecorePackage.getEString(), "name", null, 0, 1, Permission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(resourceEClass, Resource.class, "Resource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getResource_Name(), ecorePackage.getEString(), "name", null, 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getResource_Permissions(), this.getPermission(), null, "permissions", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(userScenarioEClass, UserScenario.class, "UserScenario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getUserScenario_Name(), ecorePackage.getEString(), "name", null, 0, 1, UserScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getUserScenario_User(), this.getUser(), null, "user", null, 0, 1, UserScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getUserScenario_Roles(), this.getRole(), null, "roles", null, 0, -1, UserScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getUserScenario_Resources(), this.getResource(), null, "resources", null, 0, -1, UserScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(rbacObjectEClass, RBACObject.class, "RBACObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRBACObject_Permissions(), this.getPermission(), null, "permissions", null, 0, -1, RBACObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(grantedScenarioEClass, GrantedScenario.class, "GrantedScenario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGrantedScenario_User(), this.getUser(), null, "user", null, 0, 1, GrantedScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGrantedScenario_Roles(), this.getRole(), null, "roles", null, 0, -1, GrantedScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGrantedScenario_Object(), this.getAssignment(), null, "object", null, 0, -1, GrantedScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(forbiddenScenarioEClass, ForbiddenScenario.class, "ForbiddenScenario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getForbiddenScenario_User(), this.getUser(), null, "user", null, 0, 1, ForbiddenScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getForbiddenScenario_Roles(), this.getRole(), null, "roles", null, 0, -1, ForbiddenScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getForbiddenScenario_Object(), this.getAssignment(), null, "object", null, 0, -1, ForbiddenScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(userRoleScenarioEClass, UserRoleScenario.class, "UserRoleScenario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getUserRoleScenario_Name(), ecorePackage.getEString(), "name", null, 0, 1, UserRoleScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUserRoleScenario_Roles(), this.getRole(), null, "roles", null, 0, -1, UserRoleScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(resourceRoleScenarioEClass, ResourceRoleScenario.class, "ResourceRoleScenario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getResourceRoleScenario_Name(), ecorePackage.getEString(), "name", null, 0, 1, ResourceRoleScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getResourceRoleScenario_Role(), this.getRole(), null, "role", null, 0, -1, ResourceRoleScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getResourceRoleScenario_Resources(), this.getResource(), null, "resources", null, 0, -1, ResourceRoleScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(objectRoleScenarioEClass, ObjectRoleScenario.class, "ObjectRoleScenario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getObjectRoleScenario_Role(), this.getRole(), null, "role", null, 0, -1, ObjectRoleScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getObjectRoleScenario_Assignment(), this.getAssignment(), null, "assignment", null, 0, -1, ObjectRoleScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(resourceScenarioEClass, ResourceScenario.class, "ResourceScenario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getResourceScenario_Name(), ecorePackage.getEString(), "name", null, 0, 1, ResourceScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getResourceScenario_Resources(), this.getResource(), null, "resources", null, 0, -1, ResourceScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(objectScenarioEClass, ObjectScenario.class, "ObjectScenario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getObjectScenario_Assignment(), this.getAssignment(), null, "assignment", null, 0, -1, ObjectScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

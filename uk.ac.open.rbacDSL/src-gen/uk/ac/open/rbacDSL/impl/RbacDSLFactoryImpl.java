@@ -65,18 +65,18 @@ public class RbacDSLFactoryImpl extends EFactoryImpl implements RbacDSLFactory
     switch (eClass.getClassifierID())
     {
       case RbacDSLPackage.RBAC: return createRbac();
-      case RbacDSLPackage.POLICY: return createPolicy();
-      case RbacDSLPackage.SCENARIOS: return createScenarios();
+      case RbacDSLPackage.POLICY_ELEMENT: return createPolicyElement();
+      case RbacDSLPackage.SCENARIO_ELEMENT: return createScenarioElement();
       case RbacDSLPackage.USER: return createUser();
       case RbacDSLPackage.ROLE: return createRole();
+      case RbacDSLPackage.ASSIGNMENT: return createAssignment();
       case RbacDSLPackage.PERMISSION: return createPermission();
-      case RbacDSLPackage.RESOURCE: return createResource();
-      case RbacDSLPackage.USER_SCENARIO: return createUserScenario();
+      case RbacDSLPackage.RBAC_OBJECT: return createRBACObject();
       case RbacDSLPackage.GRANTED_SCENARIO: return createGrantedScenario();
       case RbacDSLPackage.FORBIDDEN_SCENARIO: return createForbiddenScenario();
       case RbacDSLPackage.USER_ROLE_SCENARIO: return createUserRoleScenario();
-      case RbacDSLPackage.RESOURCE_ROLE_SCENARIO: return createResourceRoleScenario();
-      case RbacDSLPackage.RESOURCE_SCENARIO: return createResourceScenario();
+      case RbacDSLPackage.OBJECT_ROLE_SCENARIO: return createObjectRoleScenario();
+      case RbacDSLPackage.OBJECT_SCENARIO: return createObjectScenario();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -98,10 +98,10 @@ public class RbacDSLFactoryImpl extends EFactoryImpl implements RbacDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Policy createPolicy()
+  public PolicyElement createPolicyElement()
   {
-    PolicyImpl policy = new PolicyImpl();
-    return policy;
+    PolicyElementImpl policyElement = new PolicyElementImpl();
+    return policyElement;
   }
 
   /**
@@ -109,10 +109,10 @@ public class RbacDSLFactoryImpl extends EFactoryImpl implements RbacDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Scenarios createScenarios()
+  public ScenarioElement createScenarioElement()
   {
-    ScenariosImpl scenarios = new ScenariosImpl();
-    return scenarios;
+    ScenarioElementImpl scenarioElement = new ScenarioElementImpl();
+    return scenarioElement;
   }
 
   /**
@@ -142,6 +142,17 @@ public class RbacDSLFactoryImpl extends EFactoryImpl implements RbacDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Assignment createAssignment()
+  {
+    AssignmentImpl assignment = new AssignmentImpl();
+    return assignment;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Permission createPermission()
   {
     PermissionImpl permission = new PermissionImpl();
@@ -153,21 +164,10 @@ public class RbacDSLFactoryImpl extends EFactoryImpl implements RbacDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Resource createResource()
+  public RBACObject createRBACObject()
   {
-    ResourceImpl resource = new ResourceImpl();
-    return resource;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public UserScenario createUserScenario()
-  {
-    UserScenarioImpl userScenario = new UserScenarioImpl();
-    return userScenario;
+    RBACObjectImpl rbacObject = new RBACObjectImpl();
+    return rbacObject;
   }
 
   /**
@@ -208,10 +208,10 @@ public class RbacDSLFactoryImpl extends EFactoryImpl implements RbacDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ResourceRoleScenario createResourceRoleScenario()
+  public ObjectRoleScenario createObjectRoleScenario()
   {
-    ResourceRoleScenarioImpl resourceRoleScenario = new ResourceRoleScenarioImpl();
-    return resourceRoleScenario;
+    ObjectRoleScenarioImpl objectRoleScenario = new ObjectRoleScenarioImpl();
+    return objectRoleScenario;
   }
 
   /**
@@ -219,10 +219,10 @@ public class RbacDSLFactoryImpl extends EFactoryImpl implements RbacDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ResourceScenario createResourceScenario()
+  public ObjectScenario createObjectScenario()
   {
-    ResourceScenarioImpl resourceScenario = new ResourceScenarioImpl();
-    return resourceScenario;
+    ObjectScenarioImpl objectScenario = new ObjectScenarioImpl();
+    return objectScenario;
   }
 
   /**

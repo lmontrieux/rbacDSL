@@ -2,38 +2,30 @@
  */
 package uk.ac.open.rbacDSL.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
-import uk.ac.open.rbacDSL.Permission;
+import uk.ac.open.rbacDSL.PolicyElement;
 import uk.ac.open.rbacDSL.RbacDSLPackage;
-import uk.ac.open.rbacDSL.Resource;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Resource</b></em>'.
+ * An implementation of the model object '<em><b>Policy Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link uk.ac.open.rbacDSL.impl.ResourceImpl#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.open.rbacDSL.impl.ResourceImpl#getPermissions <em>Permissions</em>}</li>
+ *   <li>{@link uk.ac.open.rbacDSL.impl.PolicyElementImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ResourceImpl extends MinimalEObjectImpl.Container implements Resource
+public class PolicyElementImpl extends MinimalEObjectImpl.Container implements PolicyElement
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -56,21 +48,11 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getPermissions() <em>Permissions</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPermissions()
-   * @generated
-   * @ordered
-   */
-  protected EList<Permission> permissions;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ResourceImpl()
+  protected PolicyElementImpl()
   {
     super();
   }
@@ -83,7 +65,7 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
   @Override
   protected EClass eStaticClass()
   {
-    return RbacDSLPackage.Literals.RESOURCE;
+    return RbacDSLPackage.Literals.POLICY_ELEMENT;
   }
 
   /**
@@ -106,21 +88,7 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RbacDSLPackage.RESOURCE__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Permission> getPermissions()
-  {
-    if (permissions == null)
-    {
-      permissions = new EObjectResolvingEList<Permission>(Permission.class, this, RbacDSLPackage.RESOURCE__PERMISSIONS);
-    }
-    return permissions;
+      eNotify(new ENotificationImpl(this, Notification.SET, RbacDSLPackage.POLICY_ELEMENT__NAME, oldName, name));
   }
 
   /**
@@ -133,10 +101,8 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
   {
     switch (featureID)
     {
-      case RbacDSLPackage.RESOURCE__NAME:
+      case RbacDSLPackage.POLICY_ELEMENT__NAME:
         return getName();
-      case RbacDSLPackage.RESOURCE__PERMISSIONS:
-        return getPermissions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -146,18 +112,13 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case RbacDSLPackage.RESOURCE__NAME:
+      case RbacDSLPackage.POLICY_ELEMENT__NAME:
         setName((String)newValue);
-        return;
-      case RbacDSLPackage.RESOURCE__PERMISSIONS:
-        getPermissions().clear();
-        getPermissions().addAll((Collection<? extends Permission>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -173,11 +134,8 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
   {
     switch (featureID)
     {
-      case RbacDSLPackage.RESOURCE__NAME:
+      case RbacDSLPackage.POLICY_ELEMENT__NAME:
         setName(NAME_EDEFAULT);
-        return;
-      case RbacDSLPackage.RESOURCE__PERMISSIONS:
-        getPermissions().clear();
         return;
     }
     super.eUnset(featureID);
@@ -193,10 +151,8 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
   {
     switch (featureID)
     {
-      case RbacDSLPackage.RESOURCE__NAME:
+      case RbacDSLPackage.POLICY_ELEMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case RbacDSLPackage.RESOURCE__PERMISSIONS:
-        return permissions != null && !permissions.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -218,4 +174,4 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
     return result.toString();
   }
 
-} //ResourceImpl
+} //PolicyElementImpl

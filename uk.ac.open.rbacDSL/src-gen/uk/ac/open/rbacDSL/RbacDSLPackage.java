@@ -67,22 +67,22 @@ public interface RbacDSLPackage extends EPackage
   int RBAC = 0;
 
   /**
-   * The feature id for the '<em><b>Policy</b></em>' containment reference.
+   * The feature id for the '<em><b>Policy Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RBAC__POLICY = 0;
+  int RBAC__POLICY_ELEMENTS = 0;
 
   /**
-   * The feature id for the '<em><b>Scenarios</b></em>' containment reference.
+   * The feature id for the '<em><b>Scenario Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RBAC__SCENARIOS = 1;
+  int RBAC__SCENARIO_ELEMENTS = 1;
 
   /**
    * The number of structural features of the '<em>Rbac</em>' class.
@@ -94,114 +94,60 @@ public interface RbacDSLPackage extends EPackage
   int RBAC_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link uk.ac.open.rbacDSL.impl.PolicyImpl <em>Policy</em>}' class.
+   * The meta object id for the '{@link uk.ac.open.rbacDSL.impl.PolicyElementImpl <em>Policy Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.open.rbacDSL.impl.PolicyImpl
-   * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getPolicy()
+   * @see uk.ac.open.rbacDSL.impl.PolicyElementImpl
+   * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getPolicyElement()
    * @generated
    */
-  int POLICY = 1;
+  int POLICY_ELEMENT = 1;
 
   /**
-   * The feature id for the '<em><b>Users</b></em>' containment reference list.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int POLICY__USERS = 0;
+  int POLICY_ELEMENT__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Roles</b></em>' containment reference list.
+   * The number of structural features of the '<em>Policy Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int POLICY__ROLES = 1;
+  int POLICY_ELEMENT_FEATURE_COUNT = 1;
 
   /**
-   * The feature id for the '<em><b>Permissions</b></em>' containment reference list.
+   * The meta object id for the '{@link uk.ac.open.rbacDSL.impl.ScenarioElementImpl <em>Scenario Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.open.rbacDSL.impl.ScenarioElementImpl
+   * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getScenarioElement()
+   * @generated
+   */
+  int SCENARIO_ELEMENT = 2;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int POLICY__PERMISSIONS = 2;
+  int SCENARIO_ELEMENT__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Resources</b></em>' containment reference list.
+   * The number of structural features of the '<em>Scenario Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int POLICY__RESOURCES = 3;
-
-  /**
-   * The number of structural features of the '<em>Policy</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POLICY_FEATURE_COUNT = 4;
-
-  /**
-   * The meta object id for the '{@link uk.ac.open.rbacDSL.impl.ScenariosImpl <em>Scenarios</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.open.rbacDSL.impl.ScenariosImpl
-   * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getScenarios()
-   * @generated
-   */
-  int SCENARIOS = 2;
-
-  /**
-   * The feature id for the '<em><b>User Scenarios</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SCENARIOS__USER_SCENARIOS = 0;
-
-  /**
-   * The feature id for the '<em><b>User Role Scenarios</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SCENARIOS__USER_ROLE_SCENARIOS = 1;
-
-  /**
-   * The feature id for the '<em><b>Resource Role Scenarios</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SCENARIOS__RESOURCE_ROLE_SCENARIOS = 2;
-
-  /**
-   * The feature id for the '<em><b>Role Scenarios</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SCENARIOS__ROLE_SCENARIOS = 3;
-
-  /**
-   * The number of structural features of the '<em>Scenarios</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SCENARIOS_FEATURE_COUNT = 4;
+  int SCENARIO_ELEMENT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link uk.ac.open.rbacDSL.impl.UserImpl <em>User</em>}' class.
@@ -220,7 +166,7 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USER__NAME = 0;
+  int USER__NAME = POLICY_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Roles</b></em>' reference list.
@@ -229,7 +175,7 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USER__ROLES = 1;
+  int USER__ROLES = POLICY_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>User</em>' class.
@@ -238,7 +184,7 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USER_FEATURE_COUNT = 2;
+  int USER_FEATURE_COUNT = POLICY_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link uk.ac.open.rbacDSL.impl.RoleImpl <em>Role</em>}' class.
@@ -257,7 +203,7 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ROLE__NAME = 0;
+  int ROLE__NAME = POLICY_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Parent</b></em>' reference list.
@@ -266,7 +212,7 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ROLE__PARENT = 1;
+  int ROLE__PARENT = POLICY_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Ssod</b></em>' reference list.
@@ -275,7 +221,7 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ROLE__SSOD = 2;
+  int ROLE__SSOD = POLICY_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Dsod</b></em>' reference list.
@@ -284,16 +230,16 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ROLE__DSOD = 3;
+  int ROLE__DSOD = POLICY_ELEMENT_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Permissions</b></em>' reference list.
+   * The feature id for the '<em><b>Assignments</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ROLE__PERMISSIONS = 4;
+  int ROLE__ASSIGNMENTS = POLICY_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Role</em>' class.
@@ -302,7 +248,44 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ROLE_FEATURE_COUNT = 5;
+  int ROLE_FEATURE_COUNT = POLICY_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link uk.ac.open.rbacDSL.impl.AssignmentImpl <em>Assignment</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.open.rbacDSL.impl.AssignmentImpl
+   * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getAssignment()
+   * @generated
+   */
+  int ASSIGNMENT = 5;
+
+  /**
+   * The feature id for the '<em><b>Object</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGNMENT__OBJECT = 0;
+
+  /**
+   * The feature id for the '<em><b>Actions</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGNMENT__ACTIONS = 1;
+
+  /**
+   * The number of structural features of the '<em>Assignment</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGNMENT_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link uk.ac.open.rbacDSL.impl.PermissionImpl <em>Permission</em>}' class.
@@ -312,7 +295,7 @@ public interface RbacDSLPackage extends EPackage
    * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getPermission()
    * @generated
    */
-  int PERMISSION = 5;
+  int PERMISSION = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -321,7 +304,7 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERMISSION__NAME = 0;
+  int PERMISSION__NAME = POLICY_ELEMENT__NAME;
 
   /**
    * The number of structural features of the '<em>Permission</em>' class.
@@ -330,17 +313,17 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERMISSION_FEATURE_COUNT = 1;
+  int PERMISSION_FEATURE_COUNT = POLICY_ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link uk.ac.open.rbacDSL.impl.ResourceImpl <em>Resource</em>}' class.
+   * The meta object id for the '{@link uk.ac.open.rbacDSL.impl.RBACObjectImpl <em>RBAC Object</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.open.rbacDSL.impl.ResourceImpl
-   * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getResource()
+   * @see uk.ac.open.rbacDSL.impl.RBACObjectImpl
+   * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getRBACObject()
    * @generated
    */
-  int RESOURCE = 6;
+  int RBAC_OBJECT = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -349,7 +332,7 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RESOURCE__NAME = 0;
+  int RBAC_OBJECT__NAME = POLICY_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Permissions</b></em>' reference list.
@@ -358,71 +341,16 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RESOURCE__PERMISSIONS = 1;
+  int RBAC_OBJECT__PERMISSIONS = POLICY_ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Resource</em>' class.
+   * The number of structural features of the '<em>RBAC Object</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RESOURCE_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link uk.ac.open.rbacDSL.impl.UserScenarioImpl <em>User Scenario</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.open.rbacDSL.impl.UserScenarioImpl
-   * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getUserScenario()
-   * @generated
-   */
-  int USER_SCENARIO = 7;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int USER_SCENARIO__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>User</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int USER_SCENARIO__USER = 1;
-
-  /**
-   * The feature id for the '<em><b>Roles</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int USER_SCENARIO__ROLES = 2;
-
-  /**
-   * The feature id for the '<em><b>Resources</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int USER_SCENARIO__RESOURCES = 3;
-
-  /**
-   * The number of structural features of the '<em>User Scenario</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int USER_SCENARIO_FEATURE_COUNT = 4;
+  int RBAC_OBJECT_FEATURE_COUNT = POLICY_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link uk.ac.open.rbacDSL.impl.GrantedScenarioImpl <em>Granted Scenario</em>}' class.
@@ -441,7 +369,7 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GRANTED_SCENARIO__NAME = USER_SCENARIO__NAME;
+  int GRANTED_SCENARIO__NAME = SCENARIO_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>User</b></em>' reference.
@@ -450,7 +378,7 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GRANTED_SCENARIO__USER = USER_SCENARIO__USER;
+  int GRANTED_SCENARIO__USER = SCENARIO_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Roles</b></em>' reference list.
@@ -459,16 +387,16 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GRANTED_SCENARIO__ROLES = USER_SCENARIO__ROLES;
+  int GRANTED_SCENARIO__ROLES = SCENARIO_ELEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Resources</b></em>' reference list.
+   * The feature id for the '<em><b>Object</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GRANTED_SCENARIO__RESOURCES = USER_SCENARIO__RESOURCES;
+  int GRANTED_SCENARIO__OBJECT = SCENARIO_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Granted Scenario</em>' class.
@@ -477,7 +405,7 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GRANTED_SCENARIO_FEATURE_COUNT = USER_SCENARIO_FEATURE_COUNT + 0;
+  int GRANTED_SCENARIO_FEATURE_COUNT = SCENARIO_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link uk.ac.open.rbacDSL.impl.ForbiddenScenarioImpl <em>Forbidden Scenario</em>}' class.
@@ -496,7 +424,7 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORBIDDEN_SCENARIO__NAME = USER_SCENARIO__NAME;
+  int FORBIDDEN_SCENARIO__NAME = SCENARIO_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>User</b></em>' reference.
@@ -505,7 +433,7 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORBIDDEN_SCENARIO__USER = USER_SCENARIO__USER;
+  int FORBIDDEN_SCENARIO__USER = SCENARIO_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Roles</b></em>' reference list.
@@ -514,16 +442,16 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORBIDDEN_SCENARIO__ROLES = USER_SCENARIO__ROLES;
+  int FORBIDDEN_SCENARIO__ROLES = SCENARIO_ELEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Resources</b></em>' reference list.
+   * The feature id for the '<em><b>Object</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FORBIDDEN_SCENARIO__RESOURCES = USER_SCENARIO__RESOURCES;
+  int FORBIDDEN_SCENARIO__OBJECT = SCENARIO_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Forbidden Scenario</em>' class.
@@ -532,7 +460,7 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORBIDDEN_SCENARIO_FEATURE_COUNT = USER_SCENARIO_FEATURE_COUNT + 0;
+  int FORBIDDEN_SCENARIO_FEATURE_COUNT = SCENARIO_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link uk.ac.open.rbacDSL.impl.UserRoleScenarioImpl <em>User Role Scenario</em>}' class.
@@ -551,7 +479,7 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USER_ROLE_SCENARIO__NAME = 0;
+  int USER_ROLE_SCENARIO__NAME = SCENARIO_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Roles</b></em>' reference list.
@@ -560,7 +488,7 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USER_ROLE_SCENARIO__ROLES = 1;
+  int USER_ROLE_SCENARIO__ROLES = SCENARIO_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>User Role Scenario</em>' class.
@@ -569,17 +497,17 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USER_ROLE_SCENARIO_FEATURE_COUNT = 2;
+  int USER_ROLE_SCENARIO_FEATURE_COUNT = SCENARIO_ELEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link uk.ac.open.rbacDSL.impl.ResourceRoleScenarioImpl <em>Resource Role Scenario</em>}' class.
+   * The meta object id for the '{@link uk.ac.open.rbacDSL.impl.ObjectRoleScenarioImpl <em>Object Role Scenario</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.open.rbacDSL.impl.ResourceRoleScenarioImpl
-   * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getResourceRoleScenario()
+   * @see uk.ac.open.rbacDSL.impl.ObjectRoleScenarioImpl
+   * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getObjectRoleScenario()
    * @generated
    */
-  int RESOURCE_ROLE_SCENARIO = 11;
+  int OBJECT_ROLE_SCENARIO = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -588,7 +516,7 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RESOURCE_ROLE_SCENARIO__NAME = 0;
+  int OBJECT_ROLE_SCENARIO__NAME = SCENARIO_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Role</b></em>' reference list.
@@ -597,35 +525,35 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RESOURCE_ROLE_SCENARIO__ROLE = 1;
+  int OBJECT_ROLE_SCENARIO__ROLE = SCENARIO_ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Resources</b></em>' reference list.
+   * The feature id for the '<em><b>Assignment</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RESOURCE_ROLE_SCENARIO__RESOURCES = 2;
+  int OBJECT_ROLE_SCENARIO__ASSIGNMENT = SCENARIO_ELEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Resource Role Scenario</em>' class.
+   * The number of structural features of the '<em>Object Role Scenario</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RESOURCE_ROLE_SCENARIO_FEATURE_COUNT = 3;
+  int OBJECT_ROLE_SCENARIO_FEATURE_COUNT = SCENARIO_ELEMENT_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link uk.ac.open.rbacDSL.impl.ResourceScenarioImpl <em>Resource Scenario</em>}' class.
+   * The meta object id for the '{@link uk.ac.open.rbacDSL.impl.ObjectScenarioImpl <em>Object Scenario</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.open.rbacDSL.impl.ResourceScenarioImpl
-   * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getResourceScenario()
+   * @see uk.ac.open.rbacDSL.impl.ObjectScenarioImpl
+   * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getObjectScenario()
    * @generated
    */
-  int RESOURCE_SCENARIO = 12;
+  int OBJECT_SCENARIO = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -634,25 +562,25 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RESOURCE_SCENARIO__NAME = 0;
+  int OBJECT_SCENARIO__NAME = SCENARIO_ELEMENT__NAME;
 
   /**
-   * The feature id for the '<em><b>Resources</b></em>' reference list.
+   * The feature id for the '<em><b>Assignment</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RESOURCE_SCENARIO__RESOURCES = 1;
+  int OBJECT_SCENARIO__ASSIGNMENT = SCENARIO_ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Resource Scenario</em>' class.
+   * The number of structural features of the '<em>Object Scenario</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RESOURCE_SCENARIO_FEATURE_COUNT = 2;
+  int OBJECT_SCENARIO_FEATURE_COUNT = SCENARIO_ELEMENT_FEATURE_COUNT + 1;
 
 
   /**
@@ -666,134 +594,68 @@ public interface RbacDSLPackage extends EPackage
   EClass getRbac();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.open.rbacDSL.Rbac#getPolicy <em>Policy</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.open.rbacDSL.Rbac#getPolicyElements <em>Policy Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Policy</em>'.
-   * @see uk.ac.open.rbacDSL.Rbac#getPolicy()
+   * @return the meta object for the containment reference list '<em>Policy Elements</em>'.
+   * @see uk.ac.open.rbacDSL.Rbac#getPolicyElements()
    * @see #getRbac()
    * @generated
    */
-  EReference getRbac_Policy();
+  EReference getRbac_PolicyElements();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.open.rbacDSL.Rbac#getScenarios <em>Scenarios</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.open.rbacDSL.Rbac#getScenarioElements <em>Scenario Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Scenarios</em>'.
-   * @see uk.ac.open.rbacDSL.Rbac#getScenarios()
+   * @return the meta object for the containment reference list '<em>Scenario Elements</em>'.
+   * @see uk.ac.open.rbacDSL.Rbac#getScenarioElements()
    * @see #getRbac()
    * @generated
    */
-  EReference getRbac_Scenarios();
+  EReference getRbac_ScenarioElements();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.open.rbacDSL.Policy <em>Policy</em>}'.
+   * Returns the meta object for class '{@link uk.ac.open.rbacDSL.PolicyElement <em>Policy Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Policy</em>'.
-   * @see uk.ac.open.rbacDSL.Policy
+   * @return the meta object for class '<em>Policy Element</em>'.
+   * @see uk.ac.open.rbacDSL.PolicyElement
    * @generated
    */
-  EClass getPolicy();
+  EClass getPolicyElement();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.open.rbacDSL.Policy#getUsers <em>Users</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.open.rbacDSL.PolicyElement#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Users</em>'.
-   * @see uk.ac.open.rbacDSL.Policy#getUsers()
-   * @see #getPolicy()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see uk.ac.open.rbacDSL.PolicyElement#getName()
+   * @see #getPolicyElement()
    * @generated
    */
-  EReference getPolicy_Users();
+  EAttribute getPolicyElement_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.open.rbacDSL.Policy#getRoles <em>Roles</em>}'.
+   * Returns the meta object for class '{@link uk.ac.open.rbacDSL.ScenarioElement <em>Scenario Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Roles</em>'.
-   * @see uk.ac.open.rbacDSL.Policy#getRoles()
-   * @see #getPolicy()
+   * @return the meta object for class '<em>Scenario Element</em>'.
+   * @see uk.ac.open.rbacDSL.ScenarioElement
    * @generated
    */
-  EReference getPolicy_Roles();
+  EClass getScenarioElement();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.open.rbacDSL.Policy#getPermissions <em>Permissions</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.open.rbacDSL.ScenarioElement#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Permissions</em>'.
-   * @see uk.ac.open.rbacDSL.Policy#getPermissions()
-   * @see #getPolicy()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see uk.ac.open.rbacDSL.ScenarioElement#getName()
+   * @see #getScenarioElement()
    * @generated
    */
-  EReference getPolicy_Permissions();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.open.rbacDSL.Policy#getResources <em>Resources</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Resources</em>'.
-   * @see uk.ac.open.rbacDSL.Policy#getResources()
-   * @see #getPolicy()
-   * @generated
-   */
-  EReference getPolicy_Resources();
-
-  /**
-   * Returns the meta object for class '{@link uk.ac.open.rbacDSL.Scenarios <em>Scenarios</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Scenarios</em>'.
-   * @see uk.ac.open.rbacDSL.Scenarios
-   * @generated
-   */
-  EClass getScenarios();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.open.rbacDSL.Scenarios#getUserScenarios <em>User Scenarios</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>User Scenarios</em>'.
-   * @see uk.ac.open.rbacDSL.Scenarios#getUserScenarios()
-   * @see #getScenarios()
-   * @generated
-   */
-  EReference getScenarios_UserScenarios();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.open.rbacDSL.Scenarios#getUserRoleScenarios <em>User Role Scenarios</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>User Role Scenarios</em>'.
-   * @see uk.ac.open.rbacDSL.Scenarios#getUserRoleScenarios()
-   * @see #getScenarios()
-   * @generated
-   */
-  EReference getScenarios_UserRoleScenarios();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.open.rbacDSL.Scenarios#getResourceRoleScenarios <em>Resource Role Scenarios</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Resource Role Scenarios</em>'.
-   * @see uk.ac.open.rbacDSL.Scenarios#getResourceRoleScenarios()
-   * @see #getScenarios()
-   * @generated
-   */
-  EReference getScenarios_ResourceRoleScenarios();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.open.rbacDSL.Scenarios#getRoleScenarios <em>Role Scenarios</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Role Scenarios</em>'.
-   * @see uk.ac.open.rbacDSL.Scenarios#getRoleScenarios()
-   * @see #getScenarios()
-   * @generated
-   */
-  EReference getScenarios_RoleScenarios();
+  EAttribute getScenarioElement_Name();
 
   /**
    * Returns the meta object for class '{@link uk.ac.open.rbacDSL.User <em>User</em>}'.
@@ -804,17 +666,6 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    */
   EClass getUser();
-
-  /**
-   * Returns the meta object for the attribute '{@link uk.ac.open.rbacDSL.User#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uk.ac.open.rbacDSL.User#getName()
-   * @see #getUser()
-   * @generated
-   */
-  EAttribute getUser_Name();
 
   /**
    * Returns the meta object for the reference list '{@link uk.ac.open.rbacDSL.User#getRoles <em>Roles</em>}'.
@@ -836,17 +687,6 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    */
   EClass getRole();
-
-  /**
-   * Returns the meta object for the attribute '{@link uk.ac.open.rbacDSL.Role#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uk.ac.open.rbacDSL.Role#getName()
-   * @see #getRole()
-   * @generated
-   */
-  EAttribute getRole_Name();
 
   /**
    * Returns the meta object for the reference list '{@link uk.ac.open.rbacDSL.Role#getParent <em>Parent</em>}'.
@@ -882,15 +722,47 @@ public interface RbacDSLPackage extends EPackage
   EReference getRole_Dsod();
 
   /**
-   * Returns the meta object for the reference list '{@link uk.ac.open.rbacDSL.Role#getPermissions <em>Permissions</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.open.rbacDSL.Role#getAssignments <em>Assignments</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Permissions</em>'.
-   * @see uk.ac.open.rbacDSL.Role#getPermissions()
+   * @return the meta object for the containment reference list '<em>Assignments</em>'.
+   * @see uk.ac.open.rbacDSL.Role#getAssignments()
    * @see #getRole()
    * @generated
    */
-  EReference getRole_Permissions();
+  EReference getRole_Assignments();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.open.rbacDSL.Assignment <em>Assignment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Assignment</em>'.
+   * @see uk.ac.open.rbacDSL.Assignment
+   * @generated
+   */
+  EClass getAssignment();
+
+  /**
+   * Returns the meta object for the reference '{@link uk.ac.open.rbacDSL.Assignment#getObject <em>Object</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Object</em>'.
+   * @see uk.ac.open.rbacDSL.Assignment#getObject()
+   * @see #getAssignment()
+   * @generated
+   */
+  EReference getAssignment_Object();
+
+  /**
+   * Returns the meta object for the reference list '{@link uk.ac.open.rbacDSL.Assignment#getActions <em>Actions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Actions</em>'.
+   * @see uk.ac.open.rbacDSL.Assignment#getActions()
+   * @see #getAssignment()
+   * @generated
+   */
+  EReference getAssignment_Actions();
 
   /**
    * Returns the meta object for class '{@link uk.ac.open.rbacDSL.Permission <em>Permission</em>}'.
@@ -903,101 +775,25 @@ public interface RbacDSLPackage extends EPackage
   EClass getPermission();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.open.rbacDSL.Permission#getName <em>Name</em>}'.
+   * Returns the meta object for class '{@link uk.ac.open.rbacDSL.RBACObject <em>RBAC Object</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uk.ac.open.rbacDSL.Permission#getName()
-   * @see #getPermission()
+   * @return the meta object for class '<em>RBAC Object</em>'.
+   * @see uk.ac.open.rbacDSL.RBACObject
    * @generated
    */
-  EAttribute getPermission_Name();
+  EClass getRBACObject();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.open.rbacDSL.Resource <em>Resource</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Resource</em>'.
-   * @see uk.ac.open.rbacDSL.Resource
-   * @generated
-   */
-  EClass getResource();
-
-  /**
-   * Returns the meta object for the attribute '{@link uk.ac.open.rbacDSL.Resource#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uk.ac.open.rbacDSL.Resource#getName()
-   * @see #getResource()
-   * @generated
-   */
-  EAttribute getResource_Name();
-
-  /**
-   * Returns the meta object for the reference list '{@link uk.ac.open.rbacDSL.Resource#getPermissions <em>Permissions</em>}'.
+   * Returns the meta object for the reference list '{@link uk.ac.open.rbacDSL.RBACObject#getPermissions <em>Permissions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Permissions</em>'.
-   * @see uk.ac.open.rbacDSL.Resource#getPermissions()
-   * @see #getResource()
+   * @see uk.ac.open.rbacDSL.RBACObject#getPermissions()
+   * @see #getRBACObject()
    * @generated
    */
-  EReference getResource_Permissions();
-
-  /**
-   * Returns the meta object for class '{@link uk.ac.open.rbacDSL.UserScenario <em>User Scenario</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>User Scenario</em>'.
-   * @see uk.ac.open.rbacDSL.UserScenario
-   * @generated
-   */
-  EClass getUserScenario();
-
-  /**
-   * Returns the meta object for the attribute '{@link uk.ac.open.rbacDSL.UserScenario#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uk.ac.open.rbacDSL.UserScenario#getName()
-   * @see #getUserScenario()
-   * @generated
-   */
-  EAttribute getUserScenario_Name();
-
-  /**
-   * Returns the meta object for the reference '{@link uk.ac.open.rbacDSL.UserScenario#getUser <em>User</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>User</em>'.
-   * @see uk.ac.open.rbacDSL.UserScenario#getUser()
-   * @see #getUserScenario()
-   * @generated
-   */
-  EReference getUserScenario_User();
-
-  /**
-   * Returns the meta object for the reference list '{@link uk.ac.open.rbacDSL.UserScenario#getRoles <em>Roles</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Roles</em>'.
-   * @see uk.ac.open.rbacDSL.UserScenario#getRoles()
-   * @see #getUserScenario()
-   * @generated
-   */
-  EReference getUserScenario_Roles();
-
-  /**
-   * Returns the meta object for the reference list '{@link uk.ac.open.rbacDSL.UserScenario#getResources <em>Resources</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Resources</em>'.
-   * @see uk.ac.open.rbacDSL.UserScenario#getResources()
-   * @see #getUserScenario()
-   * @generated
-   */
-  EReference getUserScenario_Resources();
+  EReference getRBACObject_Permissions();
 
   /**
    * Returns the meta object for class '{@link uk.ac.open.rbacDSL.GrantedScenario <em>Granted Scenario</em>}'.
@@ -1010,6 +806,39 @@ public interface RbacDSLPackage extends EPackage
   EClass getGrantedScenario();
 
   /**
+   * Returns the meta object for the reference '{@link uk.ac.open.rbacDSL.GrantedScenario#getUser <em>User</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>User</em>'.
+   * @see uk.ac.open.rbacDSL.GrantedScenario#getUser()
+   * @see #getGrantedScenario()
+   * @generated
+   */
+  EReference getGrantedScenario_User();
+
+  /**
+   * Returns the meta object for the reference list '{@link uk.ac.open.rbacDSL.GrantedScenario#getRoles <em>Roles</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Roles</em>'.
+   * @see uk.ac.open.rbacDSL.GrantedScenario#getRoles()
+   * @see #getGrantedScenario()
+   * @generated
+   */
+  EReference getGrantedScenario_Roles();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.open.rbacDSL.GrantedScenario#getObject <em>Object</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Object</em>'.
+   * @see uk.ac.open.rbacDSL.GrantedScenario#getObject()
+   * @see #getGrantedScenario()
+   * @generated
+   */
+  EReference getGrantedScenario_Object();
+
+  /**
    * Returns the meta object for class '{@link uk.ac.open.rbacDSL.ForbiddenScenario <em>Forbidden Scenario</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1020,6 +849,39 @@ public interface RbacDSLPackage extends EPackage
   EClass getForbiddenScenario();
 
   /**
+   * Returns the meta object for the reference '{@link uk.ac.open.rbacDSL.ForbiddenScenario#getUser <em>User</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>User</em>'.
+   * @see uk.ac.open.rbacDSL.ForbiddenScenario#getUser()
+   * @see #getForbiddenScenario()
+   * @generated
+   */
+  EReference getForbiddenScenario_User();
+
+  /**
+   * Returns the meta object for the reference list '{@link uk.ac.open.rbacDSL.ForbiddenScenario#getRoles <em>Roles</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Roles</em>'.
+   * @see uk.ac.open.rbacDSL.ForbiddenScenario#getRoles()
+   * @see #getForbiddenScenario()
+   * @generated
+   */
+  EReference getForbiddenScenario_Roles();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.open.rbacDSL.ForbiddenScenario#getObject <em>Object</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Object</em>'.
+   * @see uk.ac.open.rbacDSL.ForbiddenScenario#getObject()
+   * @see #getForbiddenScenario()
+   * @generated
+   */
+  EReference getForbiddenScenario_Object();
+
+  /**
    * Returns the meta object for class '{@link uk.ac.open.rbacDSL.UserRoleScenario <em>User Role Scenario</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1028,17 +890,6 @@ public interface RbacDSLPackage extends EPackage
    * @generated
    */
   EClass getUserRoleScenario();
-
-  /**
-   * Returns the meta object for the attribute '{@link uk.ac.open.rbacDSL.UserRoleScenario#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uk.ac.open.rbacDSL.UserRoleScenario#getName()
-   * @see #getUserRoleScenario()
-   * @generated
-   */
-  EAttribute getUserRoleScenario_Name();
 
   /**
    * Returns the meta object for the reference list '{@link uk.ac.open.rbacDSL.UserRoleScenario#getRoles <em>Roles</em>}'.
@@ -1052,79 +903,57 @@ public interface RbacDSLPackage extends EPackage
   EReference getUserRoleScenario_Roles();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.open.rbacDSL.ResourceRoleScenario <em>Resource Role Scenario</em>}'.
+   * Returns the meta object for class '{@link uk.ac.open.rbacDSL.ObjectRoleScenario <em>Object Role Scenario</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Resource Role Scenario</em>'.
-   * @see uk.ac.open.rbacDSL.ResourceRoleScenario
+   * @return the meta object for class '<em>Object Role Scenario</em>'.
+   * @see uk.ac.open.rbacDSL.ObjectRoleScenario
    * @generated
    */
-  EClass getResourceRoleScenario();
+  EClass getObjectRoleScenario();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.open.rbacDSL.ResourceRoleScenario#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uk.ac.open.rbacDSL.ResourceRoleScenario#getName()
-   * @see #getResourceRoleScenario()
-   * @generated
-   */
-  EAttribute getResourceRoleScenario_Name();
-
-  /**
-   * Returns the meta object for the reference list '{@link uk.ac.open.rbacDSL.ResourceRoleScenario#getRole <em>Role</em>}'.
+   * Returns the meta object for the reference list '{@link uk.ac.open.rbacDSL.ObjectRoleScenario#getRole <em>Role</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Role</em>'.
-   * @see uk.ac.open.rbacDSL.ResourceRoleScenario#getRole()
-   * @see #getResourceRoleScenario()
+   * @see uk.ac.open.rbacDSL.ObjectRoleScenario#getRole()
+   * @see #getObjectRoleScenario()
    * @generated
    */
-  EReference getResourceRoleScenario_Role();
+  EReference getObjectRoleScenario_Role();
 
   /**
-   * Returns the meta object for the reference list '{@link uk.ac.open.rbacDSL.ResourceRoleScenario#getResources <em>Resources</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.open.rbacDSL.ObjectRoleScenario#getAssignment <em>Assignment</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Resources</em>'.
-   * @see uk.ac.open.rbacDSL.ResourceRoleScenario#getResources()
-   * @see #getResourceRoleScenario()
+   * @return the meta object for the containment reference list '<em>Assignment</em>'.
+   * @see uk.ac.open.rbacDSL.ObjectRoleScenario#getAssignment()
+   * @see #getObjectRoleScenario()
    * @generated
    */
-  EReference getResourceRoleScenario_Resources();
+  EReference getObjectRoleScenario_Assignment();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.open.rbacDSL.ResourceScenario <em>Resource Scenario</em>}'.
+   * Returns the meta object for class '{@link uk.ac.open.rbacDSL.ObjectScenario <em>Object Scenario</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Resource Scenario</em>'.
-   * @see uk.ac.open.rbacDSL.ResourceScenario
+   * @return the meta object for class '<em>Object Scenario</em>'.
+   * @see uk.ac.open.rbacDSL.ObjectScenario
    * @generated
    */
-  EClass getResourceScenario();
+  EClass getObjectScenario();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.open.rbacDSL.ResourceScenario#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.open.rbacDSL.ObjectScenario#getAssignment <em>Assignment</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uk.ac.open.rbacDSL.ResourceScenario#getName()
-   * @see #getResourceScenario()
+   * @return the meta object for the containment reference list '<em>Assignment</em>'.
+   * @see uk.ac.open.rbacDSL.ObjectScenario#getAssignment()
+   * @see #getObjectScenario()
    * @generated
    */
-  EAttribute getResourceScenario_Name();
-
-  /**
-   * Returns the meta object for the reference list '{@link uk.ac.open.rbacDSL.ResourceScenario#getResources <em>Resources</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Resources</em>'.
-   * @see uk.ac.open.rbacDSL.ResourceScenario#getResources()
-   * @see #getResourceScenario()
-   * @generated
-   */
-  EReference getResourceScenario_Resources();
+  EReference getObjectScenario_Assignment();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1160,104 +989,56 @@ public interface RbacDSLPackage extends EPackage
     EClass RBAC = eINSTANCE.getRbac();
 
     /**
-     * The meta object literal for the '<em><b>Policy</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Policy Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RBAC__POLICY = eINSTANCE.getRbac_Policy();
+    EReference RBAC__POLICY_ELEMENTS = eINSTANCE.getRbac_PolicyElements();
 
     /**
-     * The meta object literal for the '<em><b>Scenarios</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Scenario Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RBAC__SCENARIOS = eINSTANCE.getRbac_Scenarios();
+    EReference RBAC__SCENARIO_ELEMENTS = eINSTANCE.getRbac_ScenarioElements();
 
     /**
-     * The meta object literal for the '{@link uk.ac.open.rbacDSL.impl.PolicyImpl <em>Policy</em>}' class.
+     * The meta object literal for the '{@link uk.ac.open.rbacDSL.impl.PolicyElementImpl <em>Policy Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.open.rbacDSL.impl.PolicyImpl
-     * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getPolicy()
+     * @see uk.ac.open.rbacDSL.impl.PolicyElementImpl
+     * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getPolicyElement()
      * @generated
      */
-    EClass POLICY = eINSTANCE.getPolicy();
+    EClass POLICY_ELEMENT = eINSTANCE.getPolicyElement();
 
     /**
-     * The meta object literal for the '<em><b>Users</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference POLICY__USERS = eINSTANCE.getPolicy_Users();
+    EAttribute POLICY_ELEMENT__NAME = eINSTANCE.getPolicyElement_Name();
 
     /**
-     * The meta object literal for the '<em><b>Roles</b></em>' containment reference list feature.
+     * The meta object literal for the '{@link uk.ac.open.rbacDSL.impl.ScenarioElementImpl <em>Scenario Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see uk.ac.open.rbacDSL.impl.ScenarioElementImpl
+     * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getScenarioElement()
      * @generated
      */
-    EReference POLICY__ROLES = eINSTANCE.getPolicy_Roles();
+    EClass SCENARIO_ELEMENT = eINSTANCE.getScenarioElement();
 
     /**
-     * The meta object literal for the '<em><b>Permissions</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference POLICY__PERMISSIONS = eINSTANCE.getPolicy_Permissions();
-
-    /**
-     * The meta object literal for the '<em><b>Resources</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference POLICY__RESOURCES = eINSTANCE.getPolicy_Resources();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.open.rbacDSL.impl.ScenariosImpl <em>Scenarios</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.open.rbacDSL.impl.ScenariosImpl
-     * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getScenarios()
-     * @generated
-     */
-    EClass SCENARIOS = eINSTANCE.getScenarios();
-
-    /**
-     * The meta object literal for the '<em><b>User Scenarios</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SCENARIOS__USER_SCENARIOS = eINSTANCE.getScenarios_UserScenarios();
-
-    /**
-     * The meta object literal for the '<em><b>User Role Scenarios</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SCENARIOS__USER_ROLE_SCENARIOS = eINSTANCE.getScenarios_UserRoleScenarios();
-
-    /**
-     * The meta object literal for the '<em><b>Resource Role Scenarios</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SCENARIOS__RESOURCE_ROLE_SCENARIOS = eINSTANCE.getScenarios_ResourceRoleScenarios();
-
-    /**
-     * The meta object literal for the '<em><b>Role Scenarios</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SCENARIOS__ROLE_SCENARIOS = eINSTANCE.getScenarios_RoleScenarios();
+    EAttribute SCENARIO_ELEMENT__NAME = eINSTANCE.getScenarioElement_Name();
 
     /**
      * The meta object literal for the '{@link uk.ac.open.rbacDSL.impl.UserImpl <em>User</em>}' class.
@@ -1268,14 +1049,6 @@ public interface RbacDSLPackage extends EPackage
      * @generated
      */
     EClass USER = eINSTANCE.getUser();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute USER__NAME = eINSTANCE.getUser_Name();
 
     /**
      * The meta object literal for the '<em><b>Roles</b></em>' reference list feature.
@@ -1294,14 +1067,6 @@ public interface RbacDSLPackage extends EPackage
      * @generated
      */
     EClass ROLE = eINSTANCE.getRole();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ROLE__NAME = eINSTANCE.getRole_Name();
 
     /**
      * The meta object literal for the '<em><b>Parent</b></em>' reference list feature.
@@ -1328,12 +1093,38 @@ public interface RbacDSLPackage extends EPackage
     EReference ROLE__DSOD = eINSTANCE.getRole_Dsod();
 
     /**
-     * The meta object literal for the '<em><b>Permissions</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Assignments</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ROLE__PERMISSIONS = eINSTANCE.getRole_Permissions();
+    EReference ROLE__ASSIGNMENTS = eINSTANCE.getRole_Assignments();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.open.rbacDSL.impl.AssignmentImpl <em>Assignment</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.open.rbacDSL.impl.AssignmentImpl
+     * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getAssignment()
+     * @generated
+     */
+    EClass ASSIGNMENT = eINSTANCE.getAssignment();
+
+    /**
+     * The meta object literal for the '<em><b>Object</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ASSIGNMENT__OBJECT = eINSTANCE.getAssignment_Object();
+
+    /**
+     * The meta object literal for the '<em><b>Actions</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ASSIGNMENT__ACTIONS = eINSTANCE.getAssignment_Actions();
 
     /**
      * The meta object literal for the '{@link uk.ac.open.rbacDSL.impl.PermissionImpl <em>Permission</em>}' class.
@@ -1346,30 +1137,14 @@ public interface RbacDSLPackage extends EPackage
     EClass PERMISSION = eINSTANCE.getPermission();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '{@link uk.ac.open.rbacDSL.impl.RBACObjectImpl <em>RBAC Object</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see uk.ac.open.rbacDSL.impl.RBACObjectImpl
+     * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getRBACObject()
      * @generated
      */
-    EAttribute PERMISSION__NAME = eINSTANCE.getPermission_Name();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.open.rbacDSL.impl.ResourceImpl <em>Resource</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.open.rbacDSL.impl.ResourceImpl
-     * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getResource()
-     * @generated
-     */
-    EClass RESOURCE = eINSTANCE.getResource();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute RESOURCE__NAME = eINSTANCE.getResource_Name();
+    EClass RBAC_OBJECT = eINSTANCE.getRBACObject();
 
     /**
      * The meta object literal for the '<em><b>Permissions</b></em>' reference list feature.
@@ -1377,49 +1152,7 @@ public interface RbacDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RESOURCE__PERMISSIONS = eINSTANCE.getResource_Permissions();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.open.rbacDSL.impl.UserScenarioImpl <em>User Scenario</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.open.rbacDSL.impl.UserScenarioImpl
-     * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getUserScenario()
-     * @generated
-     */
-    EClass USER_SCENARIO = eINSTANCE.getUserScenario();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute USER_SCENARIO__NAME = eINSTANCE.getUserScenario_Name();
-
-    /**
-     * The meta object literal for the '<em><b>User</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference USER_SCENARIO__USER = eINSTANCE.getUserScenario_User();
-
-    /**
-     * The meta object literal for the '<em><b>Roles</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference USER_SCENARIO__ROLES = eINSTANCE.getUserScenario_Roles();
-
-    /**
-     * The meta object literal for the '<em><b>Resources</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference USER_SCENARIO__RESOURCES = eINSTANCE.getUserScenario_Resources();
+    EReference RBAC_OBJECT__PERMISSIONS = eINSTANCE.getRBACObject_Permissions();
 
     /**
      * The meta object literal for the '{@link uk.ac.open.rbacDSL.impl.GrantedScenarioImpl <em>Granted Scenario</em>}' class.
@@ -1432,6 +1165,30 @@ public interface RbacDSLPackage extends EPackage
     EClass GRANTED_SCENARIO = eINSTANCE.getGrantedScenario();
 
     /**
+     * The meta object literal for the '<em><b>User</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GRANTED_SCENARIO__USER = eINSTANCE.getGrantedScenario_User();
+
+    /**
+     * The meta object literal for the '<em><b>Roles</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GRANTED_SCENARIO__ROLES = eINSTANCE.getGrantedScenario_Roles();
+
+    /**
+     * The meta object literal for the '<em><b>Object</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GRANTED_SCENARIO__OBJECT = eINSTANCE.getGrantedScenario_Object();
+
+    /**
      * The meta object literal for the '{@link uk.ac.open.rbacDSL.impl.ForbiddenScenarioImpl <em>Forbidden Scenario</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1440,6 +1197,30 @@ public interface RbacDSLPackage extends EPackage
      * @generated
      */
     EClass FORBIDDEN_SCENARIO = eINSTANCE.getForbiddenScenario();
+
+    /**
+     * The meta object literal for the '<em><b>User</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FORBIDDEN_SCENARIO__USER = eINSTANCE.getForbiddenScenario_User();
+
+    /**
+     * The meta object literal for the '<em><b>Roles</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FORBIDDEN_SCENARIO__ROLES = eINSTANCE.getForbiddenScenario_Roles();
+
+    /**
+     * The meta object literal for the '<em><b>Object</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FORBIDDEN_SCENARIO__OBJECT = eINSTANCE.getForbiddenScenario_Object();
 
     /**
      * The meta object literal for the '{@link uk.ac.open.rbacDSL.impl.UserRoleScenarioImpl <em>User Role Scenario</em>}' class.
@@ -1452,14 +1233,6 @@ public interface RbacDSLPackage extends EPackage
     EClass USER_ROLE_SCENARIO = eINSTANCE.getUserRoleScenario();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute USER_ROLE_SCENARIO__NAME = eINSTANCE.getUserRoleScenario_Name();
-
-    /**
      * The meta object literal for the '<em><b>Roles</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1468,22 +1241,14 @@ public interface RbacDSLPackage extends EPackage
     EReference USER_ROLE_SCENARIO__ROLES = eINSTANCE.getUserRoleScenario_Roles();
 
     /**
-     * The meta object literal for the '{@link uk.ac.open.rbacDSL.impl.ResourceRoleScenarioImpl <em>Resource Role Scenario</em>}' class.
+     * The meta object literal for the '{@link uk.ac.open.rbacDSL.impl.ObjectRoleScenarioImpl <em>Object Role Scenario</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.open.rbacDSL.impl.ResourceRoleScenarioImpl
-     * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getResourceRoleScenario()
+     * @see uk.ac.open.rbacDSL.impl.ObjectRoleScenarioImpl
+     * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getObjectRoleScenario()
      * @generated
      */
-    EClass RESOURCE_ROLE_SCENARIO = eINSTANCE.getResourceRoleScenario();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute RESOURCE_ROLE_SCENARIO__NAME = eINSTANCE.getResourceRoleScenario_Name();
+    EClass OBJECT_ROLE_SCENARIO = eINSTANCE.getObjectRoleScenario();
 
     /**
      * The meta object literal for the '<em><b>Role</b></em>' reference list feature.
@@ -1491,41 +1256,33 @@ public interface RbacDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RESOURCE_ROLE_SCENARIO__ROLE = eINSTANCE.getResourceRoleScenario_Role();
+    EReference OBJECT_ROLE_SCENARIO__ROLE = eINSTANCE.getObjectRoleScenario_Role();
 
     /**
-     * The meta object literal for the '<em><b>Resources</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Assignment</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RESOURCE_ROLE_SCENARIO__RESOURCES = eINSTANCE.getResourceRoleScenario_Resources();
+    EReference OBJECT_ROLE_SCENARIO__ASSIGNMENT = eINSTANCE.getObjectRoleScenario_Assignment();
 
     /**
-     * The meta object literal for the '{@link uk.ac.open.rbacDSL.impl.ResourceScenarioImpl <em>Resource Scenario</em>}' class.
+     * The meta object literal for the '{@link uk.ac.open.rbacDSL.impl.ObjectScenarioImpl <em>Object Scenario</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.open.rbacDSL.impl.ResourceScenarioImpl
-     * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getResourceScenario()
+     * @see uk.ac.open.rbacDSL.impl.ObjectScenarioImpl
+     * @see uk.ac.open.rbacDSL.impl.RbacDSLPackageImpl#getObjectScenario()
      * @generated
      */
-    EClass RESOURCE_SCENARIO = eINSTANCE.getResourceScenario();
+    EClass OBJECT_SCENARIO = eINSTANCE.getObjectScenario();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute RESOURCE_SCENARIO__NAME = eINSTANCE.getResourceScenario_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Resources</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Assignment</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RESOURCE_SCENARIO__RESOURCES = eINSTANCE.getResourceScenario_Resources();
+    EReference OBJECT_SCENARIO__ASSIGNMENT = eINSTANCE.getObjectScenario_Assignment();
 
   }
 

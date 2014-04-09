@@ -4,14 +4,9 @@ package uk.ac.open.rbacDSL.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
@@ -26,35 +21,14 @@ import uk.ac.open.rbacDSL.User;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link uk.ac.open.rbacDSL.impl.UserImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.open.rbacDSL.impl.UserImpl#getRoles <em>Roles</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class UserImpl extends MinimalEObjectImpl.Container implements User
+public class UserImpl extends PolicyElementImpl implements User
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getRoles() <em>Roles</em>}' reference list.
    * <!-- begin-user-doc -->
@@ -91,29 +65,6 @@ public class UserImpl extends MinimalEObjectImpl.Container implements User
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RbacDSLPackage.USER__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<Role> getRoles()
   {
     if (roles == null)
@@ -133,8 +84,6 @@ public class UserImpl extends MinimalEObjectImpl.Container implements User
   {
     switch (featureID)
     {
-      case RbacDSLPackage.USER__NAME:
-        return getName();
       case RbacDSLPackage.USER__ROLES:
         return getRoles();
     }
@@ -152,9 +101,6 @@ public class UserImpl extends MinimalEObjectImpl.Container implements User
   {
     switch (featureID)
     {
-      case RbacDSLPackage.USER__NAME:
-        setName((String)newValue);
-        return;
       case RbacDSLPackage.USER__ROLES:
         getRoles().clear();
         getRoles().addAll((Collection<? extends Role>)newValue);
@@ -173,9 +119,6 @@ public class UserImpl extends MinimalEObjectImpl.Container implements User
   {
     switch (featureID)
     {
-      case RbacDSLPackage.USER__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case RbacDSLPackage.USER__ROLES:
         getRoles().clear();
         return;
@@ -193,29 +136,10 @@ public class UserImpl extends MinimalEObjectImpl.Container implements User
   {
     switch (featureID)
     {
-      case RbacDSLPackage.USER__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case RbacDSLPackage.USER__ROLES:
         return roles != null && !roles.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //UserImpl

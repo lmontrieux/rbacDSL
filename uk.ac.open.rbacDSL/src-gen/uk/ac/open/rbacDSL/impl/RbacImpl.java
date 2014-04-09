@@ -2,19 +2,24 @@
  */
 package uk.ac.open.rbacDSL.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import uk.ac.open.rbacDSL.Policy;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import uk.ac.open.rbacDSL.PolicyElement;
 import uk.ac.open.rbacDSL.Rbac;
 import uk.ac.open.rbacDSL.RbacDSLPackage;
-import uk.ac.open.rbacDSL.Scenarios;
+import uk.ac.open.rbacDSL.ScenarioElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,8 +28,8 @@ import uk.ac.open.rbacDSL.Scenarios;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link uk.ac.open.rbacDSL.impl.RbacImpl#getPolicy <em>Policy</em>}</li>
- *   <li>{@link uk.ac.open.rbacDSL.impl.RbacImpl#getScenarios <em>Scenarios</em>}</li>
+ *   <li>{@link uk.ac.open.rbacDSL.impl.RbacImpl#getPolicyElements <em>Policy Elements</em>}</li>
+ *   <li>{@link uk.ac.open.rbacDSL.impl.RbacImpl#getScenarioElements <em>Scenario Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,24 +38,24 @@ import uk.ac.open.rbacDSL.Scenarios;
 public class RbacImpl extends MinimalEObjectImpl.Container implements Rbac
 {
   /**
-   * The cached value of the '{@link #getPolicy() <em>Policy</em>}' containment reference.
+   * The cached value of the '{@link #getPolicyElements() <em>Policy Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPolicy()
+   * @see #getPolicyElements()
    * @generated
    * @ordered
    */
-  protected Policy policy;
+  protected EList<PolicyElement> policyElements;
 
   /**
-   * The cached value of the '{@link #getScenarios() <em>Scenarios</em>}' containment reference.
+   * The cached value of the '{@link #getScenarioElements() <em>Scenario Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getScenarios()
+   * @see #getScenarioElements()
    * @generated
    * @ordered
    */
-  protected Scenarios scenarios;
+  protected EList<ScenarioElement> scenarioElements;
 
   /**
    * <!-- begin-user-doc -->
@@ -78,26 +83,13 @@ public class RbacImpl extends MinimalEObjectImpl.Container implements Rbac
    * <!-- end-user-doc -->
    * @generated
    */
-  public Policy getPolicy()
+  public EList<PolicyElement> getPolicyElements()
   {
-    return policy;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetPolicy(Policy newPolicy, NotificationChain msgs)
-  {
-    Policy oldPolicy = policy;
-    policy = newPolicy;
-    if (eNotificationRequired())
+    if (policyElements == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RbacDSLPackage.RBAC__POLICY, oldPolicy, newPolicy);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      policyElements = new EObjectContainmentEList<PolicyElement>(PolicyElement.class, this, RbacDSLPackage.RBAC__POLICY_ELEMENTS);
     }
-    return msgs;
+    return policyElements;
   }
 
   /**
@@ -105,68 +97,13 @@ public class RbacImpl extends MinimalEObjectImpl.Container implements Rbac
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPolicy(Policy newPolicy)
+  public EList<ScenarioElement> getScenarioElements()
   {
-    if (newPolicy != policy)
+    if (scenarioElements == null)
     {
-      NotificationChain msgs = null;
-      if (policy != null)
-        msgs = ((InternalEObject)policy).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RbacDSLPackage.RBAC__POLICY, null, msgs);
-      if (newPolicy != null)
-        msgs = ((InternalEObject)newPolicy).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RbacDSLPackage.RBAC__POLICY, null, msgs);
-      msgs = basicSetPolicy(newPolicy, msgs);
-      if (msgs != null) msgs.dispatch();
+      scenarioElements = new EObjectContainmentEList<ScenarioElement>(ScenarioElement.class, this, RbacDSLPackage.RBAC__SCENARIO_ELEMENTS);
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RbacDSLPackage.RBAC__POLICY, newPolicy, newPolicy));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Scenarios getScenarios()
-  {
-    return scenarios;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetScenarios(Scenarios newScenarios, NotificationChain msgs)
-  {
-    Scenarios oldScenarios = scenarios;
-    scenarios = newScenarios;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RbacDSLPackage.RBAC__SCENARIOS, oldScenarios, newScenarios);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setScenarios(Scenarios newScenarios)
-  {
-    if (newScenarios != scenarios)
-    {
-      NotificationChain msgs = null;
-      if (scenarios != null)
-        msgs = ((InternalEObject)scenarios).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RbacDSLPackage.RBAC__SCENARIOS, null, msgs);
-      if (newScenarios != null)
-        msgs = ((InternalEObject)newScenarios).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RbacDSLPackage.RBAC__SCENARIOS, null, msgs);
-      msgs = basicSetScenarios(newScenarios, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RbacDSLPackage.RBAC__SCENARIOS, newScenarios, newScenarios));
+    return scenarioElements;
   }
 
   /**
@@ -179,10 +116,10 @@ public class RbacImpl extends MinimalEObjectImpl.Container implements Rbac
   {
     switch (featureID)
     {
-      case RbacDSLPackage.RBAC__POLICY:
-        return basicSetPolicy(null, msgs);
-      case RbacDSLPackage.RBAC__SCENARIOS:
-        return basicSetScenarios(null, msgs);
+      case RbacDSLPackage.RBAC__POLICY_ELEMENTS:
+        return ((InternalEList<?>)getPolicyElements()).basicRemove(otherEnd, msgs);
+      case RbacDSLPackage.RBAC__SCENARIO_ELEMENTS:
+        return ((InternalEList<?>)getScenarioElements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -197,10 +134,10 @@ public class RbacImpl extends MinimalEObjectImpl.Container implements Rbac
   {
     switch (featureID)
     {
-      case RbacDSLPackage.RBAC__POLICY:
-        return getPolicy();
-      case RbacDSLPackage.RBAC__SCENARIOS:
-        return getScenarios();
+      case RbacDSLPackage.RBAC__POLICY_ELEMENTS:
+        return getPolicyElements();
+      case RbacDSLPackage.RBAC__SCENARIO_ELEMENTS:
+        return getScenarioElements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -210,16 +147,19 @@ public class RbacImpl extends MinimalEObjectImpl.Container implements Rbac
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case RbacDSLPackage.RBAC__POLICY:
-        setPolicy((Policy)newValue);
+      case RbacDSLPackage.RBAC__POLICY_ELEMENTS:
+        getPolicyElements().clear();
+        getPolicyElements().addAll((Collection<? extends PolicyElement>)newValue);
         return;
-      case RbacDSLPackage.RBAC__SCENARIOS:
-        setScenarios((Scenarios)newValue);
+      case RbacDSLPackage.RBAC__SCENARIO_ELEMENTS:
+        getScenarioElements().clear();
+        getScenarioElements().addAll((Collection<? extends ScenarioElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -235,11 +175,11 @@ public class RbacImpl extends MinimalEObjectImpl.Container implements Rbac
   {
     switch (featureID)
     {
-      case RbacDSLPackage.RBAC__POLICY:
-        setPolicy((Policy)null);
+      case RbacDSLPackage.RBAC__POLICY_ELEMENTS:
+        getPolicyElements().clear();
         return;
-      case RbacDSLPackage.RBAC__SCENARIOS:
-        setScenarios((Scenarios)null);
+      case RbacDSLPackage.RBAC__SCENARIO_ELEMENTS:
+        getScenarioElements().clear();
         return;
     }
     super.eUnset(featureID);
@@ -255,10 +195,10 @@ public class RbacImpl extends MinimalEObjectImpl.Container implements Rbac
   {
     switch (featureID)
     {
-      case RbacDSLPackage.RBAC__POLICY:
-        return policy != null;
-      case RbacDSLPackage.RBAC__SCENARIOS:
-        return scenarios != null;
+      case RbacDSLPackage.RBAC__POLICY_ELEMENTS:
+        return policyElements != null && !policyElements.isEmpty();
+      case RbacDSLPackage.RBAC__SCENARIO_ELEMENTS:
+        return scenarioElements != null && !scenarioElements.isEmpty();
     }
     return super.eIsSet(featureID);
   }

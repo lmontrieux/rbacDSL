@@ -4,18 +4,18 @@ package uk.ac.open.rbacDSL.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.open.rbacDSL.Permission;
+import uk.ac.open.rbacDSL.Assignment;
 import uk.ac.open.rbacDSL.RbacDSLPackage;
 import uk.ac.open.rbacDSL.Role;
 
@@ -26,38 +26,17 @@ import uk.ac.open.rbacDSL.Role;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link uk.ac.open.rbacDSL.impl.RoleImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.open.rbacDSL.impl.RoleImpl#getParent <em>Parent</em>}</li>
  *   <li>{@link uk.ac.open.rbacDSL.impl.RoleImpl#getSsod <em>Ssod</em>}</li>
  *   <li>{@link uk.ac.open.rbacDSL.impl.RoleImpl#getDsod <em>Dsod</em>}</li>
- *   <li>{@link uk.ac.open.rbacDSL.impl.RoleImpl#getPermissions <em>Permissions</em>}</li>
+ *   <li>{@link uk.ac.open.rbacDSL.impl.RoleImpl#getAssignments <em>Assignments</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RoleImpl extends MinimalEObjectImpl.Container implements Role
+public class RoleImpl extends PolicyElementImpl implements Role
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getParent() <em>Parent</em>}' reference list.
    * <!-- begin-user-doc -->
@@ -89,14 +68,14 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
   protected EList<Role> dsod;
 
   /**
-   * The cached value of the '{@link #getPermissions() <em>Permissions</em>}' reference list.
+   * The cached value of the '{@link #getAssignments() <em>Assignments</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPermissions()
+   * @see #getAssignments()
    * @generated
    * @ordered
    */
-  protected EList<Permission> permissions;
+  protected EList<Assignment> assignments;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,29 +96,6 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
   protected EClass eStaticClass()
   {
     return RbacDSLPackage.Literals.ROLE;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RbacDSLPackage.ROLE__NAME, oldName, name));
   }
 
   /**
@@ -189,13 +145,29 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Permission> getPermissions()
+  public EList<Assignment> getAssignments()
   {
-    if (permissions == null)
+    if (assignments == null)
     {
-      permissions = new EObjectResolvingEList<Permission>(Permission.class, this, RbacDSLPackage.ROLE__PERMISSIONS);
+      assignments = new EObjectContainmentEList<Assignment>(Assignment.class, this, RbacDSLPackage.ROLE__ASSIGNMENTS);
     }
-    return permissions;
+    return assignments;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case RbacDSLPackage.ROLE__ASSIGNMENTS:
+        return ((InternalEList<?>)getAssignments()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -208,16 +180,14 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
   {
     switch (featureID)
     {
-      case RbacDSLPackage.ROLE__NAME:
-        return getName();
       case RbacDSLPackage.ROLE__PARENT:
         return getParent();
       case RbacDSLPackage.ROLE__SSOD:
         return getSsod();
       case RbacDSLPackage.ROLE__DSOD:
         return getDsod();
-      case RbacDSLPackage.ROLE__PERMISSIONS:
-        return getPermissions();
+      case RbacDSLPackage.ROLE__ASSIGNMENTS:
+        return getAssignments();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -233,9 +203,6 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
   {
     switch (featureID)
     {
-      case RbacDSLPackage.ROLE__NAME:
-        setName((String)newValue);
-        return;
       case RbacDSLPackage.ROLE__PARENT:
         getParent().clear();
         getParent().addAll((Collection<? extends Role>)newValue);
@@ -248,9 +215,9 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
         getDsod().clear();
         getDsod().addAll((Collection<? extends Role>)newValue);
         return;
-      case RbacDSLPackage.ROLE__PERMISSIONS:
-        getPermissions().clear();
-        getPermissions().addAll((Collection<? extends Permission>)newValue);
+      case RbacDSLPackage.ROLE__ASSIGNMENTS:
+        getAssignments().clear();
+        getAssignments().addAll((Collection<? extends Assignment>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -266,9 +233,6 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
   {
     switch (featureID)
     {
-      case RbacDSLPackage.ROLE__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case RbacDSLPackage.ROLE__PARENT:
         getParent().clear();
         return;
@@ -278,8 +242,8 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
       case RbacDSLPackage.ROLE__DSOD:
         getDsod().clear();
         return;
-      case RbacDSLPackage.ROLE__PERMISSIONS:
-        getPermissions().clear();
+      case RbacDSLPackage.ROLE__ASSIGNMENTS:
+        getAssignments().clear();
         return;
     }
     super.eUnset(featureID);
@@ -295,35 +259,16 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
   {
     switch (featureID)
     {
-      case RbacDSLPackage.ROLE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case RbacDSLPackage.ROLE__PARENT:
         return parent != null && !parent.isEmpty();
       case RbacDSLPackage.ROLE__SSOD:
         return ssod != null && !ssod.isEmpty();
       case RbacDSLPackage.ROLE__DSOD:
         return dsod != null && !dsod.isEmpty();
-      case RbacDSLPackage.ROLE__PERMISSIONS:
-        return permissions != null && !permissions.isEmpty();
+      case RbacDSLPackage.ROLE__ASSIGNMENTS:
+        return assignments != null && !assignments.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //RoleImpl

@@ -3,87 +3,81 @@ grammar uk.ac.open.RbacDSL with org.eclipse.xtext.common.Terminals
 generate rbacDSL "http://www.ac.uk/open/RbacDSL"
 
 Rbac:
-	policy = Policy
-	scenarios = Scenarios
-;
-
-Policy:
 	'policy' '{'
-		(users += User)*
-		(roles += Role)*
-		(permissions += Permission)*
-		(resources += Resource)*
+		(policyElements += PolicyElement)*
+	'}'
+	'scenarios' '{'
+		(scenarioElements += ScenarioElement)*
 	'}'
 ;
 
-Scenarios:
-	'scenarios' '{'
-		(userScenarios += UserScenario)*
-		(userRoleScenarios += UserRoleScenario)*
-		(resourceRoleScenarios += ResourceRoleScenario)*
-		(roleScenarios += ResourceScenario)*
-	'}'
+PolicyElement:
+	User | Role | Permission | RBACObject
+;
+
+ScenarioElement:
+	GrantedScenario | ForbiddenScenario | UserRoleScenario | ObjectRoleScenario | ObjectScenario
 ;
 
 User:
 	'user' name = ID '{'
-		('role:' roles += [Role])*
+		('role' roles += [Role])*
 	'}'
 ;
 
 Role:
 	'role' name = ID ('extends' parent += [Role]*)? '{'
-		('ssod:' ssod += [Role])*
-		('dsod:' dsod += [Role])*
-		('permission:' permissions += [Permission])*
+		('ssod' ssod += [Role])*
+		('dsod' dsod += [Role])*
+		('object' assignments += Assignment)*
 	'}'
+;
+
+Assignment:
+	object = [RBACObject] '['(actions += [Permission])*']'
 ;
 
 Permission:
-	'permission' name = ID
+	'action' name = ID
 ;
 
-Resource:
-	'resource' name = ID '{'
-		('permission:' permissions += [Permission])*
+RBACObject:
+	'object' name = ID '{'
+		('action' permissions += [Permission])*
 	'}'
-;
-
-UserScenario:
-	GrantedScenario | ForbiddenScenario
 ;
 
 GrantedScenario:
 	'grantedScenario' name = ID '{'
-		'user:' user = [User]
-		('role:' roles += [Role])*
-		('resource:' resources += [Resource])+
+		'user' user = [User]
+		('role' roles += [Role])*
+		('object' object += Assignment)+
 	'}'
 ;
 
 ForbiddenScenario:
 	'forbiddenScenario' name = ID '{'
-		'user:' user = [User]
-		('role:' roles += [Role])*
-		('resource:' resources += [Resource])+
+		'user' user = [User]
+		('role' roles += [Role])*
+		('object' object += Assignment)+
 	'}'
 ;
 
 UserRoleScenario:
 	'userRoleScenario' name = ID '{'
-		('role:' roles += [Role])+
+		('role' roles += [Role])+
 	'}'
 ;
 
-ResourceRoleScenario:
-	'resourceRoleScenario' name = ID '{'
-		'role:' role += [Role]
-		('resource:' resources += [Resource])+
+ObjectRoleScenario:
+	'objectRoleScenario' name = ID '{'
+		'role' role += [Role]
+		('object' assignment += Assignment)+
 	'}'
 ;
 
-ResourceScenario:
-	'roleScenario' name = ID '{'
-		('resource:' resources += [Resource])+
+ObjectScenario:
+	'objectScenario' name = ID '{'
+		('object' assignment += Assignment)+
 	'}'
 ;

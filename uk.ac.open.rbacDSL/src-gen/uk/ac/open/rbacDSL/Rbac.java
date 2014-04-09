@@ -2,6 +2,8 @@
  */
 package uk.ac.open.rbacDSL;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -12,8 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link uk.ac.open.rbacDSL.Rbac#getPolicy <em>Policy</em>}</li>
- *   <li>{@link uk.ac.open.rbacDSL.Rbac#getScenarios <em>Scenarios</em>}</li>
+ *   <li>{@link uk.ac.open.rbacDSL.Rbac#getPolicyElements <em>Policy Elements</em>}</li>
+ *   <li>{@link uk.ac.open.rbacDSL.Rbac#getScenarioElements <em>Scenario Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,55 +26,35 @@ import org.eclipse.emf.ecore.EObject;
 public interface Rbac extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Policy</b></em>' containment reference.
+   * Returns the value of the '<em><b>Policy Elements</b></em>' containment reference list.
+   * The list contents are of type {@link uk.ac.open.rbacDSL.PolicyElement}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Policy</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Policy Elements</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Policy</em>' containment reference.
-   * @see #setPolicy(Policy)
-   * @see uk.ac.open.rbacDSL.RbacDSLPackage#getRbac_Policy()
+   * @return the value of the '<em>Policy Elements</em>' containment reference list.
+   * @see uk.ac.open.rbacDSL.RbacDSLPackage#getRbac_PolicyElements()
    * @model containment="true"
    * @generated
    */
-  Policy getPolicy();
+  EList<PolicyElement> getPolicyElements();
 
   /**
-   * Sets the value of the '{@link uk.ac.open.rbacDSL.Rbac#getPolicy <em>Policy</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Policy</em>' containment reference.
-   * @see #getPolicy()
-   * @generated
-   */
-  void setPolicy(Policy value);
-
-  /**
-   * Returns the value of the '<em><b>Scenarios</b></em>' containment reference.
+   * Returns the value of the '<em><b>Scenario Elements</b></em>' containment reference list.
+   * The list contents are of type {@link uk.ac.open.rbacDSL.ScenarioElement}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Scenarios</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Scenario Elements</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Scenarios</em>' containment reference.
-   * @see #setScenarios(Scenarios)
-   * @see uk.ac.open.rbacDSL.RbacDSLPackage#getRbac_Scenarios()
+   * @return the value of the '<em>Scenario Elements</em>' containment reference list.
+   * @see uk.ac.open.rbacDSL.RbacDSLPackage#getRbac_ScenarioElements()
    * @model containment="true"
    * @generated
    */
-  Scenarios getScenarios();
-
-  /**
-   * Sets the value of the '{@link uk.ac.open.rbacDSL.Rbac#getScenarios <em>Scenarios</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Scenarios</em>' containment reference.
-   * @see #getScenarios()
-   * @generated
-   */
-  void setScenarios(Scenarios value);
+  EList<ScenarioElement> getScenarioElements();
 
 } // Rbac

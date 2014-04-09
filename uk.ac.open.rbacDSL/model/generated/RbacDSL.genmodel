@@ -8,59 +8,51 @@
   <genPackages prefix="RbacDSL" basePackage="uk.ac.open" disposableProviderFactory="true"
       fileExtensions="rbac" ecorePackage="RbacDSL.ecore#/">
     <genClasses ecoreClass="RbacDSL.ecore#//Rbac">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Rbac/policy"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Rbac/scenarios"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Rbac/policyElements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Rbac/scenarioElements"/>
     </genClasses>
-    <genClasses ecoreClass="RbacDSL.ecore#//Policy">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Policy/users"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Policy/roles"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Policy/permissions"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Policy/resources"/>
+    <genClasses ecoreClass="RbacDSL.ecore#//PolicyElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RbacDSL.ecore#//PolicyElement/name"/>
     </genClasses>
-    <genClasses ecoreClass="RbacDSL.ecore#//Scenarios">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Scenarios/userScenarios"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Scenarios/userRoleScenarios"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Scenarios/resourceRoleScenarios"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Scenarios/roleScenarios"/>
+    <genClasses ecoreClass="RbacDSL.ecore#//ScenarioElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RbacDSL.ecore#//ScenarioElement/name"/>
     </genClasses>
     <genClasses ecoreClass="RbacDSL.ecore#//User">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RbacDSL.ecore#//User/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//User/roles"/>
     </genClasses>
     <genClasses ecoreClass="RbacDSL.ecore#//Role">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RbacDSL.ecore#//Role/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Role/parent"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Role/ssod"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Role/dsod"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Role/permissions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Role/assignments"/>
     </genClasses>
-    <genClasses ecoreClass="RbacDSL.ecore#//Permission">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RbacDSL.ecore#//Permission/name"/>
+    <genClasses ecoreClass="RbacDSL.ecore#//Assignment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Assignment/object"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Assignment/actions"/>
     </genClasses>
-    <genClasses ecoreClass="RbacDSL.ecore#//Resource">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RbacDSL.ecore#//Resource/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//Resource/permissions"/>
+    <genClasses ecoreClass="RbacDSL.ecore#//Permission"/>
+    <genClasses ecoreClass="RbacDSL.ecore#//RBACObject">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//RBACObject/permissions"/>
     </genClasses>
-    <genClasses ecoreClass="RbacDSL.ecore#//UserScenario">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RbacDSL.ecore#//UserScenario/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//UserScenario/user"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//UserScenario/roles"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//UserScenario/resources"/>
+    <genClasses ecoreClass="RbacDSL.ecore#//GrantedScenario">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//GrantedScenario/user"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//GrantedScenario/roles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//GrantedScenario/object"/>
     </genClasses>
-    <genClasses ecoreClass="RbacDSL.ecore#//GrantedScenario"/>
-    <genClasses ecoreClass="RbacDSL.ecore#//ForbiddenScenario"/>
+    <genClasses ecoreClass="RbacDSL.ecore#//ForbiddenScenario">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//ForbiddenScenario/user"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//ForbiddenScenario/roles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//ForbiddenScenario/object"/>
+    </genClasses>
     <genClasses ecoreClass="RbacDSL.ecore#//UserRoleScenario">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RbacDSL.ecore#//UserRoleScenario/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//UserRoleScenario/roles"/>
     </genClasses>
-    <genClasses ecoreClass="RbacDSL.ecore#//ResourceRoleScenario">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RbacDSL.ecore#//ResourceRoleScenario/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//ResourceRoleScenario/role"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//ResourceRoleScenario/resources"/>
+    <genClasses ecoreClass="RbacDSL.ecore#//ObjectRoleScenario">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//ObjectRoleScenario/role"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//ObjectRoleScenario/assignment"/>
     </genClasses>
-    <genClasses ecoreClass="RbacDSL.ecore#//ResourceScenario">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RbacDSL.ecore#//ResourceScenario/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//ResourceScenario/resources"/>
+    <genClasses ecoreClass="RbacDSL.ecore#//ObjectScenario">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RbacDSL.ecore#//ObjectScenario/assignment"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

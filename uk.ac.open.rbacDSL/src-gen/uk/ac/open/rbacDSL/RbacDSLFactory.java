@@ -32,22 +32,22 @@ public interface RbacDSLFactory extends EFactory
   Rbac createRbac();
 
   /**
-   * Returns a new object of class '<em>Policy</em>'.
+   * Returns a new object of class '<em>Policy Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Policy</em>'.
+   * @return a new object of class '<em>Policy Element</em>'.
    * @generated
    */
-  Policy createPolicy();
+  PolicyElement createPolicyElement();
 
   /**
-   * Returns a new object of class '<em>Scenarios</em>'.
+   * Returns a new object of class '<em>Scenario Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Scenarios</em>'.
+   * @return a new object of class '<em>Scenario Element</em>'.
    * @generated
    */
-  Scenarios createScenarios();
+  ScenarioElement createScenarioElement();
 
   /**
    * Returns a new object of class '<em>User</em>'.
@@ -68,6 +68,15 @@ public interface RbacDSLFactory extends EFactory
   Role createRole();
 
   /**
+   * Returns a new object of class '<em>Assignment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Assignment</em>'.
+   * @generated
+   */
+  Assignment createAssignment();
+
+  /**
    * Returns a new object of class '<em>Permission</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -77,22 +86,13 @@ public interface RbacDSLFactory extends EFactory
   Permission createPermission();
 
   /**
-   * Returns a new object of class '<em>Resource</em>'.
+   * Returns a new object of class '<em>RBAC Object</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Resource</em>'.
+   * @return a new object of class '<em>RBAC Object</em>'.
    * @generated
    */
-  Resource createResource();
-
-  /**
-   * Returns a new object of class '<em>User Scenario</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>User Scenario</em>'.
-   * @generated
-   */
-  UserScenario createUserScenario();
+  RBACObject createRBACObject();
 
   /**
    * Returns a new object of class '<em>Granted Scenario</em>'.
@@ -122,22 +122,22 @@ public interface RbacDSLFactory extends EFactory
   UserRoleScenario createUserRoleScenario();
 
   /**
-   * Returns a new object of class '<em>Resource Role Scenario</em>'.
+   * Returns a new object of class '<em>Object Role Scenario</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Resource Role Scenario</em>'.
+   * @return a new object of class '<em>Object Role Scenario</em>'.
    * @generated
    */
-  ResourceRoleScenario createResourceRoleScenario();
+  ObjectRoleScenario createObjectRoleScenario();
 
   /**
-   * Returns a new object of class '<em>Resource Scenario</em>'.
+   * Returns a new object of class '<em>Object Scenario</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Resource Scenario</em>'.
+   * @return a new object of class '<em>Object Scenario</em>'.
    * @generated
    */
-  ResourceScenario createResourceScenario();
+  ObjectScenario createObjectScenario();
 
   /**
    * Returns the package supported by this factory.

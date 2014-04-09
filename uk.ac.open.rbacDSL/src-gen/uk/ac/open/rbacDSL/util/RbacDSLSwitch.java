@@ -79,17 +79,17 @@ public class RbacDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case RbacDSLPackage.POLICY:
+      case RbacDSLPackage.POLICY_ELEMENT:
       {
-        Policy policy = (Policy)theEObject;
-        T result = casePolicy(policy);
+        PolicyElement policyElement = (PolicyElement)theEObject;
+        T result = casePolicyElement(policyElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case RbacDSLPackage.SCENARIOS:
+      case RbacDSLPackage.SCENARIO_ELEMENT:
       {
-        Scenarios scenarios = (Scenarios)theEObject;
-        T result = caseScenarios(scenarios);
+        ScenarioElement scenarioElement = (ScenarioElement)theEObject;
+        T result = caseScenarioElement(scenarioElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -97,6 +97,7 @@ public class RbacDSLSwitch<T> extends Switch<T>
       {
         User user = (User)theEObject;
         T result = caseUser(user);
+        if (result == null) result = casePolicyElement(user);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -104,6 +105,14 @@ public class RbacDSLSwitch<T> extends Switch<T>
       {
         Role role = (Role)theEObject;
         T result = caseRole(role);
+        if (result == null) result = casePolicyElement(role);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RbacDSLPackage.ASSIGNMENT:
+      {
+        Assignment assignment = (Assignment)theEObject;
+        T result = caseAssignment(assignment);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -111,20 +120,15 @@ public class RbacDSLSwitch<T> extends Switch<T>
       {
         Permission permission = (Permission)theEObject;
         T result = casePermission(permission);
+        if (result == null) result = casePolicyElement(permission);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case RbacDSLPackage.RESOURCE:
+      case RbacDSLPackage.RBAC_OBJECT:
       {
-        Resource resource = (Resource)theEObject;
-        T result = caseResource(resource);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case RbacDSLPackage.USER_SCENARIO:
-      {
-        UserScenario userScenario = (UserScenario)theEObject;
-        T result = caseUserScenario(userScenario);
+        RBACObject rbacObject = (RBACObject)theEObject;
+        T result = caseRBACObject(rbacObject);
+        if (result == null) result = casePolicyElement(rbacObject);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -132,7 +136,7 @@ public class RbacDSLSwitch<T> extends Switch<T>
       {
         GrantedScenario grantedScenario = (GrantedScenario)theEObject;
         T result = caseGrantedScenario(grantedScenario);
-        if (result == null) result = caseUserScenario(grantedScenario);
+        if (result == null) result = caseScenarioElement(grantedScenario);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -140,7 +144,7 @@ public class RbacDSLSwitch<T> extends Switch<T>
       {
         ForbiddenScenario forbiddenScenario = (ForbiddenScenario)theEObject;
         T result = caseForbiddenScenario(forbiddenScenario);
-        if (result == null) result = caseUserScenario(forbiddenScenario);
+        if (result == null) result = caseScenarioElement(forbiddenScenario);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -148,20 +152,23 @@ public class RbacDSLSwitch<T> extends Switch<T>
       {
         UserRoleScenario userRoleScenario = (UserRoleScenario)theEObject;
         T result = caseUserRoleScenario(userRoleScenario);
+        if (result == null) result = caseScenarioElement(userRoleScenario);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case RbacDSLPackage.RESOURCE_ROLE_SCENARIO:
+      case RbacDSLPackage.OBJECT_ROLE_SCENARIO:
       {
-        ResourceRoleScenario resourceRoleScenario = (ResourceRoleScenario)theEObject;
-        T result = caseResourceRoleScenario(resourceRoleScenario);
+        ObjectRoleScenario objectRoleScenario = (ObjectRoleScenario)theEObject;
+        T result = caseObjectRoleScenario(objectRoleScenario);
+        if (result == null) result = caseScenarioElement(objectRoleScenario);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case RbacDSLPackage.RESOURCE_SCENARIO:
+      case RbacDSLPackage.OBJECT_SCENARIO:
       {
-        ResourceScenario resourceScenario = (ResourceScenario)theEObject;
-        T result = caseResourceScenario(resourceScenario);
+        ObjectScenario objectScenario = (ObjectScenario)theEObject;
+        T result = caseObjectScenario(objectScenario);
+        if (result == null) result = caseScenarioElement(objectScenario);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -186,33 +193,33 @@ public class RbacDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Policy</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Policy Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Policy</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Policy Element</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePolicy(Policy object)
+  public T casePolicyElement(PolicyElement object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Scenarios</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Scenario Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Scenarios</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Scenario Element</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseScenarios(Scenarios object)
+  public T caseScenarioElement(ScenarioElement object)
   {
     return null;
   }
@@ -250,6 +257,22 @@ public class RbacDSLSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Assignment</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Assignment</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAssignment(Assignment object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Permission</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -266,33 +289,17 @@ public class RbacDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Resource</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>RBAC Object</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Resource</em>'.
+   * @return the result of interpreting the object as an instance of '<em>RBAC Object</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseResource(Resource object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>User Scenario</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>User Scenario</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseUserScenario(UserScenario object)
+  public T caseRBACObject(RBACObject object)
   {
     return null;
   }
@@ -346,33 +353,33 @@ public class RbacDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Resource Role Scenario</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Object Role Scenario</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Resource Role Scenario</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Object Role Scenario</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseResourceRoleScenario(ResourceRoleScenario object)
+  public T caseObjectRoleScenario(ObjectRoleScenario object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Resource Scenario</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Object Scenario</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Resource Scenario</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Object Scenario</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseResourceScenario(ResourceScenario object)
+  public T caseObjectScenario(ObjectScenario object)
   {
     return null;
   }

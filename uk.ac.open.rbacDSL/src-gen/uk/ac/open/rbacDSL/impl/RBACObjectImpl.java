@@ -10,41 +10,41 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import uk.ac.open.rbacDSL.Permission;
+import uk.ac.open.rbacDSL.RBACObject;
 import uk.ac.open.rbacDSL.RbacDSLPackage;
-import uk.ac.open.rbacDSL.Role;
-import uk.ac.open.rbacDSL.UserRoleScenario;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>User Role Scenario</b></em>'.
+ * An implementation of the model object '<em><b>RBAC Object</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link uk.ac.open.rbacDSL.impl.UserRoleScenarioImpl#getRoles <em>Roles</em>}</li>
+ *   <li>{@link uk.ac.open.rbacDSL.impl.RBACObjectImpl#getPermissions <em>Permissions</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class UserRoleScenarioImpl extends ScenarioElementImpl implements UserRoleScenario
+public class RBACObjectImpl extends PolicyElementImpl implements RBACObject
 {
   /**
-   * The cached value of the '{@link #getRoles() <em>Roles</em>}' reference list.
+   * The cached value of the '{@link #getPermissions() <em>Permissions</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRoles()
+   * @see #getPermissions()
    * @generated
    * @ordered
    */
-  protected EList<Role> roles;
+  protected EList<Permission> permissions;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected UserRoleScenarioImpl()
+  protected RBACObjectImpl()
   {
     super();
   }
@@ -57,7 +57,7 @@ public class UserRoleScenarioImpl extends ScenarioElementImpl implements UserRol
   @Override
   protected EClass eStaticClass()
   {
-    return RbacDSLPackage.Literals.USER_ROLE_SCENARIO;
+    return RbacDSLPackage.Literals.RBAC_OBJECT;
   }
 
   /**
@@ -65,13 +65,13 @@ public class UserRoleScenarioImpl extends ScenarioElementImpl implements UserRol
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Role> getRoles()
+  public EList<Permission> getPermissions()
   {
-    if (roles == null)
+    if (permissions == null)
     {
-      roles = new EObjectResolvingEList<Role>(Role.class, this, RbacDSLPackage.USER_ROLE_SCENARIO__ROLES);
+      permissions = new EObjectResolvingEList<Permission>(Permission.class, this, RbacDSLPackage.RBAC_OBJECT__PERMISSIONS);
     }
-    return roles;
+    return permissions;
   }
 
   /**
@@ -84,8 +84,8 @@ public class UserRoleScenarioImpl extends ScenarioElementImpl implements UserRol
   {
     switch (featureID)
     {
-      case RbacDSLPackage.USER_ROLE_SCENARIO__ROLES:
-        return getRoles();
+      case RbacDSLPackage.RBAC_OBJECT__PERMISSIONS:
+        return getPermissions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -101,9 +101,9 @@ public class UserRoleScenarioImpl extends ScenarioElementImpl implements UserRol
   {
     switch (featureID)
     {
-      case RbacDSLPackage.USER_ROLE_SCENARIO__ROLES:
-        getRoles().clear();
-        getRoles().addAll((Collection<? extends Role>)newValue);
+      case RbacDSLPackage.RBAC_OBJECT__PERMISSIONS:
+        getPermissions().clear();
+        getPermissions().addAll((Collection<? extends Permission>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -119,8 +119,8 @@ public class UserRoleScenarioImpl extends ScenarioElementImpl implements UserRol
   {
     switch (featureID)
     {
-      case RbacDSLPackage.USER_ROLE_SCENARIO__ROLES:
-        getRoles().clear();
+      case RbacDSLPackage.RBAC_OBJECT__PERMISSIONS:
+        getPermissions().clear();
         return;
     }
     super.eUnset(featureID);
@@ -136,10 +136,10 @@ public class UserRoleScenarioImpl extends ScenarioElementImpl implements UserRol
   {
     switch (featureID)
     {
-      case RbacDSLPackage.USER_ROLE_SCENARIO__ROLES:
-        return roles != null && !roles.isEmpty();
+      case RbacDSLPackage.RBAC_OBJECT__PERMISSIONS:
+        return permissions != null && !permissions.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //UserRoleScenarioImpl
+} //RBACObjectImpl

@@ -2,80 +2,67 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rbacDSL" nsURI="http://www.ac.uk/open/RbacDSL" nsPrefix="rbacDSL">
   <eClassifiers xsi:type="ecore:EClass" name="Rbac">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="policy" eType="#//Policy"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scenarios" eType="#//Scenarios"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="policyElements" upperBound="-1"
+        eType="#//PolicyElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenarioElements" upperBound="-1"
+        eType="#//ScenarioElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Policy">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="users" upperBound="-1"
-        eType="#//User" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
-        eType="#//Role" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="permissions" upperBound="-1"
-        eType="#//Permission" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
-        eType="#//Resource" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Scenarios">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="userScenarios" upperBound="-1"
-        eType="#//UserScenario" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="userRoleScenarios" upperBound="-1"
-        eType="#//UserRoleScenario" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="resourceRoleScenarios"
-        upperBound="-1" eType="#//ResourceRoleScenario" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="roleScenarios" upperBound="-1"
-        eType="#//ResourceScenario" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="User">
+  <eClassifiers xsi:type="ecore:EClass" name="PolicyElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScenarioElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="User" eSuperTypes="#//PolicyElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="roles" unique="false" upperBound="-1"
         eType="#//Role"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Role">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//PolicyElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" unique="false"
         upperBound="-1" eType="#//Role"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ssod" unique="false" upperBound="-1"
         eType="#//Role"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dsod" unique="false" upperBound="-1"
         eType="#//Role"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignments" upperBound="-1"
+        eType="#//Assignment" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Assignment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="object" eType="#//RBACObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" unique="false"
+        upperBound="-1" eType="#//Permission"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Permission" eSuperTypes="#//PolicyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RBACObject" eSuperTypes="#//PolicyElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="permissions" unique="false"
         upperBound="-1" eType="#//Permission"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Permission">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Resource">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="permissions" unique="false"
-        upperBound="-1" eType="#//Permission"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UserScenario">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GrantedScenario" eSuperTypes="#//ScenarioElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="user" eType="#//User"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roles" unique="false" upperBound="-1"
         eType="#//Role"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="resources" unique="false"
-        upperBound="-1" eType="#//Resource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="object" upperBound="-1"
+        eType="#//Assignment" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GrantedScenario" eSuperTypes="#//UserScenario"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ForbiddenScenario" eSuperTypes="#//UserScenario"/>
-  <eClassifiers xsi:type="ecore:EClass" name="UserRoleScenario">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ForbiddenScenario" eSuperTypes="#//ScenarioElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="user" eType="#//User"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roles" unique="false" upperBound="-1"
+        eType="#//Role"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="object" upperBound="-1"
+        eType="#//Assignment" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UserRoleScenario" eSuperTypes="#//ScenarioElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="roles" unique="false" upperBound="-1"
         eType="#//Role"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResourceRoleScenario">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectRoleScenario" eSuperTypes="#//ScenarioElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="role" unique="false" upperBound="-1"
         eType="#//Role"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="resources" unique="false"
-        upperBound="-1" eType="#//Resource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignment" upperBound="-1"
+        eType="#//Assignment" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResourceScenario">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="resources" unique="false"
-        upperBound="-1" eType="#//Resource"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectScenario" eSuperTypes="#//ScenarioElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignment" upperBound="-1"
+        eType="#//Assignment" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
