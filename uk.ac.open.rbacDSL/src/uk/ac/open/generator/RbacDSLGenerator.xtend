@@ -31,7 +31,7 @@ class RbacDSLGenerator implements IGenerator {
 	
 	def toPPS(Role role) {
 		'''
-		<PolicySet xmlns="urn:oasis:names:tc:xacml:2.0:policy" 
+		<PolicySet xmlns="urn:oasis:names:tc:xacml:1.0:policy" 
 				PolicySetId="PPS:«role.name»:role"
 				PolicyCOmbiningAlgId="&policy-combine;permit-overrides">
 			<Target>
@@ -93,7 +93,7 @@ class RbacDSLGenerator implements IGenerator {
 	
 	def toRPS(Role role) {
 		'''
-		<PolicySet xmlns="urn:oasis:names:tc:xacml:2.0:policy"
+		<PolicySet xmlns="urn:oasis:names:tc:xacml:1.0:policy"
 				PolicySetId="RPS:«role.name»:role"
 				PolicyCombiningAlgId="&policy-combine;permit-overrides">
 			<Target>
@@ -119,7 +119,7 @@ class RbacDSLGenerator implements IGenerator {
 	
 	def toURAssignments(Rbac model) {
 		'''
-		<Policy xmlns="urn:oasis:names:tc:xacml:2.0:policy"
+		<Policy xmlns="urn:oasis:names:tc:xacml:1.0:policy"
 				PolicyId="Role:Assignment:Policy"
 				RuleCOmbiningAlgId="&rule-combine;permit-overrides">
 			<Target>
@@ -175,7 +175,7 @@ class RbacDSLGenerator implements IGenerator {
 	
 	def toDSoD(List<Role> roles) {
 		'''
-		<PolicySet xmlns="urn:oasis:names:tc:xacml:2.0:policy"
+		<PolicySet xmlns="urn:oasis:names:tc:xacml:1.0:policy"
 				PolicySetId="DSoS:PolicySet"
 				PolicyCombiningAlgId="&policy-combine;deny-overrides">
 			<Target>
