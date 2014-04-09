@@ -33,7 +33,7 @@ class RbacDSLGenerator implements IGenerator {
 		'''
 		<PolicySet xmlns="urn:oasis:names:tc:xacml:1.0:policy" 
 				PolicySetId="PPS:«role.name»:role"
-				PolicyCOmbiningAlgId="&policy-combine;permit-overrides">
+				PolicyCombiningAlgId="urn:oasis:names:tc:xacml:1.0:policy-combining-algorithm:permit-overrides">
 			<Target>
 				<Subjects><AnySubject /></Subjects>
 				<Resources><AnyResource /></Resources>
@@ -42,7 +42,7 @@ class RbacDSLGenerator implements IGenerator {
 			
 			<!-- Permissions specifically for the «role.name» role -->
 			<Policy PolicyId="PPS:policy:«role.name»:role"
-					RuleCombiningId="&rule-combine;permit-overrides">
+					RuleCombiningId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:permit-overrides">
 				<Target>
 					<Subjects><AnySubject /></Subjects>
 					<Resources><AnyResource /></Resources>
@@ -56,23 +56,23 @@ class RbacDSLGenerator implements IGenerator {
 						<Subjects><AnySubject/></Subjects>
 						<Resources>
 							<Resource>
-								<ResourceMatch MatchId="&function;string-match">
-									<AttributeValue DataType="&xml;string">«assignment.object.name»</AttributeValue>
+								<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-match">
+									<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">«assignment.object.name»</AttributeValue>
 									<ResourceAttributeDesignator 
-											AttributeId="&resource;resource-id"
-											DataType="&xml;string"/>
+											AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id"
+											DataType="http://www.w3.org/2001/XMLSchema#string"/>
 								</ResourceMatch>
 							</Resource>
 						</Resources>
 						<Actions>
 							«FOR action:assignment.actions»
 							<Action>
-								<ActionMatch Matchid="&function;string-match">
+								<ActionMatch Matchid="urn:oasis:names:tc:xacml:1.0:function:string-match">
 									<AttributeValue
-											DataType="&xml;string">«action.name»</AttributeValue>
+											DataType="http://www.w3.org/2001/XMLSchema#string">«action.name»</AttributeValue>
 									<ActionAttributeDesignator
-											AttributeId="&action;action-id"
-											DataType="&xml;string"/>
+											AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id"
+											DataType="http://www.w3.org/2001/XMLSchema#string"/>
 								</ActionMatch>
 							</Action>
 							«ENDFOR»
@@ -95,15 +95,15 @@ class RbacDSLGenerator implements IGenerator {
 		'''
 		<PolicySet xmlns="urn:oasis:names:tc:xacml:1.0:policy"
 				PolicySetId="RPS:«role.name»:role"
-				PolicyCombiningAlgId="&policy-combine;permit-overrides">
+				PolicyCombiningAlgId="urn:oasis:names:tc:xacml:1.0:policy-combining-algorithm:permit-overrides">
 			<Target>
 				<Subjects>
 					<Subject>
-						<SubjectMatch MatchId="&function;string-equal">
-							<AttributeValue DataType="&xml;string">«role.name»</AttributeValue>
+						<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+							<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">«role.name»</AttributeValue>
 							<SubjectAttributeDesignator
 									AttributeId="urn:attributes:role"
-									DataType="&xml;string" />
+									DataType="http://www.w3.org/2001/XMLSchema#string" />
 						</SubjectMatch>
 					</Subject>
 				</Subjects>
@@ -121,7 +121,7 @@ class RbacDSLGenerator implements IGenerator {
 		'''
 		<Policy xmlns="urn:oasis:names:tc:xacml:1.0:policy"
 				PolicyId="Role:Assignment:Policy"
-				RuleCOmbiningAlgId="&rule-combine;permit-overrides">
+				RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:permit-overrides">
 			<Target>
 				<Subjects><AnySubject /></Subjects>
 				<Resources><AnyResource /></Resources>
@@ -134,35 +134,35 @@ class RbacDSLGenerator implements IGenerator {
 					<Subjects>
 						«FOR User user:findUsers(model, role)»
 						<Subject>
-							<SubjectMatch MatchId="&function;string-equal">
+							<SubjectMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
 								<AttributeValue
-										DataType="&xml;string">«user.name»</AttributeValue>
+										DataType="http://www.w3.org/2001/XMLSchema#string">«user.name»</AttributeValue>
 								<SubjectAttributeDesignator
-										AttributeId="&subject;subject-id"
-										DataType="&xml;string" />
+										AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id"
+										DataType="http://www.w3.org/2001/XMLSchema#string" />
 							</SubjectMatch>
 						</Subject>
 						«ENDFOR»
 					</Subjects>
 					<Resources>
 						<Resource>
-							<ResourceMatch MatchId="&function;string-equal">
+							<ResourceMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
 								<AttributeValue
-										DataType="&xml;string">«role.name»</AttributeValue>
+										DataType="http://www.w3.org/2001/XMLSchema#string">«role.name»</AttributeValue>
 								<ResourceAttributeDesignator
 										AttributeId="urn:attributes:role"
-										DataType="&xml;string" />
+										DataType="http://www.w3.org/2001/XMLSchema#string" />
 							</ResourceMatch>
 						</Resource>
 					</Resources>
 					<Actions>
 						<Action>
-							<ActionMatch MatchId="&function;string-equal">
+							<ActionMatch MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
 								<AttributeValue
-										DataType="&xml;string">enable</AttributeValue>
+										DataType="http://www.w3.org/2001/XMLSchema#string">enable</AttributeValue>
 								<ActionAttributeDesignator
-										AttributeId="&action;action-id"
-										DataType="&xml;string" />
+										AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id"
+										DataType="http://www.w3.org/2001/XMLSchema#string" />
 							</ActionMatch>
 						</Action>
 					</Actions>
@@ -177,7 +177,7 @@ class RbacDSLGenerator implements IGenerator {
 		'''
 		<PolicySet xmlns="urn:oasis:names:tc:xacml:1.0:policy"
 				PolicySetId="DSoS:PolicySet"
-				PolicyCombiningAlgId="&policy-combine;deny-overrides">
+				PolicyCombiningAlgId="urn:oasis:names:tc:xacml:1.0:policy-combining-algorithm:deny-overrides">
 			<Target>
 				<Subjects><AnySubject/></Subjects>
 				<Resources><AnyResource/></Resources>
