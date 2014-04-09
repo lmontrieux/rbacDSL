@@ -204,6 +204,10 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	def checkUserRoleScenario(UserRoleScenario scenario) {
 	}
 	
+	/**
+	 * Makes sure that permissions used in Assignments are available for the
+	 * object
+	 */
 	@Check
 	def checkAssignmentPermissions(Assignment assignment) {
 		if (!assignment.object.permissions.containsAll(assignment.actions)) {
