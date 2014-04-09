@@ -7,18 +7,13 @@ import org.eclipse.xtext.validation.Check
 import uk.ac.open.rbacDSL.Assignment
 import uk.ac.open.rbacDSL.ForbiddenScenario
 import uk.ac.open.rbacDSL.GrantedScenario
+import uk.ac.open.rbacDSL.ObjectRoleScenario
+import uk.ac.open.rbacDSL.ObjectScenario
 import uk.ac.open.rbacDSL.Permission
 import uk.ac.open.rbacDSL.RbacDSLPackage
 import uk.ac.open.rbacDSL.Role
 import uk.ac.open.rbacDSL.User
 import uk.ac.open.rbacDSL.UserRoleScenario
-import uk.ac.open.rbacDSL.ObjectRoleScenario
-import uk.ac.open.rbacDSL.ObjectScenario
-import com.google.inject.Inject
-import org.eclipse.xtext.resource.IResourceDescriptions
-import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider
-import org.eclipse.xtext.resource.IContainer
-import uk.ac.open.rbacDSL.RBACObject
 
 //import org.eclipse.xtext.validation.Check
 
@@ -28,12 +23,6 @@ import uk.ac.open.rbacDSL.RBACObject
  * see http://www.eclipse.org/Xtext/documentation.html#validation
  */
 class RbacDSLValidator extends AbstractRbacDSLValidator {
-	
-	@Inject
-	ResourceDescriptionsProvider resourceDescriptionsProvider;
-	
-	@Inject
-	IContainer.Manager containerManager;
 	
 	public static val SSOD_VIOLATION = "uk.ac.open.rbacDSL.SSoD";
 	public static val DSOD_VIOLATION = "uk.ac.open.rbacDSL.DSoD";
