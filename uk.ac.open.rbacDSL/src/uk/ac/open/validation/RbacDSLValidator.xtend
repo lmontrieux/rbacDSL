@@ -132,71 +132,63 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	
 	@Check
 	def checkGrantedScenario(GrantedScenario scenario) {
-		var resourcesLeft = <ResourceSummary>newArrayList()
-		
-		// We populate a list of required actions on objects. The we'll remove 
-		// elements from the list as we find them in the available permissions.
-		// success is if the list is empty in the end
+		// first we build a list of the actions required for each object
+		var requiredObjectActions = <ObjectAction>newArrayList()
 		for (Assignment assignment:scenario.object) {
-			resourcesLeft.add(new ResourceSummary(assignment.object.name, assignment.actions))
-		}
-		
-		var roles = scenario.roles
-		for (Role role:roles) {
-			for (Assignment assignment:role.assignments) {
-				for (ResourceSummary summary:resourcesLeft) {
-					if (summary.name == assignment.object.name) {
-						for (Permission permission:assignment.actions) {
-							summary.removePermission(permission)
-						}
-					}
-				}
+			for (Permission action:assignment.actions) {
+				requiredObjectActions.add(new ObjectAction(assignment.object.name, action.name))
 			}
 		}
-		for (ResourceSummary summary:resourcesLeft) {
-			if (!summary.isEmpty()) {
-				// at least one permission wasn't available
-				error("Permission '" + summary.getName() 
-					+"' required for scenario '" + scenario.name + "'",
-					RbacDSLPackage::eINSTANCE.grantedScenario_Object)
+		
+		// if there are no roles active, we fail (there must at least be one action required
+		if (scenario.roles.isEmpty())
+			error("Granted scenario violation on scenario '"
+				+ scenario.name + "'", RbacDSLPackage::eINSTANCE.grantedScenario_Roles
+			)
+		// then we go through the available permissions to see if they're in the
+		// above list
+		for (Role role:scenario.roles) {
+			for (Assignment assignment:role.assignments) {
+				for (Permission action:assignment.actions) {
+					var objAction = new ObjectAction(assignment.object.name, action.name)
+					if (!requiredObjectActions.contains(objAction)) {
+						error("Granted scenario violation on scenario '" 
+							+ scenario.name + "'", RbacDSLPackage::eINSTANCE.grantedScenario_Object
+						)
+					}
+				}
 			}
 		}
 	}
 	
 	@Check
 	def checkForbiddenScenario(ForbiddenScenario scenario) {
-		var resourcesLeft = <ResourceSummary>newArrayList()
-		
-		// We populate a list of required actions on objects. The we'll remove 
-		// elements from the list as we find them in the available permissions.
-		// success is if the list is empty in the end
+		// first we build a list of the actions required for each object
+		var requiredObjectActions = <ObjectAction>newArrayList()
 		for (Assignment assignment:scenario.object) {
-			resourcesLeft.add(new ResourceSummary(assignment.object.name, assignment.actions))
+			for (Permission action:assignment.actions) {
+				requiredObjectActions.add(new ObjectAction(assignment.object.name, action.name))
+			}
 		}
 		
-		var roles = scenario.roles
-		for (Role role:roles) {
+		// then we go through the available permissions to see if they're in the
+		// above list. At least one should be missing
+		var success = false
+		for (Role role:scenario.roles) {
 			for (Assignment assignment:role.assignments) {
-				for (ResourceSummary summary:resourcesLeft) {
-					if (summary.name == assignment.object.name) {
-						for (Permission permission:assignment.actions) {
-							summary.removePermission(permission)
-						}
+				for (Permission action:assignment.actions) {
+					var objAction = new ObjectAction(assignment.object.name, action.name)
+					if (!requiredObjectActions.contains(objAction)) {
+						success = true // one permission missing, we're good
+						return
 					}
 				}
 			}
 		}
-		var success = false
-		for (ResourceSummary summary:resourcesLeft) {
-			if (!summary.isEmpty()) {
-				success = true
-			}
-		}
-		if (!success) {
-			// all permissions were available
-			error("Permissions too broad for scenario '" + scenario.name + "'",
-					RbacDSLPackage::eINSTANCE.forbiddenScenario_Object)
-		}
+		if (!success)
+			error("Forbidden scenario violation on scenario '" 
+				+ scenario.name + "'", RbacDSLPackage::eINSTANCE.forbiddenScenario_Object
+			)
 	}
 	
 	@Check
