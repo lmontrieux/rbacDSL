@@ -37,4 +37,37 @@ class ParserTest {
 			}
 		'''.parse.assertNoErrors
 	}
+	
+	@Test
+	def void parsePolicyOneRole() {
+		'''
+			policy {
+				role Role1 {}
+			}
+			scenarios {
+			}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parsePolicyOneAction() {
+		'''
+			policy {
+				action Perm1
+			}
+			scenarios {
+			}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parsePolicyOneObject() {
+		'''
+			policy {
+				object Obj1 {}
+			}
+			scenarios {
+			}
+		'''.parse.assertNoErrors
+	}
 }
