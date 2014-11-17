@@ -70,4 +70,20 @@ class ParserTest {
 			}
 		'''.parse.assertNoErrors
 	}
+	
+	@Test
+	def void parsePolicyOneGrantedScenario() {
+		'''
+			policy {
+				user User1 {}
+				object Obj1 {}
+			}
+			scenarios {
+				grantedScenario Granted {
+					user User1
+					object Obj1
+				}
+			}
+		'''.parse.assertNoErrors
+	}
 }
