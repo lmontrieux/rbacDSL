@@ -86,4 +86,64 @@ class ParserTest {
 			}
 		'''.parse.assertNoErrors
 	}
+	
+	@Test
+	def void parsePolicyOneForbiddenScenario() {
+		'''
+			policy {
+				user User1 {}
+				object Obj1 {}
+			}
+			scenarios {
+				forbiddenScenario Forbidden {
+					user User1
+					object Obj1
+				}
+			}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parsePolicyOneUserRoleScenario() {
+		'''
+			policy {
+				role Role1 {}
+			}
+			scenarios {
+				userRoleScenario UserRole {
+					role Role1
+				}
+			}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parsePolicyOneObjectRoleScenario() {
+		'''
+			policy {
+				role Role1 {}
+				object Obj1 {}
+			}
+			scenarios {
+				objectRoleScenario ObjectRole {
+					role Role1
+					object Obj1
+				}
+			}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parsePolicyOneObjectScenario() {
+		'''
+			policy {
+				object Obj1 {}
+			}
+			scenarios {
+				userRoleScenario ObjectScenario {
+					object Obj1
+				}
+			}
+		'''.parse.assertNoErrors
+	}
 }
