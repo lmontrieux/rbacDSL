@@ -47,7 +47,16 @@ DSoD:
 ;
 Object:
 	'object' name=ID '{'
-	
+		('actions' actions += Actions)?
 	'}'
 ;
 
+Actions:
+	'{'
+		actions += Action (',' actions += Action)*
+	'}'
+;
+
+Action:
+	name=ID
+;
