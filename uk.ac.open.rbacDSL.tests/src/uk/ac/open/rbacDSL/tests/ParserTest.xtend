@@ -51,5 +51,20 @@ class ParserTest {
 			}
 		'''.parse.assertNoErrors
 	}
+	
+	@Test
+	def void parseUsersRolesObjectsNoOrder() {
+		'''
+			policy MyPolicy {
+				role Role1 {}
+				user User1 {}
+				object Obj1 {}
+				role Role2 {}
+				role Role3 {}
+				user User3{}
+				object Obj3 {}
+			}
+		'''.parse.assertNoErrors
+	}
 
 }
