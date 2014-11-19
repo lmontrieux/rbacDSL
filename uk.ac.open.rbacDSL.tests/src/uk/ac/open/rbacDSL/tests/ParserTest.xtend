@@ -91,5 +91,45 @@ class ParserTest {
 			}
 		'''.parse.assertNoErrors
 	}
+	
+	@Test
+	def void parseRoleWithOneSSoD() {
+		'''
+			policy MyPolicy {
+				role Role1 {
+					ssod {Role2}
+				}
+				role Role2 {}
+			}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseRoleWithOneDSoD() {
+		'''
+			policy MyPolicy {
+				role Role1 {
+					dsod {Role2}
+				}
+				role Role2 {}
+			}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseRoleWithMultipleSoD() {
+		'''
+			policy MyPolicy {
+				role Role1 {
+					ssod {Role2,Role3}
+					dsod {Role4,Role5}
+				}
+				role Role2 {}
+				role Role3 {}
+				role Role4 {}
+				role Role5 {}
+			}
+		'''.parse.assertNoErrors
+	}
 
 }
