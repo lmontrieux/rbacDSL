@@ -20,7 +20,7 @@ class ParserTest {
 	@Test
 	def void parseEmptyPolicy() {
 		'''
-			policy {
+			policy MyPolicy {
 			}
 		'''.parse.assertNoErrors
 	}
