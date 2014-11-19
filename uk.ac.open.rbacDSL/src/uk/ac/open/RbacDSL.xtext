@@ -26,10 +26,25 @@ UserRoleAssignments:
 
 Role:
 	'role' name=ID '{'
-		
+		sod += SoD*
 	'}'
 ;
 
+SoD:
+	SSoD|DSoD
+;
+
+SSoD:
+	'ssod' '{'
+		ssod += [Role] (',' ssod += [Role])*
+	'}'
+;
+
+DSoD:
+	'dsod' '{'
+		dsod += [Role] (',' dsod += [Role])*
+	'}'
+;
 Object:
 	'object' name=ID '{'
 	
