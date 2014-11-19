@@ -14,11 +14,11 @@ PolicyElement:
 
 User:
 	'user' name=ID '{'
-		('roles' roles += RoleAssignments)?
+		('roles' roles += UserRoleAssignments)?
 	'}'
 ;
 
-RoleAssignments:
+UserRoleAssignments:
 	'{'
 	roles += [Role] (',' roles += [Role])*  
 	'}'
@@ -26,7 +26,7 @@ RoleAssignments:
 
 Role:
 	'role' name=ID '{'
-	
+		
 	'}'
 ;
 
