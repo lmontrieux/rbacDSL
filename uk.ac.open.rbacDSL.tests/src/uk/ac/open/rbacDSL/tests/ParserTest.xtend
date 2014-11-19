@@ -72,7 +72,7 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				user User1 {
-					roles {role1}
+					roles {Role1}
 				}
 				role Role1 {}
 			}
@@ -84,7 +84,7 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				user User1 {
-					roles {role1,role2}
+					roles {Role1,Role2}
 				}
 				role Role1 {}
 				role Role2 {}
