@@ -3,6 +3,7 @@ grammar uk.ac.open.RbacDSL with org.eclipse.xtext.common.Terminals
 generate rbacDSL "http://www.ac.uk/open/RbacDSL"
 
 Rbac:
-	'Hell' name=ID
+	'policy' name=ID '{'
+	'}'
 ;
 
