@@ -22,8 +22,6 @@ class ParserTest {
 		'''
 			policy {
 			}
-			scenarios {
-			}
 		'''.parse.assertNoErrors
 	}
 
