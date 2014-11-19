@@ -13,31 +13,14 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRbacDSLLexer extends Lexer {
     public static final int RULE_ID=4;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=10;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int EOF=-1;
-    public static final int RULE_SL_COMMENT=8;
-    public static final int RULE_ML_COMMENT=7;
-    public static final int T__19=19;
-    public static final int RULE_STRING=6;
-    public static final int T__16=16;
-    public static final int T__15=15;
-    public static final int T__18=18;
-    public static final int T__17=17;
-    public static final int T__12=12;
-    public static final int T__11=11;
-    public static final int T__14=14;
-    public static final int T__13=13;
-    public static final int RULE_INT=5;
     public static final int RULE_WS=9;
+    public static final int RULE_STRING=6;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int RULE_INT=5;
+    public static final int T__11=11;
+    public static final int RULE_ML_COMMENT=7;
+    public static final int EOF=-1;
 
     // delegates
     // delegators
@@ -57,10 +40,10 @@ public class InternalRbacDSLLexer extends Lexer {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:11:7: ( 'policy' )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:11:9: 'policy'
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:11:7: ( 'Hell' )
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:11:9: 'Hell'
             {
-            match("policy"); 
+            match("Hell"); 
 
 
             }
@@ -73,368 +56,15 @@ public class InternalRbacDSLLexer extends Lexer {
     }
     // $ANTLR end "T__11"
 
-    // $ANTLR start "T__12"
-    public final void mT__12() throws RecognitionException {
-        try {
-            int _type = T__12;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:12:7: ( '{' )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:12:9: '{'
-            {
-            match('{'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__12"
-
-    // $ANTLR start "T__13"
-    public final void mT__13() throws RecognitionException {
-        try {
-            int _type = T__13;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:13:7: ( '}' )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:13:9: '}'
-            {
-            match('}'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__13"
-
-    // $ANTLR start "T__14"
-    public final void mT__14() throws RecognitionException {
-        try {
-            int _type = T__14;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:14:7: ( 'scenarios' )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:14:9: 'scenarios'
-            {
-            match("scenarios"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__14"
-
-    // $ANTLR start "T__15"
-    public final void mT__15() throws RecognitionException {
-        try {
-            int _type = T__15;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:15:7: ( 'user' )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:15:9: 'user'
-            {
-            match("user"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__15"
-
-    // $ANTLR start "T__16"
-    public final void mT__16() throws RecognitionException {
-        try {
-            int _type = T__16;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:16:7: ( 'role' )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:16:9: 'role'
-            {
-            match("role"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__16"
-
-    // $ANTLR start "T__17"
-    public final void mT__17() throws RecognitionException {
-        try {
-            int _type = T__17;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:17:7: ( 'extends' )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:17:9: 'extends'
-            {
-            match("extends"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__17"
-
-    // $ANTLR start "T__18"
-    public final void mT__18() throws RecognitionException {
-        try {
-            int _type = T__18;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:18:7: ( 'ssod' )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:18:9: 'ssod'
-            {
-            match("ssod"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__18"
-
-    // $ANTLR start "T__19"
-    public final void mT__19() throws RecognitionException {
-        try {
-            int _type = T__19;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:19:7: ( 'dsod' )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:19:9: 'dsod'
-            {
-            match("dsod"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__19"
-
-    // $ANTLR start "T__20"
-    public final void mT__20() throws RecognitionException {
-        try {
-            int _type = T__20;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:20:7: ( 'object' )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:20:9: 'object'
-            {
-            match("object"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__20"
-
-    // $ANTLR start "T__21"
-    public final void mT__21() throws RecognitionException {
-        try {
-            int _type = T__21;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:21:7: ( '[' )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:21:9: '['
-            {
-            match('['); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__21"
-
-    // $ANTLR start "T__22"
-    public final void mT__22() throws RecognitionException {
-        try {
-            int _type = T__22;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:22:7: ( ']' )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:22:9: ']'
-            {
-            match(']'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__22"
-
-    // $ANTLR start "T__23"
-    public final void mT__23() throws RecognitionException {
-        try {
-            int _type = T__23;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:23:7: ( 'action' )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:23:9: 'action'
-            {
-            match("action"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__23"
-
-    // $ANTLR start "T__24"
-    public final void mT__24() throws RecognitionException {
-        try {
-            int _type = T__24;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:24:7: ( 'grantedScenario' )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:24:9: 'grantedScenario'
-            {
-            match("grantedScenario"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__24"
-
-    // $ANTLR start "T__25"
-    public final void mT__25() throws RecognitionException {
-        try {
-            int _type = T__25;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:25:7: ( 'forbiddenScenario' )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:25:9: 'forbiddenScenario'
-            {
-            match("forbiddenScenario"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__25"
-
-    // $ANTLR start "T__26"
-    public final void mT__26() throws RecognitionException {
-        try {
-            int _type = T__26;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:26:7: ( 'userRoleScenario' )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:26:9: 'userRoleScenario'
-            {
-            match("userRoleScenario"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__26"
-
-    // $ANTLR start "T__27"
-    public final void mT__27() throws RecognitionException {
-        try {
-            int _type = T__27;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:27:7: ( 'objectRoleScenario' )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:27:9: 'objectRoleScenario'
-            {
-            match("objectRoleScenario"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__27"
-
-    // $ANTLR start "T__28"
-    public final void mT__28() throws RecognitionException {
-        try {
-            int _type = T__28;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:28:7: ( 'objectScenario' )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:28:9: 'objectScenario'
-            {
-            match("objectScenario"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__28"
-
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3919:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3919:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:170:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:170:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3919:11: ( '^' )?
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:170:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -443,7 +73,7 @@ public class InternalRbacDSLLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3919:11: '^'
+                    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:170:11: '^'
                     {
                     match('^'); 
 
@@ -461,7 +91,7 @@ public class InternalRbacDSLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3919:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:170:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -510,10 +140,10 @@ public class InternalRbacDSLLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3921:10: ( ( '0' .. '9' )+ )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3921:12: ( '0' .. '9' )+
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:172:10: ( ( '0' .. '9' )+ )
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:172:12: ( '0' .. '9' )+
             {
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3921:12: ( '0' .. '9' )+
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:172:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -527,7 +157,7 @@ public class InternalRbacDSLLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3921:13: '0' .. '9'
+            	    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:172:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -559,10 +189,10 @@ public class InternalRbacDSLLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3923:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3923:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:174:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:174:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3923:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:174:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -580,10 +210,10 @@ public class InternalRbacDSLLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3923:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:174:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3923:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:174:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -599,23 +229,15 @@ public class InternalRbacDSLLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3923:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:174:21: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3923:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:174:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -640,10 +262,10 @@ public class InternalRbacDSLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3923:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:174:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3923:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:174:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -659,23 +281,15 @@ public class InternalRbacDSLLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3923:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:174:54: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3923:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:174:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -718,12 +332,12 @@ public class InternalRbacDSLLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3925:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3925:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:176:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:176:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3925:24: ( options {greedy=false; } : . )*
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:176:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -748,7 +362,7 @@ public class InternalRbacDSLLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3925:52: .
+            	    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:176:52: .
             	    {
             	    matchAny(); 
 
@@ -778,12 +392,12 @@ public class InternalRbacDSLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3927:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3927:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:178:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:178:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3927:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:178:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -796,7 +410,7 @@ public class InternalRbacDSLLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3927:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:178:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -816,7 +430,7 @@ public class InternalRbacDSLLexer extends Lexer {
                 }
             } while (true);
 
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3927:40: ( ( '\\r' )? '\\n' )?
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:178:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -825,9 +439,9 @@ public class InternalRbacDSLLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3927:41: ( '\\r' )? '\\n'
+                    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:178:41: ( '\\r' )? '\\n'
                     {
-                    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3927:41: ( '\\r' )?
+                    // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:178:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -836,7 +450,7 @@ public class InternalRbacDSLLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3927:41: '\\r'
+                            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:178:41: '\\r'
                             {
                             match('\r'); 
 
@@ -868,10 +482,10 @@ public class InternalRbacDSLLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3929:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3929:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:180:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:180:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3929:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:180:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -925,8 +539,8 @@ public class InternalRbacDSLLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3931:16: ( . )
-            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:3931:18: .
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:182:16: ( . )
+            // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:182:18: .
             {
             matchAny(); 
 
@@ -941,8 +555,8 @@ public class InternalRbacDSLLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=25;
+        // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:8: ( T__11 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=8;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -953,168 +567,49 @@ public class InternalRbacDSLLexer extends Lexer {
                 }
                 break;
             case 2 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:16: T__12
-                {
-                mT__12(); 
-
-                }
-                break;
-            case 3 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:22: T__13
-                {
-                mT__13(); 
-
-                }
-                break;
-            case 4 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:28: T__14
-                {
-                mT__14(); 
-
-                }
-                break;
-            case 5 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:34: T__15
-                {
-                mT__15(); 
-
-                }
-                break;
-            case 6 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:40: T__16
-                {
-                mT__16(); 
-
-                }
-                break;
-            case 7 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:46: T__17
-                {
-                mT__17(); 
-
-                }
-                break;
-            case 8 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:52: T__18
-                {
-                mT__18(); 
-
-                }
-                break;
-            case 9 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:58: T__19
-                {
-                mT__19(); 
-
-                }
-                break;
-            case 10 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:64: T__20
-                {
-                mT__20(); 
-
-                }
-                break;
-            case 11 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:70: T__21
-                {
-                mT__21(); 
-
-                }
-                break;
-            case 12 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:76: T__22
-                {
-                mT__22(); 
-
-                }
-                break;
-            case 13 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:82: T__23
-                {
-                mT__23(); 
-
-                }
-                break;
-            case 14 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:88: T__24
-                {
-                mT__24(); 
-
-                }
-                break;
-            case 15 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:94: T__25
-                {
-                mT__25(); 
-
-                }
-                break;
-            case 16 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:100: T__26
-                {
-                mT__26(); 
-
-                }
-                break;
-            case 17 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:106: T__27
-                {
-                mT__27(); 
-
-                }
-                break;
-            case 18 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:112: T__28
-                {
-                mT__28(); 
-
-                }
-                break;
-            case 19 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:118: RULE_ID
+                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:16: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 20 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:126: RULE_INT
+            case 3 :
+                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:24: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 21 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:135: RULE_STRING
+            case 4 :
+                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:33: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 22 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:147: RULE_ML_COMMENT
+            case 5 :
+                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:45: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 23 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:163: RULE_SL_COMMENT
+            case 6 :
+                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:61: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 24 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:179: RULE_WS
+            case 7 :
+                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:77: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 25 :
-                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:187: RULE_ANY_OTHER
+            case 8 :
+                // ../uk.ac.open.rbacDSL.ui/src-gen/uk/ac/open/ui/contentassist/antlr/internal/InternalRbacDSL.g:1:85: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1128,204 +623,37 @@ public class InternalRbacDSLLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\1\30\2\uffff\6\30\2\uffff\3\30\1\26\2\uffff\3\26\2\uffff"+
-        "\1\30\3\uffff\7\30\2\uffff\3\30\5\uffff\15\30\1\104\1\106\1\107"+
-        "\1\30\1\111\6\30\1\uffff\1\30\2\uffff\1\30\1\uffff\4\30\1\126\3"+
-        "\30\1\134\1\135\2\30\1\uffff\2\30\1\142\2\30\2\uffff\4\30\1\uffff"+
-        "\4\30\1\155\5\30\1\uffff\26\30\1\u0089\4\30\1\uffff\1\u008e\1\30"+
-        "\1\u0090\1\30\1\uffff\1\30\1\uffff\1\30\1\u0094\1\u0095\2\uffff";
+        "\1\uffff\1\13\1\11\2\uffff\3\11\2\uffff\1\13\6\uffff\1\13\1\23\1\uffff";
     static final String DFA12_eofS =
-        "\u0096\uffff";
+        "\24\uffff";
     static final String DFA12_minS =
-        "\1\0\1\157\2\uffff\1\143\1\163\1\157\1\170\1\163\1\142\2\uffff\1"+
-        "\143\1\162\1\157\1\101\2\uffff\2\0\1\52\2\uffff\1\154\3\uffff\1"+
-        "\145\1\157\1\145\1\154\1\164\1\157\1\152\2\uffff\1\164\1\141\1\162"+
-        "\5\uffff\1\151\1\156\1\144\1\162\2\145\1\144\1\145\1\151\1\156\1"+
-        "\142\1\143\1\141\3\60\1\156\1\60\1\143\1\157\1\164\1\151\1\171\1"+
-        "\162\1\uffff\1\157\2\uffff\1\144\1\uffff\1\164\1\156\1\145\1\144"+
-        "\1\60\1\151\1\154\1\163\2\60\2\144\1\uffff\1\157\1\145\1\60\1\157"+
-        "\1\143\2\uffff\1\123\1\145\1\163\1\123\1\uffff\1\154\1\145\1\143"+
-        "\1\156\1\60\1\143\1\145\1\156\1\145\1\123\1\uffff\1\145\1\123\1"+
-        "\141\1\156\1\143\1\156\1\143\1\162\1\141\1\145\1\141\1\145\1\151"+
-        "\1\162\1\156\1\162\1\156\1\157\1\151\1\141\1\151\1\141\1\60\1\157"+
-        "\1\162\1\157\1\162\1\uffff\1\60\1\151\1\60\1\151\1\uffff\1\157\1"+
-        "\uffff\1\157\2\60\2\uffff";
+        "\1\0\1\145\1\101\2\uffff\2\0\1\52\2\uffff\1\154\6\uffff\1\154\1\60\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\157\2\uffff\2\163\1\157\1\170\1\163\1\142\2\uffff\1\143"+
-        "\1\162\1\157\1\172\2\uffff\2\uffff\1\57\2\uffff\1\154\3\uffff\1"+
-        "\145\1\157\1\145\1\154\1\164\1\157\1\152\2\uffff\1\164\1\141\1\162"+
-        "\5\uffff\1\151\1\156\1\144\1\162\2\145\1\144\1\145\1\151\1\156\1"+
-        "\142\1\143\1\141\3\172\1\156\1\172\1\143\1\157\1\164\1\151\1\171"+
-        "\1\162\1\uffff\1\157\2\uffff\1\144\1\uffff\1\164\1\156\1\145\1\144"+
-        "\1\172\1\151\1\154\1\163\2\172\2\144\1\uffff\1\157\1\145\1\172\1"+
-        "\157\1\143\2\uffff\1\123\1\145\1\163\1\123\1\uffff\1\154\1\145\1"+
-        "\143\1\156\1\172\1\143\1\145\1\156\1\145\1\123\1\uffff\1\145\1\123"+
-        "\1\141\1\156\1\143\1\156\1\143\1\162\1\141\1\145\1\141\1\145\1\151"+
-        "\1\162\1\156\1\162\1\156\1\157\1\151\1\141\1\151\1\141\1\172\1\157"+
-        "\1\162\1\157\1\162\1\uffff\1\172\1\151\1\172\1\151\1\uffff\1\157"+
-        "\1\uffff\1\157\2\172\2\uffff";
+        "\1\uffff\1\145\1\172\2\uffff\2\uffff\1\57\2\uffff\1\154\6\uffff\1\154\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\2\uffff\1\2\1\3\6\uffff\1\13\1\14\4\uffff\1\23\1\24\3\uffff\1\30"+
-        "\1\31\1\uffff\1\23\1\2\1\3\7\uffff\1\13\1\14\3\uffff\1\24\1\25\1"+
-        "\26\1\27\1\30\30\uffff\1\10\1\uffff\1\5\1\6\1\uffff\1\11\14\uffff"+
-        "\1\1\5\uffff\1\12\1\15\4\uffff\1\7\12\uffff\1\4\33\uffff\1\22\4"+
-        "\uffff\1\16\1\uffff\1\20\3\uffff\1\17\1\21";
+        "\3\uffff\1\2\1\3\3\uffff\1\7\1\10\1\uffff\1\2\1\3\1\4\1\5\1\6\1\7\2\uffff\1\1";
     static final String DFA12_specialS =
-        "\1\2\21\uffff\1\0\1\1\u0082\uffff}>";
+        "\1\0\4\uffff\1\1\1\2\15\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\26\2\25\2\26\1\25\22\26\1\25\1\26\1\22\4\26\1\23\7\26\1"+
-            "\24\12\21\7\26\32\20\1\12\1\26\1\13\1\17\1\20\1\26\1\14\2\20"+
-            "\1\10\1\7\1\16\1\15\7\20\1\11\1\1\1\20\1\6\1\4\1\20\1\5\5\20"+
-            "\1\2\1\26\1\3\uff82\26",
-            "\1\27",
+            "\11\11\2\10\2\11\1\10\22\11\1\10\1\11\1\5\4\11\1\6\7\11\1\7\12\4\7\11\7\3\1\1\22\3\3\11\1\2\1\3\1\11\32\3\uff85\11",
+            "\1\12",
+            "\32\13\4\uffff\1\13\1\uffff\32\13",
             "",
             "",
-            "\1\33\17\uffff\1\34",
-            "\1\35",
-            "\1\36",
-            "\1\37",
-            "\1\40",
-            "\1\41",
+            "\0\15",
+            "\0\15",
+            "\1\16\4\uffff\1\17",
             "",
             "",
-            "\1\44",
-            "\1\45",
-            "\1\46",
-            "\32\30\4\uffff\1\30\1\uffff\32\30",
-            "",
-            "",
-            "\0\50",
-            "\0\50",
-            "\1\51\4\uffff\1\52",
-            "",
-            "",
-            "\1\54",
-            "",
-            "",
-            "",
-            "\1\55",
-            "\1\56",
-            "\1\57",
-            "\1\60",
-            "\1\61",
-            "\1\62",
-            "\1\63",
-            "",
-            "",
-            "\1\64",
-            "\1\65",
-            "\1\66",
+            "\1\21",
             "",
             "",
             "",
             "",
             "",
-            "\1\67",
-            "\1\70",
-            "\1\71",
-            "\1\72",
-            "\1\73",
-            "\1\74",
-            "\1\75",
-            "\1\76",
-            "\1\77",
-            "\1\100",
-            "\1\101",
-            "\1\102",
-            "\1\103",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\12\30\7\uffff\21\30\1\105\10\30\4\uffff\1\30\1\uffff\32\30",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\1\110",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\1\112",
-            "\1\113",
-            "\1\114",
-            "\1\115",
-            "\1\116",
-            "\1\117",
             "",
-            "\1\120",
-            "",
-            "",
-            "\1\121",
-            "",
-            "\1\122",
-            "\1\123",
-            "\1\124",
-            "\1\125",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\1\127",
-            "\1\130",
-            "\1\131",
-            "\12\30\7\uffff\21\30\1\132\1\133\7\30\4\uffff\1\30\1\uffff"+
-            "\32\30",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\1\136",
-            "\1\137",
-            "",
-            "\1\140",
-            "\1\141",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\1\143",
-            "\1\144",
-            "",
-            "",
-            "\1\145",
-            "\1\146",
-            "\1\147",
-            "\1\150",
-            "",
-            "\1\151",
-            "\1\152",
-            "\1\153",
-            "\1\154",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\1\156",
-            "\1\157",
-            "\1\160",
-            "\1\161",
-            "\1\162",
-            "",
-            "\1\163",
-            "\1\164",
-            "\1\165",
-            "\1\166",
-            "\1\167",
-            "\1\170",
-            "\1\171",
-            "\1\172",
-            "\1\173",
-            "\1\174",
-            "\1\175",
-            "\1\176",
-            "\1\177",
-            "\1\u0080",
-            "\1\u0081",
-            "\1\u0082",
-            "\1\u0083",
-            "\1\u0084",
-            "\1\u0085",
-            "\1\u0086",
-            "\1\u0087",
-            "\1\u0088",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\1\u008a",
-            "\1\u008b",
-            "\1\u008c",
-            "\1\u008d",
-            "",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\1\u008f",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\1\u0091",
-            "",
-            "\1\u0092",
-            "",
-            "\1\u0093",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "",
+            "\1\22",
+            "\12\13\7\uffff\32\13\4\uffff\1\13\1\uffff\32\13",
             ""
     };
 
@@ -1359,79 +687,53 @@ public class InternalRbacDSLLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_18 = input.LA(1);
+                        int LA12_0 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_18>='\u0000' && LA12_18<='\uFFFF')) ) {s = 40;}
+                        if ( (LA12_0=='H') ) {s = 1;}
 
-                        else s = 22;
+                        else if ( (LA12_0=='^') ) {s = 2;}
+
+                        else if ( ((LA12_0>='A' && LA12_0<='G')||(LA12_0>='I' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='z')) ) {s = 3;}
+
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 4;}
+
+                        else if ( (LA12_0=='\"') ) {s = 5;}
+
+                        else if ( (LA12_0=='\'') ) {s = 6;}
+
+                        else if ( (LA12_0=='/') ) {s = 7;}
+
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 8;}
+
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='.')||(LA12_0>=':' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\uFFFF')) ) {s = 9;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA12_19 = input.LA(1);
+                        int LA12_5 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_19>='\u0000' && LA12_19<='\uFFFF')) ) {s = 40;}
+                        if ( ((LA12_5>='\u0000' && LA12_5<='\uFFFF')) ) {s = 13;}
 
-                        else s = 22;
+                        else s = 9;
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_0 = input.LA(1);
+                        int LA12_6 = input.LA(1);
 
                         s = -1;
-                        if ( (LA12_0=='p') ) {s = 1;}
+                        if ( ((LA12_6>='\u0000' && LA12_6<='\uFFFF')) ) {s = 13;}
 
-                        else if ( (LA12_0=='{') ) {s = 2;}
-
-                        else if ( (LA12_0=='}') ) {s = 3;}
-
-                        else if ( (LA12_0=='s') ) {s = 4;}
-
-                        else if ( (LA12_0=='u') ) {s = 5;}
-
-                        else if ( (LA12_0=='r') ) {s = 6;}
-
-                        else if ( (LA12_0=='e') ) {s = 7;}
-
-                        else if ( (LA12_0=='d') ) {s = 8;}
-
-                        else if ( (LA12_0=='o') ) {s = 9;}
-
-                        else if ( (LA12_0=='[') ) {s = 10;}
-
-                        else if ( (LA12_0==']') ) {s = 11;}
-
-                        else if ( (LA12_0=='a') ) {s = 12;}
-
-                        else if ( (LA12_0=='g') ) {s = 13;}
-
-                        else if ( (LA12_0=='f') ) {s = 14;}
-
-                        else if ( (LA12_0=='^') ) {s = 15;}
-
-                        else if ( ((LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='b' && LA12_0<='c')||(LA12_0>='h' && LA12_0<='n')||LA12_0=='q'||LA12_0=='t'||(LA12_0>='v' && LA12_0<='z')) ) {s = 16;}
-
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 17;}
-
-                        else if ( (LA12_0=='\"') ) {s = 18;}
-
-                        else if ( (LA12_0=='\'') ) {s = 19;}
-
-                        else if ( (LA12_0=='/') ) {s = 20;}
-
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 21;}
-
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='.')||(LA12_0>=':' && LA12_0<='@')||LA12_0=='\\'||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 22;}
+                        else s = 9;
 
                         if ( s>=0 ) return s;
                         break;

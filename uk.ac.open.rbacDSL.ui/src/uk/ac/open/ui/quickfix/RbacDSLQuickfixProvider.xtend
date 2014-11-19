@@ -3,12 +3,6 @@
 */
 package uk.ac.open.ui.quickfix
 
-import uk.ac.open.validation.RbacDSLValidator
-import org.eclipse.xtext.ui.editor.quickfix.Fix
-import org.eclipse.xtext.validation.Issue
-import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
-import uk.ac.open.rbacDSL.Role
-
 //import org.eclipse.xtext.ui.editor.quickfix.Fix
 //import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
 //import org.eclipse.xtext.validation.Issue
@@ -19,17 +13,7 @@ import uk.ac.open.rbacDSL.Role
  * see http://www.eclipse.org/Xtext/documentation.html#quickfixes
  */
 class RbacDSLQuickfixProvider extends org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider {
-	
-//	@Fix(RbacDSLValidator::SSOD_VIOLATION)
-//	def removeSSoDContraint(Issue issue, IssueResolutionAcceptor acceptor) {
-//		acceptor.accept(issue, "Remove SSoD constraint", "Remove SSoD constraint", "",
-//			[element, context | 
-//				var ssod = (element as Role).ssod
-//				ssod.remove(issue.data.get(1))
-//				(element as Role).ssod = ssod
-//			]
-//		);
-//	}
+
 //	@Fix(MyDslValidator::INVALID_NAME)
 //	def capitalizeName(Issue issue, IssueResolutionAcceptor acceptor) {
 //		acceptor.accept(issue, 'Capitalize name', 'Capitalize the name.', 'upcase.png') [

@@ -2,24 +2,15 @@
  */
 package uk.ac.open.rbacDSL.impl;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import uk.ac.open.rbacDSL.PolicyElement;
 import uk.ac.open.rbacDSL.Rbac;
 import uk.ac.open.rbacDSL.RbacDSLPackage;
-import uk.ac.open.rbacDSL.ScenarioElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,8 +19,7 @@ import uk.ac.open.rbacDSL.ScenarioElement;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link uk.ac.open.rbacDSL.impl.RbacImpl#getPolicyElements <em>Policy Elements</em>}</li>
- *   <li>{@link uk.ac.open.rbacDSL.impl.RbacImpl#getScenarioElements <em>Scenario Elements</em>}</li>
+ *   <li>{@link uk.ac.open.rbacDSL.impl.RbacImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,24 +28,24 @@ import uk.ac.open.rbacDSL.ScenarioElement;
 public class RbacImpl extends MinimalEObjectImpl.Container implements Rbac
 {
   /**
-   * The cached value of the '{@link #getPolicyElements() <em>Policy Elements</em>}' containment reference list.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPolicyElements()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected EList<PolicyElement> policyElements;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getScenarioElements() <em>Scenario Elements</em>}' containment reference list.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getScenarioElements()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected EList<ScenarioElement> scenarioElements;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -83,13 +73,9 @@ public class RbacImpl extends MinimalEObjectImpl.Container implements Rbac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<PolicyElement> getPolicyElements()
+  public String getName()
   {
-    if (policyElements == null)
-    {
-      policyElements = new EObjectContainmentEList<PolicyElement>(PolicyElement.class, this, RbacDSLPackage.RBAC__POLICY_ELEMENTS);
-    }
-    return policyElements;
+    return name;
   }
 
   /**
@@ -97,31 +83,12 @@ public class RbacImpl extends MinimalEObjectImpl.Container implements Rbac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ScenarioElement> getScenarioElements()
+  public void setName(String newName)
   {
-    if (scenarioElements == null)
-    {
-      scenarioElements = new EObjectContainmentEList<ScenarioElement>(ScenarioElement.class, this, RbacDSLPackage.RBAC__SCENARIO_ELEMENTS);
-    }
-    return scenarioElements;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case RbacDSLPackage.RBAC__POLICY_ELEMENTS:
-        return ((InternalEList<?>)getPolicyElements()).basicRemove(otherEnd, msgs);
-      case RbacDSLPackage.RBAC__SCENARIO_ELEMENTS:
-        return ((InternalEList<?>)getScenarioElements()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RbacDSLPackage.RBAC__NAME, oldName, name));
   }
 
   /**
@@ -134,10 +101,8 @@ public class RbacImpl extends MinimalEObjectImpl.Container implements Rbac
   {
     switch (featureID)
     {
-      case RbacDSLPackage.RBAC__POLICY_ELEMENTS:
-        return getPolicyElements();
-      case RbacDSLPackage.RBAC__SCENARIO_ELEMENTS:
-        return getScenarioElements();
+      case RbacDSLPackage.RBAC__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -147,19 +112,13 @@ public class RbacImpl extends MinimalEObjectImpl.Container implements Rbac
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case RbacDSLPackage.RBAC__POLICY_ELEMENTS:
-        getPolicyElements().clear();
-        getPolicyElements().addAll((Collection<? extends PolicyElement>)newValue);
-        return;
-      case RbacDSLPackage.RBAC__SCENARIO_ELEMENTS:
-        getScenarioElements().clear();
-        getScenarioElements().addAll((Collection<? extends ScenarioElement>)newValue);
+      case RbacDSLPackage.RBAC__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -175,11 +134,8 @@ public class RbacImpl extends MinimalEObjectImpl.Container implements Rbac
   {
     switch (featureID)
     {
-      case RbacDSLPackage.RBAC__POLICY_ELEMENTS:
-        getPolicyElements().clear();
-        return;
-      case RbacDSLPackage.RBAC__SCENARIO_ELEMENTS:
-        getScenarioElements().clear();
+      case RbacDSLPackage.RBAC__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -195,12 +151,27 @@ public class RbacImpl extends MinimalEObjectImpl.Container implements Rbac
   {
     switch (featureID)
     {
-      case RbacDSLPackage.RBAC__POLICY_ELEMENTS:
-        return policyElements != null && !policyElements.isEmpty();
-      case RbacDSLPackage.RBAC__SCENARIO_ELEMENTS:
-        return scenarioElements != null && !scenarioElements.isEmpty();
+      case RbacDSLPackage.RBAC__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //RbacImpl
