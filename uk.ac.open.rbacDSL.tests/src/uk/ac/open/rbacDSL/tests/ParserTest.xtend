@@ -24,5 +24,32 @@ class ParserTest {
 			}
 		'''.parse.assertNoErrors
 	}
+	
+	@Test
+	def void parseOneUser() {
+		'''
+			policy MyPolicy {
+				user User1 {}
+			}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseOneRole() {
+		'''
+			policy MyPolicy {
+				role Role1 {}
+			}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseOneObject() {
+		'''
+			policy MyPolicy {
+				object Obj1 {}
+			}
+		'''.parse.assertNoErrors
+	}
 
 }
