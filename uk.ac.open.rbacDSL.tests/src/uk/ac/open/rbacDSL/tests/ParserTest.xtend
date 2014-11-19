@@ -179,5 +179,101 @@ class ParserTest {
 			}
 		'''.parse.assertNoErrors
 	}
+	
+	@Test
+	def void parseRoleOneObjectOneAction() {
+		'''
+			policy MyPolicy {
+				role Role1 {
+					permissions {Obj11[read]}
+				}
+				object Obj11 {
+					actions {read}
+				}
+			}
+		'''.parse.assertNoErrors
+	}
+
+	@Test
+	def void parseRoleOneObjectMultipleAction() {
+		'''
+			policy MyPolicy {
+				role Role1 {
+					permissions {Obj11[read,write]}
+				}
+				object Obj11 {
+					actions {read,write}
+				}
+			}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseRoleMultipleObjectsOneAction() {
+		'''
+			policy MyPolicy {
+				role Role1 {
+					permissions {Obj11[read], Obj2[read]}
+				}
+				object Obj11 {
+					actions {read}
+				}
+				object Obj2 {
+					actions {read}
+				}
+			}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseRoleMultipleObjectsDifferentAction() {
+		'''
+			policy MyPolicy {
+				role Role1 {
+					permissions {Obj11[read], Obj2[write]}
+				}
+				object Obj11 {
+					actions {read}
+				}
+				object Obj2 {
+					actions {write}
+				}
+			}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseRoleMultipleObjectsMultipleActions() {
+		'''
+			policy MyPolicy {
+				role Role1 {
+					permissions {Obj11[read,write], Obj2[read,write]}
+				}
+				object Obj11 {
+					actions {read,write}
+				}
+				object Obj2 {
+					actions {read,write}
+				}
+			}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseRoleMultipleObjectsDifferentActions() {
+		'''
+			policy MyPolicy {
+				role Role1 {
+					permissions {Obj11[read,create], Obj2[read,write]}
+				}
+				object Obj11 {
+					actions {read,create}
+				}
+				object Obj2 {
+					actions {read,write}
+				}
+			}
+		'''.parse.assertNoErrors
+	}
 
 }
