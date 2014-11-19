@@ -123,11 +123,12 @@ class ParserTest {
 			policy {
 				role Role1 {}
 				object Obj1 {}
+				action read
 			}
 			scenarios {
 				objectRoleScenario ObjectRole {
 					role Role1
-					object Obj1
+					object Obj1[read]
 				}
 			}
 		'''.parse.assertNoErrors
@@ -137,13 +138,86 @@ class ParserTest {
 	def void parsePolicyOneObjectScenario() {
 		'''
 			policy {
-				object Obj1 {}
+				object Obj1 {action read}
+				action read
 			}
 			scenarios {
 				userRoleScenario ObjectScenario {
-					object Obj1
+					object Obj1[read]
 				}
 			}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseUserRolePermWithRefs() {
+		'''
+			policy {
+				user User1 {
+					role Role1
+				}
+				role Role1 {
+					object Obj1[read]
+				}
+				action read
+				object Obj1 {
+					action read
+				}
+			}
+			scenarios {
+				
+			}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseUserMultipleRoles() {
+		'''
+			policy {
+				user User1 {
+					role Role1
+					role Role2
+				}
+				role Role1 {}
+				role Role2 {}
+			} scenarios {}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseRoleMultipleObjects() {
+		'''
+			policy {
+				role Role1 {
+					object Obj1 [read]
+					object Obj2 [read]
+				}
+				action read
+				object Obj1 {
+					action read
+				}
+				object Obj2 {
+					action read
+				}
+			} scenarios {}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseRoleMultipleActions() {
+		'''
+			policy {
+				role Role1 {
+					object Obj1 [read write]
+				}
+				action read
+				action write
+				object Obj1 {
+					action read
+					action write
+				}
+			}
+			scenarios {}
 		'''.parse.assertNoErrors
 	}
 }
