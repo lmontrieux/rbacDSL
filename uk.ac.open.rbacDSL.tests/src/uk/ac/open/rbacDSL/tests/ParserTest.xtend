@@ -117,6 +117,32 @@ class ParserTest {
 	}
 	
 	@Test
+	def void parseRoleMultipleSSoD() {
+		'''
+			policy MyPolicy {
+				role Role1 {
+					ssod {Role2,Role3}
+				}
+				role Role2 {}
+				role Role3 {}
+			}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseRoleMultipleDSoD() {
+		'''
+			policy MyPolicy {
+				role Role1 {
+					dsod {Role2,Role3}
+				}
+				role Role2 {}
+				role Role3 {}
+			}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
 	def void parseRoleWithMultipleSoD() {
 		'''
 			policy MyPolicy {
@@ -128,6 +154,28 @@ class ParserTest {
 				role Role3 {}
 				role Role4 {}
 				role Role5 {}
+			}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseObjectOneAction() {
+		'''
+			policy MyPolicy {
+				object Obj11 {
+					actions {read}
+				}
+			}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseObjectMultipleActions() {
+		'''
+			policy MyPolicy {
+				object Obj11 {
+					actions {read,write}
+				}
 			}
 		'''.parse.assertNoErrors
 	}
