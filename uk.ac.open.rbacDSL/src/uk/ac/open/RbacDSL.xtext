@@ -4,6 +4,27 @@ generate rbacDSL "http://www.ac.uk/open/RbacDSL"
 
 Rbac:
 	'policy' name=ID '{'
+	users += User*
+	roles += Role*
+	objects += Object*
+	'}'
+;
+
+User:
+	'user' name=ID '{'
+	
+	'}'
+;
+
+Role:
+	'role' name=ID '{'
+	
+	'}'
+;
+
+Object:
+	'object' name=ID '{'
+	
 	'}'
 ;
 
