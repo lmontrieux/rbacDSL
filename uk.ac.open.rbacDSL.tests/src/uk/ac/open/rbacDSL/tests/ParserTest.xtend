@@ -66,5 +66,30 @@ class ParserTest {
 			}
 		'''.parse.assertNoErrors
 	}
+	
+	@Test
+	def void parseUserWithOneRef() {
+		'''
+			policy MyPolicy {
+				user User1 {
+					roles {role1}
+				}
+				role Role1 {}
+			}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseUserWithMultipleRefs() {
+		'''
+			policy MyPolicy {
+				user User1 {
+					roles {role1,role2}
+				}
+				role Role1 {}
+				role Role2 {}
+			}
+		'''.parse.assertNoErrors
+	}
 
 }
