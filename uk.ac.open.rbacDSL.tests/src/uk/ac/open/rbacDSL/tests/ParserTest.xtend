@@ -185,7 +185,7 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				role Role1 {
-					permissions {Obj11[read]}
+					permissions {Obj11{read}}
 				}
 				object Obj11 {
 					actions {read}
@@ -199,7 +199,7 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				role Role1 {
-					permissions {Obj11[read,write]}
+					permissions {Obj11{read,write}}
 				}
 				object Obj11 {
 					actions {read,write}
@@ -213,7 +213,7 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				role Role1 {
-					permissions {Obj11[read], Obj2[read]}
+					permissions {Obj11{read}, Obj2{read}}
 				}
 				object Obj11 {
 					actions {read}
@@ -230,7 +230,7 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				role Role1 {
-					permissions {Obj11[read], Obj2[write]}
+					permissions {Obj11{read}, Obj2{write}}
 				}
 				object Obj11 {
 					actions {read}
@@ -247,7 +247,7 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				role Role1 {
-					permissions {Obj11[read,write], Obj2[read,write]}
+					permissions {Obj11{read,write}, Obj2{read,write}}
 				}
 				object Obj11 {
 					actions {read,write}
@@ -264,7 +264,7 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				role Role1 {
-					permissions {Obj11[read,create], Obj2[read,write]}
+					permissions {Obj11{read,create}, Obj2{read,write}}
 				}
 				object Obj11 {
 					actions {read,create}
