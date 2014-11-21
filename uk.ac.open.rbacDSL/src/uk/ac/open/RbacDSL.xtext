@@ -27,6 +27,7 @@ UserRoleAssignments:
 Role:
 	'role' name=ID '{'
 		sod += SoD*
+		(permissions += Permissions)?
 	'}'
 ;
 
@@ -45,15 +46,24 @@ DSoD:
 		dsod += [Role] (',' dsod += [Role])*
 	'}'
 ;
-Object:
-	'object' name=ID '{'
-		('actions' actions += Actions)?
+
+Permissions:
+	'permissions' '{'
+		permissions += ObjectActions (',' permissions += ObjectActions)*
 	'}'
 ;
 
-Actions:
-	'{'
-		actions += Action (',' actions += Action)*
+ObjectActions:
+	object += [Object] '{' actions += [Action] (',' actions += [Action])* '}'
+;
+
+ActionsRefs:
+	references += [Action] (',' references += [Action])*
+;
+
+Object:
+	'object' name=ID '{'
+		('actions' '{' actions += Action (',' actions += Action)* '}')?
 	'}'
 ;
 
