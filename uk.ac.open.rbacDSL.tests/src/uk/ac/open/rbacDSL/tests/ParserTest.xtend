@@ -84,7 +84,7 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				user User1 {
-					roles {Role1,Role2}
+					roles {Role1 Role2}
 				}
 				role Role1 {}
 				role Role2 {}
@@ -121,7 +121,7 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				role Role1 {
-					ssod {Role2,Role3}
+					ssod {Role2 Role3}
 				}
 				role Role2 {}
 				role Role3 {}
@@ -134,7 +134,7 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				role Role1 {
-					dsod {Role2,Role3}
+					dsod {Role2 Role3}
 				}
 				role Role2 {}
 				role Role3 {}
@@ -147,8 +147,8 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				role Role1 {
-					ssod {Role2,Role3}
-					dsod {Role4,Role5}
+					ssod {Role2 Role3}
+					dsod {Role4 Role5}
 				}
 				role Role2 {}
 				role Role3 {}
@@ -174,7 +174,7 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				object Obj11 {
-					actions {read,write}
+					actions {read write}
 				}
 			}
 		'''.parse.assertNoErrors
@@ -199,10 +199,10 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				role Role1 {
-					permissions {Obj11{read,write}}
+					permissions {Obj11{read write}}
 				}
 				object Obj11 {
-					actions {read,write}
+					actions {read write}
 				}
 			}
 		'''.parse.assertNoErrors
@@ -213,7 +213,7 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				role Role1 {
-					permissions {Obj11{read}, Obj2{read}}
+					permissions {Obj11{read} Obj2{read}}
 				}
 				object Obj11 {
 					actions {read}
@@ -230,7 +230,7 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				role Role1 {
-					permissions {Obj11{read}, Obj2{write}}
+					permissions {Obj11{read} Obj2{write}}
 				}
 				object Obj11 {
 					actions {read}
@@ -247,13 +247,13 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				role Role1 {
-					permissions {Obj11{read,write}, Obj2{read,write}}
+					permissions {Obj11{read write} Obj2{read write}}
 				}
 				object Obj11 {
-					actions {read,write}
+					actions {read write}
 				}
 				object Obj2 {
-					actions {read,write}
+					actions {read write}
 				}
 			}
 		'''.parse.assertNoErrors
@@ -264,13 +264,13 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				role Role1 {
-					permissions {Obj11{read,create}, Obj2{read,write}}
+					permissions {Obj11{read create} Obj2{read write}}
 				}
 				object Obj11 {
-					actions {read,create}
+					actions {read create}
 				}
 				object Obj2 {
-					actions {read,write}
+					actions {read write}
 				}
 			}
 		'''.parse.assertNoErrors
