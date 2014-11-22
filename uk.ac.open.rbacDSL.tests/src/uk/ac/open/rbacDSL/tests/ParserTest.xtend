@@ -283,5 +283,14 @@ class ParserTest {
 			scenarios MyScenarios{}
 		'''.parse.assertNoErrors
 	}
+	
+	@Test
+	def void parseEmptyScenariosMultLists() {
+		'''
+			policy MyPolicy{}
+			scenarios MyScenarios{}
+			scenarios OtherScenarios{}
+		'''.parse.assertNoErrors
+	}
 
 }
