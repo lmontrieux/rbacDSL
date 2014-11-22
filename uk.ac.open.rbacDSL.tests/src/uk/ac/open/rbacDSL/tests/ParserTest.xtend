@@ -275,5 +275,13 @@ class ParserTest {
 			}
 		'''.parse.assertNoErrors
 	}
+	
+	@Test
+	def void parseEmptyScenarios() {
+		'''
+			policy MyPolicy{}
+			scenarios MyScenarios{}
+		'''.parse.assertNoErrors
+	}
 
 }
