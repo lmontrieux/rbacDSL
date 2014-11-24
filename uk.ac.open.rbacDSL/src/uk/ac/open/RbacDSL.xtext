@@ -3,8 +3,8 @@ grammar uk.ac.open.RbacDSL with org.eclipse.xtext.common.Terminals
 generate rbacDSL "http://www.ac.uk/open/RbacDSL"
 
 Rbac:
-	policy=Policy
-	scenarios=Scenarios*
+	policy+=Policy*
+	scenarios+=Scenarios*
 ;
 
 Policy:
