@@ -300,5 +300,15 @@ class ParserTest {
 			policy Policy2 {}
 		'''.parse.assertNoErrors
 	}
+	
+	@Test
+	def void parseMultiplePoliciesMultipleScenarios() {
+		'''
+			policy Policy1 {}
+			policy Policy2 {}
+			scenarios Scenario1{}
+			scenarios Scenario2{}
+		'''.parse.assertNoErrors
+	}
 
 }
