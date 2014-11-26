@@ -9,6 +9,8 @@ import org.junit.runner.RunWith
 import uk.ac.open.RbacDSLInjectorProvider
 import org.eclipse.xtext.junit4.validation.ValidationTestHelper
 import uk.ac.open.rbacDSL.Rbac
+import com.google.inject.Provider
+import org.eclipse.emf.ecore.resource.ResourceSet
 
 @InjectWith(RbacDSLInjectorProvider)
 @RunWith(XtextRunner)
@@ -16,6 +18,7 @@ class ParserTest {
 	
 	@Inject extension ParseHelper<Rbac> parser
 	@Inject extension ValidationTestHelper
+	@Inject Provider<ResourceSet> resourceSetProvider;
 	
 	@Test
 	def void parseEmptyPolicy() {
@@ -309,6 +312,15 @@ class ParserTest {
 			scenarios Scenario1{}
 			scenarios Scenario2{}
 		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseTwoEmptyFiles() {
+		val resourceSet = resourceSetProvider.get
+		val first = ''' '''.parse(resourceSet)
+		val second = ''' '''.parse(resourceSet)
+		first.assertNoErrors
+		second.assertNoErrors
 	}
 
 }
