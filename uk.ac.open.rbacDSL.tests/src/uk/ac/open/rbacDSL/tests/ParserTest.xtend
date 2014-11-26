@@ -317,8 +317,8 @@ class ParserTest {
 	@Test
 	def void parseTwoEmptyFiles() {
 		val resourceSet = resourceSetProvider.get
-		val first = ''' '''.parse(resourceSet)
-		val second = ''' '''.parse(resourceSet)
+		val first = '''policy Policy1 {}'''.parse(resourceSet)
+		val second = '''scenarios Scenarions1 {}'''.parse(resourceSet)
 		first.assertNoErrors
 		second.assertNoErrors
 	}
