@@ -1,6 +1,5 @@
 package uk.ac.open.rbacDSL.tests
 
-import javax.inject.Inject
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.junit4.util.ParseHelper
@@ -11,6 +10,7 @@ import org.eclipse.xtext.junit4.validation.ValidationTestHelper
 import uk.ac.open.rbacDSL.Rbac
 import com.google.inject.Provider
 import org.eclipse.emf.ecore.resource.ResourceSet
+import com.google.inject.Inject
 
 @InjectWith(RbacDSLInjectorProvider)
 @RunWith(XtextRunner)
