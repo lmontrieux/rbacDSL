@@ -280,19 +280,19 @@ class ParserTest {
 	}
 	
 	@Test
-	def void parseEmptyScenarios() {
+	def void parseEmptyConstraints() {
 		'''
 			policy MyPolicy{}
-			scenarios MyScenarios{}
+			constraints MyConstraints{}
 		'''.parse.assertNoErrors
 	}
 	
 	@Test
-	def void parseEmptyScenariosMultLists() {
+	def void parseEmptyConstraintsMultLists() {
 		'''
 			policy MyPolicy{}
-			scenarios MyScenarios{}
-			scenarios OtherScenarios{}
+			constraints MyConstraints{}
+			constraints OtherConstraints{}
 		'''.parse.assertNoErrors
 	}
 	
@@ -305,12 +305,12 @@ class ParserTest {
 	}
 	
 	@Test
-	def void parseMultiplePoliciesMultipleScenarios() {
+	def void parseMultiplePoliciesMultipleConstraints() {
 		'''
 			policy Policy1 {}
 			policy Policy2 {}
-			scenarios Scenario1{}
-			scenarios Scenario2{}
+			constraints Constraints1{}
+			constraints Constraints2{}
 		'''.parse.assertNoErrors
 	}
 	
@@ -318,7 +318,7 @@ class ParserTest {
 	def void parseTwoEmptyFiles() {
 		val resourceSet = resourceSetProvider.get
 		val first = '''policy Policy1 {}'''.parse(resourceSet)
-		val second = '''scenarios Scenarions1 {}'''.parse(resourceSet)
+		val second = '''constraints Constraints1 {}'''.parse(resourceSet)
 		first.assertNoErrors
 		second.assertNoErrors
 	}
