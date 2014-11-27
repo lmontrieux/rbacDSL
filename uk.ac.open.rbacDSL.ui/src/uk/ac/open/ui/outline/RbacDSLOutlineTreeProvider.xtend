@@ -3,11 +3,17 @@
 */
 package uk.ac.open.ui.outline
 
+import uk.ac.open.rbacDSL.Rbac
+import org.eclipse.xtext.ui.editor.outline.impl.DocumentRootNode
+
 /**
  * Customization of the default outline structure.
  *
  * see http://www.eclipse.org/Xtext/documentation.html#outline
  */
 class RbacDSLOutlineTreeProvider extends org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider {
-	
+	def void _createChildren(DocumentRootNode outlineNode, Rbac model) {
+		model.policies.forEach[policy | createNode(outlineNode, policy);]
+		model.constraints.forEach[constraint | createNode(outlineNode, constraint);]
+	}
 }
