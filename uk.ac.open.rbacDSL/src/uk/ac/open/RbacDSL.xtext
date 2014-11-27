@@ -4,7 +4,7 @@ generate rbacDSL "http://www.ac.uk/open/RbacDSL"
 
 Rbac:
 	policy+=Policy*
-	scenarios+=Scenarios*
+	constraints+=Constraints*
 ;
 
 Policy:
@@ -13,8 +13,8 @@ Policy:
 	'}'
 ;
 
-Scenarios:
-	'scenarios' name=ID '{'
+Constraints:
+	'constraints' name=ID '{'
 	
 	'}'
 ;
