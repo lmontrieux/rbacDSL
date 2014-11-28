@@ -99,10 +99,9 @@ class ParserTest {
 	def void parseRoleWithOneSSoD() {
 		'''
 			policy MyPolicy {
-				role Role1 {
-					ssod {Role2}
-				}
+				role Role1 {}
 				role Role2 {}
+				ssod {(Role1 Role2)}
 			}
 		'''.parse.assertNoErrors
 	}
@@ -111,10 +110,9 @@ class ParserTest {
 	def void parseRoleWithOneDSoD() {
 		'''
 			policy MyPolicy {
-				role Role1 {
-					dsod {Role2}
-				}
+				role Role1 {}
 				role Role2 {}
+				dsod {(Role1 Role2)}
 			}
 		'''.parse.assertNoErrors
 	}
@@ -123,11 +121,10 @@ class ParserTest {
 	def void parseRoleMultipleSSoD() {
 		'''
 			policy MyPolicy {
-				role Role1 {
-					ssod {Role2 Role3}
-				}
+				role Role1 {}
 				role Role2 {}
 				role Role3 {}
+				ssod{(Role1 Role2) (Role1 Role3)}
 			}
 		'''.parse.assertNoErrors
 	}
@@ -136,11 +133,10 @@ class ParserTest {
 	def void parseRoleMultipleDSoD() {
 		'''
 			policy MyPolicy {
-				role Role1 {
-					dsod {Role2 Role3}
-				}
+				role Role1 {}
 				role Role2 {}
 				role Role3 {}
+				dsod{(Role1 Role3) (Role1 Role2)}
 			}
 		'''.parse.assertNoErrors
 	}
@@ -149,14 +145,13 @@ class ParserTest {
 	def void parseRoleWithMultipleSoD() {
 		'''
 			policy MyPolicy {
-				role Role1 {
-					ssod {Role2 Role3}
-					dsod {Role4 Role5}
-				}
+				role Role1 {}
 				role Role2 {}
 				role Role3 {}
 				role Role4 {}
 				role Role5 {}
+				ssod{(Role1 Role2) (Role1 Role3)}
+				dosd{(Role1 Role4) ( ole1 Role5)}
 			}
 		'''.parse.assertNoErrors
 	}
@@ -327,12 +322,12 @@ class ParserTest {
 	def void parseRoleAssignmentsFirst() {
 		'''
 		policy Policy1 {
+			ssod {(Role1 Role2)}
 			role Role1 {}
 			role Role2 {
 				permissions {
 					Obj1{read}
 				}
-				ssod { Role1 }
 			}
 			object Obj1{read}
 		}
@@ -345,12 +340,12 @@ class ParserTest {
 		policy Policy1 {
 			role Role1 {}
 			role Role3 {}
+			ssod {(Role1 Role2)}
+			dsod {(Role2 Role3)}
 			role Role2 {
-				dsod {Role3 }
 				permissions {
 					Obj1{read}
 				}
-				ssod { Role1 }
 			}
 			object Obj1{read}
 		}
