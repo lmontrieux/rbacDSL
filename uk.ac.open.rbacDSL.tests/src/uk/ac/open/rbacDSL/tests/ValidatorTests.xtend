@@ -30,4 +30,17 @@ class ValidatorTests {
 			"User has no role assignment"
 		)
 	}
+	
+	@Test
+	def void testRoleNoActionsWarning() {
+		'''
+		policy MyPolicy {
+			role Role1{}
+		}
+		'''.parse.assertWarning(
+			RbacDSLPackage::eINSTANCE.role,
+			RbacDSLValidator::ROLE_NO_ACTIONS,
+			"Role has no actions assigned on any object"
+		)
+	}
 }
