@@ -3,11 +3,24 @@
  */
 package uk.ac.open.validation
 
+import org.eclipse.xtext.validation.Check
+import uk.ac.open.rbacDSL.User
+import uk.ac.open.rbacDSL.RbacDSLPackage
+
 /**
  * Custom validation rules. 
  *
  * see http://www.eclipse.org/Xtext/documentation.html#validation
  */
 class RbacDSLValidator extends AbstractRbacDSLValidator {
-
+	public static val EMPTY_USER = "uk.ac.open.rbacbsl.EmptyUser"
+	
+	@Check
+	def checkEmptyUsers(User user) {
+		if (user.roles.isEmpty())
+			warning('''User has no role assignment''',
+				RbacDSLPackage::eINSTANCE.policyElement_Name,
+				EMPTY_USER
+			)
+	}
 }
