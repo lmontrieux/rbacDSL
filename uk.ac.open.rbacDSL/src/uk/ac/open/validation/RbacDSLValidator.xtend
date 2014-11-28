@@ -8,6 +8,7 @@ import org.eclipse.xtext.validation.Check
 import uk.ac.open.rbacDSL.User
 import uk.ac.open.rbacDSL.RbacDSLPackage
 import uk.ac.open.rbacDSL.Role
+import uk.ac.open.rbacDSL.Policy
 
 /**
  * Custom validation rules. 
@@ -16,6 +17,8 @@ import uk.ac.open.rbacDSL.Role
  */
 class RbacDSLValidator extends AbstractRbacDSLValidator {
 	public static val EMPTY_USER = "uk.ac.open.rbacdsl.EmptyUser"
+	public static val ONLY_ONE_DSOD = "uk.ac.open.rbacdsl.OnlyOneDSoD"
+	public static val ONLY_ONE_SSOD = "uk.ac.open.rbacdsl.OnlyOneSSoD"
 	public static val ROLE_NO_ACTIONS = "uk.ac.open.rbacdsl.RoleNoAction"
 	
 	@Check
@@ -33,6 +36,28 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 			warning('''Role has no actions assigned on any object''',
 				RbacDSLPackage::eINSTANCE.role_Name,
 				ROLE_NO_ACTIONS
+			)
+	}
+	
+	@Check
+	def checkOnlyOneSSoDBlock(Policy policy) {
+		val ssods = policy.ssod
+		if (ssods.size() > 1)
+			error('''Several ssod blocks in the same policy''',
+				ssods.get(1),
+				null,
+				ONLY_ONE_SSOD
+			)
+	}
+	
+	@Check
+	def checkOnlyOneDSoDBlock(Policy policy) {
+		val dsods = policy.dsod
+		if (dsods.size() > 1)
+			error('''Several dsod blocks in the same policy''',
+				dsods.get(1),
+				null,
+				ONLY_ONE_DSOD
 			)
 	}
 }
