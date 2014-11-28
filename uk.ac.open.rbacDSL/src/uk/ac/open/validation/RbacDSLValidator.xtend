@@ -3,6 +3,7 @@
  */
 package uk.ac.open.validation
 
+import static extension uk.ac.open.util.RbacDSLModelUtil.*
 import org.eclipse.xtext.validation.Check
 import uk.ac.open.rbacDSL.User
 import uk.ac.open.rbacDSL.RbacDSLPackage
@@ -28,7 +29,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	
 	@Check
 	def checkRoleNoActions(Role role) {
-		if (role.permissions == null)
+		if (role.getPermissions.permissions.isEmpty())
 			warning('''Role has no actions assigned on any object''',
 				RbacDSLPackage::eINSTANCE.policyElement_Name,
 				ROLE_NO_ACTIONS

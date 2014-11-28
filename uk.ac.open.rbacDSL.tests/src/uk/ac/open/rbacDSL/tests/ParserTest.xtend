@@ -322,5 +322,39 @@ class ParserTest {
 		first.assertNoErrors
 		second.assertNoErrors
 	}
+	
+	@Test
+	def void parseRoleAssignmentsFirst() {
+		'''
+		policy Policy1 {
+			role Role1 {}
+			role Role2 {
+				permissions {
+					Obj1{read}
+				}
+				ssod { Role1 }
+			}
+			object Obj1{read}
+		}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseRoleAssignmentsMiddle() {
+		'''
+		policy Policy1 {
+			role Role1 {}
+			role Role3 {}
+			role Role2 {
+				dsod {Role3 }
+				permissions {
+					Obj1{read}
+				}
+				ssod { Role1 }
+			}
+			object Obj1{read}
+		}
+		'''.parse.assertNoErrors
+	}
 
 }

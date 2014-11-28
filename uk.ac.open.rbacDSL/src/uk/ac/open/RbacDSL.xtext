@@ -32,7 +32,7 @@ User:
 Role:
 	'role' name=ID '{'
 		sod += SoD*
-		(permissions += Permissions)?
+		(permissions = Permissions)?
 	'}'
 ;
 
