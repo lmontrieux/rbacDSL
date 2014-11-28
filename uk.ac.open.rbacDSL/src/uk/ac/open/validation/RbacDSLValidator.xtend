@@ -22,16 +22,16 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	def checkEmptyUsers(User user) {
 		if (user.roles.isEmpty())
 			warning('''User has no role assignment''',
-				RbacDSLPackage::eINSTANCE.policyElement_Name,
+				RbacDSLPackage::eINSTANCE.user_Name,
 				EMPTY_USER
 			)
 	}
 	
 	@Check
 	def checkRoleNoActions(Role role) {
-		if (role.getPermissions.permissions.isEmpty())
+		if (role.permissions.isEmpty())
 			warning('''Role has no actions assigned on any object''',
-				RbacDSLPackage::eINSTANCE.policyElement_Name,
+				RbacDSLPackage::eINSTANCE.role_Name,
 				ROLE_NO_ACTIONS
 			)
 	}

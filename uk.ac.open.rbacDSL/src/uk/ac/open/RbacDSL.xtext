@@ -20,7 +20,7 @@ Constraints:
 ;
 
 PolicyElement:
-	User|Role|Object
+	User|Role|Object|SoD
 ;
 
 User:
@@ -31,8 +31,7 @@ User:
 
 Role:
 	'role' name=ID '{'
-		sod += SoD*
-		(permissions = Permissions)?
+		('permissions' '{' permissions += ObjectActions+ '}')?
 	'}'
 ;
 
@@ -42,20 +41,18 @@ SoD:
 
 SSoD:
 	'ssod' '{'
-		ssod += [Role]+
+		(ssod += TupleRole)+
 	'}'
 ;
 
 DSoD:
 	'dsod' '{'
-		dsod += [Role]+
+		(dsod += TupleRole)+
 	'}'
 ;
 
-Permissions:
-	'permissions' '{'
-		permissions += ObjectActions+
-	'}'
+TupleRole:
+	'(' fst=[Role] snd=[Role] ')'
 ;
 
 ObjectActions:
