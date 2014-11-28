@@ -151,7 +151,7 @@ class ParserTest {
 				role Role4 {}
 				role Role5 {}
 				ssod{(Role1 Role2) (Role1 Role3)}
-				dosd{(Role1 Role4) ( ole1 Role5)}
+				dsod{(Role1 Role4) (Role1 Role5)}
 			}
 		'''.parse.assertNoErrors
 	}
