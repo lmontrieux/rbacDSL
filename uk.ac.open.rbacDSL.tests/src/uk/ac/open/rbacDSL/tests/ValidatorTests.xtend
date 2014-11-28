@@ -43,4 +43,38 @@ class ValidatorTests {
 			"Role has no actions assigned on any object"
 		)
 	}
+	
+	@Test
+	def void testOnlyOneSSoDError() {
+		'''
+		policy MyPolicy {
+			role Role1{}
+			role Role2{}
+			role Role3{}
+			ssod{(Role1 Role2)}
+			ssod{(Role2 Role3)}
+		}
+		'''.parse.assertError(
+			RbacDSLPackage::eINSTANCE.SSoD,
+			RbacDSLValidator::ONLY_ONE_SSOD,
+			"Several ssod blocks in the same policy"
+		)
+	}
+	
+	@Test
+	def void testOnlyOneDSoDError() {
+		'''
+		policy MyPolicy {
+			role Role1{}
+			role Role2{}
+			role Role3{}
+			dsod{(Role1 Role2)}
+			dsod{(Role2 Role3)}
+		}
+		'''.parse.assertError(
+			RbacDSLPackage::eINSTANCE.DSoD,
+			RbacDSLValidator::ONLY_ONE_DSOD,
+			"Several dsod blocks in the same policy"
+		)
+	}
 }
