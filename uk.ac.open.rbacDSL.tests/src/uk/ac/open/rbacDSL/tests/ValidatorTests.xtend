@@ -77,4 +77,32 @@ class ValidatorTests {
 			"Several dsod blocks in the same policy"
 		)
 	}
+	
+	@Test
+	def void testNoSSoDWithSelf() {
+		'''
+		policy MyPolicy {
+			role Role1{}
+			ssod{(Role1 Role1)}
+		}
+		'''.parse.assertError(
+			RbacDSLPackage::eINSTANCE.tupleRole,
+			RbacDSLValidator::NO_SOD_WITH_SELF,
+			"SoD constraint between an role and itself"
+		)
+	}
+	
+	@Test
+	def void testNoDSoDWithSelf() {
+		'''
+		policy MyPolicy {
+			role Role1{}
+			dsod{(Role1 Role1)}
+		}
+		'''.parse.assertError(
+			RbacDSLPackage::eINSTANCE.tupleRole,
+			RbacDSLValidator::NO_SOD_WITH_SELF,
+			"SoD constraint between an role and itself"
+		)
+	}
 }

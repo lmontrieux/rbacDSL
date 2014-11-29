@@ -9,6 +9,8 @@ import uk.ac.open.rbacDSL.User
 import uk.ac.open.rbacDSL.RbacDSLPackage
 import uk.ac.open.rbacDSL.Role
 import uk.ac.open.rbacDSL.Policy
+import uk.ac.open.rbacDSL.SSoD
+import uk.ac.open.rbacDSL.TupleRole
 
 /**
  * Custom validation rules. 
@@ -17,6 +19,7 @@ import uk.ac.open.rbacDSL.Policy
  */
 class RbacDSLValidator extends AbstractRbacDSLValidator {
 	public static val EMPTY_USER = "uk.ac.open.rbacdsl.EmptyUser"
+	public static val NO_SOD_WITH_SELF = "uk.ac.open.rbacdsl.NoSoDWithSelf"
 	public static val ONLY_ONE_DSOD = "uk.ac.open.rbacdsl.OnlyOneDSoD"
 	public static val ONLY_ONE_SSOD = "uk.ac.open.rbacdsl.OnlyOneSSoD"
 	public static val ROLE_NO_ACTIONS = "uk.ac.open.rbacdsl.RoleNoAction"
@@ -58,6 +61,16 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 				dsods.get(1),
 				null,
 				ONLY_ONE_DSOD
+			)
+	}
+	
+	@Check
+	def checkNoSoDWithSelf(TupleRole tuple) {
+		if (tuple.fst.equals(tuple.snd))
+			error('''SoD constraint between an role and itself''',
+				tuple,
+				null,
+				NO_SOD_WITH_SELF
 			)
 	}
 }
