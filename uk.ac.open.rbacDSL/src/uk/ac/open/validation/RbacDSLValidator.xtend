@@ -19,6 +19,7 @@ import uk.ac.open.rbacDSL.TupleRole
  */
 class RbacDSLValidator extends AbstractRbacDSLValidator {
 	public static val EMPTY_USER = "uk.ac.open.rbacdsl.EmptyUser"
+	public static val NO_SOD_CONFLICT = "uk.ac.open.rbacdsl.NoSoDConflict"
 	public static val NO_SOD_WITH_SELF = "uk.ac.open.rbacdsl.NoSoDWithSelf"
 	public static val ONLY_ONE_DSOD = "uk.ac.open.rbacdsl.OnlyOneDSoD"
 	public static val ONLY_ONE_SSOD = "uk.ac.open.rbacdsl.OnlyOneSSoD"

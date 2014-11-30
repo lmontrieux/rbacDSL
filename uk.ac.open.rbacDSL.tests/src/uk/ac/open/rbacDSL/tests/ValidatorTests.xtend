@@ -105,4 +105,36 @@ class ValidatorTests {
 			"SoD constraint between an role and itself"
 		)
 	}
+	
+	@Test
+	def void testNoSoDConflicts() {
+		'''
+		policy MyPolicy {
+			role Role1{}
+			role Role2{}
+			ssod{(Role1 Role2)}
+			dsod{(Role1 Role2)}
+		}
+		'''.parse.assertError(
+			RbacDSLPackage::eINSTANCE.tupleRole,
+			RbacDSLValidator::NO_SOD_CONFLICT,
+			"Conflicting SSoD and DSoD constraints"
+		)
+	}
+	
+	@Test
+	def void testNoSoDConflictsReversed() {
+		'''
+		policy MyPolicy {
+			role Role1{}
+			role Role2{}
+			ssod{(Role1 Role2)}
+			dsod{(Role2 Role1)}
+		}
+		'''.parse.assertError(
+			RbacDSLPackage::eINSTANCE.tupleRole,
+			RbacDSLValidator::NO_SOD_CONFLICT,
+			"Conflicting SSoD and DSoD constraints"
+		)
+	}
 }
