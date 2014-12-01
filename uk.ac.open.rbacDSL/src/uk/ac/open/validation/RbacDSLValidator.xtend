@@ -3,14 +3,14 @@
  */
 package uk.ac.open.validation
 
-import static extension uk.ac.open.util.RbacDSLModelUtil.*
 import org.eclipse.xtext.validation.Check
-import uk.ac.open.rbacDSL.User
+import uk.ac.open.rbacDSL.Policy
 import uk.ac.open.rbacDSL.RbacDSLPackage
 import uk.ac.open.rbacDSL.Role
-import uk.ac.open.rbacDSL.Policy
-import uk.ac.open.rbacDSL.SSoD
 import uk.ac.open.rbacDSL.TupleRole
+import uk.ac.open.rbacDSL.User
+
+import static extension uk.ac.open.util.RbacDSLModelUtil.*
 
 /**
  * Custom validation rules. 
