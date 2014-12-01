@@ -11,6 +11,9 @@ import uk.ac.open.rbacDSL.TupleRole
 import uk.ac.open.rbacDSL.User
 
 import static extension uk.ac.open.util.RbacDSLModelUtil.*
+import static extension org.eclipse.xtext.EcoreUtil2.*
+import uk.ac.open.rbacDSL.SSoD
+import uk.ac.open.rbacDSL.DSoD
 
 /**
  * Custom validation rules. 
@@ -73,5 +76,36 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 				null,
 				NO_SOD_WITH_SELF
 			)
+	}
+	
+	/*
+	 * Raises a warning if a DSoD constraint is identical to an SSoD constraint.
+	 * In such a case, the DSoD constraint is unnecessary.
+	 */
+	@Check
+	def checkSoDConflicts(TupleRole tuple) {
+		if (tuple.getContainerOfType(typeof(DSoD)) != null) {
+			for (SSoD ssod:tuple.policy.ssod) {
+				for (TupleRole current:ssod.ssod) {
+					if(equivalent(tuple, current)) {
+						warning('''DSoD constraint unnecessary because of an identical SSoD constraint''',
+							tuple,
+							null,
+							NO_SOD_CONFLICT
+						)
+					}
+				}
+			}
+		}
+	}
+	
+	/*
+	 * Determines if two tuples involve the same two roles
+	 */
+	private def equivalent(TupleRole tuple1, TupleRole tuple2) {
+		if (((tuple1.fst == tuple2.fst) && (tuple1.snd == tuple2.snd))
+			|| ((tuple1.fst == tuple2.snd) && (tuple1.snd == tuple2.fst)))
+			return true
+		return false
 	}
 }

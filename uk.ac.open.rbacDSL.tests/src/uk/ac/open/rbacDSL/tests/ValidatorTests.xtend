@@ -118,7 +118,7 @@ class ValidatorTests {
 		'''.parse.assertWarning(
 			RbacDSLPackage::eINSTANCE.tupleRole,
 			RbacDSLValidator::NO_SOD_CONFLICT,
-			"Conflicting SSoD and DSoD constraints"
+			"DSoD constraint unnecessary because of an identical SSoD constraint"
 		)
 	}
 	
@@ -134,7 +134,7 @@ class ValidatorTests {
 		'''.parse.assertWarning(
 			RbacDSLPackage::eINSTANCE.tupleRole,
 			RbacDSLValidator::NO_SOD_CONFLICT,
-			"Conflicting SSoD and DSoD constraints"
+			"DSoD constraint unnecessary because of an identical SSoD constraint"
 		)
 	}
 }
