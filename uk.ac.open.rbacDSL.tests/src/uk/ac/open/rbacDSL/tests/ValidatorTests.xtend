@@ -115,7 +115,7 @@ class ValidatorTests {
 			ssod{(Role1 Role2)}
 			dsod{(Role1 Role2)}
 		}
-		'''.parse.assertError(
+		'''.parse.assertWarning(
 			RbacDSLPackage::eINSTANCE.tupleRole,
 			RbacDSLValidator::NO_SOD_CONFLICT,
 			"Conflicting SSoD and DSoD constraints"
