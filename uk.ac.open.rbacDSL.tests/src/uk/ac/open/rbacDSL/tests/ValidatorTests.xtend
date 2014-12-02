@@ -137,4 +137,33 @@ class ValidatorTests {
 			"DSoD constraint unnecessary because of an identical SSoD constraint"
 		)
 	}
+	
+	@Test
+	def void testNoDuplicateRoleExtension() {
+		'''
+		policy MyPolicy {
+			role Role1 {}
+			role Role2 extends Role1 Role1 {}
+		}
+		'''.parse.assertError(
+			RbacDSLPackage::eINSTANCE.role,
+			RbacDSLValidator::NO_DUPLICATE_ROLE_EXTENSION,
+			"Duplicate role extension"
+		)
+	}
+	
+	@Test
+	def void testNoDuplicateRoleExtensions2() {
+		'''
+		policy MyPolicy {
+			role Role1 {}
+			role Role2 {}
+			role Role3 extends Role1 Role2 Role1 {}
+		}
+		'''.parse.assertError(
+			RbacDSLPackage::eINSTANCE.role,
+			RbacDSLValidator::NO_DUPLICATE_ROLE_EXTENSION,
+			"Duplicate role extension"
+		)
+	}
 }

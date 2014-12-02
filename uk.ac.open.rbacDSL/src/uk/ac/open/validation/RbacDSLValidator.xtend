@@ -14,6 +14,7 @@ import static extension uk.ac.open.util.RbacDSLModelUtil.*
 import static extension org.eclipse.xtext.EcoreUtil2.*
 import uk.ac.open.rbacDSL.SSoD
 import uk.ac.open.rbacDSL.DSoD
+import java.util.Arrays
 
 /**
  * Custom validation rules. 
@@ -21,6 +22,7 @@ import uk.ac.open.rbacDSL.DSoD
  * see http://www.eclipse.org/Xtext/documentation.html#validation
  */
 class RbacDSLValidator extends AbstractRbacDSLValidator {
+	public static val NO_DUPLICATE_ROLE_EXTENSION = "uk.ac.open.rbacdsl.NoDuplicateRoleExtension"
 	public static val EMPTY_USER = "uk.ac.open.rbacdsl.EmptyUser"
 	public static val NO_SOD_CONFLICT = "uk.ac.open.rbacdsl.NoSoDConflict"
 	public static val NO_SOD_WITH_SELF = "uk.ac.open.rbacdsl.NoSoDWithSelf"
@@ -76,6 +78,23 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 				null,
 				NO_SOD_WITH_SELF
 			)
+	}
+	
+	/**
+	 * A role should not extend the same role multiple times
+	 */
+	@Check
+	def checkDuplicateRoleExtensions(Role role) {
+		for (var i = 0; i < role.parents.toArray.length; i++) {
+			var parent = role.parents.toArray.get(i);
+			if (Arrays.copyOfRange(role.parents.toArray, 0, i).contains(parent)) {
+				error('''Duplicate role extension''',
+					role.parents.get(i),
+					null,
+					NO_DUPLICATE_ROLE_EXTENSION
+				)
+			}
+		}
 	}
 	
 	/*
