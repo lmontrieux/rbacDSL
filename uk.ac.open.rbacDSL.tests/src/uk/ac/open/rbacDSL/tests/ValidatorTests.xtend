@@ -179,4 +179,19 @@ class ValidatorTests {
 			"Role extending itself"
 		)
 	}
+	
+	@Test
+	def void testNoRoleExtendingItselfMultiple() {
+		'''
+		policy MyPolicy {
+			role Role0
+			role MyRole
+			role Role1 extends Role0 Role1 MyRole {}
+		}
+		'''.parse.assertError(
+			RbacDSLPackage::eINSTANCE.role,
+			RbacDSLValidator::NO_ROLE_EXTENDING_ITSELF,
+			"Role extending itself"
+		)
+	}
 }
