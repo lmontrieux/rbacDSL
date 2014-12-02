@@ -166,4 +166,17 @@ class ValidatorTests {
 			"Duplicate role extension"
 		)
 	}
+	
+	@Test
+	def void testNoRoleExtendingItself() {
+		'''
+		policy MyPolicy {
+			role Role1 extends Role1 {}
+		}
+		'''.parse.assertError(
+			RbacDSLPackage::eINSTANCE.role,
+			RbacDSLValidator::NO_ROLE_EXTENDING_ITSELF,
+			"Role extending itself"
+		)
+	}
 }

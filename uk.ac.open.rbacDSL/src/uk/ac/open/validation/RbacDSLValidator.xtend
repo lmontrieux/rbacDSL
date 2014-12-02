@@ -22,8 +22,9 @@ import java.util.Arrays
  * see http://www.eclipse.org/Xtext/documentation.html#validation
  */
 class RbacDSLValidator extends AbstractRbacDSLValidator {
-	public static val NO_DUPLICATE_ROLE_EXTENSION = "uk.ac.open.rbacdsl.NoDuplicateRoleExtension"
 	public static val EMPTY_USER = "uk.ac.open.rbacdsl.EmptyUser"
+	public static val NO_DUPLICATE_ROLE_EXTENSION = "uk.ac.open.rbacdsl.NoDuplicateRoleExtension"
+	public static val NO_ROLE_EXTENDING_ITSELF = "uk.ac.open.rbacdsl.NoRoleExtendingItself"
 	public static val NO_SOD_CONFLICT = "uk.ac.open.rbacdsl.NoSoDConflict"
 	public static val NO_SOD_WITH_SELF = "uk.ac.open.rbacdsl.NoSoDWithSelf"
 	public static val ONLY_ONE_DSOD = "uk.ac.open.rbacdsl.OnlyOneDSoD"
@@ -96,6 +97,19 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 			}
 		}
 	}
+	
+	/**
+	 * A role should not extend itself
+	 */
+	 @Check
+	 def checkRoleNoSelfExtension(Role role) {
+	 	if (role.parents.contains(role))
+	 		error('''Role extending itself''',
+	 			role,
+	 			null,
+	 			NO_ROLE_EXTENDING_ITSELF
+	 		)
+	 }
 	
 	/*
 	 * Raises a warning if a DSoD constraint is identical to an SSoD constraint.
