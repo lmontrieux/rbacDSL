@@ -351,5 +351,26 @@ class ParserTest {
 		}
 		'''.parse.assertNoErrors
 	}
+	
+	@Test
+	def void parseRoleHierarchy() {
+		'''
+		policy MyPolicy {
+			role Role1{}
+			role Role2 extends Role1{}
+		}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseRoleMultipleHierarchy() {
+		'''
+		policy MyPolicy {
+			role Role1 {}
+			role Role2 {}
+			role Role3 extends Role1 Role2 {}
+		}
+		'''.parse.assertNoErrors
+	}
 
 }

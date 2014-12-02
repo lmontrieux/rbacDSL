@@ -30,7 +30,7 @@ User:
 ;
 
 Role:
-	'role' name=ID '{'
+	'role' name=ID ('extends' parents += [Role]+)? '{'
 		('permissions' '{' permissions += ObjectActions+ '}')?
 	'}'
 ;
