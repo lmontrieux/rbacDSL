@@ -22,6 +22,7 @@ import java.util.Arrays
  * see http://www.eclipse.org/Xtext/documentation.html#validation
  */
 class RbacDSLValidator extends AbstractRbacDSLValidator {
+	public static val EMPTY_POLICY = "uk.ac.open.rbacdsl.EmptyPolicy"
 	public static val EMPTY_USER = "uk.ac.open.rbacdsl.EmptyUser"
 	public static val NO_DUPLICATE_ROLE_EXTENSION = "uk.ac.open.rbacdsl.NoDuplicateRoleExtension"
 	public static val NO_ROLE_EXTENDING_ITSELF = "uk.ac.open.rbacdsl.NoRoleExtendingItself"
@@ -30,6 +31,15 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	public static val ONLY_ONE_DSOD = "uk.ac.open.rbacdsl.OnlyOneDSoD"
 	public static val ONLY_ONE_SSOD = "uk.ac.open.rbacdsl.OnlyOneSSoD"
 	public static val ROLE_NO_ACTIONS = "uk.ac.open.rbacdsl.RoleNoAction"
+	
+	@Check
+	def checkEmptyPolicy(Policy policy) {
+		if (policy.policyElements.isEmpty())
+			warning('''Empty policy''',
+				RbacDSLPackage::eINSTANCE.policy_Name,
+				EMPTY_POLICY
+			)
+	}
 	
 	@Check
 	def checkEmptyUsers(User user) {

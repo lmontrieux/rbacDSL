@@ -19,6 +19,17 @@ class ValidatorTests {
 	@Inject extension ValidationTestHelper
 	
 	@Test
+	def void testEmptyPolicy() {
+		'''
+		policy MyPolicy{}
+		'''.parse.assertWarning(
+			RbacDSLPackage::eINSTANCE.policy,
+			RbacDSLValidator::EMPTY_POLICY,
+			"Empty policy"
+		)
+	}
+	
+	@Test
 	def void testEmptyUserWarning() {
 		'''
 		policy MyPolicy {
