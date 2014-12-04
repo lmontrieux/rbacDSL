@@ -23,14 +23,15 @@ Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: uk.ac.open,
- uk.ac.open.services,
+ uk.ac.open.formatting,
+ uk.ac.open.generator,
+ uk.ac.open.parser.antlr,
+ uk.ac.open.parser.antlr.internal,
  uk.ac.open.rbacDSL,
  uk.ac.open.rbacDSL.impl,
  uk.ac.open.rbacDSL.util,
- uk.ac.open.serializer,
- uk.ac.open.parser.antlr,
- uk.ac.open.parser.antlr.internal,
- uk.ac.open.validation,
  uk.ac.open.scoping,
- uk.ac.open.generator,
- uk.ac.open.formatting
+ uk.ac.open.serializer,
+ uk.ac.open.services,
+ uk.ac.open.util,
+ uk.ac.open.validation
