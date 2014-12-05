@@ -372,5 +372,36 @@ class ParserTest {
 		}
 		'''.parse.assertNoErrors
 	}
+	
+	@Test
+	def void parseGrantedConstraint() {
+		'''
+		policy MyPolicy {
+			user User1{}
+		}
+		constraints MyConstraints {
+			granted {
+				user {User1}
+				roles {Role1}
+				actions {Obj1[read]}
+			}
+		}
+		'''.parse.assertNoErrors
+	}
 
+	@Test
+	def void parseForbiddenConstraint() {
+		'''
+		policy MyPolicy {
+			user User1{}
+		}
+		constraints MyConstraints {
+			forbidden {
+				users {User1}
+				roles {Role1}
+				actions {Obj1[read]}
+			}
+		}
+		'''.parse.assertNoErrors
+	}
 }

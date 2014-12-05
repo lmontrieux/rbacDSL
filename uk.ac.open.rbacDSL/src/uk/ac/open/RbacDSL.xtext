@@ -15,7 +15,27 @@ Policy:
 
 Constraints:
 	'constraints' name=ID '{'
-	
+		constraints += PolicyConstraint*
+	'}'
+;
+
+PolicyConstraint:
+	GrantedConstraint|ForbiddenConstraint
+;
+
+ForbiddenConstraint:
+	'forbidden' name=ID '{'
+		'users' '{' users+= [User]+ '}'
+		'roles' '{' roles += [Role]+ '}'
+		'actions' '{' actions+=[Action]+ '}'
+	'}'
+;
+
+GrantedConstraint:
+	'granted' name=ID '{'
+		'users' '{' users+= [User]+ '}'
+		'roles' '{' roles += [Role]+ '}'
+		'actions' '{' actions+=[Action]+ '}'
 	'}'
 ;
 
