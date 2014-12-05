@@ -24,6 +24,7 @@ import java.util.Arrays
 class RbacDSLValidator extends AbstractRbacDSLValidator {
 	public static val EMPTY_POLICY = "uk.ac.open.rbacdsl.EmptyPolicy"
 	public static val EMPTY_USER = "uk.ac.open.rbacdsl.EmptyUser"
+	public static val NO_DOUBLE_ROLE_ASSIGNMENT = "uk.ac.open.rbacdsl.NoDoubleRoleAssignment"
 	public static val NO_DUPLICATE_ROLE_EXTENSION = "uk.ac.open.rbacdsl.NoDuplicateRoleExtension"
 	public static val NO_ROLE_EXTENDING_ITSELF = "uk.ac.open.rbacdsl.NoRoleExtendingItself"
 	public static val NO_SOD_CONFLICT = "uk.ac.open.rbacdsl.NoSoDConflict"
@@ -119,6 +120,23 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 			null,
 	 			NO_ROLE_EXTENDING_ITSELF
 	 		)
+	 }
+	 
+	 @Check
+	 def checkDoubleRoleAssignment(User user) {
+	 	if (user.roles.isEmpty())
+	 		return;
+	 	for (var i = 0; i < user.roles.size(); i++) {
+	 		var current = user.roles.get(i)
+	 		for (var j = i; j < user.roles.size(); j++) {
+	 			if (current.equals(user.roles.get(j)))
+	 				error('''Role assigned twice to the user''',
+	 					user.roles.get(j),
+	 					null,
+	 					NO_DOUBLE_ROLE_ASSIGNMENT
+	 				)
+	 		}
+	 	}
 	 }
 	
 	/*

@@ -205,4 +205,37 @@ class ValidatorTests {
 			"Role extending itself"
 		)
 	}
+	
+	@Test
+	def void testNoDoubleUserRoleAssignment() {
+		'''
+		policy MyPolicy {
+			user User1 {
+				roles {Role1 Role1}
+			}
+			role Role1 {}
+		}
+		'''.parse.assertError(
+			RbacDSLPackage::eINSTANCE.role,
+			RbacDSLValidator::NO_DOUBLE_ROLE_ASSIGNMENT,
+			"Role assigned twice to the user"
+		)
+	}
+	
+	@Test
+	def void testNoDoubleUserRoleAssignment2() {
+		'''
+		policy MyPolicy {
+			user User1 {
+				roles {Role1 Role2 Role1}
+			}
+			role Role1 {}
+			role Role2 {}
+		}
+		'''.parse.assertError(
+			RbacDSLPackage::eINSTANCE.role,
+			RbacDSLValidator::NO_DOUBLE_ROLE_ASSIGNMENT,
+			"Role assigned twice to the user"
+		)
+	}
 }
