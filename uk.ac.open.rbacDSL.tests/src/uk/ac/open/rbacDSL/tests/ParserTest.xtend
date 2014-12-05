@@ -382,7 +382,7 @@ class ParserTest {
 			object Obj1{read}
 		}
 		constraints MyConstraints {
-			granted {
+			granted MyGranted {
 				user {User1}
 				roles {Role1}
 				actions {Obj1{read}}
@@ -401,7 +401,7 @@ class ParserTest {
 			object Obj1{read}
 		}
 		constraints MyConstraints {
-			granted {
+			granted MyGranted {
 				user {User1 User2}
 				roles {Role1}
 				actions {Obj1{read}}
@@ -421,7 +421,7 @@ class ParserTest {
 			object Obj1{read}
 		}
 		constraints MyConstraints {
-			granted {
+			granted MyGranted {
 				user {User1 User2}
 				roles {Role1 Role2}
 				actions {Obj1{read}}
@@ -440,7 +440,7 @@ class ParserTest {
 			object Obj2{read}
 		}
 		constraints MyConstraints {
-			granted {
+			granted MyGranted {
 				user {User1}
 				roles {Role1}
 				actions {Obj1{read} Obj2{read}}
@@ -458,7 +458,7 @@ class ParserTest {
 			object Obj1{read}
 		}
 		constraints MyConstraints {
-			forbidden {
+			forbidden MyForbidden {
 				users {User1}
 				roles {Role1}
 				actions {Obj1{read}}
@@ -477,7 +477,7 @@ class ParserTest {
 			object Obj1{read}
 		}
 		constraints MyConstraints {
-			forbidden {
+			forbidden MyForbidden {
 				user {User1 User2}
 				roles {Role1}
 				actions {Obj1{read}}
@@ -497,7 +497,7 @@ class ParserTest {
 			object Obj1{read}
 		}
 		constraints MyConstraints {
-			granted {
+			forbidden MyForbidden {
 				user {User1 User2}
 				roles {Role1 Role2}
 				actions {Obj1{read}}
@@ -516,7 +516,7 @@ class ParserTest {
 			object Obj2{read}
 		}
 		constraints MyConstraints {
-			granted {
+			forbidden MyForbidden {
 				user {User1}
 				roles {Role1}
 				actions {Obj1{read} Obj2{read}}
