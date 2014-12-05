@@ -378,12 +378,72 @@ class ParserTest {
 		'''
 		policy MyPolicy {
 			user User1{}
+			role Role1{}
+			object Obj1{read}
 		}
 		constraints MyConstraints {
 			granted {
 				user {User1}
 				roles {Role1}
-				actions {Obj1[read]}
+				actions {Obj1{read}}
+			}
+		}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseGrantedConstraintMultUsers() {
+		'''
+		policy MyPolicy {
+			user User1{}
+			user User2{}
+			role Role1{}
+			object Obj1{read}
+		}
+		constraints MyConstraints {
+			granted {
+				user {User1 User2}
+				roles {Role1}
+				actions {Obj1{read}}
+			}
+		}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseGrantedConstraintMultRoles() {
+		'''
+		policy MyPolicy {
+			user User1{}
+			user User2{}
+			role Role1{}
+			role Role2{}
+			object Obj1{read}
+		}
+		constraints MyConstraints {
+			granted {
+				user {User1 User2}
+				roles {Role1 Role2}
+				actions {Obj1{read}}
+			}
+		}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseGrantedConstraintMultObjects() {
+		'''
+		policy MyPolicy {
+			user User1{}
+			role Role1{}
+			object Obj1{read}
+			object Obj2{read}
+		}
+		constraints MyConstraints {
+			granted {
+				user {User1}
+				roles {Role1}
+				actions {Obj1{read} Obj2{read}}
 			}
 		}
 		'''.parse.assertNoErrors
@@ -394,12 +454,72 @@ class ParserTest {
 		'''
 		policy MyPolicy {
 			user User1{}
+			role Role1{}
+			object Obj1{read}
 		}
 		constraints MyConstraints {
 			forbidden {
 				users {User1}
 				roles {Role1}
-				actions {Obj1[read]}
+				actions {Obj1{read}}
+			}
+		}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseForbiddenConstraintMultUsers() {
+		'''
+		policy MyPolicy {
+			user User1{}
+			user User2{}
+			role Role1{}
+			object Obj1{read}
+		}
+		constraints MyConstraints {
+			forbidden {
+				user {User1 User2}
+				roles {Role1}
+				actions {Obj1{read}}
+			}
+		}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseForbiddenConstraintMultRoles() {
+		'''
+		policy MyPolicy {
+			user User1{}
+			user User2{}
+			role Role1{}
+			role Role2{}
+			object Obj1{read}
+		}
+		constraints MyConstraints {
+			granted {
+				user {User1 User2}
+				roles {Role1 Role2}
+				actions {Obj1{read}}
+			}
+		}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseForbiddenConstraintMultObjects() {
+		'''
+		policy MyPolicy {
+			user User1{}
+			role Role1{}
+			object Obj1{read}
+			object Obj2{read}
+		}
+		constraints MyConstraints {
+			granted {
+				user {User1}
+				roles {Role1}
+				actions {Obj1{read} Obj2{read}}
 			}
 		}
 		'''.parse.assertNoErrors
