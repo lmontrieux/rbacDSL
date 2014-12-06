@@ -383,7 +383,7 @@ class ParserTest {
 		}
 		constraints MyConstraints {
 			granted MyGranted {
-				user {User1}
+				users {User1}
 				roles {Role1}
 				actions {Obj1{read}}
 			}
@@ -402,7 +402,7 @@ class ParserTest {
 		}
 		constraints MyConstraints {
 			granted MyGranted {
-				user {User1 User2}
+				users {User1 User2}
 				roles {Role1}
 				actions {Obj1{read}}
 			}
@@ -422,7 +422,7 @@ class ParserTest {
 		}
 		constraints MyConstraints {
 			granted MyGranted {
-				user {User1 User2}
+				users {User1 User2}
 				roles {Role1 Role2}
 				actions {Obj1{read}}
 			}
@@ -441,7 +441,7 @@ class ParserTest {
 		}
 		constraints MyConstraints {
 			granted MyGranted {
-				user {User1}
+				users {User1}
 				roles {Role1}
 				actions {Obj1{read} Obj2{read}}
 			}
@@ -478,7 +478,7 @@ class ParserTest {
 		}
 		constraints MyConstraints {
 			forbidden MyForbidden {
-				user {User1 User2}
+				users {User1 User2}
 				roles {Role1}
 				actions {Obj1{read}}
 			}
@@ -498,7 +498,7 @@ class ParserTest {
 		}
 		constraints MyConstraints {
 			forbidden MyForbidden {
-				user {User1 User2}
+				users {User1 User2}
 				roles {Role1 Role2}
 				actions {Obj1{read}}
 			}
@@ -517,9 +517,33 @@ class ParserTest {
 		}
 		constraints MyConstraints {
 			forbidden MyForbidden {
-				user {User1}
+				users {User1}
 				roles {Role1}
 				actions {Obj1{read} Obj2{read}}
+			}
+		}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseMultipleGrantedConstraints() {
+		'''
+		policy MyPolicy {
+			user User1 {}
+			user User2 {}
+			role Role1 {}
+			object Obj1{read}
+		}
+		constraints MyConstraints {
+			granted Granted1 {
+				users {User1}
+				roles {Role1}
+				actions{Obj1{read}}
+			}
+			granted Granted2 {
+				users {User2}
+				roles {Role1}
+				actions{Obj1{read}}
 			}
 		}
 		'''.parse.assertNoErrors
