@@ -27,7 +27,7 @@ ForbiddenConstraint:
 	'forbidden' name=ID '{'
 		'users' '{' users+= [User]+ '}'
 		'roles' '{' roles += [Role]+ '}'
-		'actions' '{' actions+=[Action]+ '}'
+		'actions' '{' actions+=ObjectActions+ '}'
 	'}'
 ;
 
@@ -35,7 +35,7 @@ GrantedConstraint:
 	'granted' name=ID '{'
 		'users' '{' users+= [User]+ '}'
 		'roles' '{' roles += [Role]+ '}'
-		'actions' '{' actions+=[Action]+ '}'
+		'actions' '{' actions+=ObjectActions+ '}'
 	'}'
 ;
 
@@ -76,7 +76,7 @@ TupleRole:
 ;
 
 ObjectActions:
-	object += [Object] '{' actions += [Action]+ '}'
+	object = [Object] '{' actions += Action+ '}'
 ;
 
 ActionsRefs:
