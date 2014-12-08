@@ -124,7 +124,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 
 	 @Check
 	 def checkDoubleRoleAssignment(User user) {
-	 	if (user.roles.isEmpty())
+	 	if (user.roles.size() <= 1)
 	 		return;
 	 	for (var i = 0; i < user.roles.size(); i++) {
 	 		var current = user.roles.get(i)
