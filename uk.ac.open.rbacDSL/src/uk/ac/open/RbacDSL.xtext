@@ -79,10 +79,6 @@ ObjectActions:
 	object = [Object] '{' actions += Action+ '}'
 ;
 
-ActionsRefs:
-	references += [Action]+
-;
-
 Object:
 	'object' name=ID '{'
 		('actions' '{' actions += Action+ '}')?
