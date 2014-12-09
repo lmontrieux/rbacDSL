@@ -310,6 +310,18 @@ class ParserTest {
 	}
 	
 	@Test
+	def void parseMultiplePoliciesNoNameClash() {
+		'''
+		policy Policy1 {
+			user User1 {}
+		}
+		policy Policy2 {
+			user User1 {}
+		}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
 	def void parseTwoEmptyFiles() {
 		val resourceSet = resourceSetProvider.get
 		val first = '''policy Policy1 {}'''.parse(resourceSet)
