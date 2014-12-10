@@ -216,7 +216,7 @@ class ValidatorTests {
 			role Role1 {}
 		}
 		'''.parse.assertError(
-			RbacDSLPackage::eINSTANCE.role,
+			RbacDSLPackage::eINSTANCE.user,
 			RbacDSLValidator::NO_DOUBLE_ROLE_ASSIGNMENT,
 			"Role assigned twice to the user"
 		)
@@ -233,7 +233,7 @@ class ValidatorTests {
 			role Role2 {}
 		}
 		'''.parse.assertError(
-			RbacDSLPackage::eINSTANCE.role,
+			RbacDSLPackage::eINSTANCE.user,
 			RbacDSLValidator::NO_DOUBLE_ROLE_ASSIGNMENT,
 			"Role assigned twice to the user"
 		)
