@@ -24,14 +24,15 @@ import java.util.Arrays
 class RbacDSLValidator extends AbstractRbacDSLValidator {
 	public static val EMPTY_POLICY = "uk.ac.open.rbacdsl.EmptyPolicy"
 	public static val EMPTY_USER = "uk.ac.open.rbacdsl.EmptyUser"
-	public static val NO_DOUBLE_ROLE_ASSIGNMENT = "uk.ac.open.rbacdsl.NoDoubleRoleAssignment"
-	public static val NO_DUPLICATE_ROLE_EXTENSION = "uk.ac.open.rbacdsl.NoDuplicateRoleExtension"
-	public static val NO_ROLE_EXTENDING_ITSELF = "uk.ac.open.rbacdsl.NoRoleExtendingItself"
-	public static val NO_SOD_CONFLICT = "uk.ac.open.rbacdsl.NoSoDConflict"
-	public static val NO_SOD_WITH_SELF = "uk.ac.open.rbacdsl.NoSoDWithSelf"
-	public static val ONLY_ONE_DSOD = "uk.ac.open.rbacdsl.OnlyOneDSoD"
-	public static val ONLY_ONE_SSOD = "uk.ac.open.rbacdsl.OnlyOneSSoD"
-	public static val ROLE_NO_ACTIONS = "uk.ac.open.rbacdsl.RoleNoAction"
+	public static val DUPLICATE_PERMISSION_ASSIGNMENT = "uk.ac.open.rbacdsl.DuplicatePermissionAssignment"
+	public static val DUPLICATE_ROLE_ASSIGNMENT = "uk.ac.open.rbacdsl.DuplicateRoleAssignment"
+	public static val DUPLICATE_ROLE_EXTENSION = "uk.ac.open.rbacdsl.DuplicateRoleExtension"
+	public static val ROLE_EXTENDING_ITSELF = "uk.ac.open.rbacdsl.RoleExtendingItself"
+	public static val SOD_CONFLICT = "uk.ac.open.rbacdsl.SoDConflict"
+	public static val SOD_WITH_SELF = "uk.ac.open.rbacdsl.SoDWithSelf"
+	public static val MULTIPLE_DSOD_BLOCKS = "uk.ac.open.rbacdsl.MultipleDSoDBlocks"
+	public static val MULTIPLE_SSOD_BLOCKS = "uk.ac.open.rbacdsl.MultipleSSoDBlocks"
+	public static val EMPTY_ROLE = "uk.ac.open.rbacdsl.EmptyRole"
 	
 	@Check
 	def checkEmptyPolicy(Policy policy) {
@@ -56,7 +57,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 		if (role.permissions.isEmpty())
 			warning('''Role has no actions assigned on any object''',
 				RbacDSLPackage::eINSTANCE.role_Name,
-				ROLE_NO_ACTIONS
+				EMPTY_ROLE
 			)
 	}
 	
@@ -67,7 +68,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 			error('''Several ssod blocks in the same policy''',
 				ssods.get(1),
 				null,
-				ONLY_ONE_SSOD
+				MULTIPLE_SSOD_BLOCKS
 			)
 	}
 	
@@ -78,7 +79,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 			error('''Several dsod blocks in the same policy''',
 				dsods.get(1),
 				null,
-				ONLY_ONE_DSOD
+				MULTIPLE_DSOD_BLOCKS
 			)
 	}
 	
@@ -88,7 +89,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 			error('''SoD constraint between an role and itself''',
 				tuple,
 				null,
-				NO_SOD_WITH_SELF
+				SOD_WITH_SELF
 			)
 	}
 	
@@ -103,7 +104,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 				error('''Duplicate role extension''',
 					role.parents.get(i),
 					null,
-					NO_DUPLICATE_ROLE_EXTENSION
+					DUPLICATE_ROLE_EXTENSION
 				)
 			}
 		}
@@ -118,7 +119,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 		error('''Role extending itself''',
 	 			role,
 	 			null,
-	 			NO_ROLE_EXTENDING_ITSELF
+	 			ROLE_EXTENDING_ITSELF
 	 		)
 	 }
 	 
@@ -133,7 +134,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 				error('''Role assigned twice to the user''',
 	 					user,
 	 					RbacDSLPackage::eINSTANCE.user_Roles,
-	 					NO_DOUBLE_ROLE_ASSIGNMENT
+	 					DUPLICATE_ROLE_ASSIGNMENT
 	 				)
 	 		}
 	 	}
@@ -152,7 +153,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 						warning('''DSoD constraint unnecessary because of an identical SSoD constraint''',
 							tuple,
 							null,
-							NO_SOD_CONFLICT
+							SOD_CONFLICT
 						)
 					}
 				}

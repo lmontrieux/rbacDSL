@@ -50,7 +50,7 @@ class ValidatorTests {
 		}
 		'''.parse.assertWarning(
 			RbacDSLPackage::eINSTANCE.role,
-			RbacDSLValidator::ROLE_NO_ACTIONS,
+			RbacDSLValidator::EMPTY_ROLE,
 			"Role has no actions assigned on any object"
 		)
 	}
@@ -67,7 +67,7 @@ class ValidatorTests {
 		}
 		'''.parse.assertError(
 			RbacDSLPackage::eINSTANCE.SSoD,
-			RbacDSLValidator::ONLY_ONE_SSOD,
+			RbacDSLValidator::MULTIPLE_SSOD_BLOCKS,
 			"Several ssod blocks in the same policy"
 		)
 	}
@@ -84,7 +84,7 @@ class ValidatorTests {
 		}
 		'''.parse.assertError(
 			RbacDSLPackage::eINSTANCE.DSoD,
-			RbacDSLValidator::ONLY_ONE_DSOD,
+			RbacDSLValidator::MULTIPLE_DSOD_BLOCKS,
 			"Several dsod blocks in the same policy"
 		)
 	}
@@ -98,7 +98,7 @@ class ValidatorTests {
 		}
 		'''.parse.assertError(
 			RbacDSLPackage::eINSTANCE.tupleRole,
-			RbacDSLValidator::NO_SOD_WITH_SELF,
+			RbacDSLValidator::SOD_WITH_SELF,
 			"SoD constraint between an role and itself"
 		)
 	}
@@ -112,7 +112,7 @@ class ValidatorTests {
 		}
 		'''.parse.assertError(
 			RbacDSLPackage::eINSTANCE.tupleRole,
-			RbacDSLValidator::NO_SOD_WITH_SELF,
+			RbacDSLValidator::SOD_WITH_SELF,
 			"SoD constraint between an role and itself"
 		)
 	}
@@ -128,7 +128,7 @@ class ValidatorTests {
 		}
 		'''.parse.assertWarning(
 			RbacDSLPackage::eINSTANCE.tupleRole,
-			RbacDSLValidator::NO_SOD_CONFLICT,
+			RbacDSLValidator::SOD_CONFLICT,
 			"DSoD constraint unnecessary because of an identical SSoD constraint"
 		)
 	}
@@ -144,7 +144,7 @@ class ValidatorTests {
 		}
 		'''.parse.assertWarning(
 			RbacDSLPackage::eINSTANCE.tupleRole,
-			RbacDSLValidator::NO_SOD_CONFLICT,
+			RbacDSLValidator::SOD_CONFLICT,
 			"DSoD constraint unnecessary because of an identical SSoD constraint"
 		)
 	}
@@ -158,7 +158,7 @@ class ValidatorTests {
 		}
 		'''.parse.assertError(
 			RbacDSLPackage::eINSTANCE.role,
-			RbacDSLValidator::NO_DUPLICATE_ROLE_EXTENSION,
+			RbacDSLValidator::DUPLICATE_ROLE_EXTENSION,
 			"Duplicate role extension"
 		)
 	}
@@ -173,7 +173,7 @@ class ValidatorTests {
 		}
 		'''.parse.assertError(
 			RbacDSLPackage::eINSTANCE.role,
-			RbacDSLValidator::NO_DUPLICATE_ROLE_EXTENSION,
+			RbacDSLValidator::DUPLICATE_ROLE_EXTENSION,
 			"Duplicate role extension"
 		)
 	}
@@ -186,7 +186,7 @@ class ValidatorTests {
 		}
 		'''.parse.assertError(
 			RbacDSLPackage::eINSTANCE.role,
-			RbacDSLValidator::NO_ROLE_EXTENDING_ITSELF,
+			RbacDSLValidator::ROLE_EXTENDING_ITSELF,
 			"Role extending itself"
 		)
 	}
@@ -201,7 +201,7 @@ class ValidatorTests {
 		}
 		'''.parse.assertError(
 			RbacDSLPackage::eINSTANCE.role,
-			RbacDSLValidator::NO_ROLE_EXTENDING_ITSELF,
+			RbacDSLValidator::ROLE_EXTENDING_ITSELF,
 			"Role extending itself"
 		)
 	}
@@ -215,7 +215,7 @@ class ValidatorTests {
 		}
 		'''.parse.assertError(
 			RbacDSLPackage::eINSTANCE.user,
-			RbacDSLValidator::NO_DOUBLE_ROLE_ASSIGNMENT,
+			RbacDSLValidator::DUPLICATE_ROLE_ASSIGNMENT,
 			"Role assigned twice to the user"
 		)
 	}
@@ -230,7 +230,7 @@ class ValidatorTests {
 		}
 		'''.parse.assertError(
 			RbacDSLPackage::eINSTANCE.user,
-			RbacDSLValidator::NO_DOUBLE_ROLE_ASSIGNMENT,
+			RbacDSLValidator::DUPLICATE_ROLE_ASSIGNMENT,
 			"Role assigned twice to the user"
 		)
 	}
