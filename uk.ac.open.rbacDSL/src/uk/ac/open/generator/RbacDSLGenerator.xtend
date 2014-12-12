@@ -15,7 +15,7 @@ import org.eclipse.xtext.generator.IGenerator
 class RbacDSLGenerator implements IGenerator {
 	
 	override doGenerate(Resource input, IFileSystemAccess fsa) {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+//		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
 	
 	
