@@ -44,7 +44,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	}
 	
 	@Check
-	def checkEmptyUsers(User user) {
+	def checkEmptyUser(User user) {
 		if (user.roles.isEmpty())
 			warning('''User has no role assignment''',
 				RbacDSLPackage::eINSTANCE.user_Name,
@@ -53,7 +53,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	}
 	
 	@Check
-	def checkRoleNoActions(Role role) {
+	def checkEmptyRole(Role role) {
 		if (role.permissions.isEmpty())
 			warning('''Role has no actions assigned on any object''',
 				RbacDSLPackage::eINSTANCE.role_Name,
@@ -62,7 +62,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	}
 	
 	@Check
-	def checkOnlyOneSSoDBlock(Policy policy) {
+	def checkMultipleSSoDBlocks(Policy policy) {
 		val ssods = policy.ssod
 		if (ssods.size() > 1)
 			error('''Several ssod blocks in the same policy''',
@@ -73,7 +73,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	}
 	
 	@Check
-	def checkOnlyOneDSoDBlock(Policy policy) {
+	def checkMultipleDSoDBlocks(Policy policy) {
 		val dsods = policy.dsod
 		if (dsods.size() > 1)
 			error('''Several dsod blocks in the same policy''',
@@ -84,7 +84,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	}
 	
 	@Check
-	def checkNoSoDWithSelf(TupleRole tuple) {
+	def checkSoDWithSelf(TupleRole tuple) {
 		if (tuple.fst.equals(tuple.snd))
 			error('''SoD constraint between an role and itself''',
 				tuple,
@@ -114,7 +114,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 * A role should not extend itself
 	 */
 	 @Check
-	 def checkRoleNoSelfExtension(Role role) {
+	 def checkRoleExtendingItself(Role role) {
 	 	if (role.parents.contains(role))
 	 		error('''Role extending itself''',
 	 			role,
@@ -124,7 +124,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 }
 	 
 	 @Check
-	 def checkDoubleRoleAssignment(User user) {
+	 def checkDuplicateRoleAssignment(User user) {
 	 	if (user.roles.size() <= 1)
 	 		return;
 	 	for (var i = 0; i < user.roles.size(); i++) {
@@ -145,7 +145,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 * In such a case, the DSoD constraint is unnecessary.
 	 */
 	@Check
-	def checkSoDConflicts(TupleRole tuple) {
+	def checkSoDConflict(TupleRole tuple) {
 		if (tuple.getContainerOfType(typeof(DSoD)) != null) {
 			for (SSoD ssod:tuple.policy.ssod) {
 				for (TupleRole current:ssod.ssod) {
