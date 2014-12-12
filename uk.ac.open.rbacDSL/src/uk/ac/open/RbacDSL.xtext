@@ -75,13 +75,9 @@ TupleRole:
 	'(' fst=[Role] snd=[Role] ')'
 ;
 
-ObjectActions:
-	object = [Object|QualifiedName] '{' actions += [Action|QualifiedName]+ '}'
-;
-
 Object:
 	'object' name=ID '{'
-		('actions' '{' actions += Action+ '}')?
+		(actions += Action*)
 	'}'
 ;
 
