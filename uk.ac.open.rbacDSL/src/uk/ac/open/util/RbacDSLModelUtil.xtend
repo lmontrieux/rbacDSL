@@ -17,9 +17,6 @@ import uk.ac.open.rbacDSL.PolicyConstraint
 import uk.ac.open.rbacDSL.SoD
 
 class RbacDSLModelUtil {
-	def static getPermissions(Role role) {
-		role.permissions
-	}
 	
 	def static users(Policy policy) {
 		policy.policyElements.filter(typeof(User))

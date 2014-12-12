@@ -183,7 +183,7 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				role Role1 {
-					permissions {Obj11{read}}
+					permissions {Obj11.read}
 				}
 				object Obj11 {
 					actions {read}
@@ -197,7 +197,7 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				role Role1 {
-					permissions {Obj11{read write}}
+					permissions {Obj11.read Obj11.write}
 				}
 				object Obj11 {
 					actions {read write}
@@ -211,7 +211,7 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				role Role1 {
-					permissions {Obj11{read} Obj2{read}}
+					permissions {Obj11.read Obj2.read}
 				}
 				object Obj11 {
 					actions {read}
@@ -228,7 +228,7 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				role Role1 {
-					permissions {Obj11{read} Obj2{write}}
+					permissions {Obj11.read Obj2.write}
 				}
 				object Obj11 {
 					actions {read}
@@ -245,7 +245,7 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				role Role1 {
-					permissions {Obj11{read write} Obj2{read write}}
+					permissions {Obj11.read Obj11.write Obj2.read Obj2.write}
 				}
 				object Obj11 {
 					actions {read write}
@@ -262,7 +262,7 @@ class ParserTest {
 		'''
 			policy MyPolicy {
 				role Role1 {
-					permissions {Obj11{read create} Obj2{read write}}
+					permissions {Obj11.read Obj11.create Obj2.read Obj2.write}
 				}
 				object Obj11 {
 					actions {read create}
@@ -338,7 +338,7 @@ class ParserTest {
 			role Role1 {}
 			role Role2 {
 				permissions {
-					Obj1{read}
+					Obj1.read
 				}
 			}
 			object Obj1{actions{read}}
@@ -356,7 +356,7 @@ class ParserTest {
 			dsod {(Role2 Role3)}
 			role Role2 {
 				permissions {
-					Obj1{read}
+					Obj1.read
 				}
 			}
 			object Obj1{actions{read}}
@@ -395,9 +395,9 @@ class ParserTest {
 		}
 		constraints MyConstraints {
 			granted MyGranted {
-				users {User1}
-				roles {Role1}
-				actions {Obj1{read}}
+				users {MyPolicy.User1}
+				roles {MyPolicy.Role1}
+				actions {MyPolicy.Obj1.read}
 			}
 		}
 		'''.parse.assertNoErrors
@@ -414,9 +414,9 @@ class ParserTest {
 		}
 		constraints MyConstraints {
 			granted MyGranted {
-				users {User1 User2}
-				roles {Role1}
-				actions {Obj1{read}}
+				users {MyPolicy.User1 MyPolicy.User2}
+				roles {MyPolicy.Role1}
+				actions {MyPolicy.Obj1.read}
 			}
 		}
 		'''.parse.assertNoErrors
@@ -434,9 +434,9 @@ class ParserTest {
 		}
 		constraints MyConstraints {
 			granted MyGranted {
-				users {User1 User2}
-				roles {Role1 Role2}
-				actions {Obj1{read}}
+				users {MyPolicy.User1 MyPolicy.User2}
+				roles {MyPolicy.Role1 MyPolicy.Role2}
+				actions {MyPolicy.Obj1.read}
 			}
 		}
 		'''.parse.assertNoErrors
@@ -453,9 +453,9 @@ class ParserTest {
 		}
 		constraints MyConstraints {
 			granted MyGranted {
-				users {User1}
-				roles {Role1}
-				actions {Obj1{read} Obj2{read}}
+				users {MyPolicy.User1}
+				roles {MyPolicy.Role1}
+				actions {MyPolicy.Obj1.read MyPolicy.Obj2.read}
 			}
 		}
 		'''.parse.assertNoErrors
@@ -471,9 +471,9 @@ class ParserTest {
 		}
 		constraints MyConstraints {
 			forbidden MyForbidden {
-				users {User1}
-				roles {Role1}
-				actions {Obj1{read}}
+				users {MyPolicy.User1}
+				roles {MyPolicy.Role1}
+				actions {MyPolicy.Obj1.read}
 			}
 		}
 		'''.parse.assertNoErrors
@@ -490,9 +490,9 @@ class ParserTest {
 		}
 		constraints MyConstraints {
 			forbidden MyForbidden {
-				users {User1 User2}
-				roles {Role1}
-				actions {Obj1{read}}
+				users {MyPolicy.User1 MyPolicy.User2}
+				roles {MyPolicy.Role1}
+				actions {MyPolicy.Obj1.read}
 			}
 		}
 		'''.parse.assertNoErrors
@@ -510,9 +510,9 @@ class ParserTest {
 		}
 		constraints MyConstraints {
 			forbidden MyForbidden {
-				users {User1 User2}
-				roles {Role1 Role2}
-				actions {Obj1{read}}
+				users {MyPolicy.User1 MyPolicy.User2}
+				roles {MyPolicy.Role1 MyPolicy.Role2}
+				actions {MyPolicy.Obj1.read}
 			}
 		}
 		'''.parse.assertNoErrors
@@ -529,9 +529,9 @@ class ParserTest {
 		}
 		constraints MyConstraints {
 			forbidden MyForbidden {
-				users {User1}
-				roles {Role1}
-				actions {Obj1{read} Obj2{read}}
+				users {MyPolicy.User1}
+				roles {MyPolicy.Role1}
+				actions {MyPolicy.Obj1.read MyPolicy.Obj2.read}
 			}
 		}
 		'''.parse.assertNoErrors
@@ -548,14 +548,14 @@ class ParserTest {
 		}
 		constraints MyConstraints {
 			granted Granted1 {
-				users {User1}
-				roles {Role1}
-				actions{Obj1{read}}
+				users {MyPolicy.User1}
+				roles {MyPolicy.Role1}
+				actions{MyPolicy.Obj1.read}
 			}
 			granted Granted2 {
-				users {User2}
-				roles {Role1}
-				actions{Obj1{read}}
+				users {MyPolicy.User2}
+				roles {MyPolicy.Role1}
+				actions{MyPolicy.Obj1.read}
 			}
 		}
 		'''.parse.assertNoErrors

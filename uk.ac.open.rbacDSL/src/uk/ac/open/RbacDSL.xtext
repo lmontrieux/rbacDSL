@@ -25,17 +25,17 @@ PolicyConstraint:
 
 ForbiddenConstraint:
 	'forbidden' name=ID '{'
-		'users' '{' users+= [User]+ '}'
-		'roles' '{' roles += [Role]+ '}'
-		'actions' '{' actions+=ObjectActions+ '}'
+		'users' '{' users+= [User|QualifiedName]+ '}'
+		'roles' '{' roles += [Role|QualifiedName]+ '}'
+		'actions' '{' actions+=[Action|QualifiedName]+ '}'
 	'}'
 ;
 
 GrantedConstraint:
 	'granted' name=ID '{'
-		'users' '{' users+= [User]+ '}'
-		'roles' '{' roles += [Role]+ '}'
-		'actions' '{' actions+=ObjectActions+ '}'
+		'users' '{' users+= [User|QualifiedName]+ '}'
+		'roles' '{' roles += [Role|QualifiedName]+ '}'
+		'actions' '{' actions+=[Action|QualifiedName]+ '}'
 	'}'
 ;
 
@@ -51,7 +51,7 @@ User:
 
 Role:
 	'role' name=ID ('extends' parents += [Role]+)? '{'
-		('permissions' '{' permissions += ObjectActions+ '}')?
+		('permissions' '{' permissions += [Action|QualifiedName]+ '}')?
 	'}'
 ;
 
@@ -76,7 +76,7 @@ TupleRole:
 ;
 
 ObjectActions:
-	object = [Object] '{' actions += [Action]+ '}'
+	object = [Object|QualifiedName] '{' actions += [Action|QualifiedName]+ '}'
 ;
 
 Object:
@@ -88,3 +88,5 @@ Object:
 Action:
 	name=ID
 ;
+
+QualifiedName: ID ('.' ID)*;
