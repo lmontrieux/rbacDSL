@@ -76,7 +76,7 @@ TupleRole:
 ;
 
 ObjectActions:
-	object = [Object] '{' actions += Action+ '}'
+	object = [Object] '{' actions += [Action]+ '}'
 ;
 
 Object:
