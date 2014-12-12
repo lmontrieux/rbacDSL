@@ -341,7 +341,7 @@ class ParserTest {
 					Obj1{read}
 				}
 			}
-			object Obj1{read}
+			object Obj1{actions{read}}
 		}
 		'''.parse.assertNoErrors
 	}
@@ -359,7 +359,7 @@ class ParserTest {
 					Obj1{read}
 				}
 			}
-			object Obj1{read}
+			object Obj1{actions{read}}
 		}
 		'''.parse.assertNoErrors
 	}
@@ -391,7 +391,7 @@ class ParserTest {
 		policy MyPolicy {
 			user User1{}
 			role Role1{}
-			object Obj1{read}
+			object Obj1{actions{read}}
 		}
 		constraints MyConstraints {
 			granted MyGranted {
@@ -410,7 +410,7 @@ class ParserTest {
 			user User1{}
 			user User2{}
 			role Role1{}
-			object Obj1{read}
+			object Obj1{actions{read}}
 		}
 		constraints MyConstraints {
 			granted MyGranted {
@@ -430,7 +430,7 @@ class ParserTest {
 			user User2{}
 			role Role1{}
 			role Role2{}
-			object Obj1{read}
+			object Obj1{actions{read}}
 		}
 		constraints MyConstraints {
 			granted MyGranted {
@@ -448,8 +448,8 @@ class ParserTest {
 		policy MyPolicy {
 			user User1{}
 			role Role1{}
-			object Obj1{read}
-			object Obj2{read}
+			object Obj1{actions{read}}
+			object Obj2{actions{read}}
 		}
 		constraints MyConstraints {
 			granted MyGranted {
@@ -467,7 +467,7 @@ class ParserTest {
 		policy MyPolicy {
 			user User1{}
 			role Role1{}
-			object Obj1{read}
+			object Obj1{actions{read}}
 		}
 		constraints MyConstraints {
 			forbidden MyForbidden {
@@ -486,7 +486,7 @@ class ParserTest {
 			user User1{}
 			user User2{}
 			role Role1{}
-			object Obj1{read}
+			object Obj1{actions{read}}
 		}
 		constraints MyConstraints {
 			forbidden MyForbidden {
@@ -506,7 +506,7 @@ class ParserTest {
 			user User2{}
 			role Role1{}
 			role Role2{}
-			object Obj1{read}
+			object Obj1{actions{read}}
 		}
 		constraints MyConstraints {
 			forbidden MyForbidden {
@@ -524,8 +524,8 @@ class ParserTest {
 		policy MyPolicy {
 			user User1{}
 			role Role1{}
-			object Obj1{read}
-			object Obj2{read}
+			object Obj1{actions{read}}
+			object Obj2{actions{read}}
 		}
 		constraints MyConstraints {
 			forbidden MyForbidden {
@@ -544,7 +544,7 @@ class ParserTest {
 			user User1 {}
 			user User2 {}
 			role Role1 {}
-			object Obj1{read}
+			object Obj1{actions{read}}
 		}
 		constraints MyConstraints {
 			granted Granted1 {
