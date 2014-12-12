@@ -22,17 +22,17 @@ import java.util.Arrays
  * see http://www.eclipse.org/Xtext/documentation.html#validation
  */
 class RbacDSLValidator extends AbstractRbacDSLValidator {
-	public static val EMPTY_POLICY = "uk.ac.open.rbacdsl.EmptyPolicy"
-	public static val EMPTY_USER = "uk.ac.open.rbacdsl.EmptyUser"
 	public static val DUPLICATE_PERMISSION_ASSIGNMENT = "uk.ac.open.rbacdsl.DuplicatePermissionAssignment"
 	public static val DUPLICATE_ROLE_ASSIGNMENT = "uk.ac.open.rbacdsl.DuplicateRoleAssignment"
 	public static val DUPLICATE_ROLE_EXTENSION = "uk.ac.open.rbacdsl.DuplicateRoleExtension"
+	public static val EMPTY_POLICY = "uk.ac.open.rbacdsl.EmptyPolicy"
+	public static val EMPTY_ROLE = "uk.ac.open.rbacdsl.EmptyRole"
+	public static val EMPTY_USER = "uk.ac.open.rbacdsl.EmptyUser"
+	public static val MULTIPLE_DSOD_BLOCKS = "uk.ac.open.rbacdsl.MultipleDSoDBlocks"
+	public static val MULTIPLE_SSOD_BLOCKS = "uk.ac.open.rbacdsl.MultipleSSoDBlocks"
 	public static val ROLE_EXTENDING_ITSELF = "uk.ac.open.rbacdsl.RoleExtendingItself"
 	public static val SOD_CONFLICT = "uk.ac.open.rbacdsl.SoDConflict"
 	public static val SOD_WITH_SELF = "uk.ac.open.rbacdsl.SoDWithSelf"
-	public static val MULTIPLE_DSOD_BLOCKS = "uk.ac.open.rbacdsl.MultipleDSoDBlocks"
-	public static val MULTIPLE_SSOD_BLOCKS = "uk.ac.open.rbacdsl.MultipleSSoDBlocks"
-	public static val EMPTY_ROLE = "uk.ac.open.rbacdsl.EmptyRole"
 	
 	@Check
 	def checkEmptyPolicy(Policy policy) {
