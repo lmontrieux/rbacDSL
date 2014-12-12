@@ -210,9 +210,7 @@ class ValidatorTests {
 	def void testNoDoubleUserRoleAssignment() {
 		'''
 		policy MyPolicy {
-			user User1 {
-				roles {Role1 Role1}
-			}
+			user User1 {Role1 Role1}
 			role Role1 {}
 		}
 		'''.parse.assertError(
@@ -226,9 +224,7 @@ class ValidatorTests {
 	def void testNoDoubleUserRoleAssignment2() {
 		'''
 		policy MyPolicy {
-			user User1 {
-				roles {Role1 Role2 Role1}
-			}
+			user User1 {Role1 Role2 Role1}
 			role Role1 {}
 			role Role2 {}
 		}

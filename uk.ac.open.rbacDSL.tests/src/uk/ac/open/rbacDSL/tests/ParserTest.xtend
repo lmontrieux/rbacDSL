@@ -74,9 +74,7 @@ class ParserTest {
 	def void parseUserWithOneRef() {
 		'''
 			policy MyPolicy {
-				user User1 {
-					roles {Role1}
-				}
+				user User1 {Role1}
 				role Role1 {}
 			}
 		'''.parse.assertNoErrors
@@ -86,9 +84,7 @@ class ParserTest {
 	def void parseUserWithMultipleRefs() {
 		'''
 			policy MyPolicy {
-				user User1 {
-					roles {Role1 Role2}
-				}
+				user User1 {Role1 Role2}
 				role Role1 {}
 				role Role2 {}
 			}
@@ -178,9 +174,7 @@ class ParserTest {
 	def void parseRoleOneObjectOneAction() {
 		'''
 			policy MyPolicy {
-				role Role1 {
-					permissions {Obj11.read}
-				}
+				role Role1 {Obj11.read}
 				object Obj11 {read}
 			}
 		'''.parse.assertNoErrors
@@ -190,9 +184,7 @@ class ParserTest {
 	def void parseRoleOneObjectMultipleAction() {
 		'''
 			policy MyPolicy {
-				role Role1 {
-					permissions {Obj11.read Obj11.write}
-				}
+				role Role1 {Obj11.read Obj11.write}
 				object Obj11 {read write
 				}
 			}
@@ -203,9 +195,7 @@ class ParserTest {
 	def void parseRoleMultipleObjectsOneAction() {
 		'''
 			policy MyPolicy {
-				role Role1 {
-					permissions {Obj11.read Obj2.read}
-				}
+				role Role1 {Obj11.read Obj2.read}
 				object Obj11 {read}
 				object Obj2 {read}
 			}
@@ -216,9 +206,7 @@ class ParserTest {
 	def void parseRoleMultipleObjectsDifferentAction() {
 		'''
 			policy MyPolicy {
-				role Role1 {
-					permissions {Obj11.read Obj2.write}
-				}
+				role Role1 {Obj11.read Obj2.write}
 				object Obj11 {read}
 				object Obj2 {write}
 			}
@@ -229,9 +217,7 @@ class ParserTest {
 	def void parseRoleMultipleObjectsMultipleActions() {
 		'''
 			policy MyPolicy {
-				role Role1 {
-					permissions {Obj11.read Obj11.write Obj2.read Obj2.write}
-				}
+				role Role1 {Obj11.read Obj11.write Obj2.read Obj2.write}
 				object Obj11 {read write}
 				object Obj2 {read write}
 			}
@@ -242,9 +228,7 @@ class ParserTest {
 	def void parseRoleMultipleObjectsDifferentActions() {
 		'''
 			policy MyPolicy {
-				role Role1 {
-					permissions {Obj11.read Obj11.create Obj2.read Obj2.write}
-				}
+				role Role1 {Obj11.read Obj11.create Obj2.read Obj2.write}
 				object Obj11 {read create}
 				object Obj2 {read write}
 			}
@@ -314,9 +298,7 @@ class ParserTest {
 			ssod {(Role1 Role2)}
 			role Role1 {}
 			role Role2 {
-				permissions {
 					Obj1.read
-				}
 			}
 			object Obj1{read}
 		}
@@ -332,9 +314,7 @@ class ParserTest {
 			ssod {(Role1 Role2)}
 			dsod {(Role2 Role3)}
 			role Role2 {
-				permissions {
 					Obj1.read
-				}
 			}
 			object Obj1{read}
 		}

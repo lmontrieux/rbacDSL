@@ -45,13 +45,13 @@ PolicyElement:
 
 User:
 	'user' name=ID '{'
-		('roles' '{'roles += [Role]+ '}')?
+		roles += [Role|QualifiedName]*
 	'}'
 ;
 
 Role:
 	'role' name=ID ('extends' parents += [Role]+)? '{'
-		('permissions' '{' permissions += [Action|QualifiedName]+ '}')?
+		permissions += [Action|QualifiedName]*
 	'}'
 ;
 
