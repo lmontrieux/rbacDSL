@@ -55,7 +55,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	@Check
 	def checkEmptyRole(Role role) {
 		if (role.permissions.isEmpty())
-			warning('''Role has no actions assigned on any object''',
+			warning('''Role has no operations assigned on any object''',
 				RbacDSLPackage::eINSTANCE.role_Name,
 				EMPTY_ROLE
 			)

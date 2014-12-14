@@ -153,7 +153,7 @@ class ParserTest {
 	}
 	
 	@Test
-	def void parseObjectOneAction() {
+	def void parseObjectOneOperation() {
 		'''
 			policy MyPolicy {
 				object Obj11 {read}
@@ -162,7 +162,7 @@ class ParserTest {
 	}
 	
 	@Test
-	def void parseObjectMultipleActions() {
+	def void parseObjectMultipleOperations() {
 		'''
 			policy MyPolicy {
 				object Obj11 {read write}
@@ -171,7 +171,7 @@ class ParserTest {
 	}
 	
 	@Test
-	def void parseRoleOneObjectOneAction() {
+	def void parseRoleOneObjectOneOperation() {
 		'''
 			policy MyPolicy {
 				role Role1 {Obj11.read}
@@ -181,7 +181,7 @@ class ParserTest {
 	}
 
 	@Test
-	def void parseRoleOneObjectMultipleAction() {
+	def void parseRoleOneObjectMultipleOperation() {
 		'''
 			policy MyPolicy {
 				role Role1 {Obj11.read Obj11.write}
@@ -192,7 +192,7 @@ class ParserTest {
 	}
 	
 	@Test
-	def void parseRoleMultipleObjectsOneAction() {
+	def void parseRoleMultipleObjectsOneOperation() {
 		'''
 			policy MyPolicy {
 				role Role1 {Obj11.read Obj2.read}
@@ -203,7 +203,7 @@ class ParserTest {
 	}
 	
 	@Test
-	def void parseRoleMultipleObjectsDifferentAction() {
+	def void parseRoleMultipleObjectsDifferentOperation() {
 		'''
 			policy MyPolicy {
 				role Role1 {Obj11.read Obj2.write}
@@ -214,7 +214,7 @@ class ParserTest {
 	}
 	
 	@Test
-	def void parseRoleMultipleObjectsMultipleActions() {
+	def void parseRoleMultipleObjectsMultipleOperations() {
 		'''
 			policy MyPolicy {
 				role Role1 {Obj11.read Obj11.write Obj2.read Obj2.write}
@@ -225,7 +225,7 @@ class ParserTest {
 	}
 	
 	@Test
-	def void parseRoleMultipleObjectsDifferentActions() {
+	def void parseRoleMultipleObjectsDifferentOperations() {
 		'''
 			policy MyPolicy {
 				role Role1 {Obj11.read Obj11.create Obj2.read Obj2.write}
@@ -354,7 +354,7 @@ class ParserTest {
 			granted MyGranted {
 				users {MyPolicy.User1}
 				roles {MyPolicy.Role1}
-				actions {MyPolicy.Obj1.read}
+				operations {MyPolicy.Obj1.read}
 			}
 		}
 		'''.parse.assertNoErrors
@@ -373,7 +373,7 @@ class ParserTest {
 			granted MyGranted {
 				users {MyPolicy.User1 MyPolicy.User2}
 				roles {MyPolicy.Role1}
-				actions {MyPolicy.Obj1.read}
+				operations {MyPolicy.Obj1.read}
 			}
 		}
 		'''.parse.assertNoErrors
@@ -393,7 +393,7 @@ class ParserTest {
 			granted MyGranted {
 				users {MyPolicy.User1 MyPolicy.User2}
 				roles {MyPolicy.Role1 MyPolicy.Role2}
-				actions {MyPolicy.Obj1.read}
+				operations {MyPolicy.Obj1.read}
 			}
 		}
 		'''.parse.assertNoErrors
@@ -412,7 +412,7 @@ class ParserTest {
 			granted MyGranted {
 				users {MyPolicy.User1}
 				roles {MyPolicy.Role1}
-				actions {MyPolicy.Obj1.read MyPolicy.Obj2.read}
+				operations {MyPolicy.Obj1.read MyPolicy.Obj2.read}
 			}
 		}
 		'''.parse.assertNoErrors
@@ -430,7 +430,7 @@ class ParserTest {
 			forbidden MyForbidden {
 				users {MyPolicy.User1}
 				roles {MyPolicy.Role1}
-				actions {MyPolicy.Obj1.read}
+				operations {MyPolicy.Obj1.read}
 			}
 		}
 		'''.parse.assertNoErrors
@@ -449,7 +449,7 @@ class ParserTest {
 			forbidden MyForbidden {
 				users {MyPolicy.User1 MyPolicy.User2}
 				roles {MyPolicy.Role1}
-				actions {MyPolicy.Obj1.read}
+				operations {MyPolicy.Obj1.read}
 			}
 		}
 		'''.parse.assertNoErrors
@@ -469,7 +469,7 @@ class ParserTest {
 			forbidden MyForbidden {
 				users {MyPolicy.User1 MyPolicy.User2}
 				roles {MyPolicy.Role1 MyPolicy.Role2}
-				actions {MyPolicy.Obj1.read}
+				operations {MyPolicy.Obj1.read}
 			}
 		}
 		'''.parse.assertNoErrors
@@ -488,7 +488,7 @@ class ParserTest {
 			forbidden MyForbidden {
 				users {MyPolicy.User1}
 				roles {MyPolicy.Role1}
-				actions {MyPolicy.Obj1.read MyPolicy.Obj2.read}
+				operations {MyPolicy.Obj1.read MyPolicy.Obj2.read}
 			}
 		}
 		'''.parse.assertNoErrors
@@ -507,12 +507,12 @@ class ParserTest {
 			granted Granted1 {
 				users {MyPolicy.User1}
 				roles {MyPolicy.Role1}
-				actions{MyPolicy.Obj1.read}
+				operations {MyPolicy.Obj1.read}
 			}
 			granted Granted2 {
 				users {MyPolicy.User2}
 				roles {MyPolicy.Role1}
-				actions{MyPolicy.Obj1.read}
+				operations {MyPolicy.Obj1.read}
 			}
 		}
 		'''.parse.assertNoErrors

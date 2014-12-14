@@ -43,7 +43,7 @@ class ValidatorTests {
 	}
 	
 	@Test
-	def void testRoleNoActionsWarning() {
+	def void testRoleNoOperationsWarning() {
 		'''
 		policy MyPolicy {
 			role Role1{}
@@ -51,7 +51,7 @@ class ValidatorTests {
 		'''.parse.assertWarning(
 			RbacDSLPackage::eINSTANCE.role,
 			RbacDSLValidator::EMPTY_ROLE,
-			"Role has no actions assigned on any object"
+			"Role has no operations assigned on any object"
 		)
 	}
 	
