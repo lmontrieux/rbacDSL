@@ -106,6 +106,11 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 					i,
 					DUPLICATE_ROLE_EXTENSION
 				)
+				error('''Duplicate role extension''',
+					RbacDSLPackage::eINSTANCE.role_Parents,
+					Arrays.copyOfRange(role.parents.toArray, 0, i).indexOf(parent),
+					DUPLICATE_ROLE_EXTENSION
+				)
 			}
 		}
 	}
@@ -130,12 +135,18 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 	for (var i = 0; i < user.roles.size(); i++) {
 	 		var current = user.roles.get(i)
 	 		for (var j = i+1; j < user.roles.size(); j++) {
-	 			if (current.equals(user.roles.get(j)))
+	 			if (current.equals(user.roles.get(j))) {
 	 				error('''Duplicate role assignment''',
 	 					RbacDSLPackage::eINSTANCE.user_Roles,
 	 					j,
 	 					DUPLICATE_ROLE_ASSIGNMENT
 	 				)
+	 				error('''Duplicate role assignment''',
+	 					RbacDSLPackage::eINSTANCE.user_Roles,
+	 					i,
+	 					DUPLICATE_ROLE_ASSIGNMENT
+	 				)	
+	 			}
 	 		}
 	 	}
 	 }
