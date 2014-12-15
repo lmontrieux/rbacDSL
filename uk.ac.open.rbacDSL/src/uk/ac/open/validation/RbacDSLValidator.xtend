@@ -100,7 +100,8 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	def checkDuplicateRoleExtensions(Role role) {
 		for (var i = 0; i < role.parents.toArray.length; i++) {
 			var parent = role.parents.toArray.get(i);
-			if (Arrays.copyOfRange(role.parents.toArray, 0, i).contains(parent)) {
+			val previous = Arrays.copyOfRange(role.parents.toArray, 0, i) //subset of parents array before parent
+			if (previous.contains(parent)) {
 				error('''Duplicate role extension''',
 					RbacDSLPackage::eINSTANCE.role_Parents,
 					i,
@@ -108,7 +109,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 				)
 				error('''Duplicate role extension''',
 					RbacDSLPackage::eINSTANCE.role_Parents,
-					Arrays.copyOfRange(role.parents.toArray, 0, i).indexOf(parent),
+					previous.indexOf(parent),
 					DUPLICATE_ROLE_EXTENSION
 				)
 			}
