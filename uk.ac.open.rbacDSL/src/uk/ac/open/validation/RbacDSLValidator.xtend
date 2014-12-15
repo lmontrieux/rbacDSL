@@ -102,8 +102,8 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 			var parent = role.parents.toArray.get(i);
 			if (Arrays.copyOfRange(role.parents.toArray, 0, i).contains(parent)) {
 				error('''Duplicate role extension''',
-					role.parents.get(i),
-					null,
+					RbacDSLPackage::eINSTANCE.role_Parents,
+					i,
 					DUPLICATE_ROLE_EXTENSION
 				)
 			}
