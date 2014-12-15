@@ -131,9 +131,9 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 		var current = user.roles.get(i)
 	 		for (var j = i+1; j < user.roles.size(); j++) {
 	 			if (current.equals(user.roles.get(j)))
-	 				error('''Role assigned twice to the user''',
-	 					user,
+	 				error('''Duplicate role assignment''',
 	 					RbacDSLPackage::eINSTANCE.user_Roles,
+	 					j,
 	 					DUPLICATE_ROLE_ASSIGNMENT
 	 				)
 	 		}
