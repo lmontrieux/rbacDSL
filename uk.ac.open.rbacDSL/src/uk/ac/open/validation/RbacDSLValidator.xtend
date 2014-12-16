@@ -24,6 +24,7 @@ import uk.ac.open.rbacDSL.PolicyConstraint
  */
 class RbacDSLValidator extends AbstractRbacDSLValidator {
 	public static val DUPLICATE_PERMISSION_ASSIGNMENT = "uk.ac.open.rbacdsl.DuplicatePermissionAssignment"
+	public static val DUPLICATE_OPERATION_REFERENCE = "uk.ac.open.rbacdsl.DuplicateOperationReference"
 	public static val DUPLICATE_ROLE_ASSIGNMENT = "uk.ac.open.rbacdsl.DuplicateRoleAssignment"
 	public static val DUPLICATE_ROLE_EXTENSION = "uk.ac.open.rbacdsl.DuplicateRoleExtension"
 	public static val DUPLICATE_ROLE_REFERENCE = "uk.ac.open.rbacdsl.DuplicateRoleReference"
@@ -195,6 +196,29 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 					RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
 	 					i,
 	 					DUPLICATE_ROLE_REFERENCE
+	 				)
+	 			}
+	 		}
+	 	}
+	 }
+	 
+	 @Check
+	 def checkDuplicateOperationReferences(PolicyConstraint constraint) {
+	 	if (constraint.operations.size() <= 1)
+	 		return;
+	 	for (var i = 0; i < constraint.operations.size(); i++) {
+	 		var current = constraint.operations.get(i)
+	 		for (var j = i+1; j < constraint.operations.size(); j++) {
+	 			if (current.equals(constraint.operations.get(j))) {
+	 				error('''Duplicate operation reference''',
+	 					RbacDSLPackage::eINSTANCE.policyConstraint_Operations,
+	 					j,
+	 					DUPLICATE_OPERATION_REFERENCE
+	 				)
+	 				error('''Duplicate operation reference''',
+	 					RbacDSLPackage::eINSTANCE.policyConstraint_Operations,
+	 					i,
+	 					DUPLICATE_OPERATION_REFERENCE
 	 				)
 	 			}
 	 		}
