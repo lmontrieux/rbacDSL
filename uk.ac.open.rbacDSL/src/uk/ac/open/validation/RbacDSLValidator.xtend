@@ -15,6 +15,7 @@ import static extension org.eclipse.xtext.EcoreUtil2.*
 import uk.ac.open.rbacDSL.SSoD
 import uk.ac.open.rbacDSL.DSoD
 import java.util.Arrays
+import uk.ac.open.rbacDSL.PolicyConstraint
 
 /**
  * Custom validation rules. 
@@ -25,6 +26,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	public static val DUPLICATE_PERMISSION_ASSIGNMENT = "uk.ac.open.rbacdsl.DuplicatePermissionAssignment"
 	public static val DUPLICATE_ROLE_ASSIGNMENT = "uk.ac.open.rbacdsl.DuplicateRoleAssignment"
 	public static val DUPLICATE_ROLE_EXTENSION = "uk.ac.open.rbacdsl.DuplicateRoleExtension"
+	public static val DUPLICATE_USER_REFERENCE = "uk.ac.open.rbacdsl.DuplicateUserReference"
 	public static val EMPTY_POLICY = "uk.ac.open.rbacdsl.EmptyPolicy"
 	public static val EMPTY_ROLE = "uk.ac.open.rbacdsl.EmptyRole"
 	public static val EMPTY_USER = "uk.ac.open.rbacdsl.EmptyUser"
@@ -147,6 +149,29 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 					i,
 	 					DUPLICATE_ROLE_ASSIGNMENT
 	 				)	
+	 			}
+	 		}
+	 	}
+	 }
+	 
+	 @Check
+	 def checkDuplicateUserReferences(PolicyConstraint constraint) {
+	 	if (constraint.users.size() <= 1)
+	 		return;
+	 	for (var i = 0; i < constraint.users.size(); i++) {
+	 		var current = constraint.users.get(i)
+	 		for (var j = i+1; j < constraint.users.size(); j++) {
+	 			if (current.equals(constraint.users.get(j))) {
+	 				error('''Duplicate user reference''',
+	 					RbacDSLPackage::eINSTANCE.policyConstraint_Users,
+	 					j,
+	 					DUPLICATE_USER_REFERENCE
+	 				)
+	 				error('''Duplicate user reference''',
+	 					RbacDSLPackage::eINSTANCE.policyConstraint_Users,
+	 					i,
+	 					DUPLICATE_USER_REFERENCE
+	 				)
 	 			}
 	 		}
 	 	}
