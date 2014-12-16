@@ -26,6 +26,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	public static val DUPLICATE_PERMISSION_ASSIGNMENT = "uk.ac.open.rbacdsl.DuplicatePermissionAssignment"
 	public static val DUPLICATE_ROLE_ASSIGNMENT = "uk.ac.open.rbacdsl.DuplicateRoleAssignment"
 	public static val DUPLICATE_ROLE_EXTENSION = "uk.ac.open.rbacdsl.DuplicateRoleExtension"
+	public static val DUPLICATE_ROLE_REFERENCE = "uk.ac.open.rbacdsl.DuplicateRoleReference"
 	public static val DUPLICATE_USER_REFERENCE = "uk.ac.open.rbacdsl.DuplicateUserReference"
 	public static val EMPTY_POLICY = "uk.ac.open.rbacdsl.EmptyPolicy"
 	public static val EMPTY_ROLE = "uk.ac.open.rbacdsl.EmptyRole"
@@ -171,6 +172,29 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 					RbacDSLPackage::eINSTANCE.policyConstraint_Users,
 	 					i,
 	 					DUPLICATE_USER_REFERENCE
+	 				)
+	 			}
+	 		}
+	 	}
+	 }
+	 
+	 @Check
+	 def checkDuplicateRoleReferences(PolicyConstraint constraint) {
+	 	if (constraint.roles.size() <= 1)
+	 		return;
+	 	for (var i = 0; i < constraint.roles.size(); i++) {
+	 		var current = constraint.roles.get(i)
+	 		for (var j = i+1; j < constraint.roles.size(); j++) {
+	 			if (current.equals(constraint.roles.get(j))) {
+	 				error('''Duplicate role reference''',
+	 					RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
+	 					j,
+	 					DUPLICATE_ROLE_REFERENCE
+	 				)
+	 				error('''Duplicate role reference''',
+	 					RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
+	 					i,
+	 					DUPLICATE_ROLE_REFERENCE
 	 				)
 	 			}
 	 		}
