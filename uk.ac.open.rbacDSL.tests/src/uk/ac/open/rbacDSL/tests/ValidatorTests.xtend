@@ -19,6 +19,86 @@ class ValidatorTests {
 	@Inject extension ValidationTestHelper
 	
 	@Test
+	def void testNoGrantedViolation() {
+		'''
+		policy MyPolicy {
+			user User1 {Role1}
+			role Role1 {Obj1.read}
+			object Obj1 {read write}
+		}
+		constraints MyConstraints {
+			granted Granted {
+				users {MyPolicy.User1}
+				roles {MyPolicy.Role1}
+				operations {MyPolicy.Obj1.read}
+			}
+		}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void testGrantedViolation() {
+		'''
+		policy MyPolicy {
+			user User1 {Role1}
+			role Role1 {Obj1.read}
+			object Obj1 {read write}
+		}
+		constraints MyConstraints {
+			granted Granted {
+				users {MyPolicy.User1}
+				roles {MyPolicy.Role1}
+				operations {MyPolicy.Obj1.write}
+			}
+		}
+		'''.parse.assertError(
+			RbacDSLPackage::eINSTANCE.policyConstraint,
+			RbacDSLValidator::GRANTED_VIOLATION,
+			"Operation 'write' not granted"
+		)
+	}
+	
+	@Test
+	def void testNoForbiddenViolation() {
+		'''
+		policy MyPolicy {
+			user User1 {Role1}
+			role Role1 {Obj1.read}
+			object Obj1 {read write}
+		}
+		constraints MyConstraints {
+			forbidden Forbidden {
+				users {MyPolicy.User1}
+				roles {MyPolicy.Role1}
+				operations {MyPolicy.Obj1.write}
+			}
+		}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void testForbiddenViolation() {
+		'''
+		policy MyPolicy {
+			user User1 {Role1}
+			role Role1 {Obj1.read}
+			object Obj1 {read write}
+		}
+		constraints MyConstraints {
+			forbidden Forbidden {
+				users {MyPolicy.User1}
+				roles {MyPolicy.Role1}
+				operations {MyPolicy.Obj1.read}
+			}
+		}
+		'''.parse.assertError(
+			RbacDSLPackage::eINSTANCE.policyConstraint,
+			RbacDSLValidator::FORBIDDEN_VIOLATION,
+			"Forbidden constraint 'Forbidden' violated"
+		)
+	}
+	
+	@Test
 	def void testUnassignedRole() {
 		'''
 		policy MyPolicy {

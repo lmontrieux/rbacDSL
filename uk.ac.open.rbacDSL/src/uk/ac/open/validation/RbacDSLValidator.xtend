@@ -17,6 +17,10 @@ import uk.ac.open.rbacDSL.DSoD
 import java.util.Arrays
 import uk.ac.open.rbacDSL.PolicyConstraint
 import java.util.List
+import uk.ac.open.rbacDSL.GrantedConstraint
+import java.util.ArrayList
+import uk.ac.open.rbacDSL.Operation
+import uk.ac.open.rbacDSL.ForbiddenConstraint
 
 /**
  * Custom validation rules. 
@@ -33,12 +37,63 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	public static val EMPTY_POLICY = "uk.ac.open.rbacdsl.EmptyPolicy"
 	public static val EMPTY_ROLE = "uk.ac.open.rbacdsl.EmptyRole"
 	public static val EMPTY_USER = "uk.ac.open.rbacdsl.EmptyUser"
+	public static val FORBIDDEN_VIOLATION = "uk.ac.open.rbacdsl.constraint.ForbiddenViolation"
+	public static val GRANTED_VIOLATION = "uk.ac.open.rbacdsl.constraint.GrantedViolation"
 	public static val MULTIPLE_DSOD_BLOCKS = "uk.ac.open.rbacdsl.MultipleDSoDBlocks"
 	public static val MULTIPLE_SSOD_BLOCKS = "uk.ac.open.rbacdsl.MultipleSSoDBlocks"
 	public static val ROLE_EXTENDING_ITSELF = "uk.ac.open.rbacdsl.RoleExtendingItself"
 	public static val SOD_CONFLICT = "uk.ac.open.rbacdsl.SoDConflict"
 	public static val SOD_WITH_SELF = "uk.ac.open.rbacdsl.SoDWithSelf"
 	public static val UNASSIGNED_ROLE = "uk.ac.open.rbacdsl.UnassignedRole"
+	
+	/**
+	 * Verifies that the policies satisfy Granted constraints. To satisfy a 
+	 * Granted constraint, the activated roles must provide /all/ the operations
+	 * required in the constraint. Each operation that is not provided will be 
+	 * highlighted using an error marker
+	 */
+	@Check
+	def checkGrantedConstraint(GrantedConstraint const) {
+		val available = availableOperations(const.roles)
+		val violations = const.operations.filter[o | !available.contains(o)]
+		for(violation:violations) {
+			error("Operation '" + violation.name + "' not granted",
+				RbacDSLPackage::eINSTANCE.policyConstraint_Operations,
+				const.operations.indexOf(violation),
+				GRANTED_VIOLATION
+			)
+		}
+	}
+	
+	/**
+	 * Verifies that the policies satisfy Forbidden constraints. To satisfy a 
+	 * Forbidden constraint, the activated roles must fail to provide at least 
+	 * one operation required in the constraint. The constraint name will be 
+	 * highlighted using an error marker.
+	 */
+	@Check
+	def checkForbiddenConstraint(ForbiddenConstraint const) {
+		val available = availableOperations(const.roles) {
+			val missing = const.operations.filter[o | !available.contains(o)]
+			if (missing.isEmpty())
+				error("Forbidden constraint '" + const.name + "' violated",
+					RbacDSLPackage::eINSTANCE.policyConstraint_Name,
+					FORBIDDEN_VIOLATION
+				)
+		}
+	}
+	
+	/**
+	 * From a list of roles, returns a list of operations afforded by those 
+	 * roles
+	 */
+	private def availableOperations(List<Role> roles) {
+		var available = new ArrayList<Operation>
+		for (role:roles) {
+			available.addAll(role.permissions.toArray() as Operation[])
+		}
+		available.toSet()
+	}
 	
 	/**
 	 * Finds roles in constraints that are not /assigned/ to /all/ the users in 
