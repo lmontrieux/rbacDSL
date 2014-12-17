@@ -346,7 +346,7 @@ class ParserTest {
 	def void parseGrantedConstraint() {
 		'''
 		policy MyPolicy {
-			user User1{}
+			user User1{Role1}
 			role Role1{}
 			object Obj1{read}
 		}
@@ -364,8 +364,8 @@ class ParserTest {
 	def void parseGrantedConstraintMultUsers() {
 		'''
 		policy MyPolicy {
-			user User1{}
-			user User2{}
+			user User1{Role1}
+			user User2{Role1}
 			role Role1{}
 			object Obj1{read}
 		}
@@ -383,8 +383,8 @@ class ParserTest {
 	def void parseGrantedConstraintMultRoles() {
 		'''
 		policy MyPolicy {
-			user User1{}
-			user User2{}
+			user User1{Role1 Role2}
+			user User2{Role1 Role2}
 			role Role1{}
 			role Role2{}
 			object Obj1{read}
@@ -403,7 +403,7 @@ class ParserTest {
 	def void parseGrantedConstraintMultObjects() {
 		'''
 		policy MyPolicy {
-			user User1{}
+			user User1{Role1}
 			role Role1{}
 			object Obj1{read}
 			object Obj2{read}
@@ -422,7 +422,7 @@ class ParserTest {
 	def void parseForbiddenConstraint() {
 		'''
 		policy MyPolicy {
-			user User1{}
+			user User1{Role1}
 			role Role1{}
 			object Obj1{read}
 		}
@@ -440,8 +440,8 @@ class ParserTest {
 	def void parseForbiddenConstraintMultUsers() {
 		'''
 		policy MyPolicy {
-			user User1{}
-			user User2{}
+			user User1{Role1}
+			user User2{Role1}
 			role Role1{}
 			object Obj1{read}
 		}
@@ -459,8 +459,8 @@ class ParserTest {
 	def void parseForbiddenConstraintMultRoles() {
 		'''
 		policy MyPolicy {
-			user User1{}
-			user User2{}
+			user User1{Role1 Role2}
+			user User2{Role1 Role2}
 			role Role1{}
 			role Role2{}
 			object Obj1{read}
@@ -479,7 +479,7 @@ class ParserTest {
 	def void parseForbiddenConstraintMultObjects() {
 		'''
 		policy MyPolicy {
-			user User1{}
+			user User1{Role1}
 			role Role1{}
 			object Obj1{read}
 			object Obj2{read}
@@ -498,8 +498,8 @@ class ParserTest {
 	def void parseMultipleGrantedConstraints() {
 		'''
 		policy MyPolicy {
-			user User1 {}
-			user User2 {}
+			user User1 {Role1}
+			user User2 {Role1}
 			role Role1 {}
 			object Obj1{read}
 		}

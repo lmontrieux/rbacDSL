@@ -16,6 +16,7 @@ import uk.ac.open.rbacDSL.SSoD
 import uk.ac.open.rbacDSL.DSoD
 import java.util.Arrays
 import uk.ac.open.rbacDSL.PolicyConstraint
+import java.util.List
 
 /**
  * Custom validation rules. 
@@ -37,6 +38,31 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	public static val ROLE_EXTENDING_ITSELF = "uk.ac.open.rbacdsl.RoleExtendingItself"
 	public static val SOD_CONFLICT = "uk.ac.open.rbacdsl.SoDConflict"
 	public static val SOD_WITH_SELF = "uk.ac.open.rbacdsl.SoDWithSelf"
+	public static val UNASSIGNED_ROLE = "uk.ac.open.rbacdsl.UnassignedRole"
+	
+	/**
+	 * Finds roles in constraints that are not /assigned/ to /all/ the users in 
+	 * the constraint.
+	 * A role cannot be activated by a user if it isn't assigned to the user, 
+	 * so any of there roles should trigger an error. The error marker appears 
+	 * on the role.
+	 */
+	@Check
+	def checkUnassignedRolesInConstraint(PolicyConstraint constraint) {
+		for (user:constraint.users) {
+			for (role:checkUnassignedRolesForUser(user, constraint.roles)) {
+				error("Role not assigned to user '" + user.name + "'",
+					RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
+					constraint.roles.indexOf(role),
+					UNASSIGNED_ROLE
+				)
+			}
+		}
+	}
+	
+	private def checkUnassignedRolesForUser(User user, List<Role> roles) {
+		roles.filter[r | !user.roles.contains(r)]
+	}
 	
 	@Check
 	def checkEmptyPolicy(Policy policy) {

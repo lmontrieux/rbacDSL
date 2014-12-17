@@ -19,6 +19,26 @@ class ValidatorTests {
 	@Inject extension ValidationTestHelper
 	
 	@Test
+	def void testUnassignedRole() {
+		'''
+		policy MyPolicy {
+			user User1 {}
+			role Role1 {}
+			operations {Obj1.read}
+		}
+		constraints MyConstraints {
+			granted Granted1 {
+				users {MyPolicy.User1}
+				roles {MyPolicy.Role1}
+				operations {MyPolicy.Obj1.read}
+		}'''.parse.assertError(
+			RbacDSLPackage::eINSTANCE.policyConstraint,
+			RbacDSLValidator::UNASSIGNED_ROLE,
+			"Role not assigned to user 'User1'"
+		)
+	}
+	
+	@Test
 	def void testEmptyPolicy() {
 		'''
 		policy MyPolicy{}
