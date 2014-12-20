@@ -19,6 +19,29 @@ class ValidatorTests {
 	@Inject extension ValidationTestHelper
 	
 	@Test
+	def void testNoDSoDViolation() {
+		'''
+		policy MyPolicy {
+			user User1 {Role1 Role2}
+			role Role1 {Obj1.read}
+			role Role2 {}
+			object Obj1 { read}
+			dsod { (Role1 Role2)}
+		}
+		constraints MyConstraints {
+			granted Granted {
+				users {MyPolicy.User1}
+				roles {MyPolicy.Role1 MyPolicy.Role2}
+				operations {MyPolicy.Obj1.read}
+		}
+		'''.parse.assertError(
+			RbacDSLPackage::eINSTANCE.policyConstraint,
+			RbacDSLValidator::DSOD_CONFLICT,
+			"DSoD violation with role 'Role1'"
+		)
+	}
+	
+	@Test
 	def void testNoGrantedViolation() {
 		'''
 		policy MyPolicy {

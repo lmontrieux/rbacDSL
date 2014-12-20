@@ -28,6 +28,7 @@ import uk.ac.open.rbacDSL.ForbiddenConstraint
  * see http://www.eclipse.org/Xtext/documentation.html#validation
  */
 class RbacDSLValidator extends AbstractRbacDSLValidator {
+	public static val DSOD_CONFLICT = "uk.ac.open.rbacdsl.DSoDConflict"
 	public static val DUPLICATE_PERMISSION_ASSIGNMENT = "uk.ac.open.rbacdsl.DuplicatePermissionAssignment"
 	public static val DUPLICATE_OPERATION_REFERENCE = "uk.ac.open.rbacdsl.DuplicateOperationReference"
 	public static val DUPLICATE_ROLE_ASSIGNMENT = "uk.ac.open.rbacdsl.DuplicateRoleAssignment"
@@ -45,6 +46,26 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	public static val SOD_CONFLICT = "uk.ac.open.rbacdsl.SoDConflict"
 	public static val SOD_WITH_SELF = "uk.ac.open.rbacdsl.SoDWithSelf"
 	public static val UNASSIGNED_ROLE = "uk.ac.open.rbacdsl.UnassignedRole"
+	
+	@Check
+	def checkDSoDInConstraint(PolicyConstraint const) {
+		for (role:const.roles) {
+			for (dsod:role.dsodWith) {
+				if (const.roles.contains(dsod)) {
+					error("DSoD violation with role '" + role.name + "'",
+						RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
+						const.roles.indexOf(dsod),
+						DSOD_CONFLICT
+					)
+					error("DSoD violation with role '" + dsod.name + "'",
+						RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
+						const.roles.indexOf(role),
+						DSOD_CONFLICT
+					)
+				}
+			}
+		}
+	}
 	
 	/**
 	 * Verifies that the policies satisfy Granted constraints. To satisfy a 

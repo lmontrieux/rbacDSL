@@ -73,4 +73,34 @@ class RbacDSLModelUtil {
 	def static containingSoDSet(EObject e) {
 		e.getContainerOfType(typeof(SoD))
 	}
+	
+	/**
+	 * Takes a role and returns a list of DSoD roles
+	 */
+	def static dsodWith(Role r) {
+		val dsods = r.containingPolicy().dsod
+		var tuples = newArrayList
+		for (dsod:dsods) {
+			tuples.addAll(dsod.dsod)
+		}
+		var conflicts = newArrayList
+		for (tuple:tuples) {
+			if (involves(tuple, r) != null)
+				conflicts.add(involves(tuple, r))
+		}
+		return conflicts
+	}
+	
+	def static involves(TupleRole tuple, Role r) {
+		if (tuple.fst == r)
+			return tuple.snd
+		else if (tuple.snd == r)
+			return tuple.fst
+		else
+			return null
+	}
+	
+	def static ssodWith(Role r) {
+		
+	}
 }
