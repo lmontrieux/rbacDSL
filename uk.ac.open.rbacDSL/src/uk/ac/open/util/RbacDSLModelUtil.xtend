@@ -101,6 +101,16 @@ class RbacDSLModelUtil {
 	}
 	
 	def static ssodWith(Role r) {
-		
+		val ssods = r.containingPolicy().ssod
+		var tuples = newArrayList
+		for (ssod:ssods) {
+			tuples.addAll(ssod.ssod)
+		}
+		var conflicts = newArrayList
+		for(tuple:tuples) {
+			if (involves(tuple, r) != null)
+				conflicts.add(involves(tuple, r))
+		}
+		return conflicts
 	}
 }
