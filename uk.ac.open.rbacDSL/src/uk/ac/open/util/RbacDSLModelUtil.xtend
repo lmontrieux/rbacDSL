@@ -15,6 +15,8 @@ import static extension org.eclipse.xtext.EcoreUtil2.*
 import uk.ac.open.rbacDSL.Rbac
 import uk.ac.open.rbacDSL.PolicyConstraint
 import uk.ac.open.rbacDSL.SoD
+import java.util.Set
+import java.util.List
 
 class RbacDSLModelUtil {
 	
@@ -112,5 +114,32 @@ class RbacDSLModelUtil {
 				conflicts.add(involves(tuple, r))
 		}
 		return conflicts
+	}
+	
+	def static ancestors(Role r) {
+		var visited = newHashSet
+		for (parent:r.parents) {
+			visited.add(parent)
+			visited.addAll(ancestors(parent, visited))
+		}
+		return visited
+	}
+	
+	def static ancestors(List<Role> roles) {
+		var ancestors = newHashSet
+		for (role:roles) {
+			ancestors.addAll(ancestors(role))
+		}
+		return ancestors
+	}
+	
+	private def static ancestors(Role r, Set<Role> visited) {
+		for (parent:r.parents) {
+			if (!visited.contains(parent)) {
+				visited.add(parent)
+				ancestors(parent, visited)
+			}
+		}
+		return visited
 	}
 }
