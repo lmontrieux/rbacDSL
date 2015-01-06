@@ -76,6 +76,14 @@ class RbacDSLModelUtil {
 		e.getContainerOfType(typeof(SoD))
 	}
 	
+	def static containingSSoDSet(EObject e) {
+		e.getContainerOfType(typeof(SSoD))
+	}
+	
+	def static containingDSoDSet(EObject e) {
+		e.getContainerOfType(typeof(DSoD))
+	}
+	
 	def static getAllRoles(User user) {
 		user.roles + user.roles.ancestors
 	}

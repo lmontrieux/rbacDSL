@@ -45,6 +45,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	public static val ROLE_EXTENDING_ITSELF = "uk.ac.open.rbacdsl.RoleExtendingItself"
 	public static val SOD_CONFLICT = "uk.ac.open.rbacdsl.SoDConflict"
 	public static val SOD_WITH_SELF = "uk.ac.open.rbacdsl.SoDWithSelf"
+	public static val SSOD_WITH_ANCESTOR = "uk.ac.open.rbacdsl.SSoDWithAncestor"
 	public static val UNASSIGNED_ROLE = "uk.ac.open.rbacdsl.UnassignedRole"
 	
 	@Check
@@ -197,6 +198,23 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 				null,
 				SOD_WITH_SELF
 			)
+	}
+	
+	/**
+	 * There cannot, by definition, be SSoD constraints between a role and one
+	 * of its ancestors, as it would prevent the role to ever be assigned to
+	 * anybody.
+	 */
+	@Check
+	def checkSSoDWithAncestor(TupleRole tuple) {
+		if (tuple.containingSSoDSet != null) {
+			if (tuple.fst.ancestors.contains(tuple.snd) || tuple.snd.ancestors.contains(tuple.fst))
+				error('''SSoD constraint between a role and one of its ancestors''',
+					tuple,
+					null,
+					SSOD_WITH_ANCESTOR
+				)
+		}
 	}
 	
 	/**

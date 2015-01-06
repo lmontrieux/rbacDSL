@@ -227,6 +227,60 @@ class ValidatorTests {
 	}
 	
 	@Test
+	def void testNoSSoDWithParent() {
+		'''
+		policy MyPolicy {
+			role Role1 extends Role2 {}
+			role Role2 {}
+			ssod{(Role1 Role2)}
+		}
+		'''.parse.assertError(
+			RbacDSLPackage::eINSTANCE.tupleRole,
+			RbacDSLValidator::SSOD_WITH_ANCESTOR,
+			"SSoD constraint between a role and one of its ancestors"
+		)
+	}
+	
+	@Test
+	def void testNoSSoDWithAncestor() {
+		'''
+		policy MyPolicy {
+			role Role1 extends Role2 {}
+			role Role2 extends Role3 {}
+			role Role3 {}
+			ssod{(Role1 Role3)}
+		}
+		'''.parse.assertError(
+			RbacDSLPackage::eINSTANCE.tupleRole,
+			RbacDSLValidator::SSOD_WITH_ANCESTOR,
+			"SSoD constraint between a role and one of its ancestors"
+		)
+	}
+	
+	@Test
+	def void testDSoDWithParent() {
+		'''
+		policy MyPolicy {
+			role Role1 extends Role2 {}
+			role Role2 {}
+			dsod{(Role1 Role2)}
+		}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void testDSoDWithAncestor() {
+		'''
+		policy MyPolicy {
+			role Role1 extends Role2 {}
+			role Role2 extends Role3 {}
+			role Role3 {}
+			dsod{(Role1 Role3)}
+		}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
 	def void testNoDSoDWithSelf() {
 		'''
 		policy MyPolicy {
