@@ -138,7 +138,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	}
 	
 	private def checkUnassignedRolesForUser(User user, List<Role> roles) {
-		roles.filter[r | !user.roles.contains(r)]
+		roles.filter[r | !user.getAllRoles.toList.contains(r)]
 	}
 	
 	@Check

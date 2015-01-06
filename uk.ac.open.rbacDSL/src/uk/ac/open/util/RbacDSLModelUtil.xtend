@@ -88,6 +88,10 @@ class RbacDSLModelUtil {
 		user.roles + user.roles.ancestors
 	}
 	
+	def static getAllRoles(PolicyConstraint const) {
+		const.roles + const.roles.ancestors
+	}
+	
 	/**
 	 * Takes a role and returns a list of DSoD roles
 	 */
