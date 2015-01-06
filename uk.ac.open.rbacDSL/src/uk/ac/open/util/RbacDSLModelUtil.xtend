@@ -76,6 +76,10 @@ class RbacDSLModelUtil {
 		e.getContainerOfType(typeof(SoD))
 	}
 	
+	def static getAllRoles(User user) {
+		user.roles + user.roles.ancestors
+	}
+	
 	/**
 	 * Takes a role and returns a list of DSoD roles
 	 */

@@ -13,6 +13,7 @@ import uk.ac.open.rbacDSL.Rbac
 import uk.ac.open.rbacDSL.Role
 
 import static extension uk.ac.open.util.RbacDSLModelUtil.*
+import uk.ac.open.rbacDSL.User
 
 @InjectWith(RbacDSLInjectorProvider)
 @RunWith(XtextRunner)
@@ -105,6 +106,26 @@ class ModelUtilTests {
 		'''.parse => [
 			assertNoErrors
 			Assert::assertEquals(3, (policies.head.policyElements.head as Role).ancestors().size())
+		]
+	}
+	
+	
+	@Test
+	def void testAllRoles() {
+		'''
+		policy MyPolicy {
+			user User1 {
+				Role1 Role2
+			}
+			role Role1 extends Role3 Role4 {}
+			role Role2 {}
+			role Role3 extends Role5 {}
+			role Role4 {}
+			role Role5 {}
+		}
+		'''.parse => [
+			assertNoErrors
+			Assert::assertEquals(5, (policies.head.policyElements.head as User).getAllRoles.size)
 		]
 	}
 }
