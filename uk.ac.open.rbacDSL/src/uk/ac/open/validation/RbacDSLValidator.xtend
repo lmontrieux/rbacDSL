@@ -95,7 +95,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 */
 	@Check
 	def checkForbiddenConstraint(ForbiddenConstraint const) {
-		val available = availableOperations(const.roles) {
+		val available = getAvailableOperations(const.roles) {
 			val missing = const.operations.filter[o | !available.contains(o)]
 			if (missing.isEmpty())
 				error("Forbidden constraint '" + const.name + "' violated",
@@ -109,7 +109,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 * From a list of roles, returns a list of operations afforded by those 
 	 * roles
 	 */
-	private def availableOperations(List<Role> roles) {
+	private def getAvailableOperations(List<Role> roles) {
 		var available = new ArrayList<Operation>
 		for (role:roles) {
 			available.addAll(role.permissions.toArray() as Operation[])
@@ -354,7 +354,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 		if (tuple.getContainerOfType(typeof(DSoD)) != null) {
 			for (SSoD ssod:tuple.policy.ssod) {
 				for (TupleRole current:ssod.ssod) {
-					if(equivalent(tuple, current)) {
+					if(current.isEquivalentTo(tuple)) {
 						warning('''DSoD constraint unnecessary because of an identical SSoD constraint''',
 							tuple,
 							null,
@@ -369,7 +369,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	/*
 	 * Determines if two tuples involve the same two roles
 	 */
-	private def equivalent(TupleRole tuple1, TupleRole tuple2) {
+	private def isEquivalentTo(TupleRole tuple1, TupleRole tuple2) {
 		if (((tuple1.fst == tuple2.fst) && (tuple1.snd == tuple2.snd))
 			|| ((tuple1.fst == tuple2.snd) && (tuple1.snd == tuple2.fst)))
 			return true
