@@ -76,7 +76,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 */
 	@Check
 	def checkGrantedConstraint(GrantedConstraint const) {
-		val available = availableOperations(const.roles)
+		val available = getAvailableOperations(const.roles)
 		val violations = const.operations.filter[o | !available.contains(o)]
 		for(violation:violations) {
 			error("Operation '" + violation.name + "' not granted",
@@ -138,7 +138,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	}
 	
 	private def checkUnassignedRolesForUser(User user, List<Role> roles) {
-		roles.filter[r | !user.getAllRoles.toList.contains(r)]
+		roles.filter[r | !user.allRoles.toList.contains(r)]
 	}
 	
 	@Check

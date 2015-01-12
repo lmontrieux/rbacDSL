@@ -84,11 +84,11 @@ class RbacDSLModelUtil {
 		e.getContainerOfType(typeof(DSoD))
 	}
 	
-	def static getAllRoles(User user) {
+	def static allRoles(User user) {
 		user.roles + user.roles.ancestors
 	}
 	
-	def static getAllRoles(PolicyConstraint const) {
+	def static allRoles(PolicyConstraint const) {
 		const.roles + const.roles.ancestors
 	}
 	
