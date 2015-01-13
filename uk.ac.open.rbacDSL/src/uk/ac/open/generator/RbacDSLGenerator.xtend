@@ -10,6 +10,7 @@ import uk.ac.open.rbacDSL.Rbac
 import uk.ac.open.rbacDSL.Role
 
 import static extension uk.ac.open.util.RbacDSLModelUtil.*
+import uk.ac.open.rbacDSL.Operation
 
 /**
  * Generates code from your model files on save.
@@ -34,11 +35,50 @@ class RbacDSLGenerator implements IGenerator {
 		<PolicySet xmlns="urn:oasis:names:tc:xacml:3.0:core:schema:wd-17"
 			xmlns:xsi="hppt://www.w3.org/2001/XMLSchema-instance"
 			xsi:schemaLocation="urn:oasis:names:tc:xacml:3.0:core:schema:wd-17 xacml-core-v3-schema-wd-17.xsd"
-			PolicySetId="PPS:"
+			PolicySetId="PPS:«role.name»:role"
 			Version="1.0"
 			PolicyCombiningAlgId="&policy-combine;permit-overrides">
 			<Target/>
+			
+			<Policy PolicyId="Permissions:specifically:for:the:«role.name»:role"
+				Version="1.0"
+				RuleCombiningAlgId="&rule-combine;permit-overrides">
+				<Target/>
+					«FOR operation:role.permissions»
+					«compilePermission(operation)»
+					«ENDFOR»
+			</Policy>
+			
+			«FOR parent:role.parents»
+			«compileParentReference(parent)»
+			«ENDFOR»
 		</PolicySet>
+		'''
+	}
+	
+	private def compilePermission(Operation operation) {
+		'''
+		<Rule RuleId="Permission:«operation.containingObject.name»:operation.name" Effect="Permit">
+			<Target>
+				<AnyOf>
+					<AllOf>
+						<Match MatchId="&function;string-equal">
+							<AttributeValue DataType="&xml;string">«operation.containingObject.name».«operation.name»</AttributeValue>
+							<AttributeDesignator MustBePresent="false"
+								Category="&category;resource"
+								AttributeId="&resource;resource-id"
+								DataType="&xml;string"/>
+						</Match>
+					</AllOf>
+				</AnyOf>
+			</Target>
+		</Rule>
+		'''
+	}
+	
+	private def compileParentReference(Role role) {
+		'''
+		<PolicySetIdReference>PPS:«role.name»:role</PolicySetIdReference>
 		'''
 	}
 	

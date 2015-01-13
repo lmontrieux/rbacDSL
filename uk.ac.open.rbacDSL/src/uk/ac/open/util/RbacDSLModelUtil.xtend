@@ -68,7 +68,7 @@ class RbacDSLModelUtil {
 		e.getContainerOfType(typeof(Role))
 	}
 	
-	def static containingContsraint(EObject e) {
+	def static containingConstraint(EObject e) {
 		e.getContainerOfType(typeof(PolicyConstraint))
 	}
 	
@@ -82,6 +82,10 @@ class RbacDSLModelUtil {
 	
 	def static containingDSoDSet(EObject e) {
 		e.getContainerOfType(typeof(DSoD))
+	}
+	
+	def static containingObject(EObject e) {
+		e.getContainerOfType(typeof(uk.ac.open.rbacDSL.Object))
 	}
 	
 	def static allRoles(User user) {
