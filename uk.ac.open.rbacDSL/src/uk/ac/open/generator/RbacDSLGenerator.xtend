@@ -58,7 +58,7 @@ class RbacDSLGenerator implements IGenerator {
 	
 	private def compilePermission(Operation operation) {
 		'''
-		<Rule RuleId="Permission:«operation.containingObject.name»:operation.name" Effect="Permit">
+		<Rule RuleId="Permission:«operation.containingObject.name»:«operation.name»" Effect="Permit">
 			<Target>
 				<AnyOf>
 					<AllOf>
