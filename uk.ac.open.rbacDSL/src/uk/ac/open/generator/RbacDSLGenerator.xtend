@@ -25,6 +25,7 @@ class RbacDSLGenerator implements IGenerator {
 				fsa.generateFile(policy.name + "/declarations.xml", compileEntityDeclarations())
 				for (role:policy.roles) {
 					fsa.generateFile(policy.name + "/" + role.name + ".PPS.xml", role.compilePPS)
+					fsa.generateFile(policy.name + "/" + role.name + ".RPS.xml", role.compileRPS)
 				}
 			}
 		}
@@ -79,6 +80,34 @@ class RbacDSLGenerator implements IGenerator {
 	private def compileParentReference(Role role) {
 		'''
 		<PolicySetIdReference>PPS:«role.name»:role</PolicySetIdReference>
+		'''
+	}
+	
+	private def compileRPS(Role role) {
+		'''
+		<PolicySet xmlns="urn:oasis:names:tc:xacml:3.0:core:schema:wd-17"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="urn:oasis:names:tc:xacml:3.0:core:schema:wd-17 xacml-core-v3-schema-wd-17.xsd"
+			PolicySetId="RPS:«role.name»:role"
+			Version="1.0"
+			PolicyCombiningAlgId="&policy-combine;permit-overrides">
+			<Target>
+				<AnyOf>
+					<AllOf>
+						<Match MatchId="&function;anyURI-equal">
+							<AttributeValue DataType="&xml;anyURI">&roles;«role.name»</AttributeValue>
+							<AttributeDesignator
+								MustBePresent="false"
+								Category="&subject-category;access-subject"
+								AttributeId="&role;"
+								DataType="&xml;anyURI"/>
+						</Match>
+					</AllOf>
+				</AnyOf>
+			</Target>
+			
+			<PolicySetIdReference>PPS:«role.name»:role</PolicySetIdReference>
+		</PolicySet>
 		'''
 	}
 	
