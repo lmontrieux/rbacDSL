@@ -6,6 +6,10 @@ package uk.ac.open.generator
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
+import uk.ac.open.rbacDSL.Rbac
+import uk.ac.open.rbacDSL.Role
+
+import static extension uk.ac.open.util.RbacDSLModelUtil.*
 
 /**
  * Generates code from your model files on save.
@@ -14,8 +18,46 @@ import org.eclipse.xtext.generator.IGenerator
  */
 class RbacDSLGenerator implements IGenerator {
 	
-	override doGenerate(Resource input, IFileSystemAccess fsa) {
-//		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
+		for (rbac:resource.allContents.toIterable.filter(typeof(Rbac))) {
+			for (policy:rbac.policies) {
+				fsa.generateFile(policy.name + "/declarations.xml", compileEntityDeclarations())
+				for (role:policy.roles) {
+					fsa.generateFile(policy.name + "/" + role.name + ".PPS.xml", role.compilePPS)
+				}
+			}
+		}
+	}
+	
+	private def compilePPS(Role role) {
+		'''
+		<PolicySet xmlns="urn:oasis:names:tc:xacml:3.0:core:schema:wd-17"
+			xmlns:xsi="hppt://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="urn:oasis:names:tc:xacml:3.0:core:schema:wd-17 xacml-core-v3-schema-wd-17.xsd"
+			PolicySetId="PPS:"
+			Version="1.0"
+			PolicyCombiningAlgId="&policy-combine;permit-overrides">
+			<Target/>
+		</PolicySet>
+		'''
+	}
+	
+	private def compileEntityDeclarations() {
+		'''
+		<!ENTITY xml "http://www.w3.org/2001/XMLSchema#">
+		<!ENTITY rule-combine "urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:">
+		<!ENTITY policy-combine "urn:oasis:names:tc:xacml:1.0:policy-combining-algorithm:">
+		<!ENTITY function "urn:oasis:names:tc:xacml:1.0:function:">
+		<!ENTITY subject-category "urn:oasis:names:tc:xacml:1.0:subject-category:">
+		<!ENTITY subject "urn:oasis:names:tc:xacml:1.0:subject:">
+		<!ENTITY role "urn:oasis:names:tc:xacml:2.0:subject:role">
+		<!ENTITY roles "urn:example:role-values:">
+		<!ENTITY resource "urn:oasis:names:tc:xacml:1.0:resource:">
+		<!ENTITY action "urn:oasis:names:tc:xacml:1.0:action:">
+		<!ENTITY actions "urn:oasis:names:tc:xacml:2.0:actions:">
+		<!ENTITY environment "urn:oasis:names:tc:xacml:1.0:environment:">
+		<!ENTITY category "urn:oasis:names:tc:xacml:3.0:attribute-category:">
+		'''
 	}
 	
 	
