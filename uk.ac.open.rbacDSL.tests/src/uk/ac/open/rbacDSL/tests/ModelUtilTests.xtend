@@ -125,7 +125,7 @@ class ModelUtilTests {
 		}
 		'''.parse => [
 			assertNoErrors
-			Assert::assertEquals(5, (policies.head.policyElements.head as User).getAllRoles.size)
+			Assert::assertEquals(5, (policies.head.policyElements.head as User).allRoles.size)
 		]
 	}
 }
