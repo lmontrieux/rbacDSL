@@ -23,7 +23,7 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 	) {
 		acceptor.accept(issue,
 			"Remove role from list of parents", //label
-			"Remove role from list of parents", //description
+			"Remove role " + issue.data.get(1) + " from list of parents", //description
 			"", //icon
 			[
 				element, context |

@@ -250,7 +250,8 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 			role,
 	 			null,
 	 			ROLE_EXTENDING_ITSELF,
-	 			role.parents.indexOf(role).toString
+	 			role.parents.indexOf(role).toString,
+	 			role.name
 	 		)
 	 }
 	 
