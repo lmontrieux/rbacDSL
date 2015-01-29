@@ -249,7 +249,8 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 		error('''Role extending itself''',
 	 			role,
 	 			null,
-	 			ROLE_EXTENDING_ITSELF
+	 			ROLE_EXTENDING_ITSELF,
+	 			role.parents.indexOf(role).toString
 	 		)
 	 }
 	 

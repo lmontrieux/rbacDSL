@@ -3,24 +3,33 @@
 */
 package uk.ac.open.ui.quickfix
 
-//import org.eclipse.xtext.ui.editor.quickfix.Fix
-//import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
-//import org.eclipse.xtext.validation.Issue
+import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider
+import org.eclipse.xtext.ui.editor.quickfix.Fix
+import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
+import org.eclipse.xtext.validation.Issue
+import uk.ac.open.rbacDSL.Role
+import uk.ac.open.validation.RbacDSLValidator
 
 /**
  * Custom quickfixes.
  *
  * see http://www.eclipse.org/Xtext/documentation.html#quickfixes
  */
-class RbacDSLQuickfixProvider extends org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider {
-
-//	@Fix(MyDslValidator::INVALID_NAME)
-//	def capitalizeName(Issue issue, IssueResolutionAcceptor acceptor) {
-//		acceptor.accept(issue, 'Capitalize name', 'Capitalize the name.', 'upcase.png') [
-//			context |
-//			val xtextDocument = context.xtextDocument
-//			val firstLetter = xtextDocument.get(issue.offset, 1)
-//			xtextDocument.replace(issue.offset, 1, firstLetter.toUpperCase)
-//		]
-//	}
+class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
+	
+	@Fix(RbacDSLValidator::ROLE_EXTENDING_ITSELF)
+	def void removeRoleSelfExtension(Issue issue, 
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Remove role from list of parents", //label
+			"Remove role from list of parents", //description
+			"", //icon
+			[
+				element, context |
+				(element as Role).parents.remove(Integer.parseInt(issue.data.get(0)))
+				
+			]
+		)
+	}
 }
