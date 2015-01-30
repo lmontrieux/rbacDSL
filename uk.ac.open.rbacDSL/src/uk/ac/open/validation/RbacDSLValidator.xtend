@@ -192,11 +192,18 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	
 	@Check
 	def checkSoDWithSelf(TupleRole tuple) {
+		var int index = 0
+		if (tuple.containingSSoDSet != null) {
+			index = tuple.containingSSoDSet.ssod.indexOf(tuple)
+		} else {
+			index = tuple.containingDSoDSet.dsod.indexOf(tuple)	
+		}
 		if (tuple.fst.equals(tuple.snd))
 			error('''SoD constraint between an role and itself''',
 				tuple,
 				null,
-				SOD_WITH_SELF
+				SOD_WITH_SELF,
+				index.toString
 			)
 	}
 	

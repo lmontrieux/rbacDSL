@@ -7,7 +7,9 @@ import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider
 import org.eclipse.xtext.ui.editor.quickfix.Fix
 import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
 import org.eclipse.xtext.validation.Issue
+import uk.ac.open.rbacDSL.DSoD
 import uk.ac.open.rbacDSL.Role
+import uk.ac.open.rbacDSL.SSoD
 import uk.ac.open.validation.RbacDSLValidator
 
 /**
@@ -29,6 +31,22 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 				element, context |
 				(element as Role).parents.remove(Integer.parseInt(issue.data.get(0)))
 				
+			]
+		)
+	}
+	
+	@Fix(RbacDSLValidator::SOD_WITH_SELF)
+	def void removeSelfSoD(Issue issue,
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Remove SoD constraint", //label
+			"Remove SoD constraint", //description
+			"", //icon
+			[
+				element, context |
+				if (element instanceof SSoD) (element as SSoD).ssod.remove(Integer.parseInt(issue.data.get(0)))
+				else (element as DSoD).dsod.remove(Integer.parseInt(issue.data.get(0)))
 			]
 		)
 	}
