@@ -29,6 +29,7 @@ import uk.ac.open.rbacDSL.ForbiddenConstraint
  */
 class RbacDSLValidator extends AbstractRbacDSLValidator {
 	public static val DSOD_CONFLICT = "uk.ac.open.rbacdsl.DSoDConflict"
+	public static val DSOD_WITH_SELF = "uk.ac.open.rbacdsl.DSoDWithSelf"
 	public static val DUPLICATE_PERMISSION_ASSIGNMENT = "uk.ac.open.rbacdsl.DuplicatePermissionAssignment"
 	public static val DUPLICATE_OPERATION_REFERENCE = "uk.ac.open.rbacdsl.DuplicateOperationReference"
 	public static val DUPLICATE_ROLE_ASSIGNMENT = "uk.ac.open.rbacdsl.DuplicateRoleAssignment"
@@ -44,8 +45,8 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	public static val MULTIPLE_SSOD_BLOCKS = "uk.ac.open.rbacdsl.MultipleSSoDBlocks"
 	public static val ROLE_EXTENDING_ITSELF = "uk.ac.open.rbacdsl.RoleExtendingItself"
 	public static val SOD_CONFLICT = "uk.ac.open.rbacdsl.SoDConflict"
-	public static val SOD_WITH_SELF = "uk.ac.open.rbacdsl.SoDWithSelf"
 	public static val SSOD_WITH_ANCESTOR = "uk.ac.open.rbacdsl.SSoDWithAncestor"
+	public static val SSOD_WITH_SELF = "uk.ac.open.rbacdsl.SSoDWithSelf"
 	public static val UNASSIGNED_ROLE = "uk.ac.open.rbacdsl.UnassignedRole"
 	
 	@Check
@@ -191,18 +192,25 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	}
 	
 	@Check
-	def checkSoDWithSelf(TupleRole tuple) {
-		var int index = 0
-		if (tuple.containingSSoDSet != null) {
-			index = tuple.containingSSoDSet.ssod.indexOf(tuple)
-		} else {
-			index = tuple.containingDSoDSet.dsod.indexOf(tuple)	
-		}
+	def checkSSoDWithSelf(TupleRole tuple) {
+		var int index = tuple.containingSSoDSet.ssod.indexOf(tuple)	
 		if (tuple.fst.equals(tuple.snd))
-			error('''SoD constraint between an role and itself''',
+			error('''SSoD constraint between an role and itself''',
 				tuple,
 				null,
-				SOD_WITH_SELF,
+				SSOD_WITH_SELF,
+				index.toString
+			)
+	}
+	
+	@Check
+	def checkDSoDWithSelf(TupleRole tuple) {
+		var int index = tuple.containingDSoDSet.dsod.indexOf(tuple)	
+		if (tuple.fst.equals(tuple.snd))
+			error('''DSoD constraint between an role and itself''',
+				tuple,
+				null,
+				DSOD_WITH_SELF,
 				index.toString
 			)
 	}

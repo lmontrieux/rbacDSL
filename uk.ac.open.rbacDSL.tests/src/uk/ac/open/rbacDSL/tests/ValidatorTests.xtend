@@ -263,8 +263,8 @@ class ValidatorTests {
 		}
 		'''.parse.assertError(
 			RbacDSLPackage::eINSTANCE.tupleRole,
-			RbacDSLValidator::SOD_WITH_SELF,
-			"SoD constraint between an role and itself"
+			RbacDSLValidator::SSOD_WITH_SELF,
+			"SSoD constraint between an role and itself"
 		)
 	}
 	
@@ -331,8 +331,8 @@ class ValidatorTests {
 		}
 		'''.parse.assertError(
 			RbacDSLPackage::eINSTANCE.tupleRole,
-			RbacDSLValidator::SOD_WITH_SELF,
-			"SoD constraint between an role and itself"
+			RbacDSLValidator::DSOD_WITH_SELF,
+			"DSoD constraint between an role and itself"
 		)
 	}
 	

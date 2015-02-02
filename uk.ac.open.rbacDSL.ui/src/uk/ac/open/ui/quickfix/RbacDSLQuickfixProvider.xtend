@@ -35,18 +35,32 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 		)
 	}
 	
-	@Fix(RbacDSLValidator::SOD_WITH_SELF)
-	def void removeSelfSoD(Issue issue,
+	@Fix(RbacDSLValidator::SSOD_WITH_SELF)
+	def void removeSelfSSoD(Issue issue,
 		IssueResolutionAcceptor acceptor
 	) {
 		acceptor.accept(issue,
-			"Remove SoD constraint", //label
-			"Remove SoD constraint", //description
+			"Remove SSoD constraint", //label
+			"Remove SSoD constraint", //description
 			"", //icon
 			[
 				element, context |
-				if (element instanceof SSoD) (element as SSoD).ssod.remove(Integer.parseInt(issue.data.get(0)))
-				else (element as DSoD).dsod.remove(Integer.parseInt(issue.data.get(0)))
+				(element as SSoD).ssod.remove(Integer.parseInt(issue.data.get(0)))
+			]
+		)
+	}
+	
+	@Fix(RbacDSLValidator::DSOD_WITH_SELF)
+	def void removeSelfDSoD(Issue issue,
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Remove DSoD constraint", //label
+			"Remove DSoD constraint", //description
+			"", //icon
+			[
+				element, context |
+				(element as DSoD).dsod.remove(Integer.parseInt(issue.data.get(0)))
 			]
 		)
 	}
