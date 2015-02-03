@@ -48,6 +48,10 @@ class RbacDSLModelUtil {
 		constraints.constraints.filter(typeof(ForbiddenConstraint))
 	}
 	
+	def static containingModel(EObject e) {
+		e.getContainerOfType(typeof(Rbac))
+	}
+	
 	def static containingPolicy(EObject e) {
 		e.getContainerOfType(typeof(Policy))
 	}

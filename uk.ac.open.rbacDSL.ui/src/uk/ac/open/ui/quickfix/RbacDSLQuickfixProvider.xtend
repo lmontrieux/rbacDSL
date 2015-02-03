@@ -11,7 +11,9 @@ import uk.ac.open.rbacDSL.DSoD
 import uk.ac.open.rbacDSL.Role
 import uk.ac.open.rbacDSL.SSoD
 import uk.ac.open.validation.RbacDSLValidator
+import uk.ac.open.rbacDSL.Policy
 
+import static extension uk.ac.open.util.RbacDSLModelUtil.*
 /**
  * Custom quickfixes.
  *
@@ -61,6 +63,21 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 			[
 				element, context |
 				(element as DSoD).dsod.remove(Integer.parseInt(issue.data.get(0)))
+			]
+		)
+	}
+	
+	@Fix(RbacDSLValidator::EMPTY_POLICY)
+	def void removeEmptyPolicy(Issue issue,
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Remove empty constraint", //label
+			"Remove empty constraint", //description
+			"", //icon
+			[
+				element, context |
+				(element as Policy).containingModel.policies.remove(element)
 			]
 		)
 	}
