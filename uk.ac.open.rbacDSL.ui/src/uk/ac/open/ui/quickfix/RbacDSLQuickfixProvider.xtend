@@ -17,6 +17,7 @@ import static extension uk.ac.open.util.RbacDSLModelUtil.*
 import uk.ac.open.rbacDSL.SSoD
 import uk.ac.open.rbacDSL.User
 import uk.ac.open.rbacDSL.PolicyConstraint
+import java.util.List
 
 /**
  * Custom quickfixes.
@@ -281,6 +282,21 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 		)
 	}
 	
+	@Fix(RbacDSLValidator::UNASSIGNED_ROLE)
+	def void assignUnassignedRole(Issue issue,
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Assign role to all constraint users", //label
+			"Assign role to all constraint users", //description
+			"", //icon
+			[
+				element, context |
+				(element as PolicyConstraint).users.assignRole((element as PolicyConstraint).roles.get(Integer.parseInt(issue.data.get(0))))
+			]
+		)
+	}
+	
 	/**
 	 * Merges all DSoD blocks in a policy into the first block.
 	 * Removes empty blocks
@@ -304,6 +320,18 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 		blocks.forEach[block | ssodBlock.ssod.addAll(block.ssod)]
 		for (var i = 1; i < blocks.size(); i++) {
 			policy.policyElements.remove(blocks.get(i))
+		}
+	}
+	
+	/**
+	 * Assigns a role to all the users in the list.
+	 * Does not create a duplicate assignment for users to which the role
+	 * is already assigned
+	 */
+	private def assignRole(List<User> users, Role role) {
+		for (user:users) {
+			if (!user.roles.contains(role))
+				user.roles.add(role)
 		}
 	}
 }
