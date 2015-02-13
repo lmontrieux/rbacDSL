@@ -36,8 +36,10 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	public static val DUPLICATE_ROLE_EXTENSION = "uk.ac.open.rbacdsl.DuplicateRoleExtension"
 	public static val DUPLICATE_ROLE_REFERENCE = "uk.ac.open.rbacdsl.DuplicateRoleReference"
 	public static val DUPLICATE_USER_REFERENCE = "uk.ac.open.rbacdsl.DuplicateUserReference"
+	public static val EMPTY_DSOD = "uk.ac.open.rbacdsl.EmptyDSoD"
 	public static val EMPTY_POLICY = "uk.ac.open.rbacdsl.EmptyPolicy"
 	public static val EMPTY_ROLE = "uk.ac.open.rbacdsl.EmptyRole"
+	public static val EMPTY_SSOD = "uk.ac.open.rbacdsl.EmptySSoD"
 	public static val EMPTY_USER = "uk.ac.open.rbacdsl.EmptyUser"
 	public static val FORBIDDEN_VIOLATION = "uk.ac.open.rbacdsl.constraint.ForbiddenViolation"
 	public static val GRANTED_VIOLATION = "uk.ac.open.rbacdsl.constraint.GrantedViolation"
@@ -143,11 +145,29 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	}
 	
 	@Check
+	def checkEmptyDSoD(DSoD dsod) {
+		if (dsod.dsod.size() == 0)
+			warning('''Empty DSoD list''',
+				RbacDSLPackage::eINSTANCE.DSoD_Dsod,
+				EMPTY_DSOD
+			)
+	}
+	
+	@Check
 	def checkEmptyPolicy(Policy policy) {
 		if (policy.policyElements.isEmpty())
 			warning('''Empty policy''',
 				RbacDSLPackage::eINSTANCE.policy_Name,
 				EMPTY_POLICY
+			)
+	}
+	
+	@Check
+	def checkEmptySSoD(SSoD ssod) {
+		if (ssod.ssod.size() == 0)
+			warning('''Empty SSoD list''',
+				RbacDSLPackage::eINSTANCE.SSoD_Ssod,
+				EMPTY_SSOD
 			)
 	}
 	

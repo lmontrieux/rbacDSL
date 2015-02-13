@@ -184,6 +184,19 @@ class ValidatorTests {
 	}
 	
 	@Test
+	def void testEmptyDSoD() {
+		'''
+		policy MyPolicy {
+			dsod{}
+		}
+		'''.parse.assertWarning(
+			RbacDSLPackage::eINSTANCE.DSoD,
+			RbacDSLValidator::EMPTY_DSOD,
+			"Empty DSoD list"
+		)
+	}
+	
+	@Test
 	def void testEmptyPolicy() {
 		'''
 		policy MyPolicy{}
@@ -191,6 +204,19 @@ class ValidatorTests {
 			RbacDSLPackage::eINSTANCE.policy,
 			RbacDSLValidator::EMPTY_POLICY,
 			"Empty policy"
+		)
+	}
+	
+	@Test
+	def void testEmptySSoD() {
+		'''
+		policy MyPolicy {
+			ssod{}
+		}
+		'''.parse.assertWarning(
+			RbacDSLPackage::eINSTANCE.SSoD,
+			RbacDSLValidator::EMPTY_SSOD,
+			"Empty SSoD list"
 		)
 	}
 	
