@@ -190,6 +190,21 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 		)
 	}
 	
+	@Fix(RbacDSLValidator::MULTIPLE_SSOD_BLOCKS)
+	def void removeDuplicateSSoDBlock(Issue issue,
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Remove duplicate SSoD block", //label
+			"Remove duplicate SSoD block", //description
+			"", //icon
+			[
+				element, context |
+				(element as SSoD).containingPolicy.policyElements.remove(element as SSoD)
+			]
+		)
+	}
+	
 	@Fix(RbacDSLValidator::ROLE_EXTENDING_ITSELF)
 	def void removeRoleSelfExtension(Issue issue, 
 		IssueResolutionAcceptor acceptor
