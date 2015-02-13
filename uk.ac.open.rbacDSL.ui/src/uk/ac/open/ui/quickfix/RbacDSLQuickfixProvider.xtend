@@ -54,6 +54,21 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 		)
 	}
 	
+	@Fix(RbacDSLValidator::DUPLICATE_ROLE_EXTENSION)
+	def void removeDuplicateRoleExtension(Issue issue,
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Remove duplicate role extension", //label
+			"Remove duplicate role extension", //description
+			"", //icon
+			[
+				element, context |
+				(element as Role).parents.remove(Integer.parseInt(issue.data.get(0)))
+			]
+		)
+	}
+	
 	@Fix(RbacDSLValidator::EMPTY_DSOD)
 	def void removeEmptyDSoDList(Issue issue,
 		IssueResolutionAcceptor acceptor

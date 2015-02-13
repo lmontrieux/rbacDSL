@@ -265,12 +265,14 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 				error('''Duplicate role extension''',
 					RbacDSLPackage::eINSTANCE.role_Parents,
 					i,
-					DUPLICATE_ROLE_EXTENSION
+					DUPLICATE_ROLE_EXTENSION,
+					i.toString()
 				)
 				error('''Duplicate role extension''',
 					RbacDSLPackage::eINSTANCE.role_Parents,
 					previous.indexOf(parent),
-					DUPLICATE_ROLE_EXTENSION
+					DUPLICATE_ROLE_EXTENSION,
+					previous.indexOf(parent).toString()
 				)
 			}
 		}
