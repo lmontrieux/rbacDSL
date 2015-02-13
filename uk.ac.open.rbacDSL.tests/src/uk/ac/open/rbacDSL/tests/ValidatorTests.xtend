@@ -184,6 +184,37 @@ class ValidatorTests {
 	}
 	
 	@Test
+	def void testEmptyConstraintReferences() {
+		'''
+		policy MyPolicy {
+			user User1 {}
+		}
+		constraints MyConstraints {
+			granted Granted1 {
+				users {}
+				roles {}
+				operations{}
+		}
+		'''.parse => [
+			assertWarning(
+				RbacDSLPackage::eINSTANCE.policyConstraint,
+				RbacDSLValidator::EMPTY_CONSTRAINT_USERS,
+				"Empty list of users"
+			)
+			assertWarning(
+				RbacDSLPackage::eINSTANCE.policyConstraint,
+				RbacDSLValidator::EMPTY_CONSTRAINT_ROLES,
+				"Empty list of roles"
+			)
+			assertWarning(
+				RbacDSLPackage::eINSTANCE.policyConstraint,
+				RbacDSLValidator::EMPTY_CONSTRAINT_OPERATIONS,
+				"Empty list of operations"
+			)
+		]
+	}
+	
+	@Test
 	def void testEmptyDSoD() {
 		'''
 		policy MyPolicy {

@@ -36,6 +36,9 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	public static val DUPLICATE_ROLE_EXTENSION = "uk.ac.open.rbacdsl.DuplicateRoleExtension"
 	public static val DUPLICATE_ROLE_REFERENCE = "uk.ac.open.rbacdsl.DuplicateRoleReference"
 	public static val DUPLICATE_USER_REFERENCE = "uk.ac.open.rbacdsl.DuplicateUserReference"
+	public static val EMPTY_CONSTRAINT_USERS = "uk.ac.open.rbacdsl.EmptyConstraintUsers"
+	public static val EMPTY_CONSTRAINT_ROLES = "uk.ac.open.rbacdsl.EmptyConstraintRoles"
+	public static val EMPTY_CONSTRAINT_OPERATIONS = "uk.ac.open.rbacdsl.EmptyConstraintOperations"
 	public static val EMPTY_DSOD = "uk.ac.open.rbacdsl.EmptyDSoD"
 	public static val EMPTY_POLICY = "uk.ac.open.rbacdsl.EmptyPolicy"
 	public static val EMPTY_ROLE = "uk.ac.open.rbacdsl.EmptyRole"
@@ -143,6 +146,33 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	
 	private def checkUnassignedRolesForUser(User user, List<Role> roles) {
 		roles.filter[r | !user.allRoles.toList.contains(r)]
+	}
+	
+	@Check
+	def checkEmptyConstraintUsers(PolicyConstraint constraint) {
+		if (constraint.users.size() == 0)
+			warning('''Empty list of users''',
+				RbacDSLPackage::eINSTANCE.policyConstraint_Users,
+				EMPTY_CONSTRAINT_USERS
+			)
+	}
+	
+	@Check
+	def checkEmptyConstraintRoles(PolicyConstraint constraint) {
+		if (constraint.roles.size() == 0)
+			warning('''Empty list of roles''',
+				RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
+				EMPTY_CONSTRAINT_ROLES
+			)
+	}
+	
+	@Check
+	def checkEmptyConstraintOperations(PolicyConstraint constraint) {
+		if (constraint.operations.size() == 0)
+			warning('''Empty list of operations''',
+				RbacDSLPackage::eINSTANCE.policyConstraint_Operations,
+				EMPTY_CONSTRAINT_OPERATIONS
+			)
 	}
 	
 	@Check
