@@ -16,6 +16,7 @@ import uk.ac.open.validation.RbacDSLValidator
 import static extension uk.ac.open.util.RbacDSLModelUtil.*
 import uk.ac.open.rbacDSL.SSoD
 import uk.ac.open.rbacDSL.User
+import uk.ac.open.rbacDSL.PolicyConstraint
 
 /**
  * Custom quickfixes.
@@ -65,6 +66,21 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 			[
 				element, context |
 				(element as Role).parents.remove(Integer.parseInt(issue.data.get(0)))
+			]
+		)
+	}
+	
+	@Fix(RbacDSLValidator::DUPLICATE_ROLE_REFERENCE)
+	def void removeDuplicateRoleReference(Issue issue,
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Remove duplicate role reference", //label
+			"Remove duplicate role reference", //description
+			"", //icon
+			[
+				element, context |
+				(element as PolicyConstraint).roles.remove(Integer.parseInt(issue.data.get(0)))
 			]
 		)
 	}
