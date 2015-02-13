@@ -168,62 +168,57 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	}
 	
 	/**
-	 * Verifies that the policies satisfy Granted constraints. To satisfy a 
-	 * Granted constraint, the activated roles must provide /all/ the operations
-	 * required in the constraint. Each operation that is not provided will be 
-	 * highlighted using an error marker
-	 */
-	@Check
-	def checkGrantedConstraint(GrantedConstraint const) {
-		val available = getAvailableOperations(const.roles)
-		val violations = const.operations.filter[o | !available.contains(o)]
-		for(violation:violations) {
-			error("Operation '" + violation.name + "' not granted",
-				RbacDSLPackage::eINSTANCE.policyConstraint_Operations,
-				const.operations.indexOf(violation),
-				GRANTED_VIOLATION
-			)
-		}
-	}
-	
-	/**
-	 * Verifies that the policies satisfy Forbidden constraints. To satisfy a 
-	 * Forbidden constraint, the activated roles must fail to provide at least 
-	 * one operation required in the constraint. The constraint name will be 
-	 * highlighted using an error marker.
-	 */
-	@Check
-	def checkForbiddenConstraint(ForbiddenConstraint const) {
-		val available = getAvailableOperations(const.roles) {
-			val missing = const.operations.filter[o | !available.contains(o)]
-			if (missing.isEmpty())
-				error("Forbidden constraint '" + const.name + "' violated",
-					RbacDSLPackage::eINSTANCE.policyConstraint_Name,
-					FORBIDDEN_VIOLATION
-				)
-		}
-	}
-	
-	/**
-	 * Finds roles in constraints that are not /assigned/ to /all/ the users in 
-	 * the constraint.
-	 * A role cannot be activated by a user if it isn't assigned to the user, 
-	 * so any of there roles should trigger an error. The error marker appears 
-	 * on the role.
-	 */
-	@Check
-	def checkUnassignedRolesInConstraint(PolicyConstraint constraint) {
-		for (user:constraint.users) {
-			for (role:checkUnassignedRolesForUser(user, constraint.roles)) {
-				error("Role not assigned to user '" + user.name + "'",
-					RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
-					constraint.roles.indexOf(role),
-					UNASSIGNED_ROLE,
-					constraint.roles.indexOf(role).toString()
-				)
-			}
-		}
-	}
+	  * Checks if a constraint refers to the same role more than once
+	  */
+	 @Check
+	 def checkDuplicateRoleReferences(PolicyConstraint constraint) {
+	 	if (constraint.roles.size() <= 1)
+	 		return;
+	 	for (var i = 0; i < constraint.roles.size(); i++) {
+	 		var current = constraint.roles.get(i)
+	 		for (var j = i+1; j < constraint.roles.size(); j++) {
+	 			if (current.equals(constraint.roles.get(j))) {
+	 				error('''Duplicate role reference''',
+	 					RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
+	 					j,
+	 					DUPLICATE_ROLE_REFERENCE,
+	 					j.toString()
+	 				)
+	 				error('''Duplicate role reference''',
+	 					RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
+	 					i,
+	 					DUPLICATE_ROLE_REFERENCE,
+	 					i.toString()
+	 				)
+	 			}
+	 		}
+	 	}
+	 }
+	 
+	 @Check
+	 def checkDuplicateUserReferences(PolicyConstraint constraint) {
+	 	if (constraint.users.size() <= 1)
+	 		return;
+	 	for (var i = 0; i < constraint.users.size(); i++) {
+	 		var current = constraint.users.get(i)
+	 		for (var j = i+1; j < constraint.users.size(); j++) {
+	 			if (current.equals(constraint.users.get(j))) {
+	 				error('''Duplicate user reference''',
+	 					RbacDSLPackage::eINSTANCE.policyConstraint_Users,
+	 					j,
+	 					DUPLICATE_USER_REFERENCE,
+	 					j.toString()
+	 				)
+	 				error('''Duplicate user reference''',
+	 					RbacDSLPackage::eINSTANCE.policyConstraint_Users,
+	 					i,
+	 					DUPLICATE_USER_REFERENCE,
+	 					i.toString()
+	 				)
+	 			}
+	 		}
+	 	}
+	 }
 	
 	@Check
 	def checkEmptyConstraintUsers(PolicyConstraint constraint) {
@@ -271,6 +266,15 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	}
 	
 	@Check
+	def checkEmptyRole(Role role) {
+		if (role.permissions.isEmpty())
+			warning('''Role has no operations assigned on any object''',
+				RbacDSLPackage::eINSTANCE.role_Name,
+				EMPTY_ROLE
+			)
+	}
+	
+	@Check
 	def checkEmptySSoD(SSoD ssod) {
 		if (ssod.ssod.size() == 0)
 			warning('''Empty SSoD list''',
@@ -289,24 +293,41 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 			)
 	}
 	
+	/**
+	 * Verifies that the policies satisfy Forbidden constraints. To satisfy a 
+	 * Forbidden constraint, the activated roles must fail to provide at least 
+	 * one operation required in the constraint. The constraint name will be 
+	 * highlighted using an error marker.
+	 */
 	@Check
-	def checkEmptyRole(Role role) {
-		if (role.permissions.isEmpty())
-			warning('''Role has no operations assigned on any object''',
-				RbacDSLPackage::eINSTANCE.role_Name,
-				EMPTY_ROLE
-			)
+	def checkForbiddenConstraint(ForbiddenConstraint const) {
+		val available = getAvailableOperations(const.roles) {
+			val missing = const.operations.filter[o | !available.contains(o)]
+			if (missing.isEmpty())
+				error("Forbidden constraint '" + const.name + "' violated",
+					RbacDSLPackage::eINSTANCE.policyConstraint_Name,
+					FORBIDDEN_VIOLATION
+				)
+		}
 	}
 	
+	/**
+	 * Verifies that the policies satisfy Granted constraints. To satisfy a 
+	 * Granted constraint, the activated roles must provide /all/ the operations
+	 * required in the constraint. Each operation that is not provided will be 
+	 * highlighted using an error marker
+	 */
 	@Check
-	def checkMultipleSSoDBlocks(Policy policy) {
-		val ssods = policy.ssod
-		if (ssods.size() > 1)
-			error('''Several ssod blocks in the same policy''',
-				ssods.get(1),
-				null,
-				MULTIPLE_SSOD_BLOCKS
+	def checkGrantedConstraint(GrantedConstraint const) {
+		val available = getAvailableOperations(const.roles)
+		val violations = const.operations.filter[o | !available.contains(o)]
+		for(violation:violations) {
+			error("Operation '" + violation.name + "' not granted",
+				RbacDSLPackage::eINSTANCE.policyConstraint_Operations,
+				const.operations.indexOf(violation),
+				GRANTED_VIOLATION
 			)
+		}
 	}
 	
 	@Check
@@ -321,32 +342,14 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	}
 	
 	@Check
-	def checkSSoDWithSelf(TupleRole tuple) {
-		var int index = tuple.containingSSoDSet.ssod.indexOf(tuple)	
-		if (tuple.fst.equals(tuple.snd))
-			error('''SSoD constraint between an role and itself''',
-				tuple,
+	def checkMultipleSSoDBlocks(Policy policy) {
+		val ssods = policy.ssod
+		if (ssods.size() > 1)
+			error('''Several ssod blocks in the same policy''',
+				ssods.get(1),
 				null,
-				SSOD_WITH_SELF,
-				index.toString
+				MULTIPLE_SSOD_BLOCKS
 			)
-	}
-	
-	/**
-	 * There cannot, by definition, be SSoD constraints between a role and one
-	 * of its ancestors, as it would prevent the role to ever be assigned to
-	 * anybody.
-	 */
-	@Check
-	def checkSSoDWithAncestor(TupleRole tuple) {
-		if (tuple.containingSSoDSet != null) {
-			if (tuple.fst.ancestors.contains(tuple.snd) || tuple.snd.ancestors.contains(tuple.fst))
-				error('''SSoD constraint between a role and one of its ancestors''',
-					tuple,
-					null,
-					SSOD_WITH_ANCESTOR
-				)
-		}
 	}
 	
 	/**
@@ -364,60 +367,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 		)
 	 }
 	 
-	 @Check
-	 def checkDuplicateUserReferences(PolicyConstraint constraint) {
-	 	if (constraint.users.size() <= 1)
-	 		return;
-	 	for (var i = 0; i < constraint.users.size(); i++) {
-	 		var current = constraint.users.get(i)
-	 		for (var j = i+1; j < constraint.users.size(); j++) {
-	 			if (current.equals(constraint.users.get(j))) {
-	 				error('''Duplicate user reference''',
-	 					RbacDSLPackage::eINSTANCE.policyConstraint_Users,
-	 					j,
-	 					DUPLICATE_USER_REFERENCE,
-	 					j.toString()
-	 				)
-	 				error('''Duplicate user reference''',
-	 					RbacDSLPackage::eINSTANCE.policyConstraint_Users,
-	 					i,
-	 					DUPLICATE_USER_REFERENCE,
-	 					i.toString()
-	 				)
-	 			}
-	 		}
-	 	}
-	 }
-	 
-	 /**
-	  * Checks if a constraint refers to the same role more than once
-	  */
-	 @Check
-	 def checkDuplicateRoleReferences(PolicyConstraint constraint) {
-	 	if (constraint.roles.size() <= 1)
-	 		return;
-	 	for (var i = 0; i < constraint.roles.size(); i++) {
-	 		var current = constraint.roles.get(i)
-	 		for (var j = i+1; j < constraint.roles.size(); j++) {
-	 			if (current.equals(constraint.roles.get(j))) {
-	 				error('''Duplicate role reference''',
-	 					RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
-	 					j,
-	 					DUPLICATE_ROLE_REFERENCE,
-	 					j.toString()
-	 				)
-	 				error('''Duplicate role reference''',
-	 					RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
-	 					i,
-	 					DUPLICATE_ROLE_REFERENCE,
-	 					i.toString()
-	 				)
-	 			}
-	 		}
-	 	}
-	 }
-	
-	/*
+	 /*
 	 * Raises a warning if a DSoD constraint is identical to an SSoD constraint.
 	 * In such a case, the DSoD constraint is unnecessary.
 	 */
@@ -434,6 +384,56 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 						)
 					}
 				}
+			}
+		}
+	}
+	 
+	/**
+	 * There cannot, by definition, be SSoD constraints between a role and one
+	 * of its ancestors, as it would prevent the role to ever be assigned to
+	 * anybody.
+	 */
+	@Check
+	def checkSSoDWithAncestor(TupleRole tuple) {
+		if (tuple.containingSSoDSet != null) {
+			if (tuple.fst.ancestors.contains(tuple.snd) || tuple.snd.ancestors.contains(tuple.fst))
+				error('''SSoD constraint between a role and one of its ancestors''',
+					tuple,
+					null,
+					SSOD_WITH_ANCESTOR
+				)
+		}
+	}
+	
+	@Check
+	def checkSSoDWithSelf(TupleRole tuple) {
+		var int index = tuple.containingSSoDSet.ssod.indexOf(tuple)	
+		if (tuple.fst.equals(tuple.snd))
+			error('''SSoD constraint between an role and itself''',
+				tuple,
+				null,
+				SSOD_WITH_SELF,
+				index.toString
+			)
+	}
+	
+	/**
+	 * Finds roles in constraints that are not /assigned/ to /all/ the users in 
+	 * the constraint.
+	 * A role cannot be activated by a user if it isn't assigned to the user, 
+	 * so any of there roles should trigger an error. The error marker appears 
+	 * on the role.
+	 */
+	@Check
+	def checkUnassignedRolesInConstraint(PolicyConstraint constraint) {
+		for (user:constraint.users) {
+			for (role:checkUnassignedRolesForUser(user, constraint.roles)) {
+				error("Role not assigned to user '" + user.name + "'",
+					RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
+					constraint.roles.indexOf(role),
+					UNASSIGNED_ROLE,
+					constraint.roles.indexOf(role).toString()
+				)
 			}
 		}
 	}
