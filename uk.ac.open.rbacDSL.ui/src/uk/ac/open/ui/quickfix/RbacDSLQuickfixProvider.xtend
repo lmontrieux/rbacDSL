@@ -8,13 +8,13 @@ import org.eclipse.xtext.ui.editor.quickfix.Fix
 import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
 import org.eclipse.xtext.validation.Issue
 import uk.ac.open.rbacDSL.DSoD
-import uk.ac.open.rbacDSL.Role
-import uk.ac.open.rbacDSL.SSoD
-import uk.ac.open.validation.RbacDSLValidator
 import uk.ac.open.rbacDSL.Policy
+import uk.ac.open.rbacDSL.Role
+import uk.ac.open.rbacDSL.TupleRole
+import uk.ac.open.validation.RbacDSLValidator
 
 import static extension uk.ac.open.util.RbacDSLModelUtil.*
-import uk.ac.open.rbacDSL.TupleRole
+import uk.ac.open.rbacDSL.SSoD
 
 /**
  * Custom quickfixes.
@@ -69,6 +69,21 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 		)
 	}
 	
+	@Fix(RbacDSLValidator::EMPTY_DSOD)
+	def void removeEmptyDSoDList(Issue issue,
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Remove empty DSoD list", //label
+			"Remove empty DSoD list", //description
+			"", //icon
+			[
+				element, context |
+				(element as DSoD).containingPolicy.policyElements.remove(element as DSoD)
+			]
+		)
+	}
+	
 	@Fix(RbacDSLValidator::EMPTY_POLICY)
 	def void removeEmptyPolicy(Issue issue,
 		IssueResolutionAcceptor acceptor
@@ -80,6 +95,21 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 			[
 				element, context |
 				(element as Policy).containingModel.policies.remove(element)
+			]
+		)
+	}
+	
+	@Fix(RbacDSLValidator::EMPTY_SSOD)
+	def void removeEmptySSoDList(Issue issue,
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Remove empty SSoD list", //label
+			"Remove empty SSoD list", //description
+			"", //icon
+			[
+				element, context |
+				(element as SSoD).containingPolicy.policyElements.remove(element as SSoD)
 			]
 		)
 	}
