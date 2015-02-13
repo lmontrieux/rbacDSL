@@ -14,6 +14,8 @@ import uk.ac.open.validation.RbacDSLValidator
 import uk.ac.open.rbacDSL.Policy
 
 import static extension uk.ac.open.util.RbacDSLModelUtil.*
+import uk.ac.open.rbacDSL.TupleRole
+
 /**
  * Custom quickfixes.
  *
@@ -43,11 +45,11 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 	) {
 		acceptor.accept(issue,
 			"Remove SSoD constraint", //label
-			"Remove SSoD constraint", //description
+			"Remove SSoD constraint " + issue.data.get(0), //description
 			"", //icon
 			[
 				element, context |
-				(element as SSoD).ssod.remove(Integer.parseInt(issue.data.get(0)))
+				(element as TupleRole).containingSSoDSet.ssod.remove(Integer.parseInt(issue.data.get(0)))
 			]
 		)
 	}
@@ -62,7 +64,7 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 			"", //icon
 			[
 				element, context |
-				(element as DSoD).dsod.remove(Integer.parseInt(issue.data.get(0)))
+				(element as TupleRole).containingDSoDSet.dsod.remove(Integer.parseInt(issue.data.get(0)))
 			]
 		)
 	}
