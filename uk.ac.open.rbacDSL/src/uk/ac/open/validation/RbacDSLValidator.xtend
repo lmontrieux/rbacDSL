@@ -329,18 +329,23 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 				error('''Duplicate user reference''',
 	 					RbacDSLPackage::eINSTANCE.policyConstraint_Users,
 	 					j,
-	 					DUPLICATE_USER_REFERENCE
+	 					DUPLICATE_USER_REFERENCE,
+	 					j.toString()
 	 				)
 	 				error('''Duplicate user reference''',
 	 					RbacDSLPackage::eINSTANCE.policyConstraint_Users,
 	 					i,
-	 					DUPLICATE_USER_REFERENCE
+	 					DUPLICATE_USER_REFERENCE,
+	 					i.toString()
 	 				)
 	 			}
 	 		}
 	 	}
 	 }
 	 
+	 /**
+	  * Checks if a constraint refers to the same role more than once
+	  */
 	 @Check
 	 def checkDuplicateRoleReferences(PolicyConstraint constraint) {
 	 	if (constraint.roles.size() <= 1)
@@ -352,12 +357,14 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 				error('''Duplicate role reference''',
 	 					RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
 	 					j,
-	 					DUPLICATE_ROLE_REFERENCE
+	 					DUPLICATE_ROLE_REFERENCE,
+	 					j.toString()
 	 				)
 	 				error('''Duplicate role reference''',
 	 					RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
 	 					i,
-	 					DUPLICATE_ROLE_REFERENCE
+	 					DUPLICATE_ROLE_REFERENCE,
+	 					i.toString()
 	 				)
 	 			}
 	 		}

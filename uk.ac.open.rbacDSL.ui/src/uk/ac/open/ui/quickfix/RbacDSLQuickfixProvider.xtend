@@ -85,6 +85,21 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 		)
 	}
 	
+	@Fix(RbacDSLValidator::DUPLICATE_USER_REFERENCE)
+	def void removeDuplicateUserReference(Issue issue,
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Remove duplicate user reference", //label
+			"Remove duplicate user reference", //description
+			"", //icon
+			[
+				element, context |
+				(element as PolicyConstraint).users.remove(Integer.parseInt(issue.data.get(0)))
+			]
+		)
+	}
+	
 	@Fix(RbacDSLValidator::EMPTY_DSOD)
 	def void removeEmptyDSoDList(Issue issue,
 		IssueResolutionAcceptor acceptor
