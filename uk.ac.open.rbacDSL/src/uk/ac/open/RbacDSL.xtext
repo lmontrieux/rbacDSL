@@ -25,17 +25,17 @@ PolicyConstraint:
 
 ForbiddenConstraint:
 	'forbidden' name=ID '{'
-		'users' '{' users+= [User|QualifiedName]+ '}'
-		'roles' '{' roles += [Role|QualifiedName]+ '}'
-		'operations' '{' operations+=[Operation|QualifiedName]+ '}'
+		'users' '{' users+= [User|QualifiedName]* '}'
+		'roles' '{' roles += [Role|QualifiedName]* '}'
+		'operations' '{' operations+=[Operation|QualifiedName]* '}'
 	'}'
 ;
 
 GrantedConstraint:
 	'granted' name=ID '{'
-		'users' '{' users+= [User|QualifiedName]+ '}'
-		'roles' '{' roles += [Role|QualifiedName]+ '}'
-		'operations' '{' operations+=[Operation|QualifiedName]+ '}'
+		'users' '{' users+= [User|QualifiedName]* '}'
+		'roles' '{' roles += [Role|QualifiedName]* '}'
+		'operations' '{' operations+=[Operation|QualifiedName]* '}'
 	'}'
 ;
 
