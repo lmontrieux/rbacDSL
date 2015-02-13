@@ -54,6 +54,11 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	public static val SSOD_WITH_SELF = "uk.ac.open.rbacdsl.SSoDWithSelf"
 	public static val UNASSIGNED_ROLE = "uk.ac.open.rbacdsl.UnassignedRole"
 	
+	/**
+	 * Checks for DSoD violations in constraints. A DSoD violation happens if 
+	 * two roles appear in a constraint's list of roles while also being in a 
+	 * DSoD conflict with each other.
+	 */
 	@Check
 	def checkDSoDInConstraint(PolicyConstraint const) {
 		for (role:const.roles) {
@@ -62,12 +67,14 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 					error("DSoD violation with role '" + role.name + "'",
 						RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
 						const.roles.indexOf(dsod),
-						DSOD_CONFLICT
+						DSOD_CONFLICT,
+						const.roles.indexOf(dsod).toString()
 					)
 					error("DSoD violation with role '" + dsod.name + "'",
 						RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
 						const.roles.indexOf(role),
-						DSOD_CONFLICT
+						DSOD_CONFLICT,
+						const.roles.indexOf(role).toString()
 					)
 				}
 			}

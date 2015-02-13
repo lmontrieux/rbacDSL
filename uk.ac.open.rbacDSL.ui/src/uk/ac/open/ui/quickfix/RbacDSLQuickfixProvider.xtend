@@ -26,6 +26,24 @@ import java.util.List
  */
 class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 	
+	/**
+	 * Remove the role from the list of roles involved in a constraint
+	 */
+	@Fix(RbacDSLValidator::DSOD_CONFLICT)
+	def void removeDSoDConflictingRoleFromAssignment(Issue issue,
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Remove role from constraint", //label
+			"Remove role " + issue.data.get(0) + " from constraint", //description
+			"", //icon
+			[
+				element, context |
+				(element as PolicyConstraint).roles.remove(Integer.parseInt(issue.data.get(0)))
+			]
+		)
+	}
+	
 	@Fix(RbacDSLValidator::DSOD_WITH_SELF)
 	def void removeSelfDSoD(Issue issue,
 		IssueResolutionAcceptor acceptor
