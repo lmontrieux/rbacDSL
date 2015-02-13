@@ -18,6 +18,7 @@ import uk.ac.open.rbacDSL.SSoD
 import uk.ac.open.rbacDSL.User
 import uk.ac.open.rbacDSL.PolicyConstraint
 import java.util.List
+import java.util.ArrayList
 
 /**
  * Custom quickfixes.
@@ -43,6 +44,25 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 			]
 		)
 	}
+	
+	/**
+	 * Remove all DSoD constraints between two roles activated in a constraint
+	 */
+	 @Fix(RbacDSLValidator::DSOD_CONFLICT)
+	 def void removeDSoDConstraintsBetweenRolesInConstraint(Issue issue,
+	 	IssueResolutionAcceptor acceptor
+	 ) {
+	 	acceptor.accept(issue,
+	 		"Remove DSoD constraints between roles", //label
+	 		"Remove DSoD constraints between roles " + issue.data.get(0) 
+	 			+ " and " + issue.data.get(1), //description
+	 		"", //icon
+	 		[
+	 			element, context |
+	 			(element as PolicyConstraint).roles.get(Integer.parseInt(issue.data.get(0))).removeAllDSoD((element as PolicyConstraint).roles.get(Integer.parseInt(issue.data.get(1))))
+	 		]
+	 	)
+	 }
 	
 	@Fix(RbacDSLValidator::DSOD_WITH_SELF)
 	def void removeSelfDSoD(Issue issue,
@@ -351,5 +371,21 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 			if (!user.roles.contains(role))
 				user.roles.add(role)
 		}
+	}
+	
+	/**
+	 * Remove all DSoD constraints that exist between two roles
+	 */
+	private def removeAllDSoD(Role role1, Role role2) {
+		for (dsodBlock:role1.containingPolicy.dsod) {
+			var tuples = new ArrayList<TupleRole>()
+			for (tuple:dsodBlock.dsod) {
+				if (tuple.involves(role1) != null && tuple.involves(role2) != null)
+					tuples.add(tuple)
+			}
+			for (tuple:tuples)
+				dsodBlock.dsod.remove(tuple)
+		}
+		
 	}
 }

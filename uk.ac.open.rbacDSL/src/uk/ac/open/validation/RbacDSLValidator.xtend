@@ -68,13 +68,15 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 						RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
 						const.roles.indexOf(dsod),
 						DSOD_CONFLICT,
-						const.roles.indexOf(dsod).toString()
+						const.roles.indexOf(dsod).toString(),
+						const.roles.indexOf(role).toString()
 					)
 					error("DSoD violation with role '" + dsod.name + "'",
 						RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
 						const.roles.indexOf(role),
 						DSOD_CONFLICT,
-						const.roles.indexOf(role).toString()
+						const.roles.indexOf(role).toString(),
+						const.roles.indexOf(dsod).toString()
 					)
 				}
 			}
