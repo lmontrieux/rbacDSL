@@ -302,12 +302,14 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 				error('''Duplicate role assignment''',
 	 					RbacDSLPackage::eINSTANCE.user_Roles,
 	 					j,
-	 					DUPLICATE_ROLE_ASSIGNMENT
+	 					DUPLICATE_ROLE_ASSIGNMENT,
+	 					j.toString()
 	 				)
 	 				error('''Duplicate role assignment''',
 	 					RbacDSLPackage::eINSTANCE.user_Roles,
 	 					i,
-	 					DUPLICATE_ROLE_ASSIGNMENT
+	 					DUPLICATE_ROLE_ASSIGNMENT,
+	 					j.toString()
 	 				)	
 	 			}
 	 		}

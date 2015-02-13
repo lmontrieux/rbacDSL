@@ -24,37 +24,6 @@ import uk.ac.open.rbacDSL.User
  */
 class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 	
-	@Fix(RbacDSLValidator::ROLE_EXTENDING_ITSELF)
-	def void removeRoleSelfExtension(Issue issue, 
-		IssueResolutionAcceptor acceptor
-	) {
-		acceptor.accept(issue,
-			"Remove role from list of parents", //label
-			"Remove role " + issue.data.get(1) + " from list of parents", //description
-			"", //icon
-			[
-				element, context |
-				(element as Role).parents.remove(Integer.parseInt(issue.data.get(0)))
-				
-			]
-		)
-	}
-	
-	@Fix(RbacDSLValidator::SSOD_WITH_SELF)
-	def void removeSelfSSoD(Issue issue,
-		IssueResolutionAcceptor acceptor
-	) {
-		acceptor.accept(issue,
-			"Remove SSoD constraint", //label
-			"Remove SSoD constraint " + issue.data.get(0), //description
-			"", //icon
-			[
-				element, context |
-				(element as TupleRole).containingSSoDSet.ssod.remove(Integer.parseInt(issue.data.get(0)))
-			]
-		)
-	}
-	
 	@Fix(RbacDSLValidator::DSOD_WITH_SELF)
 	def void removeSelfDSoD(Issue issue,
 		IssueResolutionAcceptor acceptor
@@ -66,6 +35,21 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 			[
 				element, context |
 				(element as TupleRole).containingDSoDSet.dsod.remove(Integer.parseInt(issue.data.get(0)))
+			]
+		)
+	}
+	
+	@Fix(RbacDSLValidator::DUPLICATE_ROLE_ASSIGNMENT)
+	def void removeDuplicateRole(Issue issue,
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Remove duplicate role assignment", //label
+			"Remove duplicate role assignment", //description
+			"", //icon
+			[
+				element, context |
+				(element as User).roles.remove(Integer.parseInt(issue.data.get(0)))
 			]
 		)
 	}
@@ -126,6 +110,37 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 			[
 				element, context |
 				(element as User).containingPolicy.policyElements.remove(element as User)
+			]
+		)
+	}
+	
+	@Fix(RbacDSLValidator::ROLE_EXTENDING_ITSELF)
+	def void removeRoleSelfExtension(Issue issue, 
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Remove role from list of parents", //label
+			"Remove role " + issue.data.get(1) + " from list of parents", //description
+			"", //icon
+			[
+				element, context |
+				(element as Role).parents.remove(Integer.parseInt(issue.data.get(0)))
+				
+			]
+		)
+	}
+	
+	@Fix(RbacDSLValidator::SSOD_WITH_SELF)
+	def void removeSelfSSoD(Issue issue,
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Remove SSoD constraint", //label
+			"Remove SSoD constraint " + issue.data.get(0), //description
+			"", //icon
+			[
+				element, context |
+				(element as TupleRole).containingSSoDSet.ssod.remove(Integer.parseInt(issue.data.get(0)))
 			]
 		)
 	}
