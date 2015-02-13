@@ -30,7 +30,6 @@ import uk.ac.open.rbacDSL.ForbiddenConstraint
 class RbacDSLValidator extends AbstractRbacDSLValidator {
 	public static val DSOD_CONFLICT = "uk.ac.open.rbacdsl.DSoDConflict"
 	public static val DSOD_WITH_SELF = "uk.ac.open.rbacdsl.DSoDWithSelf"
-	public static val DUPLICATE_PERMISSION_ASSIGNMENT = "uk.ac.open.rbacdsl.DuplicatePermissionAssignment"
 	public static val DUPLICATE_OPERATION_REFERENCE = "uk.ac.open.rbacdsl.DuplicateOperationReference"
 	public static val DUPLICATE_ROLE_ASSIGNMENT = "uk.ac.open.rbacdsl.DuplicateRoleAssignment"
 	public static val DUPLICATE_ROLE_EXTENSION = "uk.ac.open.rbacdsl.DuplicateRoleExtension"
@@ -83,6 +82,91 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 		}
 	}
 	
+	@Check
+	def checkDSoDWithSelf(TupleRole tuple) {
+		var int index = tuple.containingDSoDSet.dsod.indexOf(tuple)	
+		if (tuple.fst.equals(tuple.snd))
+			error('''DSoD constraint between an role and itself''',
+				tuple,
+				null,
+				DSOD_WITH_SELF,
+				index.toString
+			)
+	}
+	
+	@Check
+	 def checkDuplicateOperationReferences(PolicyConstraint constraint) {
+	 	if (constraint.operations.size() <= 1)
+	 		return;
+	 	for (var i = 0; i < constraint.operations.size(); i++) {
+	 		var current = constraint.operations.get(i)
+	 		for (var j = i+1; j < constraint.operations.size(); j++) {
+	 			if (current.equals(constraint.operations.get(j))) {
+	 				error('''Duplicate operation reference''',
+	 					RbacDSLPackage::eINSTANCE.policyConstraint_Operations,
+	 					j,
+	 					DUPLICATE_OPERATION_REFERENCE
+	 				)
+	 				error('''Duplicate operation reference''',
+	 					RbacDSLPackage::eINSTANCE.policyConstraint_Operations,
+	 					i,
+	 					DUPLICATE_OPERATION_REFERENCE
+	 				)
+	 			}
+	 		}
+	 	}
+	 }
+	 
+	 @Check
+	 def checkDuplicateRoleAssignment(User user) {
+	 	if (user.roles.size() <= 1)
+	 		return;
+	 	for (var i = 0; i < user.roles.size(); i++) {
+	 		var current = user.roles.get(i)
+	 		for (var j = i+1; j < user.roles.size(); j++) {
+	 			if (current.equals(user.roles.get(j))) {
+	 				error('''Duplicate role assignment''',
+	 					RbacDSLPackage::eINSTANCE.user_Roles,
+	 					j,
+	 					DUPLICATE_ROLE_ASSIGNMENT,
+	 					j.toString()
+	 				)
+	 				error('''Duplicate role assignment''',
+	 					RbacDSLPackage::eINSTANCE.user_Roles,
+	 					i,
+	 					DUPLICATE_ROLE_ASSIGNMENT,
+	 					j.toString()
+	 				)	
+	 			}
+	 		}
+	 	}
+	 }
+	 
+	 /**
+	 * A role should not extend the same role multiple times
+	 */
+	@Check
+	def checkDuplicateRoleExtensions(Role role) {
+		for (var i = 0; i < role.parents.toArray.length; i++) {
+			var parent = role.parents.toArray.get(i);
+			val previous = Arrays.copyOfRange(role.parents.toArray, 0, i) //subset of parents array before parent
+			if (previous.contains(parent)) {
+				error('''Duplicate role extension''',
+					RbacDSLPackage::eINSTANCE.role_Parents,
+					i,
+					DUPLICATE_ROLE_EXTENSION,
+					i.toString()
+				)
+				error('''Duplicate role extension''',
+					RbacDSLPackage::eINSTANCE.role_Parents,
+					previous.indexOf(parent),
+					DUPLICATE_ROLE_EXTENSION,
+					previous.indexOf(parent).toString()
+				)
+			}
+		}
+	}
+	
 	/**
 	 * Verifies that the policies satisfy Granted constraints. To satisfy a 
 	 * Granted constraint, the activated roles must provide /all/ the operations
@@ -121,18 +205,6 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	}
 	
 	/**
-	 * From a list of roles, returns a list of operations afforded by those 
-	 * roles
-	 */
-	private def getAvailableOperations(List<Role> roles) {
-		var available = new ArrayList<Operation>
-		for (role:roles) {
-			available.addAll(role.permissions.toArray() as Operation[])
-		}
-		available.toSet()
-	}
-	
-	/**
 	 * Finds roles in constraints that are not /assigned/ to /all/ the users in 
 	 * the constraint.
 	 * A role cannot be activated by a user if it isn't assigned to the user, 
@@ -151,10 +223,6 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 				)
 			}
 		}
-	}
-	
-	private def checkUnassignedRolesForUser(User user, List<Role> roles) {
-		roles.filter[r | !user.allRoles.toList.contains(r)]
 	}
 	
 	@Check
@@ -264,18 +332,6 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 			)
 	}
 	
-	@Check
-	def checkDSoDWithSelf(TupleRole tuple) {
-		var int index = tuple.containingDSoDSet.dsod.indexOf(tuple)	
-		if (tuple.fst.equals(tuple.snd))
-			error('''DSoD constraint between an role and itself''',
-				tuple,
-				null,
-				DSOD_WITH_SELF,
-				index.toString
-			)
-	}
-	
 	/**
 	 * There cannot, by definition, be SSoD constraints between a role and one
 	 * of its ancestors, as it would prevent the role to ever be assigned to
@@ -294,31 +350,6 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	}
 	
 	/**
-	 * A role should not extend the same role multiple times
-	 */
-	@Check
-	def checkDuplicateRoleExtensions(Role role) {
-		for (var i = 0; i < role.parents.toArray.length; i++) {
-			var parent = role.parents.toArray.get(i);
-			val previous = Arrays.copyOfRange(role.parents.toArray, 0, i) //subset of parents array before parent
-			if (previous.contains(parent)) {
-				error('''Duplicate role extension''',
-					RbacDSLPackage::eINSTANCE.role_Parents,
-					i,
-					DUPLICATE_ROLE_EXTENSION,
-					i.toString()
-				)
-				error('''Duplicate role extension''',
-					RbacDSLPackage::eINSTANCE.role_Parents,
-					previous.indexOf(parent),
-					DUPLICATE_ROLE_EXTENSION,
-					previous.indexOf(parent).toString()
-				)
-			}
-		}
-	}
-	
-	/**
 	 * A role should not extend itself
 	 */
 	 @Check
@@ -331,31 +362,6 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 			role.parents.indexOf(role).toString,
 	 			role.name
 	 		)
-	 }
-	 
-	 @Check
-	 def checkDuplicateRoleAssignment(User user) {
-	 	if (user.roles.size() <= 1)
-	 		return;
-	 	for (var i = 0; i < user.roles.size(); i++) {
-	 		var current = user.roles.get(i)
-	 		for (var j = i+1; j < user.roles.size(); j++) {
-	 			if (current.equals(user.roles.get(j))) {
-	 				error('''Duplicate role assignment''',
-	 					RbacDSLPackage::eINSTANCE.user_Roles,
-	 					j,
-	 					DUPLICATE_ROLE_ASSIGNMENT,
-	 					j.toString()
-	 				)
-	 				error('''Duplicate role assignment''',
-	 					RbacDSLPackage::eINSTANCE.user_Roles,
-	 					i,
-	 					DUPLICATE_ROLE_ASSIGNMENT,
-	 					j.toString()
-	 				)	
-	 			}
-	 		}
-	 	}
 	 }
 	 
 	 @Check
@@ -410,29 +416,6 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 		}
 	 	}
 	 }
-	 
-	 @Check
-	 def checkDuplicateOperationReferences(PolicyConstraint constraint) {
-	 	if (constraint.operations.size() <= 1)
-	 		return;
-	 	for (var i = 0; i < constraint.operations.size(); i++) {
-	 		var current = constraint.operations.get(i)
-	 		for (var j = i+1; j < constraint.operations.size(); j++) {
-	 			if (current.equals(constraint.operations.get(j))) {
-	 				error('''Duplicate operation reference''',
-	 					RbacDSLPackage::eINSTANCE.policyConstraint_Operations,
-	 					j,
-	 					DUPLICATE_OPERATION_REFERENCE
-	 				)
-	 				error('''Duplicate operation reference''',
-	 					RbacDSLPackage::eINSTANCE.policyConstraint_Operations,
-	 					i,
-	 					DUPLICATE_OPERATION_REFERENCE
-	 				)
-	 			}
-	 		}
-	 	}
-	 }
 	
 	/*
 	 * Raises a warning if a DSoD constraint is identical to an SSoD constraint.
@@ -463,5 +446,21 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 			|| ((tuple1.fst == tuple2.snd) && (tuple1.snd == tuple2.fst)))
 			return true
 		return false
+	}
+	
+	private def checkUnassignedRolesForUser(User user, List<Role> roles) {
+		roles.filter[r | !user.allRoles.toList.contains(r)]
+	}
+	
+	/**
+	 * From a list of roles, returns a list of operations afforded by those 
+	 * roles
+	 */
+	private def getAvailableOperations(List<Role> roles) {
+		var available = new ArrayList<Operation>
+		for (role:roles) {
+			available.addAll(role.permissions.toArray() as Operation[])
+		}
+		available.toSet()
 	}
 }
