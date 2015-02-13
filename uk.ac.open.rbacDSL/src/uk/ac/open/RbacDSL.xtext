@@ -60,13 +60,13 @@ SoD:
 ;
 
 SSoD:
-	'ssod' '{'
+	{SSoD}'ssod' '{'
 		ssod += TupleRole*
 	'}'
 ;
 
 DSoD:
-	'dsod' '{'
+	{DSoD}'dsod' '{'
 		dsod += TupleRole*
 	'}'
 ;
