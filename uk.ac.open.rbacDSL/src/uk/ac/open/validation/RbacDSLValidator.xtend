@@ -134,7 +134,8 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 				error("Role not assigned to user '" + user.name + "'",
 					RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
 					constraint.roles.indexOf(role),
-					UNASSIGNED_ROLE
+					UNASSIGNED_ROLE,
+					constraint.roles.indexOf(role).toString()
 				)
 			}
 		}

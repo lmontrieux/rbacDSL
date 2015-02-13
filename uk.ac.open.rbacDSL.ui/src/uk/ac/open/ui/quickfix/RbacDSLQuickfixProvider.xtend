@@ -266,6 +266,21 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 		)
 	}
 	
+	@Fix(RbacDSLValidator::UNASSIGNED_ROLE)
+	def void removeUnassignedRole(Issue issue,
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Remove unassigned role", //label
+			"Remove unassigned role", //description
+			"", //icon
+			[
+				element, context |
+				(element as PolicyConstraint).roles.remove(Integer.parseInt(issue.data.get(0)))
+			]
+		)
+	}
+	
 	/**
 	 * Merges all DSoD blocks in a policy into the first block.
 	 * Removes empty blocks
