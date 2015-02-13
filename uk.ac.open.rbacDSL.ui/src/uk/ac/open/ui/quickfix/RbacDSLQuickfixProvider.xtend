@@ -15,6 +15,7 @@ import uk.ac.open.validation.RbacDSLValidator
 
 import static extension uk.ac.open.util.RbacDSLModelUtil.*
 import uk.ac.open.rbacDSL.SSoD
+import uk.ac.open.rbacDSL.User
 
 /**
  * Custom quickfixes.
@@ -110,6 +111,21 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 			[
 				element, context |
 				(element as SSoD).containingPolicy.policyElements.remove(element as SSoD)
+			]
+		)
+	}
+	
+	@Fix(RbacDSLValidator::EMPTY_USER)
+	def void removeEmptyUser(Issue issue,
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Remove empty user", //label
+			"Remove empty user " + issue.data.get(0), //description
+			"", //icon
+			[
+				element, context |
+				(element as User).containingPolicy.policyElements.remove(element as User)
 			]
 		)
 	}

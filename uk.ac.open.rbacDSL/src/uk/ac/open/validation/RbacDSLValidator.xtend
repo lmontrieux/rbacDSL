@@ -176,7 +176,8 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 		if (user.roles.isEmpty())
 			warning('''User has no role assignment''',
 				RbacDSLPackage::eINSTANCE.user_Name,
-				EMPTY_USER
+				EMPTY_USER,
+				user.name
 			)
 	}
 	
