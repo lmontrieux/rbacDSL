@@ -130,6 +130,21 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 		)
 	}
 	
+	@Fix(RbacDSLValidator::EMPTY_ROLE)
+	def void removeEmptyRole(Issue issue,
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Remove empty role", //label
+			"Remove empty role", //description
+			"", //icon
+			[
+				element, context |
+				(element as Role).containingPolicy.policyElements.remove(element)
+			]
+		)
+	}
+	
 	@Fix(RbacDSLValidator::EMPTY_SSOD)
 	def void removeEmptySSoDList(Issue issue,
 		IssueResolutionAcceptor acceptor
