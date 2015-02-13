@@ -190,6 +190,21 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 		)
 	}
 	
+	@Fix(RbacDSLValidator::MULTIPLE_DSOD_BLOCKS)
+	def void mergeDuplicateDSoDBlock(Issue issue,
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Merge duplicate DSoD block", //label
+			"Merge duplicate DSoD block", //description
+			"", //icon
+			[
+				element, context |
+				(element as DSoD).containingPolicy.mergeDSoDBlocks()
+			]
+		)
+	}
+	
 	@Fix(RbacDSLValidator::MULTIPLE_SSOD_BLOCKS)
 	def void removeDuplicateSSoDBlock(Issue issue,
 		IssueResolutionAcceptor acceptor
@@ -234,5 +249,18 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 				(element as TupleRole).containingSSoDSet.ssod.remove(Integer.parseInt(issue.data.get(0)))
 			]
 		)
+	}
+	
+	/**
+	 * Merges all DSoD blocks in a policy into the first block.
+	 * Removes empty blocks
+	 */
+	private def mergeDSoDBlocks(Policy policy) {
+		var blocks = policy.dsod
+		val dsodBlock = blocks.get(0)
+		blocks.forEach[block | dsodBlock.dsod.addAll(block.dsod)]
+		for (var i = 1; i < blocks.size(); i++) {
+			policy.policyElements.remove(blocks.get(i))
+		}
 	}
 }
