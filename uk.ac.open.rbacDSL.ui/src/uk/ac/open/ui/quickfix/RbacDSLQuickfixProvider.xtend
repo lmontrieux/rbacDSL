@@ -79,6 +79,21 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 		)
 	}
 	
+	@Fix(RbacDSLValidator::DUPLICATE_OPERATION_REFERENCE)
+	def void removeDuplicateOperationReference(Issue issue,
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Remove duplicate operation reference", //label
+			"Remove duplicate operation reference", //description
+			"", //icon
+			[
+				element, context |
+				(element as PolicyConstraint).operations.remove(Integer.parseInt(issue.data.get(0)))
+			]
+		)
+	}
+	
 	@Fix(RbacDSLValidator::DUPLICATE_ROLE_ASSIGNMENT)
 	def void removeDuplicateRole(Issue issue,
 		IssueResolutionAcceptor acceptor

@@ -105,12 +105,14 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 				error('''Duplicate operation reference''',
 	 					RbacDSLPackage::eINSTANCE.policyConstraint_Operations,
 	 					j,
-	 					DUPLICATE_OPERATION_REFERENCE
+	 					DUPLICATE_OPERATION_REFERENCE,
+	 					j.toString()
 	 				)
 	 				error('''Duplicate operation reference''',
 	 					RbacDSLPackage::eINSTANCE.policyConstraint_Operations,
 	 					i,
-	 					DUPLICATE_OPERATION_REFERENCE
+	 					DUPLICATE_OPERATION_REFERENCE,
+	 					i.toString()
 	 				)
 	 			}
 	 		}
