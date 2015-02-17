@@ -174,8 +174,8 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 		IssueResolutionAcceptor acceptor
 	) {
 		acceptor.accept(issue,
-			"Remove empty constraint", //label
-			"Remove empty constraint", //description
+			"Remove empty policy", //label
+			"Remove empty policy", //description
 			"", //icon
 			[
 				element, context |
