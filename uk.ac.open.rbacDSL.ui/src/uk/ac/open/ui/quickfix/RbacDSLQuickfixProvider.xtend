@@ -229,6 +229,21 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 		)
 	}
 	
+	@Fix(RbacDSLValidator::FORBIDDEN_VIOLATION)
+	def void removeForbiddenConstraint(Issue issue,
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Remove constraint", //label
+			"Remove constraint " + issue.data.get(0), //description
+			"", //icon
+			[
+				element, context |
+				(element as PolicyConstraint).containingConstraintSet.constraints.remove(element as PolicyConstraint)
+			]
+		)
+	}
+	
 	@Fix(RbacDSLValidator::MULTIPLE_DSOD_BLOCKS)
 	def void removeDuplicateDSoDBlock(Issue issue,
 		IssueResolutionAcceptor acceptor
