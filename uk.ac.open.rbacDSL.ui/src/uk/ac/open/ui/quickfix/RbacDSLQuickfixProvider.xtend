@@ -155,12 +155,12 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 	}
 	
 	@Fix(RbacDSLValidator::EMPTY_DSOD)
-	def void removeEmptyDSoDList(Issue issue,
+	def void removeEmptyDSoDBlock(Issue issue,
 		IssueResolutionAcceptor acceptor
 	) {
 		acceptor.accept(issue,
-			"Remove empty DSoD list", //label
-			"Remove empty DSoD list", //description
+			"Remove empty DSoD block", //label
+			"Remove empty DSoD block", //description
 			"", //icon
 			[
 				element, context |
@@ -200,12 +200,12 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 	}
 	
 	@Fix(RbacDSLValidator::EMPTY_SSOD)
-	def void removeEmptySSoDList(Issue issue,
+	def void removeEmptySSoDBlock(Issue issue,
 		IssueResolutionAcceptor acceptor
 	) {
 		acceptor.accept(issue,
-			"Remove empty SSoD list", //label
-			"Remove empty SSoD list", //description
+			"Remove empty SSoD block", //label
+			"Remove empty SSoD block", //description
 			"", //icon
 			[
 				element, context |
