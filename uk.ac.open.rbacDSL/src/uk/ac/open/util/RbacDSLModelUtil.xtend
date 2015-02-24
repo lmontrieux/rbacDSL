@@ -17,6 +17,7 @@ import uk.ac.open.rbacDSL.PolicyConstraint
 import uk.ac.open.rbacDSL.SoD
 import java.util.Set
 import java.util.List
+import uk.ac.open.rbacDSL.Operation
 
 class RbacDSLModelUtil {
 	
@@ -155,6 +156,40 @@ class RbacDSLModelUtil {
 			ancestors.addAll(ancestors(role))
 		}
 		return ancestors
+	}
+	
+	/**
+	 * Assigns a role to a user.
+	 * If the role is already assigned, returns false
+	 */
+	def static assignRole(User user, Role role) {
+		user.roles.add(role)
+	}
+	
+	/**
+	 * Finds a user object referenced in a constraint, using its name
+	 * Returns null if there's no user with said name
+	 * Returns a list of users if several users exist with the same name
+	 */
+	def static user(PolicyConstraint constraint, String userName) {
+		return constraint.users.filter[user | user.name.equals(userName)]
+	}
+	
+	/**
+	 * Finds a role object referenced in a constraint, using its name
+	 * Returns an empty list if there's no role with said name
+	 * Returns a list of roles if several roles exist with the same name
+	 */
+	def static role(PolicyConstraint constraint, String roleName) {
+		return constraint.roles.filter[role | role.name.equals(roleName)]
+	}
+	
+	/**
+	 * Returns a list of all the roles providing a particular operation
+	 * This does not consider role hierarchies
+	 */
+	def static providingRoles(Operation operation) {
+		operation.containingPolicy.roles.filter[role | role.permissions.contains(operation)]
 	}
 	
 	private def static ancestors(Role r, Set<Role> visited) {

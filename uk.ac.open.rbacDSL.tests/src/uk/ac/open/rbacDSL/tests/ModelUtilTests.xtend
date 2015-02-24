@@ -14,6 +14,7 @@ import uk.ac.open.rbacDSL.Role
 
 import static extension uk.ac.open.util.RbacDSLModelUtil.*
 import uk.ac.open.rbacDSL.User
+import uk.ac.open.rbacDSL.Operation
 
 @InjectWith(RbacDSLInjectorProvider)
 @RunWith(XtextRunner)
@@ -126,6 +127,51 @@ class ModelUtilTests {
 		'''.parse => [
 			assertNoErrors
 			Assert::assertEquals(5, (policies.head.policyElements.head as User).allRoles.size)
+		]
+	}
+	
+	@Test
+	def void testProvidingOneRole() {
+		'''
+		policy MyPolicy {
+			user User1 {}
+			role Role1 {Obj1.read}
+			object Obj1 {read}
+		}
+		'''.parse => [
+			assertNoErrors
+			Assert::assertEquals(1, (policies.head.policyElements.filter[obj | obj instanceof uk.ac.open.rbacDSL.Object].head as uk.ac.open.rbacDSL.Object).operations.head.providingRoles.size())
+		]
+	}
+	
+	@Test
+	def void testProvidingMultRoles() {
+		'''
+		policy MyPolicy {
+			user User1 {}
+			role Role1 {Obj1.read}
+			role Role2 {Obj1.read}
+			role Role3 {}
+			role Role4 {Obj1.read}
+			object Obj1 {read}
+		}
+		'''.parse => [
+			assertNoErrors
+			Assert::assertEquals(3, (policies.head.policyElements.filter[obj | obj instanceof uk.ac.open.rbacDSL.Object].head as uk.ac.open.rbacDSL.Object).operations.head.providingRoles.size())
+		]
+	}
+	
+	@Test
+	def void testProvidingNoRole() {
+		'''
+		policy MyPolicy {
+			user User1 {}
+			role Role1 {}
+			object Obj1 {read}
+		}
+		'''.parse => [
+			assertNoErrors
+			Assert::assertEquals(0, (policies.head.policyElements.filter[obj | obj instanceof uk.ac.open.rbacDSL.Object].head as uk.ac.open.rbacDSL.Object).operations.head.providingRoles.size())
 		]
 	}
 }
