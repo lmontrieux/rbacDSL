@@ -321,7 +321,7 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 	}
 	
 	@Fix(RbacDSLValidator::SOD_CONFLICT)
-	def void removeSSoDFromSoDConflict(Issue issue,
+	def void removeDSoDFromSoDConflict(Issue issue,
 		IssueResolutionAcceptor acceptor
 	) {
 		acceptor.accept(issue,
