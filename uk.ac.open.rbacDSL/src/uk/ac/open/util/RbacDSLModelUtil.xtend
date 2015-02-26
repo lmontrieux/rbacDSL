@@ -192,6 +192,48 @@ class RbacDSLModelUtil {
 		operation.containingPolicy.roles.filter[role | role.permissions.contains(operation)]
 	}
 	
+	/**
+	 * Finds an SSoD tuple in a policy that matches a string representation
+	 * Returns only one match, even if there exist several
+	 */
+	def static ssodTuple(Policy policy, String tupleStr) {
+		for (SSoD block:policy.ssod) {
+			var tuple = block.findTuple(tupleStr)
+			if (tuple != null)
+				return tuple
+		}
+		return null
+	}
+	
+	/**
+	 * Finds a DSoD tuple in a policy that matches a string representation
+	 * Returns only one match, even if there exist several
+	 */
+	def static dsodTuple(Policy policy, String tupleStr) {
+		for (DSoD block:policy.dsod) {
+			var tuple = block.findTuple(tupleStr)
+			if (tuple != null)
+				return tuple
+		}
+		return null
+	}
+	
+	private def static findTuple(SSoD block, String tupleStr) {
+		for (TupleRole tuple:block.ssod) {
+			if (tuple.toString.equals(tupleStr))
+				return tuple
+		}
+		return null
+	}
+	
+	private def static findTuple(DSoD block, String tupleStr) {
+		for (TupleRole tuple:block.dsod) {
+			if (tuple.toString.equals(tupleStr))
+				return tuple
+		}
+		return null
+	}
+	
 	private def static ancestors(Role r, Set<Role> visited) {
 		for (parent:r.parents) {
 			if (!visited.contains(parent)) {

@@ -335,6 +335,21 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 		)
 	}
 	
+	@Fix(RbacDSLValidator::SOD_CONFLICT)
+	def void removeSSoDFromSoDConflict(Issue issue,
+		IssueResolutionAcceptor acceptor
+	) {
+		acceptor.accept(issue,
+			"Remove SSoD constraint", //label
+			"Remove SSoD constraint", //description,
+			"", //icon
+			[
+				element, context |
+				(element as TupleRole).containingPolicy.ssodTuple(issue.data.get(0)).containingSSoDSet.ssod.remove((element as TupleRole).containingPolicy.ssodTuple(issue.data.get(0)))
+			]
+		)
+	}
+	
 	@Fix(RbacDSLValidator::SSOD_WITH_SELF)
 	def void removeSelfSSoD(Issue issue,
 		IssueResolutionAcceptor acceptor
