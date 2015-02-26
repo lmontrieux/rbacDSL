@@ -382,7 +382,8 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 						warning('''DSoD constraint unnecessary because of an identical SSoD constraint''',
 							tuple,
 							null,
-							SOD_CONFLICT
+							SOD_CONFLICT,
+							current.toString
 						)
 					}
 				}
