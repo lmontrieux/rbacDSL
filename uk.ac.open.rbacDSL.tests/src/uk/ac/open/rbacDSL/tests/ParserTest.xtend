@@ -519,7 +519,7 @@ class ParserTest {
 	}
 	
 	@Test
-	def void parseUserRoleConstraint() {
+	def void parseRoleOperationConstraint() {
 		'''
 		policy MyPolicy {
 			user User1 {Role1}
@@ -545,6 +545,21 @@ class ParserTest {
 		}
 		constraints MyConstraints {
 			operations {MyPolicy.Obj1.read MyPolicy.Obj1.write}
+		}
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void parseUserRoleConstraint() {
+		'''
+		policy MyPolicy {
+			user User1 {Role1}
+			role Role1 {Obj1.read Obj1.write}
+			role Role2 {Obj1.write}
+			object Obj1{read write}
+		}
+		constraints MyConstraints {
+			user-role {MyPolicy.Role1 MyPolicy.Role2}
 		}
 		'''.parse.assertNoErrors
 	}
