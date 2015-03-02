@@ -21,6 +21,7 @@ import uk.ac.open.rbacDSL.GrantedConstraint
 import java.util.ArrayList
 import uk.ac.open.rbacDSL.Operation
 import uk.ac.open.rbacDSL.ForbiddenConstraint
+import uk.ac.open.rbacDSL.UserConstraint
 
 /**
  * Custom validation rules. 
@@ -59,19 +60,19 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 * DSoD conflict with each other.
 	 */
 	@Check
-	def checkDSoDInConstraint(PolicyConstraint const) {
+	def checkDSoDInConstraint(UserConstraint const) {
 		for (role:const.roles) {
 			for (dsod:role.dsodWith) {
 				if (const.roles.contains(dsod)) {
 					error("DSoD violation with role '" + role.name + "'",
-						RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
+						RbacDSLPackage::eINSTANCE.userConstraint_Roles,
 						const.roles.indexOf(dsod),
 						DSOD_CONFLICT,
 						const.roles.indexOf(dsod).toString(),
 						const.roles.indexOf(role).toString()
 					)
 					error("DSoD violation with role '" + dsod.name + "'",
-						RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
+						RbacDSLPackage::eINSTANCE.userConstraint_Roles,
 						const.roles.indexOf(role),
 						DSOD_CONFLICT,
 						const.roles.indexOf(role).toString(),
@@ -95,7 +96,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	}
 	
 	@Check
-	 def checkDuplicateOperationReferences(PolicyConstraint constraint) {
+	 def checkDuplicateOperationReferences(UserConstraint constraint) {
 	 	if (constraint.operations.size() <= 1)
 	 		return;
 	 	for (var i = 0; i < constraint.operations.size(); i++) {
@@ -103,13 +104,13 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 		for (var j = i+1; j < constraint.operations.size(); j++) {
 	 			if (current.equals(constraint.operations.get(j))) {
 	 				error('''Duplicate operation reference''',
-	 					RbacDSLPackage::eINSTANCE.policyConstraint_Operations,
+	 					RbacDSLPackage::eINSTANCE.userConstraint_Operations,
 	 					j,
 	 					DUPLICATE_OPERATION_REFERENCE,
 	 					j.toString()
 	 				)
 	 				error('''Duplicate operation reference''',
-	 					RbacDSLPackage::eINSTANCE.policyConstraint_Operations,
+	 					RbacDSLPackage::eINSTANCE.userConstraint_Operations,
 	 					i,
 	 					DUPLICATE_OPERATION_REFERENCE,
 	 					i.toString()
@@ -173,7 +174,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	  * Checks if a constraint refers to the same role more than once
 	  */
 	 @Check
-	 def checkDuplicateRoleReferences(PolicyConstraint constraint) {
+	 def checkDuplicateRoleReferences(UserConstraint constraint) {
 	 	if (constraint.roles.size() <= 1)
 	 		return;
 	 	for (var i = 0; i < constraint.roles.size(); i++) {
@@ -181,13 +182,13 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 		for (var j = i+1; j < constraint.roles.size(); j++) {
 	 			if (current.equals(constraint.roles.get(j))) {
 	 				error('''Duplicate role reference''',
-	 					RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
+	 					RbacDSLPackage::eINSTANCE.userConstraint_Roles,
 	 					j,
 	 					DUPLICATE_ROLE_REFERENCE,
 	 					j.toString()
 	 				)
 	 				error('''Duplicate role reference''',
-	 					RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
+	 					RbacDSLPackage::eINSTANCE.userConstraint_Roles,
 	 					i,
 	 					DUPLICATE_ROLE_REFERENCE,
 	 					i.toString()
@@ -198,7 +199,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 }
 	 
 	 @Check
-	 def checkDuplicateUserReferences(PolicyConstraint constraint) {
+	 def checkDuplicateUserReferences(UserConstraint constraint) {
 	 	if (constraint.users.size() <= 1)
 	 		return;
 	 	for (var i = 0; i < constraint.users.size(); i++) {
@@ -206,13 +207,13 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 		for (var j = i+1; j < constraint.users.size(); j++) {
 	 			if (current.equals(constraint.users.get(j))) {
 	 				error('''Duplicate user reference''',
-	 					RbacDSLPackage::eINSTANCE.policyConstraint_Users,
+	 					RbacDSLPackage::eINSTANCE.userConstraint_Users,
 	 					j,
 	 					DUPLICATE_USER_REFERENCE,
 	 					j.toString()
 	 				)
 	 				error('''Duplicate user reference''',
-	 					RbacDSLPackage::eINSTANCE.policyConstraint_Users,
+	 					RbacDSLPackage::eINSTANCE.userConstraint_Users,
 	 					i,
 	 					DUPLICATE_USER_REFERENCE,
 	 					i.toString()
@@ -223,28 +224,28 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 }
 	
 	@Check
-	def checkEmptyConstraintUsers(PolicyConstraint constraint) {
+	def checkEmptyConstraintUsers(UserConstraint constraint) {
 		if (constraint.users.size() == 0)
 			warning('''Empty list of users''',
-				RbacDSLPackage::eINSTANCE.policyConstraint_Users,
+				RbacDSLPackage::eINSTANCE.userConstraint_Users,
 				EMPTY_CONSTRAINT_USERS
 			)
 	}
 	
 	@Check
-	def checkEmptyConstraintRoles(PolicyConstraint constraint) {
+	def checkEmptyConstraintRoles(UserConstraint constraint) {
 		if (constraint.roles.size() == 0)
 			warning('''Empty list of roles''',
-				RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
+				RbacDSLPackage::eINSTANCE.userConstraint_Roles,
 				EMPTY_CONSTRAINT_ROLES
 			)
 	}
 	
 	@Check
-	def checkEmptyConstraintOperations(PolicyConstraint constraint) {
+	def checkEmptyConstraintOperations(UserConstraint constraint) {
 		if (constraint.operations.size() == 0)
 			warning('''Empty list of operations''',
-				RbacDSLPackage::eINSTANCE.policyConstraint_Operations,
+				RbacDSLPackage::eINSTANCE.userConstraint_Operations,
 				EMPTY_CONSTRAINT_OPERATIONS
 			)
 	}
@@ -307,7 +308,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 			val missing = const.operations.filter[o | !available.contains(o)]
 			if (missing.isEmpty())
 				error("Forbidden constraint '" + const.name + "' violated",
-					RbacDSLPackage::eINSTANCE.policyConstraint_Name,
+					RbacDSLPackage::eINSTANCE.userConstraint_Name,
 					FORBIDDEN_VIOLATION
 				)
 		}
@@ -325,7 +326,7 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 		val violations = const.operations.filter[o | !available.contains(o)]
 		for(violation:violations) {
 			error("Operation '" + violation.name + "' not granted",
-				RbacDSLPackage::eINSTANCE.policyConstraint_Operations,
+				RbacDSLPackage::eINSTANCE.userConstraint_Operations,
 				const.operations.indexOf(violation),
 				GRANTED_VIOLATION
 			)
@@ -428,11 +429,11 @@ class RbacDSLValidator extends AbstractRbacDSLValidator {
 	 * on the role.
 	 */
 	@Check
-	def checkUnassignedRolesInConstraint(PolicyConstraint constraint) {
+	def checkUnassignedRolesInConstraint(UserConstraint constraint) {
 		for (user:constraint.users) {
 			for (role:checkUnassignedRolesForUser(user, constraint.roles)) {
 				error("Role not assigned to user '" + user.name + "'",
-					RbacDSLPackage::eINSTANCE.policyConstraint_Roles,
+					RbacDSLPackage::eINSTANCE.userConstraint_Roles,
 					constraint.roles.indexOf(role),
 					UNASSIGNED_ROLE,
 					constraint.roles.indexOf(role).toString()

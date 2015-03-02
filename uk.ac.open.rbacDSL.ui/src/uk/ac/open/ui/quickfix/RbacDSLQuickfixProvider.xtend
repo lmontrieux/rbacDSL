@@ -19,6 +19,7 @@ import uk.ac.open.rbacDSL.User
 import uk.ac.open.rbacDSL.PolicyConstraint
 import java.util.List
 import java.util.ArrayList
+import uk.ac.open.rbacDSL.UserConstraint
 
 /**
  * Custom quickfixes.
@@ -40,7 +41,7 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 			"", //icon
 			[
 				element, context |
-				(element as PolicyConstraint).roles.remove(Integer.parseInt(issue.data.get(0)))
+				(element as UserConstraint).roles.remove(Integer.parseInt(issue.data.get(0)))
 			]
 		)
 	}
@@ -59,7 +60,7 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 	 		"", //icon
 	 		[
 	 			element, context |
-	 			(element as PolicyConstraint).roles.get(Integer.parseInt(issue.data.get(0))).removeAllDSoD((element as PolicyConstraint).roles.get(Integer.parseInt(issue.data.get(1))))
+	 			(element as UserConstraint).roles.get(Integer.parseInt(issue.data.get(0))).removeAllDSoD((element as UserConstraint).roles.get(Integer.parseInt(issue.data.get(1))))
 	 		]
 	 	)
 	 }
@@ -89,7 +90,7 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 			"", //icon
 			[
 				element, context |
-				(element as PolicyConstraint).operations.remove(Integer.parseInt(issue.data.get(0)))
+				(element as UserConstraint).operations.remove(Integer.parseInt(issue.data.get(0)))
 			]
 		)
 	}
@@ -134,7 +135,7 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 			"", //icon
 			[
 				element, context |
-				(element as PolicyConstraint).roles.remove(Integer.parseInt(issue.data.get(0)))
+				(element as UserConstraint).roles.remove(Integer.parseInt(issue.data.get(0)))
 			]
 		)
 	}
@@ -149,7 +150,7 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 			"", //icon
 			[
 				element, context |
-				(element as PolicyConstraint).users.remove(Integer.parseInt(issue.data.get(0)))
+				(element as UserConstraint).users.remove(Integer.parseInt(issue.data.get(0)))
 			]
 		)
 	}
@@ -375,7 +376,7 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 			"", //icon
 			[
 				element, context |
-				(element as PolicyConstraint).roles.remove(Integer.parseInt(issue.data.get(0)))
+				(element as UserConstraint).roles.remove(Integer.parseInt(issue.data.get(0)))
 			]
 		)
 	}
@@ -390,7 +391,7 @@ class RbacDSLQuickfixProvider extends DefaultQuickfixProvider {
 			"", //icon
 			[
 				element, context |
-				(element as PolicyConstraint).users.assignRole((element as PolicyConstraint).roles.get(Integer.parseInt(issue.data.get(0))))
+				(element as UserConstraint).users.assignRole((element as UserConstraint).roles.get(Integer.parseInt(issue.data.get(0))))
 			]
 		)
 	}

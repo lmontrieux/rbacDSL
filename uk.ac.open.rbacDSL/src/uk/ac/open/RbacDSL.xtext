@@ -20,7 +20,12 @@ Constraints:
 ;
 
 PolicyConstraint:
-	GrantedConstraint|ForbiddenConstraint
+	UserConstraint|UserRoleConstraint
+	|RolePermissionConstraint|OperationConstraint
+;
+
+UserConstraint:
+	ForbiddenConstraint|GrantedConstraint
 ;
 
 ForbiddenConstraint:
@@ -37,6 +42,21 @@ GrantedConstraint:
 		'roles' '{' roles += [Role|QualifiedName]* '}'
 		'operations' '{' operations+=[Operation|QualifiedName]* '}'
 	'}'
+;
+
+UserRoleConstraint:
+	{UserRoleConstraint}'user-role' '{' roles += [Role|QualifiedName]* '}'
+;
+
+RolePermissionConstraint:
+	'role-permission' name=ID '{'
+		'role' role = [Role|QualifiedName]
+		'operations' operations += [Operation|QualifiedName]*
+	'}'
+;
+
+OperationConstraint:
+	{OperationConstraint} 'operations' '{' operations += [Operation|QualifiedName]* '}'
 ;
 
 PolicyElement:

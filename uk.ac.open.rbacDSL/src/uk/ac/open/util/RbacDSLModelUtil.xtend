@@ -18,6 +18,7 @@ import uk.ac.open.rbacDSL.SoD
 import java.util.Set
 import java.util.List
 import uk.ac.open.rbacDSL.Operation
+import uk.ac.open.rbacDSL.UserConstraint
 
 class RbacDSLModelUtil {
 	
@@ -97,7 +98,7 @@ class RbacDSLModelUtil {
 		user.roles + user.roles.ancestors
 	}
 	
-	def static allRoles(PolicyConstraint const) {
+	def static allRoles(UserConstraint const) {
 		const.roles + const.roles.ancestors
 	}
 	
@@ -171,7 +172,7 @@ class RbacDSLModelUtil {
 	 * Returns null if there's no user with said name
 	 * Returns a list of users if several users exist with the same name
 	 */
-	def static user(PolicyConstraint constraint, String userName) {
+	def static user(UserConstraint constraint, String userName) {
 		return constraint.users.filter[user | user.name.equals(userName)]
 	}
 	
@@ -180,7 +181,7 @@ class RbacDSLModelUtil {
 	 * Returns an empty list if there's no role with said name
 	 * Returns a list of roles if several roles exist with the same name
 	 */
-	def static role(PolicyConstraint constraint, String roleName) {
+	def static role(UserConstraint constraint, String roleName) {
 		return constraint.roles.filter[role | role.name.equals(roleName)]
 	}
 	
