@@ -21,7 +21,7 @@ Constraints:
 
 PolicyConstraint:
 	UserConstraint|UserRoleConstraint
-	|RolePermissionConstraint|OperationConstraint
+	|RoleOperationConstraint|OperationConstraint
 ;
 
 UserConstraint:
@@ -48,10 +48,10 @@ UserRoleConstraint:
 	{UserRoleConstraint}'user-role' '{' roles += [Role|QualifiedName]* '}'
 ;
 
-RolePermissionConstraint:
-	'role-permission' name=ID '{'
+RoleOperationConstraint:
+	'role-operations' name=ID '{'
 		'role' role = [Role|QualifiedName]
-		'operations' operations += [Operation|QualifiedName]*
+		'operations' '{' operations += [Operation|QualifiedName]* '}'
 	'}'
 ;
 
